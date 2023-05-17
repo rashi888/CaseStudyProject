@@ -9,16 +9,15 @@
   
 }
 .formcont{
-    display: inline;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.wrapper{
-  /* background: #fff;
-  border-radius: 15px;
-  box-shadow: 0px 15px 20px rgba(0,0,0,0.1); */
-  display: block ruby;
-  background-color: azure;
+.wrapper {
+  background-color: #fcfcfc;
 }
+
 .wrapper .title{
   font-size: 35px;
   font-weight: 600;
@@ -31,6 +30,7 @@
 }
 .wrapper form{
   padding: 10px 30px 50px 30px;
+  position: initial;
 }
 .wrapper form .field{
   height: 50px;
@@ -129,3 +129,18 @@ form .pass-link a:hover,
 form .signup-link a:hover{
   text-decoration: underline;
 }
+
+@media  screen and (max-width: 1000px){
+  .login-content{
+    flex-direction: column;
+  }
+  .login-content .form{
+    width: 100%;
+  }
+   .formcont
+    {
+        display: grid;
+    }
+}
+
+    
