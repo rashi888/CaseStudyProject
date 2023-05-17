@@ -15,7 +15,7 @@ import UserProfile from './pages/UserProfile';
 import Front from './pages/Front';
 import AdBanner from './pages/AdBanner';
 import AddItem from './pages/AddItem';
-// import MultiCarouselEffect from './components/MultiCarouselEffect';
+import MultiCarouselEffect from './components/MultiCarouselEffect';
 import Advs from './components/Advs';
 
 function App() {
@@ -32,11 +32,12 @@ function App() {
         <Route path="cart" Component={Cart} />
         <Route path='productsView' Component={ProductsView} />
         <Route path='mobiles' Component={Mobiles} />
-        <Route path="userProfile" Component={UserProfile}/>
-        <Route path="front" Component={Front}/>
-        <Route path="adbanner" Component={AdBanner  }/>
-        <Route path="addtocart" Component={AddItem  }/>
-        <Route path="advs" Component={ Advs }/>
+        <Route path="userProfile" Component={UserProfile} />
+        <Route path="front" Component={Front} />
+        <Route path="adbanner" Component={AdBanner} />
+        <Route path="addtocart" Component={AddItem} />
+        <Route path="multicau" Component={MultiCarouselEffect} />
+        <Route path="advs" Component={Advs} />
       </Routes>
       {/* <Footer /> */}
 
