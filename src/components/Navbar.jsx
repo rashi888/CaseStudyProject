@@ -33,7 +33,11 @@ const Navbar = () => {
 
         <div className="icons">
           <Link to="/login">
-            <img src={profile} alt="" />
+            <img className="profileimg" src={profile} alt="" />
+            <div className="profile">
+              <h6>My Profile</h6>
+              <h6>LogOut</h6>
+              </div>
             
           </Link>
           <Link to="/">

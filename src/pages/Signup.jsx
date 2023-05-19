@@ -93,7 +93,7 @@ const Signup = () => {
                   id="name"
                   onChange={(e) => handleChange(e, "name")}
                   value={data.name} required
-                  invalid={error.errors?.response?.data?.name ? true : false}
+                  invalid={error.errors?.response?.data?.name ? "true" : "false"}
                 />
                 <FormFeedback>
                   {error.errors?.response?.data?.name}
@@ -107,7 +107,7 @@ const Signup = () => {
                   id="emailId"
                   onChange={(e) => handleChange(e, "emailId")}
                   value={data.emailId} required
-                  invalid={error.errors?.response?.data?.emailId ? true : false}
+                  invalid={error.errors?.response?.data?.emailId ? "true" : "false"}
                 />
                 <FormFeedback>
                   {error.errors?.response?.data?.emailId}
@@ -122,7 +122,7 @@ const Signup = () => {
                   onChange={(e) => handleChange(e, "mobileNumber")}
                   value={data.mobileNumber} required
                   invalid={
-                    error.errors?.response?.data?.mobileNumber ? true : false
+                    error.errors?.response?.data?.mobileNumber ? "true" : "false"
                   }
                 />
                 <FormFeedback>
@@ -138,7 +138,7 @@ const Signup = () => {
                   onChange={(e) => handleChange(e, "password")}
                   value={data.password} required
                   invalid={
-                    error.errors?.response?.data?.password ? true : false
+                    error.errors?.response?.data?.password ? "true" : "false"
                   }
                 />
                 <FormFeedback>

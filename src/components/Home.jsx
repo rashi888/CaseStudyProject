@@ -10,7 +10,7 @@ function Home() {
     return (
         <>
         <Products/>
-        <Navy/>
+        {/* <Navy/> */}
         <Cards slides={SliderData} />; 
         <Wrapper/>
         <Electronic/>
