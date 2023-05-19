@@ -77,7 +77,6 @@ const Signup = () => {
   };
 
   return (
-    <Container>
       <>
         <meta charSet="utf-8" />
         <div className="wrapper">
@@ -166,7 +165,6 @@ const Signup = () => {
           </div>
         </div>
       </>
-    </Container>
   );
 };
 
