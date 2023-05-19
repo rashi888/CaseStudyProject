@@ -40,7 +40,7 @@ const Navbar = () => {
               </div>
             
           </Link>
-          <Link to="/">
+          <Link to="/cart">
           <img src={carts} alt="" />
 
           </Link>

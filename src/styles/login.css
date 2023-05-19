@@ -12,6 +12,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    top:30px;
 }
 
 .wrapper {
