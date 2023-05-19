@@ -83,7 +83,7 @@ const Signup = () => {
           <div className="formcont">
             <video src={login} width="450" height="600" loop autoPlay />
 
-            <form class="loginform" onSubmit={submitForm}>
+            <form className="loginform" onSubmit={submitForm}>
               <div className="title">Sign-up</div>
               <div className="field">
                 <input

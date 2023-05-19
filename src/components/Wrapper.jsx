@@ -161,7 +161,7 @@ const Wrapper = () => {
               alt="product.title"
             />
           </a>
-          {/* <div class="label-top shadow-sm">Asus Rog</div>  */}
+          {/* <div className="label-top shadow-sm">Asus Rog</div>  */}
           <div className="label-top shadow-sm">
             <a className="text-white" href="#">
               msi

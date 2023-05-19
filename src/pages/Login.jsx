@@ -10,12 +10,14 @@ import {
   FormGroup,
   Input,
   Label,
+  Nav,
   Row,
 } from "reactstrap";
 import { Link } from "react-router-dom";
 import "../styles/login.css";
 import React, { useEffect, useState } from "react";
 import { signIn, signUp } from "../services/user-service";
+import { useNavigate } from "react-router-dom";
 
 import login from "../assets/login.mp4";
 const LogIn = () => {
@@ -59,8 +61,9 @@ const LogIn = () => {
       .then((resp) => {
         console.log(resp);
         console.log("success log");
-        // toast.success("User registered successfully!")
-        alert("User Login successfully!");
+        toast.success("User registered successfully!")
+        // alert("User Login successfully!");
+        navigate("/home");
       })
       .catch((error) => {
         console.log(error);
@@ -80,7 +83,7 @@ const LogIn = () => {
         <div className="formcont">
           <video src={login} width="450" height="600" loop autoPlay />
 
-          <form class="loginform" onSubmit={submitForm}>
+          <form className="loginform" onSubmit={submitForm}>
             <div className="title">Login</div>
             <div className="field">
             <input
