@@ -5,42 +5,44 @@ import { BiSearch } from "react-icons/bi";
 import { FaUser } from "react-icons/fa";
 import { FaShoppingBag } from "react-icons/fa";
 import "../styles/Navbar.css";
+import profile from "../assets/profile.png";
+import carts from "../assets/cart1.png";
 
 const Navbar = () => {
   return (
     <div>
         
-      <div className="header navbar  ">
-        <div className="logo">
+      <div className="navbars  ">
+        <div className="logos">
 
-          <Link to="/"> 
+          <Link to="/home"> 
           <img src={logo} alt="" className="logo" />
           </Link>
         </div>
-        <div className="searchBar">
+        <div className="searchBars">
           <input
-            className="inputSearch form-control mr-sm-2"
+            className="inputSearchs"
             type="search"
             placeholder="Items to Search..."
             aria-label="Search"
           />
-          <div className="searchIcon">
+          <div className="searchIcons">
             <BiSearch />
           </div>
         </div>
 
         <div className="icons">
           <Link to="/login">
-            {" "}
-            <div className="login text-center" id="login">
-              <FaUser />
-            </div>
+            <img className="profileimg" src={profile} alt="" />
+            <div className="profile">
+              <h6>My Profile</h6>
+              <h6>LogOut</h6>
+              </div>
+            
           </Link>
           <Link to="/">
-            {" "}
-            <div className="cart" id="cart">
-              <FaShoppingBag />
-            </div>
+          <img src={carts} alt="" />
+
           </Link>
         </div>
       </div>

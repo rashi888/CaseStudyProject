@@ -1,7 +1,7 @@
 import './App.css';
 // import 'react-toastify/dist/ReactToastify.css';
 import Navbar from './components/Navbar';
-// import Footer from './components/Footer';
+import Footer from './components/Footer';
 // import Navy from './components/Navy';
 import { Routes, Route } from 'react-router-dom';
 import Login from './pages/Login'
@@ -42,7 +42,7 @@ function App() {
         <Route path="advs" Component={Advs} />
         <Route path="merchant" Component={Merchant} />
       </Routes>
-      {/* <Footer /> */}
+      <Footer />
 
     </>
   );

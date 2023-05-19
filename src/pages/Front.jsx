@@ -12,10 +12,10 @@ const Front = () => {
           <img className='img' src={model2} alt="" />
         </div>
         <div className="leftContent">
-          <button type="button" class="btn btn-info">Sale 80%</button>
+          <button type="button" className="btn btn-info">Sale 80%</button>
           <h1>Shop All You Want With Ease</h1>
           <p>Anyone can beat you but no one can beat your outfit as long as you wear Dine outfits.</p>
-          <button type="button" class="btn btn-dark"><BsCart3 /> Start Shopping</button>
+          <button type="button" className="btn btn-dark"><BsCart3 /> Start Shopping</button>
         </div>
 
       </div>

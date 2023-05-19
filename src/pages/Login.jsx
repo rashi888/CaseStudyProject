@@ -10,15 +10,22 @@ import {
   FormGroup,
   Input,
   Label,
+  Nav,
   Row,
 } from "reactstrap";
 import { Link } from "react-router-dom";
 import "../styles/login.css";
 import React, { useEffect, useState } from "react";
 import { signIn, signUp } from "../services/user-service";
+import { useNavigate } from "react-router-dom";
+import login from "../assets/login.gif";
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
-import login from "../assets/login.mp4";
+
 const LogIn = () => {
+  const navigate = useNavigate();
+
 
   const [data, setData] = useState({
     emailId: "",
@@ -59,8 +66,17 @@ const LogIn = () => {
       .then((resp) => {
         console.log(resp);
         console.log("success log");
-        // toast.success("User registered successfully!")
-        alert("User Login successfully!");
+        toast.success('🦄 Login!', {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          });                // alert("User Login successfully!");
+        navigate("/home");
       })
       .catch((error) => {
         console.log(error);
@@ -75,12 +91,24 @@ const LogIn = () => {
 
   return (
     <>
+   <ToastContainer
+position="bottom-center"
+autoClose={5000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+theme="light"
+/>
       <meta charSet="utf-8" />
       <div className="wrapper">
         <div className="formcont">
-          <video src={login} width="450" height="600" loop autoPlay />
+          <img  class="logingif"src={login} alt="" />
 
-          <form class="loginform" onSubmit={submitForm}>
+          <form className="loginform" onSubmit={submitForm}>
             <div className="title">Login</div>
             <div className="field">
             <input
@@ -89,7 +117,7 @@ const LogIn = () => {
                   id="emailId"
                   onChange={(e) => handleChange(e, "emailId")}
                   value={data.emailId} required
-                  invalid={error.errors?.response?.data?.emailId ? true : false}
+                  invalid={error.errors?.response?.data?.emailId ? "true" : "false"}
                 />
                 <FormFeedback>
                   {error.errors?.response?.data?.emailId}
@@ -104,8 +132,9 @@ const LogIn = () => {
                   onChange={(e) => handleChange(e, "password")}
                   value={data.password} required
                   invalid={
-                    error.errors?.response?.data?.password ? true : false
+                    error.errors?.response?.data?.password ? "true" : "false"
                   }
+                 
                 />
                 <FormFeedback>
                   {error.errors?.response?.data?.password}

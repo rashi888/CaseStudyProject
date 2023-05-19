@@ -4,54 +4,84 @@ import "../styles/Footer.css"
 const Footer = () => {
     return (
         <>
-            <footer>
-                <div className='container grid2 foot'>
-                    <div className='box '>
-                        <h1>ShopEase</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor libero id et, in gravida. Sit diam duis mauris nulla cursus. Erat et lectus vel ut sollicitudin elit at amet.</p>
-                        <div className='icon d_flex'>
-                            <div className='img d_flex'>
-                                <i class='fa-brands fa-google-play'></i>
-                                <span>Google Play</span>
-                            </div>
-                            <div className='img d_flex'>
-                                <i class='fa-brands fa-app-store-ios'></i>
-                                <span>App Store</span>
-                            </div>
-                        </div>
-                    </div>
+  <header>{/* Content */}</header>
+  <main>{/* Content */}</main>
+  <footer className="footer">
+    <div className="footer__addr">
+      <h1 className="footer__logo">Something</h1>
+      <h2>Contact</h2>
+      <address>
+        5534 Somewhere In. The World 22193-10212
+        <br />
+        <a className="footer__btn" href="mailto:example@gmail.com">
+          Email Us
+        </a>
+      </address>
+    </div>
+    <ul className="footer__nav">
+      <li className="nav__item">
+        <h2 className="nav__title">Media</h2>
+        <ul className="nav__ul">
+          <li>
+            <a href="#">Online</a>
+          </li>
+          <li>
+            <a href="#">Print</a>
+          </li>
+          <li>
+            <a href="#">Alternative Ads</a>
+          </li>
+        </ul>
+      </li>
+      <li className="nav__item nav__item--extra">
+        <h2 className="nav__title">Technology</h2>
+        <ul className="nav__ul nav__ul--extra">
+          <li>
+            <a href="#">Hardware Design</a>
+          </li>
+          <li>
+            <a href="#">Software Design</a>
+          </li>
+          <li>
+            <a href="#">Digital Signage</a>
+          </li>
+          <li>
+            <a href="#">Automation</a>
+          </li>
+          <li>
+            <a href="#">Artificial Intelligence</a>
+          </li>
+          <li>
+            <a href="#">IoT</a>
+          </li>
+        </ul>
+      </li>
+      <li className="nav__item">
+        <h2 className="nav__title">Legal</h2>
+        <ul className="nav__ul">
+          <li>
+            <a href="#">Privacy Policy</a>
+          </li>
+          <li>
+            <a href="#">Terms of Use</a>
+          </li>
+          <li>
+            <a href="#">Sitemap</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <div className="legal">
+      <p>© 2019 Something. All rights reserved.</p>
+      <div className="legal__links">
+        <span>
+          Made with <span className="heart">♥</span> remotely from Anywhere
+        </span>
+      </div>
+    </div>
+  </footer>
+</>
 
-                    <div className='box'>
-                        <h2>About Us</h2>
-                        <ul>
-                            <li>Careers</li>
-                            <li>Our Stores</li>
-                            <li>Our Cares</li>
-                            <li>Terms & Conditions</li>
-                            <li>Privacy Policy</li>
-                        </ul>
-                    </div>
-                    <div className='box'>
-                        <h2>Customer Care</h2>
-                        <ul>
-                            <li>Help Center </li>
-                            <li>How to Buy </li>
-                            <li>Track Your Order </li>
-                            <li>Corporate & Bulk Purchasing </li>
-                            <li>Returns & Refunds </li>
-                        </ul>
-                    </div>
-                    <div className='box'>
-                        <h2>Contact Us</h2>
-                        <ul>
-                            <li>70 Washington Square South, New York, NY 10012, United States </li>
-                            <li>Email: uilib.help@gmail.com</li>
-                            <li>Phone: +1 1123 456 780</li>
-                        </ul>
-                    </div>
-                </div>
-            </footer>
-        </>
     )
 }
 

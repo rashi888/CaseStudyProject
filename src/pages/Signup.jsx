@@ -16,8 +16,8 @@ import React, { useEffect, useState } from "react";
 import { signUp } from "../services/user-service";
 import { toast } from "react-toastify";
 import signup from "../styles/signup.css";
-import login from "../assets/login.mp4";
-import { GoogleLogin } from '@react-oauth/google';
+
+import login from "../assets/login.gif";
 
 
 const Signup = () => {
@@ -79,14 +79,14 @@ const Signup = () => {
   };
 
   return (
-    <Container>
       <>
         <meta charSet="utf-8" />
         <div className="wrapper">
           <div className="formcont">
-            <video src={login} width="450" height="600" loop autoPlay />
+          <img  class="logingif"src={login} alt="" />
 
-            <form class="loginform" onSubmit={submitForm}>
+
+            <form className="loginform" onSubmit={submitForm}>
               <div className="title">Sign-up</div>
               <div className="field">
                 <input
@@ -95,7 +95,7 @@ const Signup = () => {
                   id="name"
                   onChange={(e) => handleChange(e, "name")}
                   value={data.name} required
-                  invalid={error.errors?.response?.data?.name ? true : false}
+                  invalid={error.errors?.response?.data?.name ? "true" : "false"}
                 />
                 <FormFeedback>
                   {error.errors?.response?.data?.name}
@@ -109,7 +109,7 @@ const Signup = () => {
                   id="emailId"
                   onChange={(e) => handleChange(e, "emailId")}
                   value={data.emailId} required
-                  invalid={error.errors?.response?.data?.emailId ? true : false}
+                  invalid={error.errors?.response?.data?.emailId ? "true" : "false"}
                 />
                 <FormFeedback>
                   {error.errors?.response?.data?.emailId}
@@ -124,7 +124,7 @@ const Signup = () => {
                   onChange={(e) => handleChange(e, "mobileNumber")}
                   value={data.mobileNumber} required
                   invalid={
-                    error.errors?.response?.data?.mobileNumber ? true : false
+                    error.errors?.response?.data?.mobileNumber ? "true" : "false"
                   }
                 />
                 <FormFeedback>
@@ -140,7 +140,7 @@ const Signup = () => {
                   onChange={(e) => handleChange(e, "password")}
                   value={data.password} required
                   invalid={
-                    error.errors?.response?.data?.password ? true : false
+                    error.errors?.response?.data?.password ? "true" : "false"
                   }
                 />
                 <FormFeedback>
@@ -169,15 +169,6 @@ const Signup = () => {
         </div>
       </>
 
-      <GoogleLogin
-        onSuccess={credentialResponse => {
-          console.log(credentialResponse);
-        }}
-        onError={() => {
-          console.log('Login Failed');
-        }}
-      />;
-    </Container>
   );
 };
 
