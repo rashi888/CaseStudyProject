@@ -16,7 +16,7 @@ import React, { useEffect, useState } from "react";
 import { signUp } from "../services/user-service";
 import { toast } from "react-toastify";
 import signup from "../styles/signup.css";
-import login from "../assets/login.mp4";
+import login from "../assets/login.gif";
 
 const Signup = () => {
   const [data, setData] = useState({
@@ -81,7 +81,8 @@ const Signup = () => {
         <meta charSet="utf-8" />
         <div className="wrapper">
           <div className="formcont">
-            <video src={login} width="450" height="600" loop autoPlay />
+          <img  class="logingif"src={login} alt="" />
+
 
             <form className="loginform" onSubmit={submitForm}>
               <div className="title">Sign-up</div>

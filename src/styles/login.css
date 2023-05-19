@@ -56,6 +56,10 @@
 form .field input:valid{
   border-color: #4158d0;
 }
+.logingif{
+  height: 450px;
+  width: 500px;
+}
 .wrapper form .field label{
   position: absolute;
   top: 50%;
