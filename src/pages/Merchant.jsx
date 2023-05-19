@@ -7,7 +7,7 @@ function Merchant() {
   return (
     <>
       <div className="addProductPage my-5 mt-3">
-        <Card className='shadow-sm mt-5' color='lightgray'>
+        {/* <Card className='shadow-sm mt-5' color='lightgray'> */}
           <CardHeader><h3 className='text-center'>Add Item</h3></CardHeader>
           <CardBody>
             <Form >
@@ -35,17 +35,12 @@ function Merchant() {
                 <Label for='name'>Enter category</Label><b><Label style={{ color: "red" }}>*</Label></b>
                 <Input type='text' id='name' placeholder='Enter category Here: '></Input>
               </div>
-
-              <div>
-                <Button className='savebtn' block color='success'>Save Changes</Button>
-              </div>
-              <div >
-                <Button className='resetbtn' block color='primary'>Reset</Button>
-              </div>
+              <button type="button" class="btn btn-success w-40 ">Save Changes</button>
+              <button type="button" class="btn btn-primary">Reset</button>
 
             </Form>
           </CardBody>
-        </Card>
+        {/* </Card> */}
       </div>
     </>
   )
