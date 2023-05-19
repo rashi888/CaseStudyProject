@@ -17,6 +17,8 @@ import { signUp } from "../services/user-service";
 import { toast } from "react-toastify";
 import signup from "../styles/signup.css";
 import login from "../assets/login.mp4";
+import { GoogleLogin } from '@react-oauth/google';
+
 
 const Signup = () => {
   const [data, setData] = useState({
@@ -89,7 +91,7 @@ const Signup = () => {
               <div className="field">
                 <input
                   type="text"
-                  
+
                   id="name"
                   onChange={(e) => handleChange(e, "name")}
                   value={data.name} required
@@ -103,7 +105,7 @@ const Signup = () => {
               <div className="field">
                 <input
                   type="emailId"
-                  
+
                   id="emailId"
                   onChange={(e) => handleChange(e, "emailId")}
                   value={data.emailId} required
@@ -117,7 +119,7 @@ const Signup = () => {
               <div className="field">
                 <input
                   type="tel"
-                  
+
                   id="mobileNumber"
                   onChange={(e) => handleChange(e, "mobileNumber")}
                   value={data.mobileNumber} required
@@ -133,7 +135,7 @@ const Signup = () => {
               <div className="field">
                 <input
                   type="password"
-                  
+
                   id="password"
                   onChange={(e) => handleChange(e, "password")}
                   value={data.password} required
@@ -166,6 +168,15 @@ const Signup = () => {
           </div>
         </div>
       </>
+
+      <GoogleLogin
+        onSuccess={credentialResponse => {
+          console.log(credentialResponse);
+        }}
+        onError={() => {
+          console.log('Login Failed');
+        }}
+      />;
     </Container>
   );
 };

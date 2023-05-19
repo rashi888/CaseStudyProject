@@ -17,6 +17,7 @@ import AdBanner from './pages/AdBanner';
 import AddItem from './pages/AddItem';
 import MultiCarouselEffect from './components/MultiCarouselEffect';
 import Advs from './components/Advs';
+import Merchant from './pages/Merchant';
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
     <>
       <Navbar />
       {/* <Navy /> */}
+      
       <Routes>
         <Route path='home' Component={Home} />
         <Route path="products" Component={Products} />
@@ -38,6 +40,7 @@ function App() {
         <Route path="addtocart" Component={AddItem} />
         <Route path="multicau" Component={MultiCarouselEffect} />
         <Route path="advs" Component={Advs} />
+        <Route path="merchant" Component={Merchant} />
       </Routes>
       {/* <Footer /> */}
 
