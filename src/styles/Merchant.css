@@ -1,0 +1,15 @@
+.addProductPage{
+    /* height: 50%; */
+    width: 60%;
+    align-items: center;
+    margin: 0% 20%;
+    margin-top: 10%;
+}
+.savebtn{
+    height: 10%;
+    width: 100%;
+    overflow: hidden;
+}
+.resetbtn{
+
+}
