@@ -38,7 +38,7 @@ function Merchant() {
               <button type="button" class="btn btn-primary">Reset</button>
 
             </Form>
-          </CardBody>
+          {/* </CardBody> */}
         {/* </Card> */}
       </div>
     </>
