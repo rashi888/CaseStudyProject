@@ -4,7 +4,7 @@ import Wrapper from './Wrapper'
 import Products from './Products'
 import { SliderData } from './SliderData'
 import Electronic from './Electronic'
-import Navy from './Navy'
+// import Navy from './Navy'
 
 function Home() {
     return (

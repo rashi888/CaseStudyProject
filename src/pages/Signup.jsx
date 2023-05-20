@@ -1,17 +1,4 @@
-import {
-  Button,
-  Card,
-  CardBody,
-  CardHeader,
-  Col,
-  Container,
-  Form,
-  FormFeedback,
-  FormGroup,
-  Input,
-  Label,
-  Row,
-} from "reactstrap";
+import {FormFeedback} from "reactstrap";
 import React, { useEffect, useState } from "react";
 import { signUp } from "../services/user-service";
 import { toast } from "react-toastify";
@@ -83,7 +70,7 @@ const Signup = () => {
         <meta charSet="utf-8" />
         <div className="wrapper">
           <div className="formcont">
-          <img  class="logingif"src={login} alt="" />
+          <img  className="logingif"src={login} alt="" />
 
 
             <form className="loginform" onSubmit={submitForm}>

@@ -7,6 +7,7 @@ import { FaShoppingBag } from "react-icons/fa";
 import "../styles/Navbar.css";
 import profile from "../assets/profile.png";
 import carts from "../assets/cart1.png";
+import logoo from "../assets/logoo.png";
 
 const Navbar = () => {
   return (
@@ -16,7 +17,8 @@ const Navbar = () => {
         <div className="logos">
 
           <Link to="/home"> 
-          <img src={logo} alt="" className="logo" />
+          {/* <img src={logo} alt="" className="logo" /> */}
+          <img src={logoo} alt="" className="logo" />
           </Link>
         </div>
         <div className="searchBars">

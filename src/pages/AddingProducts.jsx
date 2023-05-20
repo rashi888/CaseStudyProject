@@ -5,11 +5,11 @@ import b1 from "../assets/phone1.webp"
 function AddingProducts() {
     return (
         <>
-            <div class="container-fluid my-5">
+            <div className="container-fluid my-5">
 
-                <Link  style={{ margin: "2%  0px ",padding:'1%', width: '20%' }} class="btn btn-primary">Add Product</Link>
-                <table class="table">
-                    <thead class="thead-light">
+                <Link to="addp"  style={{ margin: "2%  0px ",padding:'1%', width: '20%' }} className="btn btn-primary">Add Product</Link>
+                <table className="table">
+                    <thead className="thead-light">
                         <tr>
                             <th scope="col">SN</th>
                             <th scope="col">Product Name</th>
@@ -27,8 +27,8 @@ function AddingProducts() {
                             <td >Larry</td>
                             <td><img src={b1} height="100px" width="100px"  /></td>
 
-                            <td><a href=""  class="btn btn-danger">Delete</a></td>
-                            <td><a href=""  class="btn btn-warning">Update</a></td>
+                            <td><a href=""  className="btn btn-danger">Delete</a></td>
+                            <td><a href=""  className="btn btn-warning">Update</a></td>
 
                         </tr>
 
@@ -38,8 +38,8 @@ function AddingProducts() {
                             <td >Harry</td>
                             <td><img src={b1} height="100px" width="100px"  /></td>
 
-                            <td><a href=""  class="btn btn-danger">Delete</a></td>
-                            <td><a href=""  class="btn btn-warning">Update</a></td>
+                            <td><a href=""  className="btn btn-danger">Delete</a></td>
+                            <td><a href=""  className="btn btn-warning">Update</a></td>
 
                         </tr>
 
@@ -49,8 +49,8 @@ function AddingProducts() {
                             <td >Carry</td>
                             <td><img src={b1} height="100px" width="100px"  /></td>
 
-                            <td><a href=""  class="btn btn-danger">Delete</a></td>
-                            <td><a href=""  class="btn btn-warning">Update</a></td>
+                            <td><a href=""  className="btn btn-danger">Delete</a></td>
+                            <td><a href=""  className="btn btn-warning">Update</a></td>
 
                         </tr>
                     </tbody>

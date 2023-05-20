@@ -1,5 +1,4 @@
 import React from 'react'
-import "../styles/AdminDashboard.css"
 import {Link} from "react-router-dom"
 
 function AdminDashboard() {

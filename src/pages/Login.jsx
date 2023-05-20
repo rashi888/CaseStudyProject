@@ -1,18 +1,4 @@
-import {
-  Button,
-  Card,
-  CardBody,
-  CardHeader,
-  Col,
-  Container,
-  Form,
-  FormFeedback,
-  FormGroup,
-  Input,
-  Label,
-  Nav,
-  Row,
-} from "reactstrap";
+import { FormFeedback, } from "reactstrap";
 import { Link } from "react-router-dom";
 import "../styles/login.css";
 import React, { useEffect, useState } from "react";
@@ -20,7 +6,7 @@ import { signIn, signUp } from "../services/user-service";
 import { useNavigate } from "react-router-dom";
 import login from "../assets/login.gif";
 import { ToastContainer, toast } from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const LogIn = () => {
@@ -75,7 +61,7 @@ const LogIn = () => {
           draggable: true,
           progress: undefined,
           theme: "light",
-          });                // alert("User Login successfully!");
+        });                // alert("User Login successfully!");
         navigate("/home");
       })
       .catch((error) => {
@@ -91,54 +77,54 @@ const LogIn = () => {
 
   return (
     <>
-   <ToastContainer
-position="bottom-center"
-autoClose={5000}
-hideProgressBar={false}
-newestOnTop={false}
-closeOnClick
-rtl={false}
-pauseOnFocusLoss
-draggable
-pauseOnHover
-theme="light"
-/>
+      <ToastContainer
+        position="bottom-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
       <meta charSet="utf-8" />
       <div className="wrapper">
         <div className="formcont">
-          <img  class="logingif"src={login} alt="" />
+          <img class="logingif" src={login} alt="" />
 
           <form className="loginform" onSubmit={submitForm}>
             <div className="title">Login</div>
             <div className="field">
-            <input
-                  type="emailId"
-                  
-                  id="emailId"
-                  onChange={(e) => handleChange(e, "emailId")}
-                  value={data.emailId} required
-                  invalid={error.errors?.response?.data?.emailId ? "true" : "false"}
-                />
-                <FormFeedback>
-                  {error.errors?.response?.data?.emailId}
-                </FormFeedback>
+              <input
+                type="emailId"
+
+                id="emailId"
+                onChange={(e) => handleChange(e, "emailId")}
+                value={data.emailId} required
+                invalid={error.errors?.response?.data?.emailId ? "true" : "false"}
+              />
+              <FormFeedback>
+                {error.errors?.response?.data?.emailId}
+              </FormFeedback>
               <label>Email Address</label>
             </div>
             <div className="field">
-            <input
-                  type="password"
-                  
-                  id="password"
-                  onChange={(e) => handleChange(e, "password")}
-                  value={data.password} required
-                  invalid={
-                    error.errors?.response?.data?.password ? "true" : "false"
-                  }
-                 
-                />
-                <FormFeedback>
-                  {error.errors?.response?.data?.password}
-                </FormFeedback>              <label>Password</label>
+              <input
+                type="password"
+
+                id="password"
+                onChange={(e) => handleChange(e, "password")}
+                value={data.password} required
+                invalid={
+                  error.errors?.response?.data?.password ? "true" : "false"
+                }
+
+              />
+              <FormFeedback>
+                {error.errors?.response?.data?.password}
+              </FormFeedback>              <label>Password</label>
             </div>
             <div className="content">
               <div className="checkbox">

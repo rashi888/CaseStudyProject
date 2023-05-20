@@ -2,7 +2,7 @@ import './App.css';
 // import 'react-toastify/dist/ReactToastify.css';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-// import Navy from './components/Navy';
+import Navy from './components/Navy';
 import { Routes, Route } from 'react-router-dom';
 import Login from './pages/Login'
 import Signup from './pages/Signup'
@@ -16,25 +16,28 @@ import Front from './pages/Front';
 import AdBanner from './pages/AdBanner';
 import AddItem from './pages/AddItem';
 import MultiCarouselEffect from './components/MultiCarouselEffect';
-import Advs from './components/Advs';
 import Merchant from './pages/Merchant';
 import AdminDashboard from './components/AdminDashboard';
 import AddingCategories from './pages/AddingCategories';
 import AddingProducts from './pages/AddingProducts';
+import Checkout from './pages/Checkout';
+import ProductsAdd from './pages/ProductsAdd';
+import CategoryAdd from './pages/CategoryAdd';
 
 function App() {
 
   return (
     <>
       <Navbar />
-      {/* <Navy /> */}
+      <Navy/>
       
       <Routes>
         <Route path='home' Component={Home} />
-        <Route path="products" Component={Products} />
         <Route path="login" Component={Login} />
         <Route path="signup" Component={Signup} />
-        <Route path="cart" Component={Cart} />
+        <Route path="emptycart" Component={Cart} />
+
+        <Route path="products" Component={Products} />
         <Route path='productsView' Component={ProductsView} />
         <Route path='mobiles' Component={Mobiles} />
         <Route path="userProfile" Component={UserProfile} />
@@ -42,12 +45,16 @@ function App() {
         <Route path="adbanner" Component={AdBanner} />
         <Route path="addtocart" Component={AddItem} />
         <Route path="multicau" Component={MultiCarouselEffect} />
-        <Route path="advs" Component={Advs} />
         <Route path="merchant" Component={Merchant} />
         <Route path="merchantD" Component={Merchant} />
-        <Route path="adminD" Component={AdminDashboard} />
-        <Route path="addcategory" Component={AddingCategories} />
-        <Route path="addproduct" Component={AddingProducts} />
+
+
+        <Route path="admindashboard" Component={AdminDashboard} />
+        <Route path="categorylist" Component={AddingCategories} />
+        <Route path="productlist" Component={AddingProducts} />
+        <Route path="productadd" Component={ProductsAdd} />
+        <Route path="categoryadd" Component={CategoryAdd} />
+        <Route path="checkout" Component={Checkout} />
         
       </Routes>
       <Footer />
