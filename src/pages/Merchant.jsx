@@ -9,7 +9,6 @@ function Merchant() {
       <div className="addProductPage my-5 mt-3">
         {/* <Card className='shadow-sm mt-5' color='lightgray'> */}
           <CardHeader><h3 className='text-center'>Add Item</h3></CardHeader>
-          <CardBody>
             <Form >
               <div className='my-3'>
                 <Label for='name'>Enter Product Name</Label><b><Label style={{ color: "red" }}>*</Label></b>
@@ -39,7 +38,7 @@ function Merchant() {
               <button type="button" class="btn btn-primary">Reset</button>
 
             </Form>
-          </CardBody>
+          {/* </CardBody> */}
         {/* </Card> */}
       </div>
     </>
