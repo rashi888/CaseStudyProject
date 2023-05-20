@@ -18,6 +18,9 @@ import AddItem from './pages/AddItem';
 import MultiCarouselEffect from './components/MultiCarouselEffect';
 import Advs from './components/Advs';
 import Merchant from './pages/Merchant';
+import AdminDashboard from './components/AdminDashboard';
+import AddingCategories from './pages/AddingCategories';
+import AddingProducts from './pages/AddingProducts';
 
 function App() {
 
@@ -41,6 +44,11 @@ function App() {
         <Route path="multicau" Component={MultiCarouselEffect} />
         <Route path="advs" Component={Advs} />
         <Route path="merchant" Component={Merchant} />
+        <Route path="merchantD" Component={Merchant} />
+        <Route path="adminD" Component={AdminDashboard} />
+        <Route path="addcategory" Component={AddingCategories} />
+        <Route path="addproduct" Component={AddingProducts} />
+        
       </Routes>
       <Footer />
 
