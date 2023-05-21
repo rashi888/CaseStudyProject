@@ -13,6 +13,10 @@ export const signIn = (user) => {
       
 }
 
-
+export const addProduct = (product) => {
+    console.log(product)
+    return myAxios.post('/api/products',product)
+      
+}
 
 
