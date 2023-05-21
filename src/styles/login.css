@@ -6,7 +6,6 @@
 } */
 .login-content{
   display: flex;
-  
 }
 .formcont{
     display: flex;
@@ -16,10 +15,17 @@
     top:30px;
 }
 
-.wrapper {
-  background-color: #fcfcfc;
+/* .wrapper {
+  background-color: #d1e7de;
+} */
+.wrapper{
+  /* background: #e6e6e6ba; */
+  background: white;
+  margin:10px 100px;
+  padding: 0;
+  height:32em;
+  border-radius: 8px;
 }
-
 .wrapper .title{
   font-size: 35px;
   font-weight: 600;

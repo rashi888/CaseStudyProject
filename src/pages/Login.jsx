@@ -77,6 +77,8 @@ const LogIn = () => {
 
   return (
     <>
+
+   
       <ToastContainer
         position="bottom-center"
         autoClose={5000}
@@ -90,7 +92,7 @@ const LogIn = () => {
         theme="light"
       />
       <meta charSet="utf-8" />
-      <div className="wrapper">
+      <div className="wrapper" style={{backgroundColor:'white'}}>
         <div className="formcont">
           <img class="logingif" src={login} alt="" />
 
@@ -144,6 +146,7 @@ const LogIn = () => {
           </form>
         </div>
       </div>
+      
     </>
   );
 };
