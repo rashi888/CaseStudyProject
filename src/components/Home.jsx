@@ -9,12 +9,12 @@ import Electronic from './Electronic'
 function Home() {
     return (
         <>
-        <Products/>
-        {/* <Navy/> */}
-        <Cards slides={SliderData} />; 
-        <Wrapper/>
-        <Electronic/>
-               
+            <Products />
+            {/* <Navy/> */}
+            <Cards slides={SliderData} />;
+            <Wrapper />
+            <Electronic />
+
         </>
     )
 }

@@ -21,7 +21,7 @@ function Mobiles() {
 
   return (
     <>
-      <div className="container">
+      <div className="containerMobiles">
         <div className="left">
           <h2>Filters</h2>
           <div className="productLabel">
@@ -58,6 +58,7 @@ function Mobiles() {
             <h6>20% And Above</h6>
           </div>
         </div>
+        
         <div className="right">
           <div className="filter">
             <h6>Sort By</h6>
@@ -68,34 +69,34 @@ function Mobiles() {
           </div>
           <hr />
           {product.map((item) => {
-                      return( <>
-          <div className="prod" id="prod1">
-            <div className="images">
-              <img
-                src="https://rukminim1.flixcart.com/image/312/312/xif0q/mobile/e/n/j/-original-imaghuf9vphhbnkc.jpeg?q=70"
-                alt=""
-              />
-              <VscHeart style={{ position: "absolute", fontSize: "1.5em" }} />
-            </div>
-            <div className="details">
-              {item.productName}
-            </div>
-            <div className="details">
-              {item.productDescription}
-            </div>
-            <div className="priceAndOffer">
-              <h1>{item.productPrice} </h1>
-              <p>
-                <del>12,999</del> 23% off
-              </p>
-              <h6>Free delivery</h6>
-              <h6>ShopEase Guranteed</h6>
-              <p>Upto 9,450 Off On Exchange </p>
-            </div>
-          </div>
+            return (<>
+              <div className="prod" id="prod1">
+                <div className="images">
+                  <img
+                    src="https://rukminim1.flixcart.com/image/312/312/xif0q/mobile/e/n/j/-original-imaghuf9vphhbnkc.jpeg?q=70"
+                    alt=""
+                  />
+                  <VscHeart style={{ position: "absolute", fontSize: "1.5em" }} />
+                </div>
+                <div className="details">
+                  {item.productName}
+                </div>
+                <div className="details">
+                  {item.productDescription}
+                </div>
+                <div className="priceAndOffer">
+                  <h1>{item.productPrice} </h1>
+                  <p>
+                    <del>12,999</del> 23% off
+                  </p>
+                  <h6>Free delivery</h6>
+                  <h6>ShopEase Guranteed</h6>
+                  <p>Upto 9,450 Off On Exchange </p>
+                </div>
+              </div>
             </>
             );
-            })}
+          })}
         </div>
       </div>
     </>

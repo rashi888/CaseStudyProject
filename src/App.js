@@ -23,6 +23,8 @@ import AddingProducts from './pages/AddingProducts';
 import Checkout from './pages/Checkout';
 import ProductsAdd from './pages/ProductsAdd';
 import CategoryAdd from './pages/CategoryAdd';
+import MobilesCate from './pages/MobilesCate';
+import Error from './pages/Error';
 
 function App() {
 
@@ -37,6 +39,7 @@ function App() {
         <Route path="signup" Component={Signup} />
         <Route path="emptycart" Component={Cart} />
 
+        <Route path="mobcat" Component={MobilesCate} />
         <Route path="products" Component={Products} />
         <Route path='productsView' Component={ProductsView} />
         <Route path='mobiles' Component={Mobiles} />
@@ -47,6 +50,7 @@ function App() {
         <Route path="multicau" Component={MultiCarouselEffect} />
         <Route path="merchant" Component={Merchant} />
         <Route path="merchantD" Component={Merchant} />
+        <Route path="error" Component={Error} />
 
 
         <Route path="admindashboard" Component={AdminDashboard} />
