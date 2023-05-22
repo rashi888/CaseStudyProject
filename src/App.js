@@ -1,6 +1,6 @@
 import './App.css';
-// import 'react-toastify/dist/ReactToastify.css';
 import { Routes, Route } from 'react-router-dom';
+// import 'react-toastify/dist/ReactToastify.css';
 import Home from './components/Home';
 import Products from './components/Products';
 import ProductsView from './pages/ProductsView';

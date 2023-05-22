@@ -10,7 +10,7 @@ import Items from './Items/Items'
 function Home() {
     return (
         <>
-            <Products />
+            {/* <Products /> */}
             {/* <Navy/> */}
             {/* <Cards slides={SliderData} />; */}
             {/* <Items /> */}
