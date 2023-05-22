@@ -43,7 +43,7 @@ function Items() {
 
   return (
    <>
-   <div className="wrapper">
+   <div className="wrapperr">
         <Carousel responsive={responsive}>
           {product.map((item) => {
             return (<>

@@ -10,7 +10,7 @@ function Navy() {
                 <link to="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet" />
                 {/* call to action */}
                 {/* nav navigation commerce */}
-                <div className="nav-container" style={{ marginTop: '8%', marginBottom: '-2%', zIndex: 17 }}>
+                <div className="nav-container" style={{ marginTop: '10%', marginBottom: '-2%', zIndex: 17 }}>
                     <nav className="all-category-nav">
                         <label className="open-menu-all" htmlFor="open-menu-all">
                             <input className="input-menu-all" id="open-menu-all" type="checkbox" name="menu-open" />

@@ -43,7 +43,7 @@ const Navbar = () => {
 
                     </Link>
                     <Link to="/cart">
-                        <img src={carts} alt="" />
+                        <img className="cartimg" src={carts} alt="" />
 
                     </Link>
                 </div>

@@ -12,8 +12,8 @@ function Home() {
         <>
             <Products />
             {/* <Navy/> */}
-            <Cards slides={SliderData} />;
-            <Items/>
+            {/* <Cards slides={SliderData} />; */}
+            {/* <Items /> */}
             <Wrapper />
             <Electronic />
 
