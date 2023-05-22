@@ -69,7 +69,7 @@ const Signup = () => {
   return (
     <>
       <meta charSet="utf-8" />
-      <div className="wrapper">
+      <div className="wrapper" style={{height:'fit-content'}}>
         <div className="formcont">
           <img className="logingif" src={login} alt="" />
 

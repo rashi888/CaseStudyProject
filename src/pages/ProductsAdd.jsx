@@ -96,8 +96,10 @@ function ProductsAdd() {
                                 <input type="file" className="custom-file-input" onChange={(e)=>setProductPhoto(e.target.files[0])} name="productPhoto" accept="image/jpeg, image/png" id="productPhoto" />
                                 <label className="custom-file-label" for="productImage">Choose file</label>
                             </div> */}
-                            <input type="text" onChange={(e) => handleChange(e, "productPhoto")}
+                            <input type="file" onChange={(e) => handleChange(e, "productPhoto")}
                                 value={data.productPhoto} name="productPhoto" id="" />
+                            {/* <label for="exampleFormControlFile1">Example file input</label>
+                            <input type="file" class="form-control-file" id="exampleFormControlFile1"></input> */}
 
                             <button type="submit" className="btn btn-primary">Add product</button>
                         </div>

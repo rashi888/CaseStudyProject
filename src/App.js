@@ -1,11 +1,6 @@
 import './App.css';
 // import 'react-toastify/dist/ReactToastify.css';
-import Navbar from './components/Navbar/Navbar';
-import Navy from './components/Navy';
 import { Routes, Route } from 'react-router-dom';
-// import Login from './pages/Login'
-// import Signup from './pages/Signup'
-import Cart from './pages/Cart';
 import Home from './components/Home';
 import Products from './components/Products';
 import ProductsView from './pages/ProductsView';
@@ -23,11 +18,14 @@ import Checkout from './pages/Checkout';
 import ProductsAdd from './pages/ProductsAdd';
 import CategoryAdd from './pages/CategoryAdd';
 import MobilesCate from './pages/MobilesCate';
-import Error from './pages/Error';
 
+import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
 import Login from './components/Login/Login';
 import Signup from './components/Signup/Signup';
+import Navy from './components/Navy/Navy';
+import Cart from './pages/MorePages/Cart';
+import Error from './pages/MorePages/Error';
 
 function App() {
 
@@ -35,13 +33,10 @@ function App() {
     <>
       <Navbar />
       <Navy />
-
       <Routes>
         <Route path='home' Component={Home} />
-        {/* <Route path="login" Component={Login} /> */}
         <Route path="login" Component={Login} />
         <Route path="signup" Component={Signup} />
-        <Route path="emptycart" Component={Cart} />
 
         <Route path="mobcat" Component={MobilesCate} />
         <Route path="products" Component={Products} />
@@ -55,6 +50,7 @@ function App() {
         <Route path="merchant" Component={Merchant} />
         <Route path="merchantD" Component={Merchant} />
         <Route path="error" Component={Error} />
+        <Route path="cart" Component={Cart} />
 
 
         <Route path="admindashboard" Component={AdminDashboard} />

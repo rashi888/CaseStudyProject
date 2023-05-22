@@ -58,7 +58,7 @@ function Mobiles() {
             <h6>20% And Above</h6>
           </div>
         </div>
-        
+
         <div className="right">
           <div className="filter">
             <h6>Sort By</h6>

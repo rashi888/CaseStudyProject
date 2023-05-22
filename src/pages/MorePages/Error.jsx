@@ -1,5 +1,5 @@
 import React from 'react'
-import img404 from "../assets/190.jpg"
+import img404 from "../../assets/MoreImgs/190.jpg"
 import {Link} from "react-router-dom"
 
 function Error() {
