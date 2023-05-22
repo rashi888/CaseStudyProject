@@ -1,15 +1,15 @@
 import { FormFeedback, } from "reactstrap";
 import { Link } from "react-router-dom";
-import "../styles/login.css";
+import "./Login.css";
 import React, { useEffect, useState } from "react";
-import { signIn, signUp } from "../services/user-service";
+import { signIn, signUp } from "../../services/user-service";
 import { useNavigate } from "react-router-dom";
-import login from "../assets/login.gif";
+import login from "../../assets/LoginSignupImg/login.gif";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
-const LogIn = () => {
+const Login = () => {
   const navigate = useNavigate();
 
 
@@ -151,4 +151,4 @@ const LogIn = () => {
   );
 };
 
-export default LogIn;
+export default Login;

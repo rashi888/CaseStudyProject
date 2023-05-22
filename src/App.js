@@ -1,11 +1,10 @@
 import './App.css';
 // import 'react-toastify/dist/ReactToastify.css';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
+import Navbar from './components/Navbar/Navbar';
 import Navy from './components/Navy';
 import { Routes, Route } from 'react-router-dom';
-import Login from './pages/Login'
-import Signup from './pages/Signup'
+// import Login from './pages/Login'
+// import Signup from './pages/Signup'
 import Cart from './pages/Cart';
 import Home from './components/Home';
 import Products from './components/Products';
@@ -26,15 +25,20 @@ import CategoryAdd from './pages/CategoryAdd';
 import MobilesCate from './pages/MobilesCate';
 import Error from './pages/Error';
 
+import Footer from './components/Footer/Footer';
+import Login from './components/Login/Login';
+import Signup from './components/Signup/Signup';
+
 function App() {
 
   return (
     <>
       <Navbar />
-      <Navy/>
-      
+      <Navy />
+
       <Routes>
         <Route path='home' Component={Home} />
+        {/* <Route path="login" Component={Login} /> */}
         <Route path="login" Component={Login} />
         <Route path="signup" Component={Signup} />
         <Route path="emptycart" Component={Cart} />
@@ -59,7 +63,7 @@ function App() {
         <Route path="productadd" Component={ProductsAdd} />
         <Route path="categoryadd" Component={CategoryAdd} />
         <Route path="checkout" Component={Checkout} />
-        
+
       </Routes>
       <Footer />
 
