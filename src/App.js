@@ -33,6 +33,7 @@ import Mobiles from './pages/Mobiles/Mobiles';
 import Homepage from './components/HomePage/Homepage';
 import CarouselPage from './pages/Caurosel/CarouselPage';
 import UserProfile from './pages/Userprofile/UserProfile';
+import ImageAdd from './pages/ImageAdd';
 
 function App() {
 
@@ -42,6 +43,7 @@ function App() {
       <Navy />
       <Routes>
         {/* Sorted  */}
+        <Route path='/imageadd' Component={ImageAdd} />
         <Route path='home' Component={Home} />
         <Route path="login" Component={Login} />
         <Route path="signup" Component={Signup} />
