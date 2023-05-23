@@ -49,14 +49,17 @@ function Items() {
             return (<>
               <div className="cardy">
                 <Link to="mobiles">
+                  <script>
+                    const id = item.productId;
+                  </script>
 
               <img
-                  src="https://m.media-amazon.com/images/I/81gK08T6tYL._AC_SL1500_.jpg"
+                  src={"http://localhost:8080/api/products/image/"+item.productPhoto}
                   className="card-img-top"
                   alt="product.title"
                 />
                 </Link>
-                 <h2 className="heading-main">Asus Laptop</h2>
+                 <h2 className="heading-main">{item.productName}</h2>
                 <p className='price-main'>{item.productPrice}</p>
                 <p className='description-main'> {item.productDescription}</p>
                 <p>

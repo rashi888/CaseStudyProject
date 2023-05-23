@@ -6,6 +6,13 @@ import axios from 'axios'
 function ProductsAdd() {
     const [category, setCategory] = useState([]);
     const [categoryId, setCategoryId] = useState("");
+    const [productPhoto, setProductPhoto] = useState(null);
+    const [productId, setProductId] = useState("");
+
+    const handleFileChange = (event) => {
+        setProductPhoto(event.target.files[0]);
+        console.log(event.target.files[0]);
+    };
 
     const [data, setData] = useState({
         productName: "",
@@ -16,7 +23,7 @@ function ProductsAdd() {
 
 
     useEffect(() => {
-        console.log(data);
+        // console.log(data);
     }, [data]);
 
     const handleChange = (event, property) => {
@@ -27,7 +34,23 @@ function ProductsAdd() {
         event.preventDefault();
         axios.post("http://localhost:8080/api/category/product/" + categoryId, data)
             .then((resp) => {
-                console.log(resp);
+                const proId=resp["data"]["productId"];
+
+                const formData = new FormData();
+    formData.append('image', productPhoto);  // Add product image to form data')
+
+
+    axios.post("http://localhost:8080/api/products/img_upload/"+proId, formData, {
+        headers: {
+            'Content-Type': 'multipart/form-data'
+        }
+    }).then((resp) => {
+        console.log(resp);
+        console.log("success log");
+        alert("Product added successfully!");
+    })
+
+                console.log(resp["data"]["productId"]);
                 console.log("success log");
                 alert("Product added successfully!");
             })
@@ -36,6 +59,9 @@ function ProductsAdd() {
 
             });
     };
+    
+
+    
 
 
 
@@ -92,14 +118,10 @@ function ProductsAdd() {
                         </div>
                         <div className="col-sm-5">
                             <p>Product Image</p>
-                            {/* <div className="custom-file">
-                                <input type="file" className="custom-file-input" onChange={(e)=>setProductPhoto(e.target.files[0])} name="productPhoto" accept="image/jpeg, image/png" id="productPhoto" />
+                            <div className="custom-file">
+                                <input type="file" className="custom-file-input" onChange={handleFileChange} name="productPhoto" accept="image/jpeg, image/png" id="productPhoto" />
                                 <label className="custom-file-label" for="productImage">Choose file</label>
-                            </div> */}
-                            <input type="file" onChange={(e) => handleChange(e, "productPhoto")}
-                                value={data.productPhoto} name="productPhoto" id="" />
-                            {/* <label for="exampleFormControlFile1">Example file input</label>
-                            <input type="file" class="form-control-file" id="exampleFormControlFile1"></input> */}
+                            </div>
 
                             <button type="submit" className="btn btn-primary">Add product</button>
                         </div>
