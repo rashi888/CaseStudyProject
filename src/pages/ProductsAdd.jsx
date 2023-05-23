@@ -78,8 +78,8 @@ function ProductsAdd() {
 
     return (
         <>
-            <div className="containerr" style={{ margin: '3% 7%', border: '0.3px solid lightgray', padding: '2%' }}>
-                <h3>Add a new Product</h3>
+            <div className="containerr" style={{ margin: '3% 7%', padding: '20px 40px',boxShadow:'10px 5px 10px lightgray',borderRadius:'2px',backgroundColor:'white' }}>
+                <h3 style={{marginBottom:'10px'}}>Add a new Product</h3>
                 <form onSubmit={submitForm}>
                     <div className="row">
                         <div className="col-sm-5">

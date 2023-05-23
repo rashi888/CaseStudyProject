@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { SliderData } from './SliderData';
-import { HiOutlineArrowCircleLeft,HiOutlineArrowCircleRight } from "react-icons/hi"
+import { HiOutlineArrowCircleLeft, HiOutlineArrowCircleRight } from "react-icons/hi"
 import '../styles/Cards.css';
 
 const Cards = ({ slides }) => {
@@ -30,7 +30,7 @@ const Cards = ({ slides }) => {
             key={index}
           >
             {index === current && (
-              <img src={slide.image}  alt='image' className='image'  />
+              <img src={slide.image} alt='image' className='image' />
             )}
           </div>
         );

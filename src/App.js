@@ -45,7 +45,7 @@ function App() {
       <Routes>
         {/* Sorted  */}
         <Route path='/' Component={Homepage} />
-        <Route path='/imageadd' Component={ImageAdd} />
+        {/* <Route path='/imageadd' Component={ImageAdd} /> */}
         <Route path='home' Component={Homepage} />
         <Route path="login" Component={Login} />
         <Route path="signup" Component={Signup} />

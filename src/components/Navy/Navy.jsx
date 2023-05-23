@@ -9,7 +9,8 @@ import Fashion from "../../assets/NavyImages/Fashion.webp"
 import Electronics from "../../assets/NavyImages/Electronics.webp"
 import Home from "../../assets/NavyImages/Home1.png"
 import Beauty from "../../assets/NavyImages/Beauty 2.png"
-import AllCategory from "../../assets/NavyImages/allcat.png"
+// import AllCategory from "../../assets/NavyImages/allcat.png"
+
 
 function Navy() {
     return (
@@ -26,7 +27,7 @@ function Navy() {
                                 <i className="fas fa-angle-up" />
                             </span>
                             <div className="category1">
-                                <img src={AllCategory} alt="" />
+                                {/* <img src={AllCategory} alt="" /> */}
                                 <li className="nav-row-list"><Link to="" className="nav-row-list-link" >All Category</Link></li>
                             </div>
 

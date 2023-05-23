@@ -12,7 +12,7 @@ import "./Navbar.css";
 import profile from "../../assets/All_Icons/user.png"
 import carts from "../../assets/All_Icons/carty.png"
 // import logoo from "../../assets/NavbarImg/ShopEase1.png"
-import logoo from "../../assets/NavbarImg/logom.png"
+import logoo from "../../assets/NavbarImg/log.jpg"
 
 const Navbar = () => {
     return (
