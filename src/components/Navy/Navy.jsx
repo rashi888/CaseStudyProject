@@ -6,7 +6,7 @@ import Grocery from "../../assets/NavyImages/Grocery.webp"
 import Mobile from "../../assets/NavyImages/Mobile.webp"
 import Fashion from "../../assets/NavyImages/Fashion.webp"
 import Electronics from "../../assets/NavyImages/Electronics.webp"
-import Home from "../../assets/NavyImages/Home.webp"
+import Home from "../../assets/NavyImages/Home1.png"
 import Beauty from "../../assets/NavyImages/Beauty 2.png"
 
 function Navy() {

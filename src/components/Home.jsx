@@ -1,6 +1,6 @@
 import React from 'react'
 // import Cards from './Cards'
-// import Wrapper from './Wrapper'
+import Wrapper from './Wrapper'
 // // import Products from './Products'
 // import { SliderData } from './SliderData'
 // import Electronic from './Electronic'
@@ -17,7 +17,7 @@ function Home() {
             {/* <Navy/> */}
             {/* <Cards slides={SliderData} />; */}
             {/* <Items /> */}
-            {/* <Wrapper /> */}
+            <Wrapper />
             {/* <Electronic /> */}
             <Items />
             <Adv1 />
