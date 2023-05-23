@@ -30,9 +30,11 @@ import Adv1 from './pages/AdvertiseBanners/Adv1';
 import Adv2 from './pages/AdvertiseBanners/Adv2';
 import Adv3 from './pages/AdvertiseBanners/Adv3';
 import Mobiles from './pages/Mobiles/Mobiles';
-import Homepage from './components/HomePage/Homepage';
+// import Homepage from './components/HomePage/Homepage';
 import CarouselPage from './pages/Caurosel/CarouselPage';
 import UserProfile from './pages/Userprofile/UserProfile';
+import CardPage from './pages/Cards/CardPage';
+import Homepage from './pages/HomePage/Homepage';
 
 function App() {
 
@@ -76,7 +78,7 @@ function App() {
         <Route path="categoryadd" Component={CategoryAdd} />
         <Route path="checkout" Component={Checkout} />
 
-
+        <Route path='cardpage' Component={CardPage} />
         <Route path='mobiles' Component={Mobiles} />
         
       </Routes>

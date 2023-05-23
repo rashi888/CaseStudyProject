@@ -5,25 +5,38 @@
 .lifeside-user{
     /* background-color: aqua; */
     /* height: 200px; */
-    width: 200px;
-    padding:10px 30px;
+    width: 250px;
+    padding:30px 30px;
     display: flex;
     /* justify-content: center; */
     flex-direction: column;
     align-items: center;
+    background-color: white;
+    box-shadow: 2px 18px 10px lightgray;
+    margin-right: 10px;
+    border-radius: 3px;
 }
 .lifeside-user img{
     height: 100px;
     width: 100px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 .myaccount{
     display: flex;
     align-items: center;
     text-align: center;
     /* padding: 5px; */
-    width: 150px;
+    width: 180px;
     /* background-color: aquamarine; */
+    padding: 0 20px;
+    /* justify-content: center; */
+    box-shadow: 4px 0px 3px lightgray;
+}
+.myaccount:hover{
+    cursor: pointer;
+    background-color: rgb(0, 106, 255);
+    border-radius: 3px;
+    /* padding:0 5px; */
 }
 #icon1,#icon2,#icon3,#icon4,#icon5{
     margin: 10px 5px;
@@ -40,18 +53,30 @@
 /* right side   */
 .rightside-user{
     /* background-color: rgb(0, 255, 42); */
-    /* height: 400px;   */
+    /* height: 400px;   */ 
     width: 700px;
     padding: 30px;
-    display: flex;
-    flex-wrap: wrap;
+    /* border: 1px solid lightgray; */
+    background-color: white;
+    box-shadow: 10px 18px 10px lightgray;
+    border-radius: 5px;
+    /* display: flex;
+    flex-wrap: wrap; */
   
 }
 .rightside-user input{
     width: 210px;
     margin: 0px 10px;
+    margin-bottom: 10px;
 }
 .rightside-user label{
     /* width: 200px; */
-    margin: 0px 10px;
+    margin: 5px 10px;
+    /* align-items: start; */
+}
+.btn-user-profile{
+    padding: 5px 30px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
 }

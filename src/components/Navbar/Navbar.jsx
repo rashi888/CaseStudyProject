@@ -9,9 +9,10 @@ import "./Navbar.css";
 // import carts from "../../assets/NavbarImg/cart1.png";
 // import logoo from "../../assets/NavbarImg/logoo.png";
 
-import profile from "../../assets/All_Icons/user icon.png"
-import carts from "../../assets/All_Icons/cart icon.png"
-import logoo from "../../assets/NavbarImg/ShopEase1.png"
+import profile from "../../assets/All_Icons/user.png"
+import carts from "../../assets/All_Icons/carty.png"
+// import logoo from "../../assets/NavbarImg/ShopEase1.png"
+import logoo from "../../assets/NavbarImg/logom.png"
 
 const Navbar = () => {
     return (

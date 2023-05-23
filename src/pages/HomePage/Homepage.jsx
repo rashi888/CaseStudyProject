@@ -1,16 +1,21 @@
 import React from 'react'
-import Adv1 from '../../pages/AdvertiseBanners/Adv1'
-import Adv2 from '../../pages/AdvertiseBanners/Adv2'
-import Adv3 from '../../pages/AdvertiseBanners/Adv3'
-import Items from '../Items/Items'
+import Adv1 from '../AdvertiseBanners/Adv1'
+import Adv2 from '../AdvertiseBanners/Adv2'
+import Adv3 from '../AdvertiseBanners/Adv3'
+import Items from '../../components/Items/Items'
+// import CardPage from '../Cards/CardPage'
 // import Products from '../Products'
 // import Wrapper from '../../pages/Wrapper/Wrapper'
 // import CarouselPage from '../../pages/Caurosel/CarouselPage'
 // import Wrapper from '../Wrapper'
+import Cards from '../../components/Cards'
+import { SliderData } from '../../components/SliderData'
 
 function Homepage() {
     return (
         <>
+        {/* <CardPage/> */}
+        <Cards slides={SliderData} />;
         <Items/>
         <Adv1/>
         {/* <Wrapper/> */}

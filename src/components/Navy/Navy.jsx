@@ -2,6 +2,7 @@ import React from 'react'
 import './Navy.css'
 import { Link } from "react-router-dom"
 
+import AllCategory from "../../assets/NavyImages/All-category2.png"
 import Grocery from "../../assets/NavyImages/Grocery.webp"
 import Mobile from "../../assets/NavyImages/Mobile.webp"
 import Fashion from "../../assets/NavyImages/Fashion.webp"
@@ -19,11 +20,20 @@ function Navy() {
                 {/* nav navigation commerce */}
                 <div className="nav-container" style={{ marginTop: '15%', marginBottom: '-2%', zIndex: 17 }}>
                     <nav className="all-category-nav">
+
                         <label className="open-menu-all" htmlFor="open-menu-all">
                             <input className="input-menu-all" id="open-menu-all" type="checkbox" name="menu-open" />
                             <span className="all-navigator" style={{ textDecoration: 'none' }}><i className="fas fa-bars" /> <span>All category</span> <i className="fas fa-angle-down" />
                                 <i className="fas fa-angle-up" />
                             </span>
+                            
+
+                            {/* <input className="input-menu-all" id="open-menu-all" type="checkbox" name="menu-open" />
+                            <span className="all-navigator" style={{ textDecoration: 'none' }}> <img src={AllCategory} height='50px' width='50px' /> <span>All category</span> <i className="fas fa-angle-down" />
+                                <i className="fas fa-angle-up" />
+                            </span> */}
+                            
+
                             <ul className="all-category-list">
                                 <li className="all-category-list-item" ><Link to="/mobiles" className="all-category-list-link" style={{ textDecoration: 'none', color: 'gray' }}>Smartphones<i className="fas fa-angle-right" /></Link>
                                     <div className="category-second-list">
@@ -43,11 +53,14 @@ function Navy() {
                                 <li className="all-category-list-item"><Link to="" className="all-category-list-link" >Games<i className="fas fa-angle-right" /></Link></li>
                                 <li className="all-category-list-item"><Link to="" className="all-category-list-link" >Automotive<i className="fas fa-angle-right" /></Link></li>
                             </ul>
+                            
                         </label>
                     </nav>
+
+
                     <nav className="featured-category">
                         <ul className="nav-row">
-                        <div className="category1">
+                            <div className="category1">
                                 <img src={Grocery} alt="" />
                                 <li className="nav-row-list"><Link to="" className="nav-row-list-link" >Grocery</Link></li>
                             </div>
@@ -55,7 +68,7 @@ function Navy() {
                                 <img src={Mobile} alt="" />
                                 <li className="nav-row-list"><Link to="" className="nav-row-list-link" >Mobile</Link></li>
                             </div>
-                        <div className="category1">
+                            <div className="category1">
                                 <img src={Fashion} alt="" />
                                 <li className="nav-row-list"><Link to="" className="nav-row-list-link" >Fashion</Link></li>
                             </div>

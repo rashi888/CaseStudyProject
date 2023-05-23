@@ -1,4 +1,5 @@
 import React ,{useState,useEffect}from 'react'
+import "./Wrapper.css"
 
 
 function Wrapper() {
@@ -20,11 +21,11 @@ function Wrapper() {
     <>
     {product.map((item) => {
         return (<>
-    <div className="container-fluid">
-        <div className="row">
-            <div className="col" style={{backgroundColor:'pink'}}>
+    <div className="container-fluid" style={{display:'flex',width:'100px'}}>
+        <div className="row" style={{display:'flex',backgroundColor:'blue'}}>
+            <div className="col" style={{backgroundColor:'pink',display:'flex'  }}>
 
-                <div className="box">
+                <div className="box" style={{backgroundColor:'purple',display:'flex'}}>
                     <a href="#">
                     <img
                       src="https://m.media-amazon.com/images/I/81gK08T6tYL._AC_SL1500_.jpg"
