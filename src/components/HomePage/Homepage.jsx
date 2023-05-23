@@ -4,7 +4,8 @@ import Adv2 from '../../pages/AdvertiseBanners/Adv2'
 import Adv3 from '../../pages/AdvertiseBanners/Adv3'
 import Items from '../Items/Items'
 import Products from '../Products'
-import Wrapper from '../../pages/Wrapper/Wrapper'
+// import Wrapper from '../../pages/Wrapper/Wrapper'
+// import CarouselPage from '../../pages/Caurosel/CarouselPage'
 // import Wrapper from '../Wrapper'
 
 function Homepage() {

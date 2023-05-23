@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import { NavLink } from 'react-router-dom'
+import { NavLink,Link} from 'react-router-dom'
 import "./Items.css";
 
 function Items() {
@@ -48,17 +48,20 @@ function Items() {
           {product.map((item) => {
             return (<>
               <div className="cardy">
+                <Link to="mobiles">
+
               <img
                   src="https://m.media-amazon.com/images/I/81gK08T6tYL._AC_SL1500_.jpg"
                   className="card-img-top"
                   alt="product.title"
                 />
-                 <h2>Asus Laptop</h2>
-                <p className='price'>{item.productPrice}</p>
-                <p> {item.productDescription}</p>
+                </Link>
+                 <h2 className="heading-main">Asus Laptop</h2>
+                <p className='price-main'>{item.productPrice}</p>
+                <p className='description-main'> {item.productDescription}</p>
                 <p>
                   <NavLink to="/cart">
-                <button type="button" class="btn btn-warning">Add to cart</button>
+                <button type="button" class="btn-item btn-warning">Add to cart</button>
                   </NavLink>
 
                 </p>

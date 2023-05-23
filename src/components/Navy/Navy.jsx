@@ -2,6 +2,13 @@ import React from 'react'
 import './Navy.css'
 import { Link } from "react-router-dom"
 
+import Grocery from "../../assets/NavyImages/Grocery.webp"
+import Mobile from "../../assets/NavyImages/Mobile.webp"
+import Fashion from "../../assets/NavyImages/Fashion.webp"
+import Electronics from "../../assets/NavyImages/Electronics.webp"
+import Home from "../../assets/NavyImages/Home.webp"
+import Beauty from "../../assets/NavyImages/Beauty 2.png"
+
 function Navy() {
     return (
         <>
@@ -10,7 +17,7 @@ function Navy() {
                 <link to="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet" />
                 {/* call to action */}
                 {/* nav navigation commerce */}
-                <div className="nav-container" style={{ marginTop: '10%', marginBottom: '-2%', zIndex: 17 }}>
+                <div className="nav-container" style={{ marginTop: '15%', marginBottom: '-2%', zIndex: 17 }}>
                     <nav className="all-category-nav">
                         <label className="open-menu-all" htmlFor="open-menu-all">
                             <input className="input-menu-all" id="open-menu-all" type="checkbox" name="menu-open" />
@@ -40,12 +47,36 @@ function Navy() {
                     </nav>
                     <nav className="featured-category">
                         <ul className="nav-row">
-                            <li className="nav-row-list"><Link to="" className="nav-row-list-link" >Smartphones</Link></li>
+                        <div className="category1">
+                                <img src={Grocery} alt="" />
+                                <li className="nav-row-list"><Link to="" className="nav-row-list-link" >Grocery</Link></li>
+                            </div>
+                            <div className="category1">
+                                <img src={Mobile} alt="" />
+                                <li className="nav-row-list"><Link to="" className="nav-row-list-link" >Mobile</Link></li>
+                            </div>
+                        <div className="category1">
+                                <img src={Fashion} alt="" />
+                                <li className="nav-row-list"><Link to="" className="nav-row-list-link" >Fashion</Link></li>
+                            </div>
+                            <div className="category1">
+                                <img src={Electronics} alt="" />
+                                <li className="nav-row-list"><Link to="" className="nav-row-list-link" >Electronics</Link></li>
+                            </div>
+                            <div className="category1">
+                                <img src={Home} alt="" />
+                                <li className="nav-row-list"><Link to="" className="nav-row-list-link" >Home</Link></li>
+                            </div>
+                            <div className="category1">
+                                <img src={Beauty} alt="" />
+                                <li className="nav-row-list"><Link to="" className="nav-row-list-link" >Beauty</Link></li>
+                            </div>
+                            {/* <li className="nav-row-list"><Link to="" className="nav-row-list-link" >Smartphones</Link></li>
                             <li className="nav-row-list"><Link to="" className="nav-row-list-link">furniture</Link></li>
                             <li className="nav-row-list"><Link to="" className="nav-row-list-link">Toys</Link></li>
                             <li className="nav-row-list"><Link to="" className="nav-row-list-link">Computing</Link></li>
                             <li className="nav-row-list"><Link to="" className="nav-row-list-link">Games</Link></li>
-                            <li className="nav-row-list"><Link to="" className="nav-row-list-link">Automotive</Link></li>
+                            <li className="nav-row-list"><Link to="" className="nav-row-list-link">Automotive</Link></li> */}
                         </ul>
                     </nav>
                 </div>

@@ -2,12 +2,16 @@ import React from "react";
 // import logo from "../assets/logo.png";
 import { Link } from "react-router-dom";
 import { BiSearch } from "react-icons/bi";
-import { FaUser } from "react-icons/fa";
-import { FaShoppingBag } from "react-icons/fa";
+// import { FaUser } from "react-icons/fa";
+// import { FaShoppingBag } from "react-icons/fa";
 import "./Navbar.css";
-import profile from "../../assets/NavbarImg/profile.png";
-import carts from "../../assets/NavbarImg/cart1.png";
-import logoo from "../../assets/NavbarImg/logoo.png";
+// import profile from "../../assets/NavbarImg/profile.png";
+// import carts from "../../assets/NavbarImg/cart1.png";
+// import logoo from "../../assets/NavbarImg/logoo.png";
+
+import profile from "../../assets/All_Icons/user icon.png"
+import carts from "../../assets/All_Icons/cart icon.png"
+import logoo from "../../assets/NavbarImg/ShopEase1.png"
 
 const Navbar = () => {
     return (

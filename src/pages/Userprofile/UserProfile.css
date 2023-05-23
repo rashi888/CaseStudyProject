@@ -1,0 +1,57 @@
+.user-container{
+    display: flex;
+    margin: 40px ;
+}
+.lifeside-user{
+    /* background-color: aqua; */
+    /* height: 200px; */
+    width: 200px;
+    padding:10px 30px;
+    display: flex;
+    /* justify-content: center; */
+    flex-direction: column;
+    align-items: center;
+}
+.lifeside-user img{
+    height: 100px;
+    width: 100px;
+    margin-bottom: 20px;
+}
+.myaccount{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    /* padding: 5px; */
+    width: 150px;
+    /* background-color: aquamarine; */
+}
+#icon1,#icon2,#icon3,#icon4,#icon5{
+    margin: 10px 5px;
+    font-size: 130%;
+}
+.headings{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    margin: 10px 5px;
+}
+
+
+/* right side   */
+.rightside-user{
+    /* background-color: rgb(0, 255, 42); */
+    /* height: 400px;   */
+    width: 700px;
+    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+  
+}
+.rightside-user input{
+    width: 210px;
+    margin: 0px 10px;
+}
+.rightside-user label{
+    /* width: 200px; */
+    margin: 0px 10px;
+}

@@ -5,7 +5,7 @@ import Home from './components/Home';
 import Products from './components/Products';
 import ProductsView from './pages/ProductsView';
 // import Mobiles from './pages/Mobiles';
-import UserProfile from './pages/UserProfile';
+// import UserProfile from './pages/UserProfile';
 import Front from './pages/Front';
 import AdBanner from './pages/AdBanner';
 import AddItem from './pages/AddItem';
@@ -31,6 +31,8 @@ import Adv2 from './pages/AdvertiseBanners/Adv2';
 import Adv3 from './pages/AdvertiseBanners/Adv3';
 import Mobiles from './pages/Mobiles/Mobiles';
 import Homepage from './components/HomePage/Homepage';
+import CarouselPage from './pages/Caurosel/CarouselPage';
+import UserProfile from './pages/Userprofile/UserProfile';
 
 function App() {
 
@@ -64,7 +66,7 @@ function App() {
         <Route path="adv2" Component={Adv2} />
         <Route path="adv3" Component={Adv3} />
         <Route path="homepage" Component={Homepage} />
-        
+        <Route path="Carousel" Component={CarouselPage} />
 
 
         <Route path="admindashboard" Component={AdminDashboard} />

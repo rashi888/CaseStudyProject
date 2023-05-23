@@ -24,7 +24,7 @@ label, a {
     height: 30px;
     justify-content: flex-end;
     margin: 0 auto;
-    max-width: 1300px;
+    max-width: 1200px;
     width: 100%;
   }
   .header-content-top .content span {
@@ -63,6 +63,31 @@ label, a {
     text-decoration: none;
     color: gray;
   }
+  .nav-row{
+    /* background-color: #e74c3c; */
+  }
+.category1{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* background-color: #4d61fc; */
+}
+.category1 img{
+  height: 60px;
+  width: 60px;
+}
+
+
+
+
+
+
+
+
+
+
+  /* responsive */
   @media (max-width: 991px) {
     .container .open-search {
       margin: 0;

@@ -30,10 +30,10 @@ const Mobiles = () => {
             <a style={{textDecoration:'none'}}>Clear All</a>
           </div>
 
-          <div className="filter-area">
+          <div className="filter-area-bottom">
             <div className="dropdown">
-              <button className="btn-filter btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Category
+              <button className="btn-filter btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+             PageNumber
               </button>
               <ul className="dropdown-menu">
                 <li><a className="dropdown-item" href="#">Action</a></li>
@@ -43,10 +43,10 @@ const Mobiles = () => {
             </div>
           </div>
 
-          <div className="filter-area">
-          <div className="dropdown" style={{margin:'20px'}}>
-              <button className="btn-filter btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Discount
+          <div className="filter-area-bottom">
+          <div className="dropdown" >
+              <button className="btn-filter btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+             Price 
               </button>
               <ul className="dropdown-menu" >
                 <li><a className="dropdown-item" href="#">Action</a></li>
@@ -56,10 +56,10 @@ const Mobiles = () => {
             </div>
           </div>
 
-          <div className="filter-area">
+          <div className="filter-area-bottom">
           <div className="dropdown">
-              <button className="btn-filter btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Price
+              <button className="btn-filter btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Newest
               </button>
               <ul className="dropdown-menu">
                 <li><a className="dropdown-item" href="#">Action</a></li>

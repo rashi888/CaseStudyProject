@@ -1,18 +1,20 @@
 .wrapperr{
-    /* background-color: pink; */
-    margin-top: 15px;
+    /* background-color: rgb(204, 192, 255); */
+    margin-top: 20px;
     padding: 20px;
   }
   .cardy{
-    background-color: rgb(255, 255, 255);
+    background-color: white;
+    /* background-color: rgb(240, 179, 179); */
     margin: 0px 20px;
+    /* height: 500px; */
     /* height: 100%; */
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 20px;
+    /* padding: 10px; */
     /* border: 0.3px solid lightgray; */
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 5px;
@@ -22,5 +24,18 @@
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
   }
   .card-img-top{
-    height: 50%;
+    /* height: 50%; */
+    height: 200px;
+    margin: 0;
+    /* padding: 0; */
+    /* background-color: aqua; */
+  }
+  .heading-main, .price-main, .description-main{
+    margin: 5px;
+    /* background-color: yellow; */
+  }
+  .btn-item{
+    padding: 5px 20px;
+    border-radius: 5px;
+    color: white;
   }
