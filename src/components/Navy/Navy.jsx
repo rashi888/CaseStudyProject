@@ -8,6 +8,7 @@ import Fashion from "../../assets/NavyImages/Fashion.webp"
 import Electronics from "../../assets/NavyImages/Electronics.webp"
 import Home from "../../assets/NavyImages/Home1.png"
 import Beauty from "../../assets/NavyImages/Beauty 2.png"
+import AllCategory from "../../assets/NavyImages/allcat.png"
 
 function Navy() {
     return (
@@ -17,13 +18,18 @@ function Navy() {
                 <link to="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet" />
                 {/* call to action */}
                 {/* nav navigation commerce */}
-                <div className="nav-container" style={{ marginTop: '15%', marginBottom: '-2%', zIndex: 17 }}>
+                <div className="nav-container" style={{ marginTop: '10%', marginBottom: '-2%', zIndex: 17 }}>
                     <nav className="all-category-nav">
                         <label className="open-menu-all" htmlFor="open-menu-all">
                             <input className="input-menu-all" id="open-menu-all" type="checkbox" name="menu-open" />
                             <span className="all-navigator" style={{ textDecoration: 'none' }}><i className="fas fa-bars" /> <span>All category</span> <i className="fas fa-angle-down" />
                                 <i className="fas fa-angle-up" />
                             </span>
+                            <div className="category1">
+                                <img src={AllCategory} alt="" />
+                                <li className="nav-row-list"><Link to="" className="nav-row-list-link" >All Category</Link></li>
+                            </div>
+
                             <ul className="all-category-list">
                                 <li className="all-category-list-item" ><Link to="/mobiles" className="all-category-list-link" style={{ textDecoration: 'none', color: 'gray' }}>Smartphones<i className="fas fa-angle-right" /></Link>
                                     <div className="category-second-list">
