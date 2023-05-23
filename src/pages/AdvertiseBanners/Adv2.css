@@ -1,0 +1,17 @@
+.filesContainer{
+    display: flex;
+    /* background-color: rgb(33, 163, 122); */
+    /* width: 100vw; */
+    min-height: 200px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    gap: 4px;
+    /* justify-content: space-evenly; */
+    padding: 10px 10px;
+}
+
+.filesContainer img{
+    width: 334px;
+    height: 240px;
+    border-radius: 2px;
+}

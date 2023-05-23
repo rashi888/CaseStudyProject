@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link} from "react-router-dom";
-import b1 from "../assets/phone1.webp"
+import b1 from "../assets/PhoneImgs/phone1.webp"
 
 function AddingProducts() {
     return (

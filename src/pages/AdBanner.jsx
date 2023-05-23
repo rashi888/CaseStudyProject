@@ -1,7 +1,7 @@
 import React from 'react'
 import "../styles/AdBanner.css"
 import model from "../assets/model.png"
-import img1 from "../assets/phone1.webp";
+import img1 from "../assets/PhoneImgs/phone1.webp";
 
 const AdBanner = () => {
     return (

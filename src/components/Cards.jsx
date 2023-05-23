@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { SliderData } from './SliderData';
-import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from 'react-icons/fa';
+import { HiOutlineArrowCircleLeft,HiOutlineArrowCircleRight } from "react-icons/hi"
 import '../styles/Cards.css';
 
 const Cards = ({ slides }) => {
@@ -21,8 +21,8 @@ const Cards = ({ slides }) => {
 
   return (
     <section className='slider'>
-      <FaArrowAltCircleLeft className='left-arrow' onClick={prevSlide} />
-      <FaArrowAltCircleRight className='right-arrow' onClick={nextSlide} />
+      <HiOutlineArrowCircleLeft className='left-arrow' onClick={prevSlide} />
+      <HiOutlineArrowCircleRight className='right-arrow' onClick={nextSlide} />
       {SliderData.map((slide, index) => {
         return (
           <div
