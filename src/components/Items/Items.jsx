@@ -47,7 +47,7 @@ function Items() {
         <Carousel responsive={responsive}>
           {product.map((item) => {
             return (<>
-              <div className="cardy">
+              <div className="cardy" style={{height:'500px'}}>
                 <Link to="mobiles">
                   <script>
                     const id = item.productId;
