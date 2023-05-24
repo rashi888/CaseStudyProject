@@ -20,7 +20,7 @@ const Cards = ({ slides }) => {
   }
 
   return (
-    <section className='slider'>
+    <section className='sliders'>
       <HiOutlineArrowCircleLeft className='left-arrow' onClick={prevSlide} />
       <HiOutlineArrowCircleRight className='right-arrow' onClick={nextSlide} />
       {SliderData.map((slide, index) => {
@@ -30,7 +30,7 @@ const Cards = ({ slides }) => {
             key={index}
           >
             {index === current && (
-              <img  src={slide.image} alt='image' className='images' />
+              <img  src={slide.image} alt='image' height="400" className='images' />
             )}
           </div>
         );

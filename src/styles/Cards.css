@@ -5,6 +5,13 @@
   
 }
 
+
+.sliders{
+  position: relative;
+display: flex;
+align-items: center;
+}
+
 .bannerpic{
   width: 180%;
   height: 100%;
@@ -13,9 +20,10 @@
 }
 
 .images {
-  width: 1400px;
-  height: 500px;
+  width:160%;
   border-radius: 10px;
+  margin-left: 60px;
+  margin-top:4%
   
 }
 
