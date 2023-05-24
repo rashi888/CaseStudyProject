@@ -52,7 +52,7 @@ function Navy() {
                             </div>
                             <div className="category1">
                                 <img src={Mobile} alt="" />
-                                <li className="nav-row-list"><Link to="" className="nav-row-list-link" >Mobile</Link></li>
+                                <li className="nav-row-list"><Link to="/mobiles" className="nav-row-list-link" >Mobile</Link></li>
                             </div>
                             <div className="category1">
                                 <img src={Fashion} alt="" />
