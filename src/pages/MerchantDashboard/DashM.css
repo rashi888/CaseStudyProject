@@ -1,18 +1,21 @@
 .merchant-dashboard{
-    background-color: aqua;
-    /* height: 200px; */
-    width: 950px;
-    margin: 30px 100px;
-}
-.fields-route{
-    background-color: bisque;
-    height: 200px;
-    width: 250px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 10px 10px 10px lightgray;
+    /* width: 950px; */
     border-radius: 5px;
-    padding: 15px;
-    display: flex;
+    padding: 60px 40px;
+    margin: 40px 90px;
 }
-.box1{
-    margin: 10px 20px;
-    width: 800px;
+.merchant-dashboard h1{
+    color: #48c1cf;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 0;
+   margin-left: 0;
+    /* margin-bottom: 30px; */
+}
+.cardd{
+    height: 230px;
+    width: 250px;
+    border-radius:6px;
+    box-shadow: 5px 10px 5px lightgray;
 }
