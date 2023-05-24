@@ -8,10 +8,14 @@ function ProductsAdd() {
     const [categoryId, setCategoryId] = useState("");
     const [productPhoto, setProductPhoto] = useState(null);
     const [productId, setProductId] = useState("");
+    const [selectedImage, setSelectedImage] = useState('');
 
     const handleFileChange = (event) => {
         setProductPhoto(event.target.files[0]);
         console.log(event.target.files[0]);
+
+        const file = event.target.files[0]
+        setSelectedImage(file ? file.name : null);
     };
 
     const [data, setData] = useState({
@@ -34,21 +38,21 @@ function ProductsAdd() {
         event.preventDefault();
         axios.post("http://localhost:8080/api/category/product/" + categoryId, data)
             .then((resp) => {
-                const proId=resp["data"]["productId"];
+                const proId = resp["data"]["productId"];
 
                 const formData = new FormData();
-    formData.append('image', productPhoto);  // Add product image to form data')
+                formData.append('image', productPhoto);  // Add product image to form data')
 
 
-    axios.post("http://localhost:8080/api/products/img_upload/"+proId, formData, {
-        headers: {
-            'Content-Type': 'multipart/form-data'
-        }
-    }).then((resp) => {
-        console.log(resp);
-        console.log("success log");
-        // alert("Product added successfully!");
-    })
+                axios.post("http://localhost:8080/api/products/img_upload/" + proId, formData, {
+                    headers: {
+                        'Content-Type': 'multipart/form-data'
+                    }
+                }).then((resp) => {
+                    console.log(resp);
+                    console.log("success log");
+                    // alert("Product added successfully!");
+                })
 
                 console.log(resp["data"]["productId"]);
                 console.log("success log");
@@ -59,9 +63,9 @@ function ProductsAdd() {
 
             });
     };
-    
 
-    
+
+
 
 
 
@@ -78,8 +82,9 @@ function ProductsAdd() {
 
     return (
         <>
-            <div className="containerr" style={{ margin: '3% 7%', padding: '20px 40px',boxShadow:'10px 5px 10px lightgray',borderRadius:'2px',backgroundColor:'white' }}>
-                <h3 style={{marginBottom:'10px'}}>Add a new Product</h3>
+
+            <div className="containerr" style={{ margin: '3% 7%', padding: '20px 40px', boxShadow: '10px 5px 10px lightgray', borderRadius: '2px', backgroundColor: 'white' }}>
+                <h3 style={{ marginBottom: '10px' }}>Add a new Product</h3>
                 <form onSubmit={submitForm}>
                     <div className="row">
                         <div className="col-sm-5">
@@ -119,8 +124,15 @@ function ProductsAdd() {
                         <div className="col-sm-5">
                             <p>Product Image</p>
                             <div className="custom-file">
-                                <input type="file" className="custom-file-input" onChange={handleFileChange} name="productPhoto" accept="image/jpeg, image/png" id="productPhoto" />
-                                <label className="custom-file-label" for="productImage">Choose file</label>
+                                <input type="file" className="custom-file-input" onChange={handleFileChange} name="productPhoto" value={data.productPhoto} accept="image/jpeg, image/png" id="productPhoto" />
+                                <label className="custom-file-label" for="productImage" > {selectedImage ? (
+                                    <h6 style={{fontWeight:300}}>{selectedImage}</h6>
+                                ) : (
+                                    <h6 style={{fontWeight:300}}>Choose an image</h6>
+                                )}</label>
+                                {/* {selectedImage && <p> {selectedImage}</p>} */}
+                                {/* {selectedImage ? (<p>Selected Image:{selectedImage}</p>):( <p> Choose File</p> )} */}
+
                             </div>
 
                             <button type="submit" className="btn btn-primary">Add product</button>
