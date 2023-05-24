@@ -50,10 +50,10 @@ function Navy() {
                                     <h6>product2</h6>
                                 </div> */}
                             </div>
-                            <div className="category1">
+                            <Link to="/mobiles" className="category1">
                                 <img src={Mobile} alt="" />
                                 <li className="nav-row-list"><Link to="/mobiles" className="nav-row-list-link" >Mobile</Link></li>
-                            </div>
+                            </Link>
                             <div className="category1">
                                 <img src={Fashion} alt="" />
                                 <li className="nav-row-list"><Link to="" className="nav-row-list-link" >Fashion</Link></li>
