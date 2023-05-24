@@ -35,6 +35,8 @@ import CarouselPage from './pages/Caurosel/CarouselPage';
 import UserProfile from './pages/Userprofile/UserProfile';
 import CardPage from './pages/Cards/CardPage';
 import Homepage from './pages/HomePage/Homepage';
+import MSignup from './pages/MerchantSignUp/MSignup';
+import DashM from './pages/MerchantDashboard/DashM';
 
 function App() {
 
@@ -55,10 +57,10 @@ function App() {
 
 
         {/* unsorted  */}
-        <Route path="mobcat" Component={MobilesCate} />
+        <Route path="/mobcat" Component={MobilesCate} />
         <Route path="products" Component={Products} />
         <Route path='productsView' Component={ProductsView} />
-       
+
         <Route path="userProfile" Component={UserProfile} />
         <Route path="front" Component={Front} />
         <Route path="adbanner" Component={AdBanner} />
@@ -82,7 +84,12 @@ function App() {
 
         <Route path='cardpage' Component={CardPage} />
         <Route path='mobiles' Component={Mobiles} />
-        
+
+        <Route path='/mobiles' Component={Mobiles} />
+        <Route path='/msignup' Component={MSignup} />
+
+        <Route path='/mdash' Component={DashM} />
+
       </Routes>
       <Footer />
 

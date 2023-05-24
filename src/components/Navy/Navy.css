@@ -1,3 +1,4 @@
+
 label, a {
     text-decoration: none;
     color: #555;
@@ -59,24 +60,81 @@ label, a {
     overflow: hidden;
     position: relative;
   }
-  .all-category-list-item,.all-category-list-link,.nav-row-list-link{
-    text-decoration: none;
-    color: gray;
-  }
-  .nav-row{
-    /* background-color: #e74c3c; */
-  }
+
+  /* ===================================Navy code start here=================== */
+  
+  /* simple divs css  */
 .category1{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* background-color: #4d61fc; */
 }
+
 .category1 img{
   height: 60px;
   width: 60px;
 }
+/* **********main dropdown code********** */
+.nav-container{
+  margin-top: 12%;
+  z-index: 17;
+  /* background-color: #4d61fc; */
+}
+.featured-category{
+  /* background-color: rgb(255, 119, 141); */
+}
+.nav-row{
+  /* background-color: aqua; */
+}
+
+.all-category-list-item,.all-category-list-link,.nav-row-list-link{
+  text-decoration: none;
+  color: rgb(103, 103, 103);
+}
+.item-box{
+  position:fixed;
+    /* display: none; */
+    box-sizing: border-box;
+    width: 100px;
+    background-color: white;
+    padding: 6px;
+    border-radius: 3px;
+    top: 50px;
+    z-index: 1;
+}
+.allcategory{
+  color: purple;
+}
+.allcategory:hover +.item-box{
+  display: block;
+  transition: 1ms;
+}
+.item-box:hover{
+  display: block;
+  transition: 2ms;
+}
+
+/* .groce{
+  position:fixed;
+    display: none;
+    box-sizing: border-box;
+    width: 100px;
+    background-color: white;
+    padding: 6px;
+    border-radius: 3px;
+    top: 50px;
+    z-index: 1;
+}
+.grocery:hover +.groce{
+  display: block;
+  transition: 1ms;
+}
+.groce:hover{
+  display: block;
+  transition: 1ms;
+} */
+
 
 
 

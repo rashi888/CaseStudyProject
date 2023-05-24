@@ -15,44 +15,40 @@ import Beauty from "../../assets/NavyImages/Beauty 2.png"
 function Navy() {
     return (
         <>
-            <div>
-
+            <div style={{ marginLeft: '30px', marginRight: '30px', marginTop: '10%' }}>
                 <link to="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet" />
-                <div className="nav-container" style={{ marginTop: '10%', marginBottom: '-2%', zIndex: 17 }}>
-                    <nav className="all-category-nav">
 
-                        <label className="open-menu-all" htmlFor="open-menu-all">
-                            <input  className="input-menu-all" id="open-menu-all" type="checkbox" name="menu-open" />
-                            <span className="all-navigator" style={{ textDecoration: 'none' }}><i className="fas fa-bars" /> 
-                                <i className="fas fa-angle-up" />
-                            </span>
-                            <div className="category1">
-                                {/* <img src={AllCategory} alt="" /> */}
-                                <li className="nav-row-list"><Link to="" className="nav-row-list-link" >All Category</Link></li>
-                            </div>
-
-                            <ul className="all-category-list">
-                                <li className="all-category-list-item" ><Link to="/mobiles" className="all-category-list-link" style={{ textDecoration: 'none', color: 'gray' }}>Smartphones<i className="fas fa-angle-right" /></Link>
-                                    <div className="category-second-list">
-                                        
-                                    </div>
-                                </li>
-                                <li className="all-category-list-item"><Link to="" className="all-category-list-link">Furniture <i className="fas fa-angle-right" /></Link></li>
-                                <li className="all-category-list-item"><Link to="" className="all-category-list-link">Toys<i className="fas fa-angle-right" /></Link></li>
-                                <li className="all-category-list-item"><Link to="" className="all-category-list-link">Computing<i className="fas fa-angle-right" /></Link></li>
-                                <li className="all-category-list-item"><Link to="" className="all-category-list-link" >Games<i className="fas fa-angle-right" /></Link></li>
-                                <li className="all-category-list-item"><Link to="" className="all-category-list-link" >Automotive<i className="fas fa-angle-right" /></Link></li>
-                            </ul>
-                            
-                        </label>
-                    </nav>
-
+                <div className="nav-container" style={{ marginTop: '12%', zIndex: 17 }}>
 
                     <nav className="featured-category">
                         <ul className="nav-row">
+
+                            <div className="category1">
+                                <img src={AllCategory} alt="" />
+                                <li ><Link to="" style={{textDecoration:'none'}} className='allcategory'>All category</Link></li>
+                                <div className="item-box">
+                                    <ul className="all-category-list">
+                                        <li className="all-category-list-item" ><Link to="/mobiles" className="all-category-list-link" style={{ textDecoration: 'none', color: 'black' }}>Smartphones<i className="fas fa-angle-right" /></Link>
+                                            <div className="category-second-list">
+
+                                            </div>
+                                        </li>
+                                        <li className="all-category-list-item"><Link to="" className="all-category-list-link">Furniture <i className="fas fa-angle-right" /></Link></li>
+                                        <li className="all-category-list-item"><Link to="" className="all-category-list-link">Toys<i className="fas fa-angle-right" /></Link></li>
+                                        <li className="all-category-list-item"><Link to="" className="all-category-list-link">Computing<i className="fas fa-angle-right" /></Link></li>
+                                        <li className="all-category-list-item"><Link to="" className="all-category-list-link" >Games<i className="fas fa-angle-right" /></Link></li>
+                                        <li className="all-category-list-item"><Link to="" className="all-category-list-link" >Automotive<i className="fas fa-angle-right" /></Link></li>
+                                    </ul>
+                                </div>
+                            </div>
+
                             <div className="category1">
                                 <img src={Grocery} alt="" />
-                                <li className="nav-row-list"><Link to="" className="nav-row-list-link" >Grocery</Link></li>
+                                <li className="grocery nav-row-list"><Link to="" className="nav-row-list-link" >Grocery</Link></li>
+                                {/* <div className="groce" >
+                                    <h6>product1</h6>
+                                    <h6>product2</h6>
+                                </div> */}
                             </div>
                             <div className="category1">
                                 <img src={Mobile} alt="" />

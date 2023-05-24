@@ -47,7 +47,7 @@ function ProductsAdd() {
     }).then((resp) => {
         console.log(resp);
         console.log("success log");
-        alert("Product added successfully!");
+        // alert("Product added successfully!");
     })
 
                 console.log(resp["data"]["productId"]);

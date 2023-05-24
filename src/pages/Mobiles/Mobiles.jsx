@@ -9,7 +9,8 @@ const Mobiles = () => {
 
   const fetchData = () => {
     return fetch(
-      "http://localhost:8080/api/products?pageNumber=0&pageSize=5&sortBy=productId&sortDir=desc"
+      // "http://localhost:8080/api/products?pageNumber=0&pageSize=5&sortBy=productId&sortDir=desc"
+      "http://localhost:8080/api/category/1/products"
     )
       .then((response) => response.json())
       .then((data) => setProduct(data["content"]));
@@ -27,13 +28,13 @@ const Mobiles = () => {
         <div className='left-side'>
           <div className="filter-area">
             <h5>Filters</h5>
-            <a style={{textDecoration:'none'}}>Clear All</a>
+            <a style={{ textDecoration: 'none' }}>Clear All</a>
           </div>
 
           <div className="filter-area-bottom">
             <div className="dropdown">
-              <button className="btn-filter btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-             PageNumber
+              <button className="btn-filter  dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                PageNumber
               </button>
               <ul className="dropdown-menu">
                 <li><a className="dropdown-item" href="#">Action</a></li>
@@ -44,9 +45,9 @@ const Mobiles = () => {
           </div>
 
           <div className="filter-area-bottom">
-          <div className="dropdown" >
-              <button className="btn-filter btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-             Price 
+            <div className="dropdown" >
+              <button className="btn-filter dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Price
               </button>
               <ul className="dropdown-menu" >
                 <li><a className="dropdown-item" href="#">Action</a></li>
@@ -57,9 +58,9 @@ const Mobiles = () => {
           </div>
 
           <div className="filter-area-bottom">
-          <div className="dropdown">
-              <button className="btn-filter btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Newest
+            <div className="dropdown">
+              <button className="btn-filter dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Newest
               </button>
               <ul className="dropdown-menu">
                 <li><a className="dropdown-item" href="#">Action</a></li>
