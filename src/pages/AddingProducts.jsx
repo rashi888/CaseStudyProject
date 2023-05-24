@@ -5,7 +5,7 @@ import b1 from "../assets/PhoneImgs/phone1.webp"
 function AddingProducts() {
     return (
         <>
-            <div className="container-fluid my-5">
+            <div className="container-fluid my-5" style={{backgroundColor:'white'}}>
 
                 <Link to="addp"  style={{ margin: "2%  0px ",padding:'1%', width: '20%' }} className="btn btn-primary">Add Product</Link>
                 <table className="table">
