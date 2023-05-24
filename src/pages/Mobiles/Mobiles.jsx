@@ -71,115 +71,16 @@ const Mobiles = () => {
           </div>
         </div>
 
-
-
-        {/* <div className='right-side'>
-              <div className="card-main">
-                <div className="img-card">
-                </div>
-                <div className="about-img">
-                  <h4>Samsung galaxy</h4>
-                  <p> Lorem ipsum</p>
-                  <p>19999</p>
-                  <button type="button" className="btn btn-warning" style={{fontSize:'1rem',padding:'3% 5%',borderRadius:'5px',color:'white'}}>Add To cart</button>
-                </div>
-              </div>
-              <div className="card-main">
-                <div className="img-card">
-                </div>
-                <div className="about-img">
-                  <h4>Samsung galaxy</h4>
-                  <p> Lorem ipsum</p>
-                  <p>19999</p>
-                  <button type="button" className="btn btn-warning" style={{fontSize:'1rem',padding:'3% 5%',borderRadius:'5px',color:'white'}}>Add To cart</button>
-                </div>
-              </div>
-              <div className="card-main">
-                <div className="img-card">
-                </div>
-                <div className="about-img">
-                  <h4>Samsung galaxy</h4>
-                  <p> Lorem ipsum</p>
-                  <p>19999</p>
-                  <button type="button" className="btn btn-warning" style={{fontSize:'1rem',padding:'3% 5%',borderRadius:'5px',color:'white'}}>Add To cart</button>
-                </div>
-              </div>
-              <div className="card-main">
-                <div className="img-card">
-                </div>
-                <div className="about-img">
-                  <h4>Samsung galaxy</h4>
-                  <p> Lorem ipsum</p>
-                  <p>19999</p>
-                  <button type="button" className="btn btn-warning" style={{fontSize:'1rem',padding:'3% 5%',borderRadius:'5px',color:'white'}}>Add To cart</button>
-                </div>
-              </div>
-              <div className="card-main">
-                <div className="img-card">
-                </div>
-                <div className="about-img">
-                  <h4>Samsung galaxy</h4>
-                  <p> Lorem ipsum</p>
-                  <p>19999</p>
-                  <button type="button" className="btn btn-warning" style={{fontSize:'1rem',padding:'3% 5%',borderRadius:'5px',color:'white'}}>Add To cart</button>
-                </div>
-              </div>
-              <div className="card-main">
-                <div className="img-card">
-                </div>
-                <div className="about-img">
-                  <h4>Samsung galaxy</h4>
-                  <p> Lorem ipsum</p>
-                  <p>19999</p>
-                  <button type="button" className="btn btn-warning" style={{fontSize:'1rem',padding:'3% 5%',borderRadius:'5px',color:'white'}}>Add To cart</button>
-                </div>
-              </div>
-              <div className="card-main">
-                <div className="img-card">
-                </div>
-                <div className="about-img">
-                  <h4>Samsung galaxy</h4>
-                  <p> Lorem ipsum</p>
-                  <p>19999</p>
-                  <button type="button" className="btn btn-warning" style={{fontSize:'1rem',padding:'3% 5%',borderRadius:'5px',color:'white'}}>Add To cart</button>
-                </div>
-              </div>
-              <div className="card-main">
-                <div className="img-card">
-                </div>
-                <div className="about-img">
-                  <h4>Samsung galaxy</h4>
-                  <p> Lorem ipsum</p>
-                  <p>19999</p>
-                  <button type="button" className="btn btn-warning" style={{fontSize:'1rem',padding:'3% 5%',borderRadius:'5px',color:'white'}}>Add To cart</button>
-                </div>
-              </div>
-              <div className="card-main">
-                <div className="img-card">
-                </div>
-                <div className="about-img">
-                  <h4>Samsung galaxy</h4>
-                  <p> Lorem ipsum</p>
-                  <p>19999</p>
-                  <button type="button" className="btn btn-warning" style={{fontSize:'1rem',padding:'3% 5%',borderRadius:'5px',color:'white'}}>Add To cart</button>
-                </div>
-              </div>
-              <div className="card-main">
-                <div className="img-card">
-                </div>
-                <div className="about-img">
-                  <h4>Samsung galaxy</h4>
-                  <p> Lorem ipsum</p>
-                  <p>19999</p>
-                  <button type="button" className="btn btn-warning" style={{fontSize:'1rem',padding:'3% 5%',borderRadius:'5px',color:'white'}}>Add To cart</button>
-                </div>
-              </div>
-            </div> */}
         <div className='right-side'>
           {product.map((item) => {
             return (<>
               <div className="card-main">
-                <div className="img-card">
+                <div >
+                <img
+                    src={"http://localhost:8080/api/products/image/" + item.productPhoto}
+                    className="card-img-top"
+                    alt="product.title"
+                  />
                 </div>
                 <div className="about-img">
                   <h4>{item.productName}</h4>

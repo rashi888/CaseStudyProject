@@ -18,7 +18,7 @@ function Navy() {
             <div style={{ marginLeft: '30px', marginRight: '30px', marginTop: '10%' }}>
                 <link to="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet" />
 
-                <div className="nav-container" style={{ marginTop: '12%', zIndex: 17 }}>
+                <div className="nav-container" style={{  zIndex: 17 }}>
 
                     <nav className="featured-category">
                         <ul className="nav-row">
