@@ -30,7 +30,7 @@ const Cards = ({ slides }) => {
             key={index}
           >
             {index === current && (
-              <img class="bannerpic" src={slide.image} alt='image' className='image' />
+              <img  src={slide.image} alt='image' className='images' />
             )}
           </div>
         );

@@ -9,11 +9,14 @@
   width: 180%;
   height: 100%;
   border-radius: 10px;
+
 }
 
-.image {
-  width: 190%;
+.images {
+  width: 1400px;
+  height: 500px;
   border-radius: 10px;
+  
 }
 
 .right-arrow {
