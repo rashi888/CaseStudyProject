@@ -3,7 +3,7 @@ import React from 'react'
 function CategoryAdd() {
     return (
         <>
-            <div className="containerr" style={{margin:"2% 20%",border:'0.3px solid lightgray',padding:'2%'}}>
+            <div className="containerr" style={{margin:"2% 20%",backgroundColor:'white',boxShadow:'5px 10px 30px lightgray',borderRadius:'4px',padding:'2%'}}>
                 <div className="row">
                     <div className="col-sm-4">
                         <form method="post">

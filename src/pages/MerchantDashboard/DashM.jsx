@@ -14,7 +14,7 @@ function DashM() {
               <div className="card-body">
                 <h4 className="card-title">Categories</h4>
                 <p className="card-text">Manage the categories section here.</p>
-                <Link to="#"  className="card-link btn btn-primary">Add Category</Link>
+                <Link to="/categoryadd"  className="card-link btn btn-primary">Add Category</Link>
 
               </div>
             </div>
@@ -26,7 +26,7 @@ function DashM() {
               <div className="card-body">
                 <h4 className="card-title">Products</h4>
                 <p className="card-text">Manage all the products here.</p>
-                <Link to="#"  className="card-link btn btn-primary">Add Product</Link>
+                <Link to="/productadd"  className="card-link btn btn-primary">Add Product</Link>
 
               </div>
             </div>
@@ -36,8 +36,8 @@ function DashM() {
             <div className="cardd" >
               <div className="card-body">
                 <h4 className="card-title">View Categories List</h4>
-                <p className="card-text">Manage the categories section here.</p>
-                <Link to="#"  className="card-link btn btn-primary">View Category</Link>
+                <p className="card-text">View categories here.</p>
+                <Link to="/categorylist"  className="card-link btn btn-primary">View Category</Link>
 
               </div>
             </div>
@@ -47,8 +47,8 @@ function DashM() {
             <div className="cardd" >
               <div className="card-body">
                 <h4 className="card-title">View Products List</h4>
-                <p className="card-text">Manage the categories section here.</p>
-                <Link to="#"  className="card-link btn btn-primary">View Product</Link>
+                <p className="card-text">View products here.</p>
+                <Link to="/productlist"  className="card-link btn btn-primary">View Product</Link>
 
               </div>
             </div>

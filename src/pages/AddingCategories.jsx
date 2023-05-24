@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function AddingCategories() {
     return (
         <>
-            <div className="container my-5" style={{ display: 'block' }}>
+            <div className="container my-5" style={{ display: 'block',height:'400px' }}>
                 {/* <a th: href="@{/admin/categories/add}" style="margin: 20px 0" className="btn btn-primary">Add Category</a> */}
                 <Link style={{ margin: "2%  0px ",padding:'1%', width: '20%' }} className=" d-block     btn btn-primary ">Add Category</Link>
                 {/* <div classNameName="tableCont"> */}

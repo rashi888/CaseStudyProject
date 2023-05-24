@@ -53,14 +53,9 @@ function App() {
         <Route path="signup" Component={Signup} />
         <Route path="cart" Component={Cart} />
         <Route path="error" Component={Error} />
-
-
-
-        {/* unsorted  */}
         <Route path="/mobcat" Component={MobilesCate} />
         <Route path="products" Component={Products} />
         <Route path='productsView' Component={ProductsView} />
-
         <Route path="userProfile" Component={UserProfile} />
         <Route path="front" Component={Front} />
         <Route path="adbanner" Component={AdBanner} />
@@ -73,26 +68,22 @@ function App() {
         <Route path="adv3" Component={Adv3} />
         <Route path="homepage" Component={Homepage} />
         <Route path="Carousel" Component={CarouselPage} />
-
-
         <Route path="admindashboard" Component={AdminDashboard} />
-        <Route path="categorylist" Component={AddingCategories} />
-        <Route path="productlist" Component={AddingProducts} />
-        <Route path="productadd" Component={ProductsAdd} />
-        <Route path="categoryadd" Component={CategoryAdd} />
         <Route path="checkout" Component={Checkout} />
-
         <Route path='cardpage' Component={CardPage} />
         <Route path='mobiles' Component={Mobiles} />
-
         <Route path='/mobiles' Component={Mobiles} />
-        <Route path='/msignup' Component={MSignup} />
-
-        <Route path='/mdash' Component={DashM} />
-
+     
+        
 
         {/* Merchant Dashboard Field  */}
-        
+        <Route path='/msignup' Component={MSignup} />
+        <Route path='/mdash' Component={DashM} />
+        <Route path="/categorylist" Component={AddingCategories} />
+        <Route path="/productlist" Component={AddingProducts} />
+        <Route path="/productadd" Component={ProductsAdd} />
+        <Route path="/categoryadd" Component={CategoryAdd} />
+
       </Routes>
       <Footer />
 
