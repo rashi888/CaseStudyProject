@@ -3,8 +3,8 @@ import { Routes, Route } from 'react-router-dom';
 // import 'react-toastify/dist/ReactToastify.css';
 import Home from './components/Home';
 import Products from './components/Products';
-import ProductsView from './pages/ProductsView';
-// import Mobiles from './pages/Mobiles';
+// import ProductsView from './pages/ProductsView';
+// import ProductsView from './pages/ProductsView';
 // import UserProfile from './pages/UserProfile';
 import Front from './pages/Front';
 import AdBanner from './pages/AdBanner';
@@ -29,7 +29,7 @@ import Error from './pages/MorePages/Error';
 import Adv1 from './pages/AdvertiseBanners/Adv1';
 import Adv2 from './pages/AdvertiseBanners/Adv2';
 import Adv3 from './pages/AdvertiseBanners/Adv3';
-import Mobiles from './pages/Mobiles/Mobiles';
+import ProductsView from './pages/ProductsView/ProductsView';
 // import Homepage from './components/HomePage/Homepage';
 import CarouselPage from './pages/Caurosel/CarouselPage';
 import UserProfile from './pages/Userprofile/UserProfile';
@@ -39,7 +39,12 @@ import MSignup from './pages/MerchantSignUp/MSignup';
 import DashM from './pages/MerchantDashboard/DashM';
 
 function App() {
-
+  const groceryApi="http://localhost:8080/api/category/1/products";
+  const mobileApi="http://localhost:8080/api/category/2/products";
+  const fashionApi="http://localhost:8080/api/category/3/products";
+  const electronicsApi="http://localhost:8080/api/category/4/products";
+  const homeApi="http://localhost:8080/api/category/5/products";
+  const beautyApi="http://localhost:8080/api/category/6/products";
   return (
     <>
       <Navbar />
@@ -71,8 +76,12 @@ function App() {
         <Route path="admindashboard" Component={AdminDashboard} />
         <Route path="checkout" Component={Checkout} />
         <Route path='cardpage' Component={CardPage} />
-        <Route path='mobiles' Component={Mobiles} />
-        <Route path='/mobiles' Component={Mobiles} />
+        <Route path='/grocery'  Component={() => <ProductsView api={groceryApi} />} />
+        <Route path='/mobile'  Component={() => <ProductsView api={mobileApi} />} />
+        <Route path='/fashion'  Component={() => <ProductsView api={fashionApi} />} />
+        <Route path='/electronics'  Component={() => <ProductsView api={electronicsApi} />} />
+        <Route path='/homeproduct'  Component={() => <ProductsView api={homeApi} />} />
+        <Route path='/beauty'  Component={() => <ProductsView api={beautyApi} />} />
      
         
 
