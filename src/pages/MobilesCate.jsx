@@ -22,7 +22,7 @@ function MobilesCate() {
 
     return (
         <>
-            <div className="container" style={{ marginTop: "30px", border: '1px solid lightgray', margin: '3%', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+            <div className="container" style={{ marginTop: "160px",height:'400px', border: '1px solid lightgray', margin: '3%', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                 <div className="row">
                     <div className="col-sm-3" style={{ border: '1px solid gray' }}>
                         <h4>Categories</h4>

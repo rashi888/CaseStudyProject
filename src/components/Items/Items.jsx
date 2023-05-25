@@ -47,7 +47,7 @@ function Items() {
         <Carousel responsive={responsive}>
           {product.map((item) => {
             return (<>
-              <div className="cardy" style={{height:'600px'}}>
+              <div className="cardy" style={{ height: '600px' }}>
                 <Link to="mobiles">
                   <script>
                     const id = item.productId;
@@ -59,8 +59,8 @@ function Items() {
                     alt="product.title"
                   />
                 </Link>
-                <h2 className="heading-main">{item.productName}</h2>
-                <p className='price-main'>{item.productPrice}</p>
+                <h3 className="heading-main">{item.productName}</h3>
+                <p className='price-main'>₹ {item.productPrice}</p>
                 <p className='description-main'> {item.productDescription}</p>
                 <p>
                   <NavLink to="/cart">

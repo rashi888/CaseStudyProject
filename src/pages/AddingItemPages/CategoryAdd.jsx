@@ -1,9 +1,20 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 function CategoryAdd() {
+
+    const [category, setCategory] = useState([]);
+    const [categoryId, setCategoryId] = useState("");
+
+    const [data, setData] = useState({
+        categoryTitle: "",
+        categoryDescription: "",
+
+    });
+
+
     return (
         <>
-            <div className="containerr" style={{margin:"2% 20%",backgroundColor:'white',boxShadow:'5px 10px 30px lightgray',borderRadius:'4px',padding:'2%'}}>
+            <div className="containerr" style={{ margin: "2% 20%", backgroundColor: 'white', boxShadow: '5px 10px 30px lightgray', borderRadius: '4px', padding: '2%' }}>
                 <div className="row">
                     <div className="col-sm-4">
                         <form method="post">

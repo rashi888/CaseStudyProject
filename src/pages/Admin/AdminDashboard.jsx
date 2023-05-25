@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom"
 
 function AdminDashboard() {
     return (
@@ -11,7 +11,7 @@ function AdminDashboard() {
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-3 pt-3 my-3" >
-                        <div class="cardy " style={{ backgroundColor: 'white' ,boxShadow: "2px 1px 5px #888888",borderRadius:'5%'}}>
+                        <div class="cardy " style={{ backgroundColor: 'white', boxShadow: "2px 1px 5px #888888", borderRadius: '5%' }}>
                             <div class="card-body">
                                 <h4 class="card-title">Categories</h4>
                                 <p class="card-text">Manage the categories section here.</p>
@@ -20,7 +20,7 @@ function AdminDashboard() {
                         </div>
                     </div>
                     <div class="col-sm-3 pt-3 my-3" >
-                        <div class="cardy" style={{ backgroundColor: 'white' ,boxShadow: "2px 1px 5px #888888",borderRadius:'5%'}}>
+                        <div class="cardy" style={{ backgroundColor: 'white', boxShadow: "2px 1px 5px #888888", borderRadius: '5%' }}>
                             <div class="card-body">
                                 <h4 class="card-title">Products</h4>
                                 <p class="card-text">Manage all the products here.</p>
@@ -32,9 +32,9 @@ function AdminDashboard() {
                 </div>
             </div>
 
-        
-    </>
-  )
+
+        </>
+    )
 }
 
 export default AdminDashboard

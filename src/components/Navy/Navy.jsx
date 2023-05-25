@@ -18,15 +18,21 @@ function Navy() {
     const [category, setCategory] = useState([]);
 
     const fetchData = () => {
+      
       return fetch("http://localhost:8080/api/categories/")
         .then((response) => response.json())
         .then((data) => setCategory(data["content"]));
+        
+
     };
+    
   
     useEffect(() => {
       fetchData();
     }, []);
     console.log(category);
+    console.log("hello")
+    console.log(setCategory);
 
     return (
         <>

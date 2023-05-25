@@ -3,20 +3,20 @@ import { Routes, Route } from 'react-router-dom';
 // import 'react-toastify/dist/ReactToastify.css';
 import Home from './components/Home';
 import Products from './components/Products';
-// import ProductsView from './pages/ProductsView';
-// import ProductsView from './pages/ProductsView';
+import ProductsView from './pages/ViewSingleProduct/ProductsView';
+// import Mobiles from './pages/Mobiles';
 // import UserProfile from './pages/UserProfile';
-import Front from './pages/Front';
-import AdBanner from './pages/AdBanner';
+// import Front from './pages/Front';
+// import AdBanner from './components/AdBanner/AdBanner';
 import AddItem from './pages/AddItem';
 import MultiCarouselEffect from './components/MultiCarouselEffect';
 import Merchant from './pages/Merchant';
-import AdminDashboard from './components/AdminDashboard';
-import AddingCategories from './pages/AddingCategories';
-import AddingProducts from './pages/AddingProducts';
-import Checkout from './pages/Checkout';
-import ProductsAdd from './pages/ProductsAdd';
-import CategoryAdd from './pages/CategoryAdd';
+// import AdminDashboard from './pages/Admin/AdminDashboard';
+import AddingCategories from './pages/AddingItemPages/AddingCategories';
+import AddingProducts from './pages/AddingItemPages/AddingProducts';
+import Checkout from './pages/CheckoutPage/Checkout';
+import ProductsAdd from './pages/AddingItemPages/ProductsAdd';
+import CategoryAdd from './pages/AddingItemPages/CategoryAdd';
 import MobilesCate from './pages/MobilesCate';
 
 import Navbar from './components/Navbar/Navbar';
@@ -37,6 +37,10 @@ import CardPage from './pages/Cards/CardPage';
 import Homepage from './pages/HomePage/Homepage';
 import MSignup from './pages/MerchantSignUp/MSignup';
 import DashM from './pages/MerchantDashboard/DashM';
+import AdBanner from './pages/AdvertiseBanners/AdBanner';
+import AdminDashboard from './pages/Admin/AdminDashboard';
+import Allproducts from './pages/AllUniPage/Allproducts';
+import ImageAdd from './pages/ImageAdd';
 
 function App() {
   const groceryApi="http://localhost:8080/api/category/1/products";
@@ -62,7 +66,7 @@ function App() {
         <Route path="products" Component={Products} />
         <Route path='productsView' Component={ProductsView} />
         <Route path="userProfile" Component={UserProfile} />
-        <Route path="front" Component={Front} />
+        {/* <Route path="front" Component={Front} /> */}
         <Route path="adbanner" Component={AdBanner} />
         <Route path="addtocart" Component={AddItem} />
         <Route path="multicau" Component={MultiCarouselEffect} />
@@ -76,14 +80,10 @@ function App() {
         <Route path="admindashboard" Component={AdminDashboard} />
         <Route path="checkout" Component={Checkout} />
         <Route path='cardpage' Component={CardPage} />
-        <Route path='/grocery'  Component={() => <ProductsView api={groceryApi} />} />
-        <Route path='/mobile'  Component={() => <ProductsView api={mobileApi} />} />
-        <Route path='/fashion'  Component={() => <ProductsView api={fashionApi} />} />
-        <Route path='/electronics'  Component={() => <ProductsView api={electronicsApi} />} />
-        <Route path='/homeproduct'  Component={() => <ProductsView api={homeApi} />} />
-        <Route path='/beauty'  Component={() => <ProductsView api={beautyApi} />} />
-     
-        
+        <Route path='mobiles' Component={Mobiles} />
+        <Route path='/mobiles' Component={Mobiles} />
+        <Route path='/allproducts' Component={Allproducts} />
+
 
         {/* Merchant Dashboard Field  */}
         <Route path='/msignup' Component={MSignup} />
