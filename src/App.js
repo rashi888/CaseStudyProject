@@ -3,7 +3,8 @@ import { Routes, Route } from 'react-router-dom';
 // import 'react-toastify/dist/ReactToastify.css';
 import Home from './components/Home';
 import Products from './components/Products';
-import ProductsView from './pages/ViewSingleProduct/ProductsView';
+import ProductView from './pages/ViewSingleProduct/ProductsView';
+import ProductsView from './pages/ProductsView/ProductsView';
 // import Mobiles from './pages/Mobiles';
 // import UserProfile from './pages/UserProfile';
 // import Front from './pages/Front';
@@ -29,7 +30,6 @@ import Error from './pages/MorePages/Error';
 import Adv1 from './pages/AdvertiseBanners/Adv1';
 import Adv2 from './pages/AdvertiseBanners/Adv2';
 import Adv3 from './pages/AdvertiseBanners/Adv3';
-import ProductsView from './pages/ProductsView/ProductsView';
 // import Homepage from './components/HomePage/Homepage';
 import CarouselPage from './pages/Caurosel/CarouselPage';
 import UserProfile from './pages/Userprofile/UserProfile';
@@ -64,7 +64,7 @@ function App() {
         <Route path="error" Component={Error} />
         <Route path="/mobcat" Component={MobilesCate} />
         <Route path="products" Component={Products} />
-        <Route path='productsView' Component={ProductsView} />
+        <Route path='productView' Component={ProductView} />
         <Route path="userProfile" Component={UserProfile} />
         {/* <Route path="front" Component={Front} /> */}
         <Route path="adbanner" Component={AdBanner} />
@@ -80,9 +80,14 @@ function App() {
         <Route path="admindashboard" Component={AdminDashboard} />
         <Route path="checkout" Component={Checkout} />
         <Route path='cardpage' Component={CardPage} />
-        <Route path='mobiles' Component={Mobiles} />
-        <Route path='/mobiles' Component={Mobiles} />
         <Route path='/allproducts' Component={Allproducts} />
+        <Route path='/grocery' Component={ () => <ProductsView api={groceryApi}/> } />
+        <Route path='/mobile' Component={ () => <ProductsView api={mobileApi}/> } />
+        <Route path='/fashion' Component={ () => <ProductsView api={fashionApi}/> } />
+        <Route path='/electronics' Component={ () => <ProductsView api={electronicsApi}/> } />
+        <Route path='/homeproduct' Component={ () => <ProductsView api={homeApi}/> } />
+        <Route path='/beauty' Component={ () => <ProductsView api={beautyApi}/> } />
+
 
 
         {/* Merchant Dashboard Field  */}
