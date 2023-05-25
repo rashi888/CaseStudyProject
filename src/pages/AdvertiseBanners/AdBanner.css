@@ -1,0 +1,44 @@
+.section{
+    text-align: center;
+    padding-top: 30px;
+    background-color:yellow;
+}
+.ads{
+    display: flex;
+    /* height: 100%;
+    width: 100%; */
+    /* padding: 3% 5%; */
+    padding:30px ;
+   background-color: pink;
+}
+.lefty{
+    /* height: 100%; */
+    width: 300px;
+    padding: 20px;
+    background-color: rgb(240, 240, 240);
+    background-color:white;
+    box-shadow:10px 10px 10px lightgray;
+}
+.mid{
+    height: 100%;
+    width: 30%;
+    padding: 6.5% 3%;
+    margin: 0% 4%;
+    background-color:white;
+    box-shadow:10px 10px 10px lightgray;
+}
+.righty{
+    height: 100%;
+    width: 30%;
+    padding: 3%;
+    background-color:white;
+    box-shadow:10px 10px 10px lightgray;
+}
+.img{
+    height: 100%;
+    /* width: 50%; */
+}
+.img1{
+    height: 40%;
+    width: 40%;
+}

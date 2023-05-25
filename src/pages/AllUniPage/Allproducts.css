@@ -1,0 +1,32 @@
+.universal-page{
+    /* background-color: bisque; */
+    padding: 10px 30px;
+    /* height: 500px; */
+    width: 100%;
+    margin-top: 50px;
+    /* display: flex; */
+}
+.card-1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 10px 20px lightgray;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: white;
+    /* padding: 20px; */
+    margin-bottom:20px;
+}
+.img-1{
+    /* background-color: rgb(199, 13, 13); */
+    height: 80%;
+    width: 200px;
+    /* height: 100px; */
+    /* width: 40%; */
+}
+.content-1{
+    padding: 0;
+    margin: 0px 40px;
+   /* background-color: yellow; */
+   text-align: left;
+}

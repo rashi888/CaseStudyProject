@@ -7,8 +7,8 @@ function Checkout() {
                 <section className="mt-5 mb-4" style={{margin:'5%' }}>
                     <div className="row" >
                         <div className="col-lg-8 mb-4">
-                            <div className="wish-list pb-1" style={{ border: "0.3px solid lightgray",margin:'5% 3%' }}>
-                                <div className="card-body">
+                            <div className="wish-list pb-1" style={{ margin:'5% 3%' }}>
+                                <div className="card-body" style={{backgroundColor:'white',borderRadius:'3px',padding:'20px',boxShadow:"10px 10px 10px lightgray"}}>
 
                                     <h5 className="mb-2">Billing details</h5>
                                     <div className="row">

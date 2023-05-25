@@ -1,0 +1,90 @@
+.prod1{
+    background-color: rgb(255, 255, 255);
+   /* height: 100vh; */
+   /* width: 95vw; */
+   margin-top: 8%;
+   display: flex;
+   padding: 15px 50px; 
+   border-radius: 5px;
+   margin: 100px 50px;
+}
+.imgMain{
+    height: 85%;
+    /* width: 30%; */
+    /* border: 1px solid lightgray; */
+    border-radius: 20px;
+    padding: 20px 35px;
+    margin-top: 2%;
+    margin-right: 40px;
+    /* background-color: aqua; */
+    
+}
+
+.mainImage{
+    height: 100%;
+    width: 100%;
+    /* background-color: white; */
+}
+.prodDetails{
+    height: 100%;
+    width: 65%;
+    text-align: left;
+    padding: 60px;
+    font-weight: 200;
+}
+.prodDetails h1,h2,h3,h4,h5,h6{
+    padding: 5px 0px;
+    font-size: 2em;
+
+}
+.prodDetails button{
+    padding: 10px 20px;
+    margin:  15px 0px;
+    border-radius: 70px;
+    width: 12em;
+    border: none;
+    color: white;
+    text-decoration: none;
+    background-color: rgb(17, 131, 17);
+}
+
+.image-small{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 200px;
+    /* border: 1px solid lightgray; */
+    margin: 10px;
+}
+.im1,.im2{
+    border: 1px solid lightgray;
+    margin: 10px;
+    padding: 10px;
+}
+
+/* 
+@media (min-width: 992px) and (max-width:1400px) {
+    .prodDetails h1,h2,h3,h4,h5,h6{
+        padding: 5px 0px;
+        font-size: 0.em;
+    }
+}
+
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .prodDetails h1,h2,h3,h4,h5,h6{
+        padding: 5px 0px;
+    }
+}
+
+
+@media (max-width: 767px) {
+   .prod1{
+    width: 1000px;
+    background-color: blueviolet;
+   }
+  }
+  
+ 
+  */
