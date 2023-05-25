@@ -87,33 +87,89 @@ label, a {
 .nav-row{
   /* background-color: aqua; */
 }
-
-.all-category-list-item,.all-category-list-link,.nav-row-list-link{
-  text-decoration: none;
-  color: rgb(103, 103, 103);
-}
-.item-box{
-  position:fixed;
-    /* display: none; */
-    box-sizing: border-box;
-    width: 100px;
-    background-color: white;
-    padding: 6px;
-    border-radius: 3px;
-    top: 50px;
-    z-index: 1;
+.all-category-list,.all-category-list-item{
+  background-color: yellow;
+  height: 100%;
+  width: 100%;
 }
 .allcategory{
   color: purple;
 }
-.allcategory:hover +.item-box{
+.all-category-list-item,.all-category-list-link,.nav-row-list-link{
+  text-decoration: none;
+  color: rgb(103, 103, 103);
+}
+.box-inside-dropdown{
+  display: flex;
+}
+.item-box{
+  position:fixed;
+    display: none;
+    box-sizing: border-box;
+    width: 300px;
+    height: 300px;
+    background-color: rgb(239, 126, 126);
+    padding: 7px;
+    border-radius: 3px;
+    top: 50px;
+    z-index: 1;
+}
+.inside-item-box{
+  position:fixed;
+    display: none;
+    box-sizing: border-box;
+    width: 300px;
+    height: 300px;
+    background-color: rgb(239, 126, 126);
+    padding: 7px;
+    border-radius: 3px;
+    top: 50px;
+    z-index: 1;
+    margin-top: 10px;
+
+}
+.all-category1 img{
+  height: 40px;
+  width: 40px;
+  margin-left: 30%;
+}
+.allcategory:hover+ .box-inside-dropdown{
+  display: block;
+  transition: 3ms;
+}
+.box-inside-dropdown:hover{
+  display: block;
+  transition: 3ms;
+}
+.categories{
+  position:fixed;
+    display: none;
+    box-sizing: border-box;
+    width: 200px;
+    background-color: #48c1cf;
+    color: white;
+    padding: 6px;
+    border-radius: 3px;
+    top: 170px;
+    left: 50px;
+    z-index: 1;
+}
+.allcategory:hover +.categories{
   display: block;
   transition: 1ms;
 }
-.item-box:hover{
+.categories:hover{
   display: block;
-  transition: 2ms;
+  transition: 1ms;
+  
+} 
+.categories .p1:hover,.categories .p2:hover
+,.categories .p3:hover,.categories .p4:hover,
+.categories .p5:hover,.categories .p6:hover{
+  color: #54b9c4;
+  background-color: white;
 }
+
 
 /* .groce{
   position:fixed;
@@ -133,7 +189,7 @@ label, a {
 .groce:hover{
   display: block;
   transition: 1ms;
-} */
+}  */
 
 
 

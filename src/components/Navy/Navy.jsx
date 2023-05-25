@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import './Navy.css'
 import { Link } from "react-router-dom"
 
@@ -11,34 +11,67 @@ import Home from "../../assets/NavyImages/Home1.png"
 import Beauty from "../../assets/NavyImages/Beauty 2.png"
 // import AllCategory from "../../assets/NavyImages/allcat.png"
 
+// http://localhost:8080/api/categories/
 
 function Navy() {
+
+    const [category, setCategory] = useState([]);
+
+    const fetchData = () => {
+      return fetch("http://localhost:8080/api/categories/")
+        .then((response) => response.json())
+        .then((data) => setCategory(data["content"]));
+    };
+  
+    useEffect(() => {
+      fetchData();
+    }, []);
+    console.log(category);
+
     return (
         <>
             <div style={{ marginLeft: '30px', marginRight: '30px', marginTop: '10%' }}>
                 <link to="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet" />
 
-                <div className="nav-container" style={{  zIndex: 17 }}>
+                <div className="nav-container" style={{ zIndex: 17 }}>
 
                     <nav className="featured-category">
                         <ul className="nav-row">
 
-                            <div className="category1">
-                                <img src={AllCategory} alt="" />
-                                <li ><Link to="" style={{textDecoration:'none'}} className='allcategory'>All category</Link></li>
-                                <div className="item-box">
-                                    <ul className="all-category-list">
-                                        <li className="all-category-list-item" ><Link to="/mobiles" className="all-category-list-link" style={{ textDecoration: 'none', color: 'black' }}>Smartphones<i className="fas fa-angle-right" /></Link>
-                                            <div className="category-second-list">
+                            {/* <div className="category1">
+                                <img src={AllCategory} alt="" height='50px' width='50px' />
+                                <li className="allcategory nav-row-list"><Link to="" style={{ textDecoration: 'none' }} className='nav-row-list-link'>All category</Link></li>
 
-                                            </div>
-                                        </li>
-                                        <li className="all-category-list-item"><Link to="" className="all-category-list-link">Furniture <i className="fas fa-angle-right" /></Link></li>
-                                        <li className="all-category-list-item"><Link to="" className="all-category-list-link">Toys<i className="fas fa-angle-right" /></Link></li>
-                                        <li className="all-category-list-item"><Link to="" className="all-category-list-link">Computing<i className="fas fa-angle-right" /></Link></li>
-                                        <li className="all-category-list-item"><Link to="" className="all-category-list-link" >Games<i className="fas fa-angle-right" /></Link></li>
-                                        <li className="all-category-list-item"><Link to="" className="all-category-list-link" >Automotive<i className="fas fa-angle-right" /></Link></li>
-                                    </ul>
+                                <div className="box-inside-dropdown">
+                                    <div className="item-box" >
+                                        <p>Smartphones</p>
+                                        <p>Furniture</p>
+                                        <p>Toys</p>
+                                        <p>Computing</p>
+                                        <p>Games</p>
+                                        <p>Automotive</p>
+                                    </div>
+                                    <div className="inside-item-box">
+                                        <p>iphone</p>
+                                        <p>Samsung Galaxy</p>
+                                        <p>Realme</p>
+                                        <p>Redmi</p>
+                                        <p>Intex</p>
+                                    </div>
+
+                                </div>
+                            </div> */}
+
+                            <div className="all-category1">
+                                <img src={AllCategory} alt="" />
+                                <li className="allcategory nav-row-list"><Link to="" className="nav-row-list-link" >All Categories</Link></li>
+                                <div className="categories" >
+                                    <p className='p1'>Smartphones</p>
+                                    <p className='p2'>Furniture</p>
+                                    <p className='p3'>Toys</p>
+                                    <p className='p4'>Computing</p>
+                                    <p className='p5'>Games</p>
+                                    <p className='p6'>Automotive</p>
                                 </div>
                             </div>
 
@@ -79,6 +112,24 @@ function Navy() {
                         </ul>
                     </nav>
                 </div>
+                {/* <div className="box-inside-dropdown">
+                    <div className="item-box" >
+                        <p>Smartphones</p>
+                        <p>Furniture</p>
+                        <p>Toys</p>
+                        <p>Computing</p>
+                        <p>Games</p>
+                        <p>Automotive</p>
+                    </div>
+                    <div className="inside-item-box">
+                        <p>iphone</p>
+                        <p>Samsung Galaxy</p>
+                        <p>Realme</p>
+                        <p>Redmi</p>
+                        <p>Intex</p>
+                    </div>
+
+                </div> */}
             </div>
         </>
     )
