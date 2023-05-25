@@ -1,16 +1,18 @@
 import React from 'react'
-import './Mobiles.css'
+import './ProductsView.css'
 import { VscHeart } from "react-icons/vsc";
 import { useState, useEffect } from "react";
 
-const Mobiles = () => {
-
+const ProductsView = (props) => {
+  const [mobileApi, setMobileApi] = useState(props.api);
+  console.log(mobileApi);
+  
   const [product, setProduct] = useState([]);
 
   const fetchData = () => {
-    return fetch(
+    return fetch(mobileApi
       // "http://localhost:8080/api/products?pageNumber=0&pageSize=5&sortBy=productId&sortDir=desc"
-      "http://localhost:8080/api/category/1/products"
+      // "http://localhost:8080/api/category/1/products"
     )
       .then((response) => response.json())
       .then((data) => setProduct(data["content"]));
@@ -98,4 +100,4 @@ const Mobiles = () => {
   )
 }
 
-export default Mobiles
+export default ProductsView

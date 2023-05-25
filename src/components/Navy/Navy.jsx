@@ -81,34 +81,34 @@ function Navy() {
                                 </div>
                             </div>
 
-                            <div className="category1">
+                            <Link to="/grocery" className="category1">
                                 <img src={Grocery} alt="" />
                                 <li className="grocery nav-row-list"><Link to="" className="nav-row-list-link" >Grocery</Link></li>
                                 {/* <div className="groce" >
                                     <h6>product1</h6>
                                     <h6>product2</h6>
                                 </div> */}
-                            </div>
-                            <Link to="/mobiles" className="category1">
+                            </Link>
+                            <Link to="/mobile" className="category1">
                                 <img src={Mobile} alt="" />
                                 <li className="nav-row-list"><Link to="/mobiles" className="nav-row-list-link" >Mobile</Link></li>
                             </Link>
-                            <div className="category1">
+                            <Link to="/fashion" className="category1">
                                 <img src={Fashion} alt="" />
                                 <li className="nav-row-list"><Link to="" className="nav-row-list-link" >Fashion</Link></li>
-                            </div>
-                            <div className="category1">
+                            </Link >
+                            <Link to="/electronics" className="category1">
                                 <img src={Electronics} alt="" />
                                 <li className="nav-row-list"><Link to="" className="nav-row-list-link" >Electronics</Link></li>
-                            </div>
-                            <div className="category1">
+                            </Link>
+                            <Link to="/homeproduct" className="category1">
                                 <img src={Home} alt="" />
                                 <li className="nav-row-list"><Link to="" className="nav-row-list-link" >Home</Link></li>
-                            </div>
-                            <div className="category1">
+                            </Link>
+                            <Link to="/beauty" className="category1">
                                 <img src={Beauty} alt="" />
                                 <li className="nav-row-list"><Link to="" className="nav-row-list-link" >Beauty</Link></li>
-                            </div>
+                            </Link>
                             {/* <li className="nav-row-list"><Link to="" className="nav-row-list-link" >Smartphones</Link></li>
                             <li className="nav-row-list"><Link to="" className="nav-row-list-link">furniture</Link></li>
                             <li className="nav-row-list"><Link to="" className="nav-row-list-link">Toys</Link></li>
