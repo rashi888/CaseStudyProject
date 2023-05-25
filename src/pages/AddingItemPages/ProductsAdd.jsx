@@ -65,10 +65,6 @@ function ProductsAdd() {
     };
 
 
-
-
-
-
     const fetchData = async () => {
         const response = await fetch("http://localhost:8080/api/categories/");
         const data = await response.json();
@@ -126,9 +122,9 @@ function ProductsAdd() {
                             <div className="custom-file">
                                 <input type="file" className="custom-file-input" onChange={handleFileChange} name="productPhoto" value={data.productPhoto} accept="image/jpeg, image/png" id="productPhoto" />
                                 <label className="custom-file-label" for="productImage" > {selectedImage ? (
-                                    <h6 style={{fontWeight:300}}>{selectedImage}</h6>
+                                    <p style={{ fontWeight: 300 }}>{selectedImage}</p>
                                 ) : (
-                                    <h6 style={{fontWeight:300}}>Choose an image</h6>
+                                    <p style={{ fontWeight: 300 }}>Choose image</p>
                                 )}</label>
                                 {/* {selectedImage && <p> {selectedImage}</p>} */}
                                 {/* {selectedImage ? (<p>Selected Image:{selectedImage}</p>):( <p> Choose File</p> )} */}

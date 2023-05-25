@@ -32,11 +32,11 @@
     padding: 60px;
     font-weight: 200;
 }
-.prodDetails h1,h2,h3,h4,h5,h6{
+/* .prodDetails h1,h2,h3,h4,h5,h6{
     padding: 5px 0px;
     font-size: 2em;
 
-}
+} */
 .prodDetails button{
     padding: 10px 20px;
     margin:  15px 0px;
