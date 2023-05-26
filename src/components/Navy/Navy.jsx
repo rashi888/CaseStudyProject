@@ -21,9 +21,9 @@ function Navy() {
       
       return fetch("http://localhost:8080/api/categories/")
         .then((response) => response.json())
-        .then((data) => setCategory(data["content"]));
+        .then((data) => setCategory(data));
         
-
+haiu
     };
     
   
@@ -72,12 +72,12 @@ function Navy() {
                                 <img src={AllCategory} alt="" />
                                 <li className="allcategory nav-row-list"><Link to="" className="nav-row-list-link" >All Categories</Link></li>
                                 <div className="categories" >
-                                    <p className='p1'>Smartphones</p>
-                                    <p className='p2'>Furniture</p>
-                                    <p className='p3'>Toys</p>
-                                    <p className='p4'>Computing</p>
-                                    <p className='p5'>Games</p>
-                                    <p className='p6'>Automotive</p>
+                                {category.map((item) => {
+                                        return (
+                                            <p className='p1'>{item.categoryTitle}</p>
+                                        );
+                                    })}
+                                
                                 </div>
                             </div>
 
