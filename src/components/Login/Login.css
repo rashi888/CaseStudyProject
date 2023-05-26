@@ -142,7 +142,7 @@ form .signup-link a:hover{
   text-decoration: underline;
 }
 
-@media  screen and (max-width: 1000px){
+ @media  screen and (max-width: 1000px){
   .login-content{
     flex-direction: column;
   }
@@ -153,6 +153,20 @@ form .signup-link a:hover{
     {
         display: grid;
     }
+} 
+@media  screen and (max-width:576px) {
+  
 }
-
+@media  screen and (min-width:577px) and (max-width:768px) {
+  
+}
     
+@media  screen and (min-width: 769px) and (max-width:992px) {
+  
+}
+@media  screen and (min-width: 993px) and (max-width:1200px) {
+  
+}
+@media  screen and (min-width: 1201) and (max-width:1500px) {
+  
+}

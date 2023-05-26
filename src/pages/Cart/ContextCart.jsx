@@ -8,7 +8,7 @@ import { CartContext } from './AddItem';
 
 const ContextCart = () => {
 
-    const { item, clearCart,totalItem ,totalAmount} = useContext(CartContext)
+    const { item, clearCart, totalItem, totalAmount } = useContext(CartContext)
     return (
         <>
             {/* heading part */}

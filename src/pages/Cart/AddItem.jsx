@@ -1,8 +1,7 @@
-import React, { createContext, useEffect, useState } from 'react'
-import "../styles/AddItem.css"
+import React, { createContext, useEffect, useState,useReducer } from 'react'
+import "./AddItem.css"
 import { products } from "./Product";
 import ContextCart from './ContextCart';
-import { useReducer } from 'react';
 import { reducer } from "./Reducer";
 
 
@@ -47,15 +46,15 @@ const AddItem = () => {
         })
     }
     // update the data 
-    useEffect(()=>{
-        dispatch({type:"GET_TOTAL"});
+    useEffect(() => {
+        dispatch({ type: "GET_TOTAL" });
         // console.log("Awesome")
-    },[state.item]);
+    }, [state.item]);
 
 
     return (
         <>
-            <CartContext.Provider value={{ ...state, removeItem, clearCart, increment, decrement}}>
+            <CartContext.Provider value={{ ...state, removeItem, clearCart, increment, decrement }}>
                 <ContextCart />
             </CartContext.Provider>
 

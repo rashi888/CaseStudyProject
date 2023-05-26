@@ -9,7 +9,7 @@ import ProductsView from './pages/ProductsView/ProductsView';
 // import UserProfile from './pages/UserProfile';
 // import Front from './pages/Front';
 // import AdBanner from './components/AdBanner/AdBanner';
-import AddItem from './pages/AddItem';
+import AddItem from './pages/Cart/AddItem';
 import MultiCarouselEffect from './components/MultiCarouselEffect';
 import Merchant from './pages/Merchant';
 // import AdminDashboard from './pages/Admin/AdminDashboard';
@@ -41,14 +41,15 @@ import AdBanner from './pages/AdvertiseBanners/AdBanner';
 import AdminDashboard from './pages/Admin/AdminDashboard';
 import Allproducts from './pages/AllUniPage/Allproducts';
 import ImageAdd from './pages/ImageAdd';
+// import ShoppingCart from './components/ShoppingCart/ShoppingCart';
 
 function App() {
-  const groceryApi="http://localhost:8080/api/category/1/products";
-  const mobileApi="http://localhost:8080/api/category/2/products";
-  const fashionApi="http://localhost:8080/api/category/3/products";
-  const electronicsApi="http://localhost:8080/api/category/4/products";
-  const homeApi="http://localhost:8080/api/category/5/products";
-  const beautyApi="http://localhost:8080/api/category/6/products";
+  const groceryApi = "http://localhost:8080/api/category/1/products";
+  const mobileApi = "http://localhost:8080/api/category/2/products";
+  const fashionApi = "http://localhost:8080/api/category/3/products";
+  const electronicsApi = "http://localhost:8080/api/category/4/products";
+  const homeApi = "http://localhost:8080/api/category/5/products";
+  const beautyApi = "http://localhost:8080/api/category/6/products";
   return (
     <>
       <Navbar />
@@ -59,7 +60,7 @@ function App() {
         {/* <Route path='/imageadd' Component={ImageAdd} /> */}
         <Route path='home' Component={Homepage} />
         <Route path="login" Component={Login} />
-        <Route path="signup" Component={Signup} />
+        <Route path="/signup" Component={Signup} />
         <Route path="cart" Component={Cart} />
         <Route path="error" Component={Error} />
         <Route path="/mobcat" Component={MobilesCate} />
@@ -81,12 +82,12 @@ function App() {
         <Route path="checkout" Component={Checkout} />
         <Route path='cardpage' Component={CardPage} />
         <Route path='/allproducts' Component={Allproducts} />
-        <Route path='/grocery' Component={ () => <ProductsView api={groceryApi}/> } />
-        <Route path='/mobile' Component={ () => <ProductsView api={mobileApi}/> } />
-        <Route path='/fashion' Component={ () => <ProductsView api={fashionApi}/> } />
-        <Route path='/electronics' Component={ () => <ProductsView api={electronicsApi}/> } />
-        <Route path='/homeproduct' Component={ () => <ProductsView api={homeApi}/> } />
-        <Route path='/beauty' Component={ () => <ProductsView api={beautyApi}/> } />
+        <Route path='/grocery' Component={() => <ProductsView api={groceryApi} />} />
+        <Route path='/mobile' Component={() => <ProductsView api={mobileApi} />} />
+        <Route path='/fashion' Component={() => <ProductsView api={fashionApi} />} />
+        <Route path='/electronics' Component={() => <ProductsView api={electronicsApi} />} />
+        <Route path='/homeproduct' Component={() => <ProductsView api={homeApi} />} />
+        <Route path='/beauty' Component={() => <ProductsView api={beautyApi} />} />
 
 
 
@@ -98,6 +99,8 @@ function App() {
         <Route path="/productadd" Component={ProductsAdd} />
         <Route path="/categoryadd" Component={CategoryAdd} />
 
+
+        <Route path="/sc" Component={AddItem} />
       </Routes>
       <Footer />
 
