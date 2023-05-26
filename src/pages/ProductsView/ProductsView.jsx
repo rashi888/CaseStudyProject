@@ -2,12 +2,22 @@ import React from 'react'
 import './ProductsView.css'
 import { VscHeart } from "react-icons/vsc";
 import { useState, useEffect } from "react";
+import { useLocation } from 'react-router-dom';
 
 const ProductsView = (props) => {
   const [mobileApi, setMobileApi] = useState(props.api);
-  console.log(mobileApi);
   
-  const [product, setProduct] = useState([]);
+  const location = useLocation();
+  // const [product, setProduct] = useState(location.state.searchdata); 
+  const [product, setProduct] = useState([]); 
+  
+  
+
+
+  
+
+
+  
 
   const fetchData = () => {
     return fetch(mobileApi

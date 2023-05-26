@@ -13,8 +13,34 @@ import profile from "../../assets/All_Icons/user.png"
 import carts from "../../assets/All_Icons/carty.png"
 // import logoo from "../../assets/NavbarImg/ShopEase1.png"
 import logoo from "../../assets/NavbarImg/log.jpg"
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+    const [search, setSearch] = React.useState("");
+    const navigate = useNavigate();
+
+    const handleChange = (event) => {
+        setSearch(event.target.value);
+    };
+
+   
+
+    const srch = () => {
+        axios.get('http://localhost:8080/api/products/search/' + search)
+        .then(response => {
+            console.log(response.data);
+            navigate("/search", { state: { searchdata: response.data } });
+
+        })
+        .catch(error => {
+            console.log(error);
+        });
+    }
+
+
+
+
     return (
         <div>
 
@@ -32,8 +58,12 @@ const Navbar = () => {
                         type="search"
                         placeholder="Items to Search..."
                         aria-label="Search"
+                        onChange={(e) => handleChange(e, "search")}
+                value={search}
+                name="search"
+                id="search"
                     />
-                    <div className="searchIcons">
+                    <div onClick={srch} className="searchIcons">
                         <BiSearch />
                     </div>
                 </div>

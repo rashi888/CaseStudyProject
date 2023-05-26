@@ -87,6 +87,7 @@ function App() {
         <Route path='/electronics' Component={ () => <ProductsView api={electronicsApi}/> } />
         <Route path='/homeproduct' Component={ () => <ProductsView api={homeApi}/> } />
         <Route path='/beauty' Component={ () => <ProductsView api={beautyApi}/> } />
+        <Route path='search' Component={ () => <ProductsView />  } />
 
 
 
