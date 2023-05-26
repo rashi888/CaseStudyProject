@@ -70,13 +70,14 @@
       /* padding:10px; */
       height: 100%;
       width: 20vw;
-      /* background-color: aliceblue; */
+      /* background-color: rgb(56, 150, 232); */
     }
     .profileimg,.cartimg{
       height:30px;
       width: 30px;
       color: white;
       /* background-color: white; */
+      padding-left: 0px;
     }
     #logins {
       text-decoration: none;
