@@ -8,21 +8,21 @@ import Items from '../../components/Items/Items'
 // import Wrapper from '../../pages/Wrapper/Wrapper'
 // import CarouselPage from '../../pages/Caurosel/CarouselPage'
 // import Wrapper from '../Wrapper'
-import Cards from '../../components/Cards'
-import { SliderData } from '../../components/SliderData'
+import Cards from '../../components/CardsCaurosel/Cards'
+import { SliderData } from '../../components/CardsCaurosel/SliderData'
 
 function Homepage() {
     return (
         <>
-        {/* <CardPage/> */}
-        <Cards slides={SliderData} />;
-        <Items/>
-        <Adv1/>
-        {/* <Wrapper/> */}
-        <Items/>
-        <Adv2/>
-        <Items/>
-        <Adv3/>
+            {/* <CardPage/> */}
+            <Cards slides={SliderData} />;
+            <Items />
+            <Adv1 />
+            {/* <Wrapper/> */}
+            <Items />
+            <Adv2 />
+            <Items />
+            <Adv3 />
         </>
     )
 }

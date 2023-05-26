@@ -23,7 +23,7 @@ function Navy() {
         .then((response) => response.json())
         .then((data) => setCategory(data));
         
-haiu
+// haiu
     };
     
   

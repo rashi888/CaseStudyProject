@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { SliderData } from './SliderData';
 import { HiOutlineArrowCircleLeft, HiOutlineArrowCircleRight } from "react-icons/hi"
-import '../styles/Cards.css';
+import './Cards.css';
 
 const Cards = ({ slides }) => {
   const [current, setCurrent] = useState(0);
@@ -30,7 +30,7 @@ const Cards = ({ slides }) => {
             key={index}
           >
             {index === current && (
-              <img  src={slide.image} alt='image' height="400" className='images' />
+              <img src={slide.image} alt='image' height="400" className='images' />
             )}
           </div>
         );
