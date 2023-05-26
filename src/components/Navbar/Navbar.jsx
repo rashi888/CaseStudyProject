@@ -38,19 +38,26 @@ const Navbar = () => {
                     </div>
                 </div>
 
-                <div className="icons">
-                    <Link to="/login">
-                        <img className="profileimg" src={profile} alt="" />
-                        <div className="profile">
-                            <h6>My Profile</h6>
-                            <h6>LogOut</h6>
-                        </div>
+                <div className="icons"  >
+                    <div className="profilediv" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '10px' }}>
+                        <p style={{ color: 'white', padding: '15px 0px 0px 0px' }}> Profile</p>
+                        <Link to="/login">
+                            <img className="profileimg" src={profile} alt="" />
+                            <div className="profile">
+                                <h6>My Profile</h6>
+                                <h6>LogOut</h6>
+                            </div>
+                        </Link>
+                    </div>
 
-                    </Link>
-                    <Link to="/cart">
-                        <img className="cartimg" src={carts} alt="" />
 
-                    </Link>
+                    <div className="cartdiv" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '10px' }}>
+                        <p style={{ color: 'white', padding: '15px 0px 0px 0px' }}>Cart</p>
+                        <Link to="/cart">
+                            <img className="cartimg" src={carts} alt="" />
+                        </Link>
+                    </div>
+
                 </div>
             </div>
         </div>
