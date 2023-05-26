@@ -82,12 +82,13 @@ function App() {
         <Route path="checkout" Component={Checkout} />
         <Route path='cardpage' Component={CardPage} />
         <Route path='/allproducts' Component={Allproducts} />
-        <Route path='/grocery' Component={() => <ProductsView api={groceryApi} />} />
-        <Route path='/mobile' Component={() => <ProductsView api={mobileApi} />} />
-        <Route path='/fashion' Component={() => <ProductsView api={fashionApi} />} />
-        <Route path='/electronics' Component={() => <ProductsView api={electronicsApi} />} />
-        <Route path='/homeproduct' Component={() => <ProductsView api={homeApi} />} />
-        <Route path='/beauty' Component={() => <ProductsView api={beautyApi} />} />
+        <Route path='/grocery' Component={ () => <ProductsView api={groceryApi}/> } />
+        <Route path='/mobile' Component={ () => <ProductsView api={mobileApi}/> } />
+        <Route path='/fashion' Component={ () => <ProductsView api={fashionApi}/> } />
+        <Route path='/electronics' Component={ () => <ProductsView api={electronicsApi}/> } />
+        <Route path='/homeproduct' Component={ () => <ProductsView api={homeApi}/> } />
+        <Route path='/beauty' Component={ () => <ProductsView api={beautyApi}/> } />
+        <Route path='search' Component={ () => <ProductsView />  } />
 
 
 
@@ -99,8 +100,6 @@ function App() {
         <Route path="/productadd" Component={ProductsAdd} />
         <Route path="/categoryadd" Component={CategoryAdd} />
 
-
-        <Route path="/sc" Component={AddItem} />
       </Routes>
       <Footer />
 

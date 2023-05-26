@@ -1,17 +1,15 @@
-import { FormFeedback, } from "reactstrap";
+import { FormFeedback } from "reactstrap";
 import { Link } from "react-router-dom";
 import "./Login.css";
 import React, { useEffect, useState } from "react";
 import { signIn, signUp } from "../../services/user-service";
 import { useNavigate } from "react-router-dom";
 import login from "../../assets/LoginSignupImg/login.gif";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
   const navigate = useNavigate();
-
 
   const [data, setData] = useState({
     emailId: "",
@@ -45,14 +43,15 @@ const Login = () => {
       setError({ ...error, isError: false });
       return;
     }
+    
+
+    
 
     console.log(data);
 
     signIn(data)
       .then((resp) => {
-        console.log(resp);
-        console.log("success log");
-        toast.success('🦄 Login!', {
+        toast.success("🦄 Login!", {
           position: "top-center",
           autoClose: 5000,
           hideProgressBar: false,
@@ -61,8 +60,11 @@ const Login = () => {
           draggable: true,
           progress: undefined,
           theme: "light",
-        });                // alert("User Login successfully!");
+        });
+        console.log(resp);
+        console.log("success log");
         navigate("/home");
+        
       })
       .catch((error) => {
         console.log(error);
@@ -77,8 +79,6 @@ const Login = () => {
 
   return (
     <>
-
-   
       <ToastContainer
         position="bottom-center"
         autoClose={5000}
@@ -92,7 +92,7 @@ const Login = () => {
         theme="light"
       />
       <meta charSet="utf-8" />
-      <div className="wrapper" style={{backgroundColor:'white'}}>
+      <div className="wrapper" style={{ backgroundColor: "white" }}>
         <div className="formcont">
           <img class="logingif" src={login} alt="" />
 
@@ -101,11 +101,13 @@ const Login = () => {
             <div className="field">
               <input
                 type="emailId"
-
                 id="emailId"
                 onChange={(e) => handleChange(e, "emailId")}
-                value={data.emailId} required
-                invalid={error.errors?.response?.data?.emailId ? "true" : "false"}
+                value={data.emailId}
+                required
+                invalid={
+                  error.errors?.response?.data?.emailId ? "true" : "false"
+                }
               />
               <FormFeedback>
                 {error.errors?.response?.data?.emailId}
@@ -115,18 +117,18 @@ const Login = () => {
             <div className="field">
               <input
                 type="password"
-
                 id="password"
                 onChange={(e) => handleChange(e, "password")}
-                value={data.password} required
+                value={data.password}
+                required
                 invalid={
                   error.errors?.response?.data?.password ? "true" : "false"
                 }
-
               />
               <FormFeedback>
                 {error.errors?.response?.data?.password}
-              </FormFeedback>              <label>Password</label>
+              </FormFeedback>{" "}
+              <label>Password</label>
             </div>
             <div className="content">
               <div className="checkbox">
@@ -146,7 +148,6 @@ const Login = () => {
           </form>
         </div>
       </div>
-      
     </>
   );
 };
