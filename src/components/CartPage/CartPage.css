@@ -1,0 +1,15 @@
+.container-main{
+    background-color: #ffffff;
+    width: 99%;
+   padding: 20px;
+   margin: 30px 8px;
+}
+.cardy-box{
+    padding: 30px;
+    background-color: white;
+    border:1px solid lightgray;
+}
+.total-amt{
+    border: 1px solid lightgray;
+    padding: 20px 30px;
+}

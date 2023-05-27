@@ -19,6 +19,7 @@ import Checkout from './pages/CheckoutPage/Checkout';
 import ProductsAdd from './pages/AddingItemPages/ProductsAdd';
 import CategoryAdd from './pages/AddingItemPages/CategoryAdd';
 // import MobilesCate from './pages/MobilesCate';
+// import CartView from "./components/Cart/CartView"
 
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
@@ -43,10 +44,14 @@ import Allproducts from './pages/AllUniPage/Allproducts';
 // import Cards from './components/Cards';
 import Electronic from './components/Items/Electronic';
 import MobilesCate from './pages/MorePages/MobilesCate';
-import Products from './components/Products';
+import Products from './pages/HomePage/Products';
+import CartPage from './components/CartPage/CartPage';
+// import AddItem from './pages/Cart/AddItem';
+// import Products from './components/Products';
 // import ImageAdd from './pages/ImageAdd';
 // import Mobiles from './pages/Mobiles';
 // import ShoppingCart from './components/ShoppingCart/ShoppingCart';
+
 
 function App() {
   const groceryApi = "http://localhost:8080/api/category/1/products";
@@ -111,9 +116,8 @@ function App() {
 
         <Route path="/mc" Component={MobilesCate} />
         <Route path="/prody" Component={Products} />
-
-
-
+        <Route path='/userCart' Component={CartPage}/>
+        <Route path='/cartview' Component={AddItem}/>
       </Routes>
       <Footer />
 

@@ -5,12 +5,12 @@ import image3 from '../../assets/CarouselImg/3.png'
 export const SliderData = [
   {
     image:
-    image1
+    image2
     
   },
   {
     image:
-    image2  },
+    image1 },
   {
     image:
     image3  },
