@@ -22,19 +22,19 @@ export default class BannerMain extends Component {
             <img src={image1} alt="" height="250px" width="100%"/>
           </div>
           <div>
-          <img src={image2} alt="" height="250px" width="1100px"/>
+          <img src={image2} alt="" height="250px" width="100%"/>
           </div>
           <div>
-          <img src={image3} alt="" height="250px" width="1100px"/>
+          <img src={image3} alt="" height="250px"width="100%"/>
           </div>
           <div>
-          <img src={image1} alt="" height="250px" width="1100px"/>
+          <img src={image1} alt="" height="250px" width="100%"/>
           </div>
           <div>
-          <img src={image2} alt="" height="250px" width="1100px"/>
+          <img src={image2} alt="" height="250px" width="100%"/>
           </div>
           <div>
-          <img src={image3} alt="" height="250px" width="1100px"/>
+          <img src={image3} alt="" height="250px" width="100%"/>
           </div>
         </Slider>
       </div>
