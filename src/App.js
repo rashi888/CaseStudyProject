@@ -48,6 +48,7 @@ import Products from './pages/HomePage/Products';
 import CartPage from './components/CartPage/CartPage';
 import SearchData from './pages/SearchData/SearchData';
 import Tiles from './components/Tiles/Tiles';
+import BannerMain from './components/SlickCarousel/BannerMain';
 // import AddItem from './pages/Cart/AddItem';
 // import Products from './components/Products';
 // import ImageAdd from './pages/ImageAdd';
@@ -125,6 +126,7 @@ function App() {
         <Route path='/cartview' Component={AddItem}/>
 
         <Route path='/tiles' Component={Tiles}/>
+        <Route path='/bm' Component={BannerMain}/>
       </Routes>
       <Footer />
 
