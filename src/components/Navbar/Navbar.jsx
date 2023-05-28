@@ -39,6 +39,30 @@ const Navbar = () => {
         });
     }
 
+    const logout = () => {
+        window.localStorage.clear();
+        navigate("/login");
+        refresh();
+    }
+    
+    if (window.localStorage.getItem("token") === null) {
+        var Name = "Login"
+    }
+    else {
+        var Name = window.localStorage.getItem("name")
+    }
+    let menu;
+    if (window.localStorage.getItem("token") != null) {
+        menu = (
+            <div className="profile">
+            <h6>My Profile</h6>
+            <h6 onClick={logout}>LogOut</h6>
+        </div>
+        )
+    }
+
+            
+   
 
 
 
@@ -71,13 +95,21 @@ const Navbar = () => {
 
                 <div className="icons"  >
                     <div className="profilediv" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '10px' }}>
-                        <p style={{ color: 'white', padding: '15px 0px 0px 0px' }}> Profile</p>
+                        <p style={{ color: 'white', padding: '15px 0px 0px 0px' }}> {Name}</p>
                         <Link to="/login">
-                            <img className="profileimg" src={profile} alt="" />
-                            <div className="profile">
-                                <h6>My Profile</h6>
-                                <h6>LogOut</h6>
-                            </div>
+                        <img className="profileimg" src={profile} alt="" />
+                        {/* <div className="profile">
+            <h6>My Profile</h6>
+            <h6 onClick={logout}>LogOut</h6>
+        </div> */}
+        {menu}
+
+                        
+                        
+                       
+
+
+                            
                         </Link>
                     </div>
 

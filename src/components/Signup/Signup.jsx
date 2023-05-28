@@ -1,11 +1,13 @@
 import { FormFeedback } from "reactstrap";
 import React, { useEffect, useState } from "react";
 import { signUp } from "../../services/user-service";
-import { toast } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 // import signup from "./Signup.css";
 
 import login from "../../assets/LoginSignupImg/login.gif";
 import signup from "./Signup.css";
+import "react-toastify/dist/ReactToastify.css";
+import { useNavigate } from "react-router-dom";
 
 
 const Signup = () => {
@@ -15,6 +17,7 @@ const Signup = () => {
     emailId: "",
     password: "",
   });
+  const navigate = useNavigate();
   const [error, setError] = useState({
     errors: {},
     isError: false,
@@ -52,8 +55,20 @@ const Signup = () => {
       .then((resp) => {
         console.log(resp);
         console.log("success log");
-        // toast.success("User registered successfully!")
-        alert("User registered successfully!");
+        toast.success("🦄 Login!", {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+        resetData();
+        
+
+        // alert("User registered successfully!");
       })
       .catch((error) => {
         console.log(error);
@@ -68,6 +83,18 @@ const Signup = () => {
 
   return (
     <>
+    <ToastContainer
+        position="bottom-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
       <meta charSet="utf-8" />
       <div className="wrapper" style={{ height: 'fit-content' }}>
         <div className="formcont">
