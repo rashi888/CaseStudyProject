@@ -5,9 +5,9 @@ function AddingCategories() {
     const [product, setProduct] = useState([]);
 
     const fetchData = () => {
-        return fetch("http://localhost:8080/api/category/1/products")
+        return fetch("http://localhost:8080/api/categories/")
             .then((response) => response.json())
-            .then((data) => setProduct(data["content"]));
+            .then((data) => setProduct(data));
     };
 
     useEffect(() => {
@@ -17,7 +17,8 @@ function AddingCategories() {
 
     return (
         <>
-            <div className="container my-5" style={{ display: 'block', height: '400px' }}><Link style={{ margin: "2%  0px ", padding: '1%', width: '20%' }} className=" d-block     btn btn-primary ">Add Category</Link>
+            <div className="container my-5" style={{ display: 'block', height: '100%' }}><Link to='/categoryadd' style={{ margin: "2%  0px ", padding: '1%', width: '20%' }} className=" d-block     btn btn-primary ">Add Category</Link>
+            <Link to='/mdash' style={{ margin: "2%  0px ", padding: '1%', width: '20%' }} className=" d-block      btn btn-primary ">Back To DashBoard</Link>
 
                 <table className="table" >
                     <thead className="thead-light">
@@ -32,8 +33,8 @@ function AddingCategories() {
                         return (<>
                             <tbody>
                                 <tr >
-                                    <th key={item.category.categoryId}>{index+1}</th>
-                                    <td >{item.category.categoryTitle}</td>
+                                    <th >{item.categoryId}</th>
+                                    <td >{item.categoryTitle}</td>
                                     <td><Link className="btn btn-danger">Delete</Link></td>
                                     <td><Link className="btn btn-warning" style={{ padding: '5px 10px', borderRadius: '2px' }}>Update</Link></td>
 
