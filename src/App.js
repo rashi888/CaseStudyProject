@@ -95,15 +95,15 @@ function App() {
         <Route path="admindashboard" Component={AdminDashboard} />
         <Route path="checkout" Component={Checkout} />
         <Route path='cardpage' Component={CardPage} />
-        <Route path='/allproducts' Component={Allproducts} />
+        <Route path='/allproducts' Component={() => <Allproducts api={allproductsApi} />} />
         {/* <Route path='/allproducts' Component={() => <ProductsView api={allproductsApi} />} /> */}
 
-        <Route path='/Grocery' Component={() => <ProductsView api={groceryApi} />} />
-        <Route path='/Mobile' Component={() => <ProductsView api={mobileApi} />} />
-        <Route path='/Fashion' Component={() => <ProductsView api={fashionApi} />} />
-        <Route path='/Electronics' Component={() => <ProductsView api={electronicsApi} />} />
-        <Route path='/Home' Component={() => <ProductsView api={homeApi} />} />
-        <Route path='/Beauty' Component={() => <ProductsView api={beautyApi} />} />
+        <Route path='/Grocery' Component={() => <Allproducts api={groceryApi} />} />
+        <Route path='/Mobile' Component={() => <Allproducts api={mobileApi} />} />
+        <Route path='/Fashion' Component={() => <Allproducts api={fashionApi} />} />
+        <Route path='/Electronics' Component={() => <Allproducts api={electronicsApi} />} />
+        <Route path='/Home' Component={() => <Allproducts api={homeApi} />} />
+        <Route path='/Beauty' Component={() => <Allproducts api={beautyApi} />} />
         <Route path='search' Component={() => <SearchData />} />
 
 

@@ -23,7 +23,7 @@ const Navbar = () => {
     const handleChange = (event) => {
         setSearch(event.target.value);
     };
-
+    const refresh = () => window.location.reload(true)
    
 
     const srch = () => {
@@ -31,6 +31,7 @@ const Navbar = () => {
         .then(response => {
             console.log(response.data);
             navigate("/search", { state: { searchdata: response.data } });
+            refresh();
 
         })
         .catch(error => {

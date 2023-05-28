@@ -5,11 +5,12 @@ import icon from "../../assets/All_Icons/user icon.png"
 import img from "../../assets/PhoneImgs/phone1.webp"
 import {RiArrowDownSLine} from "react-icons/ri";
 
-function Allproducts() {
+function Allproducts(props) {
   const [product, setProduct] = useState([]);
+  const [api, setApi] = useState(props.api);
 
   const fetchData = () => {
-    return fetch("http://localhost:8080/api/products?sortBy=category")
+    return fetch(api)
       .then((response) => response.json())
       .then((data) => setProduct(data["content"]));
   };
