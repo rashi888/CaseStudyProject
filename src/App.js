@@ -61,6 +61,7 @@ function App() {
   const electronicsApi = "http://localhost:8080/api/category/4/products";
   const homeApi = "http://localhost:8080/api/category/5/products";
   const beautyApi = "http://localhost:8080/api/category/6/products";
+  const allproductsApi = "http://localhost:8080/api/products";
   return (
     <>
       <Navbar />
@@ -92,7 +93,9 @@ function App() {
         <Route path="admindashboard" Component={AdminDashboard} />
         <Route path="checkout" Component={Checkout} />
         <Route path='cardpage' Component={CardPage} />
-        <Route path='/allproducts' Component={Allproducts} />
+        {/* <Route path='/allproducts' Component={Allproducts} /> */}
+        <Route path='/allproducts' Component={() => <ProductsView api={allproductsApi} />} />
+
         <Route path='/Grocery' Component={() => <ProductsView api={groceryApi} />} />
         <Route path='/Mobile' Component={() => <ProductsView api={mobileApi} />} />
         <Route path='/Fashion' Component={() => <ProductsView api={fashionApi} />} />

@@ -68,7 +68,7 @@ function Navy() {
                                 </div>
                             </div> */}
 
-                            <div className="all-category1">
+                            <Link to='/allproducts' className="all-category1">
                                 <img src={AllCategory} alt="" />
                                 <li className="allcategory nav-row-list"><Link to="" className="nav-row-list-link" >All Categories</Link></li>
                                 <div className="categories" >
@@ -81,7 +81,7 @@ function Navy() {
                                     })}
                                 
                                 </div>
-                            </div>
+                            </Link>
 
                             <Link to="/Grocery" className="category1">
                                 <img src={Grocery} alt="" />
