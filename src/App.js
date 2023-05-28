@@ -46,7 +46,7 @@ import Electronic from './components/Items/Electronic';
 import MobilesCate from './pages/MorePages/MobilesCate';
 import Products from './pages/HomePage/Products';
 import CartPage from './components/CartPage/CartPage';
-import Tiles from './components/Tiles/Tiles';
+import SearchData from './pages/SearchData/SearchData';
 // import AddItem from './pages/Cart/AddItem';
 // import Products from './components/Products';
 // import ImageAdd from './pages/ImageAdd';
@@ -61,6 +61,7 @@ function App() {
   const electronicsApi = "http://localhost:8080/api/category/4/products";
   const homeApi = "http://localhost:8080/api/category/5/products";
   const beautyApi = "http://localhost:8080/api/category/6/products";
+  const allproductsApi = "http://localhost:8080/api/products";
   return (
     <>
       <Navbar />
@@ -92,14 +93,16 @@ function App() {
         <Route path="admindashboard" Component={AdminDashboard} />
         <Route path="checkout" Component={Checkout} />
         <Route path='cardpage' Component={CardPage} />
-        <Route path='/allproducts' Component={Allproducts} />
-        <Route path='/grocery' Component={() => <ProductsView api={groceryApi} />} />
-        <Route path='/mobile' Component={() => <ProductsView api={mobileApi} />} />
-        <Route path='/fashion' Component={() => <ProductsView api={fashionApi} />} />
-        <Route path='/electronics' Component={() => <ProductsView api={electronicsApi} />} />
-        <Route path='/homeproduct' Component={() => <ProductsView api={homeApi} />} />
-        <Route path='/beauty' Component={() => <ProductsView api={beautyApi} />} />
-        <Route path='search' Component={() => <ProductsView />} />
+        {/* <Route path='/allproducts' Component={Allproducts} /> */}
+        <Route path='/allproducts' Component={() => <ProductsView api={allproductsApi} />} />
+
+        <Route path='/Grocery' Component={() => <ProductsView api={groceryApi} />} />
+        <Route path='/Mobile' Component={() => <ProductsView api={mobileApi} />} />
+        <Route path='/Fashion' Component={() => <ProductsView api={fashionApi} />} />
+        <Route path='/Electronics' Component={() => <ProductsView api={electronicsApi} />} />
+        <Route path='/Home' Component={() => <ProductsView api={homeApi} />} />
+        <Route path='/Beauty' Component={() => <ProductsView api={beautyApi} />} />
+        <Route path='search' Component={() => <SearchData />} />
 
 
 
