@@ -1,39 +1,188 @@
-.msignup-container{
-    background-color: rgb(255, 255, 255);
-    /* height: 100px; */
-    width: 1200px;
-    margin: 40px;
-    padding: 30px 0;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+.merchant-signup{
+    /* height: 120px; */
+    width: 1100px;
+    margin: 40px 100px;
+    /* background-color: rgb(255, 255, 255); */
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    border-radius: 5px;
+}
+.left-image{
+    width: 500px;
+    height: 100%;
+    background-color: pink;
+}
+.left-image>img{
+    width: 100%;
+    height: 100%;
+}
+.right-credantials{
+    width: 500px;
+    height: 100%;
+    /* background-color: rgb(250, 31, 75); */
+}
+
+.login-content{
+  display: flex;
+  
+}
+.formcont{
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 15px 20px 30px lightgray;
-    border-radius: 4px;
+    position: relative;
+    top:30px;
+}
+.logingif{
+  height: 450px;
+  width: 500px;
+  top: 0;
+}
+.right-credantials {
+    margin-top: 10px;
+  background-color: #ffffff;
+  padding: 10px;
 }
 
-.leftImg{
-/* background-color: rgb(52, 187, 52); */
-/* height: 100%; */
-width: 50%;
-display: flex;
-justify-content: center;
-margin: 0px 30px;
+.right-credantials .title{
+  font-size: 35px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 100px;
+  color: #48c1cf;
+  user-select: none;
+  border-radius: 15px 15px 0 0;
+  margin-bottom: 0px;
+  /* background: linear-gradient(-135deg, #c850c0, #4158d0); */
+}
+.right-credantials form{
+  padding: 10px 30px 50px 30px;
+  position: initial;
+}
+.right-credantials form .field{
+  height: 190px;
+  width: 70%;
+  margin-top: 20px;
+  position: relative;
+}
+.loginform{
+    position: relative;
+    top: -100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+    /* background-color:#c850c0; */
+    margin: 0;
+    padding:0 ;
 }
 
-
-/* Right Side css  */
-.rightCredantials{
-    /* background-color: rgb(222, 61, 61); */
-    /* height: 100%; */
-    width: 650px;
-    padding: 20px 40px;
+.right-credantials form .field input{
+  height: 100%;
+  width: 100%;
+  outline: none;
+  font-size: 17px;
+  padding-left: 20px;
+  border: 1px solid lightgrey;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  padding: 8px 20px;
+}
+.right-credantials form .field input:focus,
+form .field input:valid{
+  border-color: #4158d0;
+}
+.right-credantials form .field label{
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  color: #999999;
+  font-weight: 400;
+  font-size: 17px;
+  pointer-events: none;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+}
+form .field input:focus ~ label,
+form .field input:valid ~ label{
+  top: 0%;
+  font-size: 16px;
+  color: #4158d0;
+  background: #fff;
+  transform: translateY(-50%);
+}
+form .content{
+  display: flex;
+  width: 100%;
+  height: 50px;
+  font-size: 16px;
+  align-items: center;
+  justify-content: space-around;
+}
+form .content .checkbox{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+form .content input{
+  width: 15px;
+  height: 15px;
+  background: red;
+}
+form .content label{
+  color: #262626;
+  user-select: none;
+  padding-left: 5px;
+  margin: 10px;
+}
+form .content .pass-link{
+  color: "";
+}
+form .field input[type="submit"]{
+  color: #fff;
+  border: none;
+  padding-left: 0;
+  margin-top: -10px;
+  font-size: 20px;
+  font-weight: 500;
+ height: 45px;
+  cursor: pointer;
+  background: linear-gradient(-135deg, #c850c0, #4158d0);
+  transition: all 0.3s ease;
+}
+form .field input[type="submit"]:active{
+  transform: scale(0.95);
+}
+form .signup-link{
+  color: #262626;
+  margin-top: 10px;
+  text-align: center;
+}
+form .pass-link a,
+form .signup-link a{
+  color: #4158d0;
+  text-decoration: none;
+}
+form .pass-link a:hover,
+form .signup-link a:hover{
+  text-decoration: underline;
 }
 
-.rightCredantials input{
-    width: 200px;
-    margin: 0px 10px;
-    margin-bottom: 10px;
+@media  screen and (max-width: 1000px){
+  .login-content{
+    flex-direction: column;
+  }
+  .login-content .form{
+    width: 100%;
+  }
+   .formcont
+    {
+        display: grid;
+    }
 }
-.rightCredantials label{
-    margin: 5px 10px;
-}
+
+    

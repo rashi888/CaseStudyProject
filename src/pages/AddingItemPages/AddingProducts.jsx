@@ -6,7 +6,7 @@ function AddingProducts() {
     const [product, setProduct] = useState([]);
 
     const fetchData = () => {
-        return fetch("http://localhost:8080/api/category/1/products")
+        return fetch("http://localhost:8080/api/products?sortBy=category")
             .then((response) => response.json())
             .then((data) => setProduct(data["content"]));
     };
@@ -19,9 +19,9 @@ function AddingProducts() {
 
     return (
         <>
-            <div className="container-fluid my-5" style={{ backgroundColor: 'white' }}>
+            <div className="container-fluid my-5" style={{ backgroundColor: 'white',paddingBottom:'10px' }}>
 
-                <Link to="addp" style={{ margin: "2%  0px ", padding: '1%', width: '20%' }} className="btn btn-primary">Add Product</Link>
+                <Link to="/productadd" style={{ margin: "2%  0px ", padding: '1%', width: '20%' }} className="btn btn-primary">Add Product</Link>
                 <table className="table">
                     <thead className="thead-light">
                         <tr>
@@ -33,23 +33,42 @@ function AddingProducts() {
                             <th scope="col">Update</th>
                         </tr>
                     </thead>
-                            {product.map((item) => {
-                                return (<>
-                    <tbody>
-                        <tr >
-                                    <th scope="row" >{item.productId}</th>
+                    {product.map((item, index) => {
+                        return (<>
+                            <tbody>
+                                <tr >
+                                    <th scope="row" key={item.productId}> {index + 1}</th>
                                     <td >{item.productName}</td>
                                     <td >{item.category.categoryTitle}</td>
                                     <td>₹ {item.productPrice}</td>
 
                                     <td><a href="" className="btn btn-danger">Delete</a></td>
-                                    <td><a href="" className="btnn btn-warning" style={{padding:'5px 10px',borderRadius:'2px'}}>Update</a></td>
-                        </tr >
-                    </tbody>
-                                </>
-                                );
-                            })}
+                                    <td><a href="" className="btnn btn-warning" style={{ padding: '8px 10px', borderRadius: '5px',marginTop:'20px' }}>Update</a></td>
+                                </tr >
+                            </tbody>
+                        </>
+                        );
+                    })}
                 </table>
+
+
+                <nav aria-label="Page navigation example" style={{margin:'30px 0px',padding:'10px'}}>
+                    <ul class="pagination " >
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
         </>
     )

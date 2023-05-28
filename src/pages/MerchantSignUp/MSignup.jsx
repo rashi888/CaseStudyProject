@@ -1,68 +1,164 @@
-import React from 'react'
-import "./MSignup.css"
-import msignupimg from "../../assets/MSignupImg/msignup.jpg"
+import { FormFeedback } from "reactstrap";
+import React, { useEffect, useState } from "react";
+import { signUp } from "../../services/user-service";
+import { toast } from "react-toastify";
+// import signup from "./Signup.css";
 
-function MSignup() {
+// import login from "../../assets/LoginSignupImg/login.gif";
+import merchantimg from "../../assets/MSignupImg/Merchant Sign up page.png";
+import msignup from "../../assets/MSignupImg/msignup.jpg"
+import "./MSignup.css"
+
+
+const MSignup = () => {
+    const [data, setData] = useState({
+        name: "",
+        mobileNumber: "",
+        emailId: "",
+        password: "",
+    });
+    const [error, setError] = useState({
+        errors: {},
+        isError: false,
+    });
+
+    useEffect(() => {
+        console.log(data);
+    }, [data]);
+
+    const handleChange = (event, property) => {
+        setData({ ...data, [property]: event.target.value });
+    };
+    const resetData = () => {
+        setData({
+            name: "",
+            emailId: "",
+            password: "",
+            mobileNumber: "",
+        });
+    };
+
+    const submitForm = (event) => {
+        event.preventDefault();
+
+        if (error.isError) {
+            // toast.error("Form data is invalid, check all details given ")
+            alert("Form data is invalid, check all details given ");
+            setError({ ...error, isError: false });
+            return;
+        }
+
+        console.log(data);
+
+        signUp(data)
+            .then((resp) => {
+                console.log(resp);
+                console.log("success log");
+                // toast.success("User registered successfully!")
+                alert("User registered successfully!");
+            })
+            .catch((error) => {
+                console.log(error);
+                console.log("Error log");
+
+                setError({
+                    errors: error,
+                    isError: true,
+                });
+            });
+    };
+
     return (
         <>
-            <div className="msignup-container">
-                <div className="leftImg">
-                    <img src={msignupimg} alt="" />
+            <div className="merchant-signup">
+                <div className="left-image">
+                    <img className="merchant-img" src={merchantimg} alt="" />
                 </div>
+                <div className="right-credantials">
+                    <form className="loginform" onSubmit={submitForm}>
+                        <div className="title"> Become a Merchant</div>
+                        <div className="field">
+                            <input
+                                type="text"
 
-                <div className="rightCredantials">
-                    <h2 style={{marginBottom:'20px',paddingLeft:'6px'}}>   Merchant Signup Page</h2>
-
-                    <div className="name-email" style={{ display: 'flex' }}>
-                        <div className="name" style={{ margin: '5px 20px 5px 0px' }}>
-                            <label for="name" className="form-label label">Merchant Name</label>
-                            <input type="text" className="form-control input" id='name' placeholder='Your Name' />
+                                id="name"
+                                onChange={(e) => handleChange(e, "name")}
+                                value={data.name} required
+                                invalid={error.errors?.response?.data?.name ? "true" : "false"}
+                            />
+                            <FormFeedback>
+                                {error.errors?.response?.data?.name}
+                            </FormFeedback>
+                            <label> Name</label>
                         </div>
-                        <div className="email">
-                            <label for="email" className="form-label label">Email Address</label>
-                            <input type="email" className="form-control input" id='email' placeholder='Type Email' />
+                        <div className="field">
+                            <input
+                                type="emailId"
+
+                                id="emailId"
+                                onChange={(e) => handleChange(e, "emailId")}
+                                value={data.emailId} required
+                                invalid={error.errors?.response?.data?.emailId ? "true" : "false"}
+                            />
+                            <FormFeedback>
+                                {error.errors?.response?.data?.emailId}
+                            </FormFeedback>
+                            <label> Email</label>
                         </div>
-                    </div>
+                        <div className="field">
+                            <input
+                                type="tel"
 
-                    <div className="address-phone" style={{  display: 'flex' }}>
-                        <div className="number" style={{margin: '5px 20px 5px 0px' }}>
-                            <label for="number" className="form-label label">Mobile Number</label>
-                            <input type="text" className="form-control input" id='number' placeholder='Mobile Number' />
+                                id="mobileNumber"
+                                onChange={(e) => handleChange(e, "mobileNumber")}
+                                value={data.mobileNumber} required
+                                invalid={
+                                    error.errors?.response?.data?.mobileNumber ? "true" : "false"
+                                }
+                            />
+                            <FormFeedback>
+                                {error.errors?.response?.data?.mobileNumber}
+                            </FormFeedback>
+                            <label> Mobile</label>
                         </div>
+                        <div className="field">
+                            <input
+                                type="password"
 
-                        <div className="address1">
-                            <label for="address1" className="form-label label">Home Address1</label> <br />
-                            {/* <textarea name="address1" id="address1" cols="55" rows="3"></textarea> <br /> */}
-                            <input type="text" className="form-control input" id='address1' placeholder='Home Address' />
+                                id="password"
+                                onChange={(e) => handleChange(e, "password")}
+                                value={data.password} required
+                                invalid={
+                                    error.errors?.response?.data?.password ? "true" : "false"
+                                }
+                            />
+                            <FormFeedback>
+                                {error.errors?.response?.data?.password}
+                            </FormFeedback>
 
+                            <label>Password</label>
                         </div>
-                    </div>
-
-                    <div className="city-postal" style={{  display: 'flex' }}>
-                        <div className="city" style={{ margin: '5px 20px 5px 0px' }}>
-                            <label for="city" className="form-label label">City</label>
-                            <input type="text" className="form-control input" id='city' placeholder='City' />
+                        <div className="content">
+                            <div className="checkbox">
+                                <input type="checkbox" id="remember-me" />
+                                <label htmlFor="remember-me">Remember me</label>
+                            </div>
+                            {/* <div className="pass-link">
+          <a href="#">Forgot password?</a>
+        </div> */}
                         </div>
-                        <div className="postal">
-                            <label for="postal" className="form-label label">Postal Code</label>
-                            <input type="text" className="form-control input" id='postal' placeholder='Postal Code' />
+                        <div className="field register-btn">
+                            <input type="submit" value="Register" />
                         </div>
-                    </div>
-
-
-
-                    {/* <label for="country" className="form-label label">Country</label>
-                    <input type="text" className="form-control input" id='country' placeholder='Country' /> */}
-
-                    <button type="button" className="btn-user-profile btn-primary mt-4" style={{marginLeft:'10px'}} >Save Changes</button>
-
+                        <div className="signup-link">
+                            Already a member? <a href="login">Login</a>
+                        </div>
+                    </form>
                 </div>
             </div>
-
         </>
-    )
-}
 
-export default MSignup
+    );
+};
 
-
+export default MSignup;

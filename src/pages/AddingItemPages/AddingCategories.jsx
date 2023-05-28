@@ -29,7 +29,7 @@ function AddingCategories() {
                             <th scope="col">Update</th>
                         </tr>
                     </thead>
-                    {product.map((item) => {
+                    {product.map((item,index) => {
                         return (<>
                             <tbody>
                                 <tr >

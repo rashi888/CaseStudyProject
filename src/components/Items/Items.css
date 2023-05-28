@@ -1,7 +1,9 @@
 .wrapperr{
-    /* background-color: rgb(204, 192, 255); */
-    margin-top: 20px;
-    padding: 20px;
+    /* background-color: rgb(171, 161, 215); */
+    /* margin-top: 20px;
+    padding: 20px; */
+    /* width: 1200px; */
+    /* height: 100px; */
   }
   .cardy{
     background-color: white;
@@ -23,19 +25,42 @@
     cursor: pointer;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
   }
-  .card-img-top{
-    /* height: 50%; */
+  .image-items{
+    width: 100%;
+    margin-top: -13px;
     height: 200px;
-    margin: 0;
-    /* padding: 0; */
-    /* background-color: aqua; */
+  }
+  .all-main-content{
+    margin-top: 20px;
+    width: 100%;
+    height: 230px;
+    padding: 15px;
+  }
+ .all-main-content>p{
+    overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Number of lines to display */
+  -webkit-box-orient: vertical;
+  }
+  .all-main-content>h4{
+    overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1; /* Number of lines to display */
+  -webkit-box-orient: vertical;
+  }
+  .card-img-top{
+    padding: 10px;
   }
   .heading-main, .price-main, .description-main{
-    margin: 5px;
+    margin: 10px;
+  
     /* background-color: yellow; */
   }
-  .btn-item{
-    padding: 5px 20px;
-    border-radius: 0px;
+  .btn-Item{
+    padding: 7px 30px;
+    position: relative;
     color: white;
+    margin-top: 10px;
   }
