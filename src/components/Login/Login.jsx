@@ -37,26 +37,21 @@ const Login = () => {
       window.localStorage.setItem("token", response.data.token);
       window.localStorage.setItem("userId", response.data.userId);
       window.localStorage.setItem("name", response.data.name);
-      if (response.status === 200) {
-        toast.success("🦄 Login Successful!", {
-          position: "top-center",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          progress: undefined,
-        });
-        resetData();
-        navigate("/home");
-      } else {
-        toast.error("🦄 Login Failed!", {
-          position: "top-center",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          progress: undefined,
-        });
-        resetData();
-      }
+
+      navigate("/home");
+      window.location.reload(true);
+    }).catch((error) => {
+      console.log(error);
+      toast.error("🦄 Invalid Credentials!", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+      });
+      resetData();
+      
+       
     });
   };
 
