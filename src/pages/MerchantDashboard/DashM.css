@@ -52,4 +52,6 @@
 .card-link {
     position: relative;
    margin-top: 10%;
+   background-color: #22b9c9;
+   border: none;
 }

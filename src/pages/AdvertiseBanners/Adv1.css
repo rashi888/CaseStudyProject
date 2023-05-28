@@ -8,10 +8,12 @@
     gap: 4px;
     justify-content: space-evenly;
     padding: 10px 10px;
+    width: auto;
 }
 
 .filesContainer img{
-    width: 420px;
-    height: 240px;
+    /* width: 600px; */
+    width: auto;
+    height: 210px;
     border-radius: 2px;
 }

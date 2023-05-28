@@ -28,11 +28,11 @@ function AddingCategories() {
                             <th scope="col">Update</th>
                         </tr>
                     </thead>
-                    {product.map((item) => {
+                    {product.map((item,index) => {
                         return (<>
                             <tbody>
                                 <tr >
-                                    <th >{item.category.categoryId}</th>
+                                    <th key={item.category.categoryId}>{index+1}</th>
                                     <td >{item.category.categoryTitle}</td>
                                     <td><Link className="btn btn-danger">Delete</Link></td>
                                     <td><Link className="btn btn-warning" style={{ padding: '5px 10px', borderRadius: '2px' }}>Update</Link></td>

@@ -27,7 +27,7 @@ function ProductsAdd() {
 
 
     useEffect(() => {
-        // console.log(data);
+        // console.log(data); 
     }, [data]);
 
     const handleChange = (event, property) => {
@@ -131,7 +131,7 @@ function ProductsAdd() {
 
                             </div>
 
-                            <button type="submit" className="btn btn-primary">Add product</button>
+                            <button type="submit" className="btn btn-primary" style={{marginTop:'20px'}}>Add product</button>
                         </div>
                     </div>
                 </form>

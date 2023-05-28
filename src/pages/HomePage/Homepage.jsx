@@ -10,6 +10,7 @@ import Items from '../../components/Items/Items'
 // import Wrapper from '../Wrapper'
 import Cards from '../../components/CardsCaurosel/Cards'
 import { SliderData } from '../../components/CardsCaurosel/SliderData'
+import Tiles from '../../components/Tiles/Tiles'
 
 function Homepage() {
     return (
@@ -18,6 +19,7 @@ function Homepage() {
             <Cards slides={SliderData} />;
             <Items />
             <Adv1 />
+            <Tiles/>
             {/* <Wrapper/> */}
             <Items />
             <Adv2 />

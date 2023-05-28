@@ -48,7 +48,7 @@ function DashM() {
               <div className="card-body">
                 <h4 className="card-title">View All Products</h4>
                 <p className="card-text">View products here.</p>
-                <Link to="/productlist" className="card-link btn btn-primary">View Product</Link>
+                <Link to="/productlist" className="card-link btn btn-primary">View All Product</Link>
 
               </div>
             </div>
@@ -59,7 +59,7 @@ function DashM() {
               <div className="card-body">
                 <h4 className="card-title">View My Products</h4>
                 <p className="card-text">View products here.</p>
-                <Link to="/productlist" className="card-link btn btn-primary">View Product</Link>
+                <Link to="/productlist" className="card-link btn btn-primary">View My Product</Link>
 
               </div>
             </div>
