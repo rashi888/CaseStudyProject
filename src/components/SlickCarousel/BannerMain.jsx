@@ -16,7 +16,7 @@ export default class BannerMain extends Component {
       slidesToScroll: 1
     };
     return (
-      <div style={{margin:'auto',marginBottom:'50px',marginTop:'20px',backgroundColor:'orange'}}>
+      <div style={{margin:'auto',marginBottom:'50px',marginTop:'20px'}}>
         <Slider {...settings}>
           <div>
           <img src={image1} alt="" height="250px" width="100%"/>
