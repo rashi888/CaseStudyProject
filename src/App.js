@@ -94,8 +94,8 @@ function App() {
         <Route path="admindashboard" Component={AdminDashboard} />
         <Route path="checkout" Component={Checkout} />
         <Route path='cardpage' Component={CardPage} />
-        {/* <Route path='/allproducts' Component={Allproducts} /> */}
-        <Route path='/allproducts' Component={() => <ProductsView api={allproductsApi} />} />
+        <Route path='/allproducts' Component={Allproducts} />
+        {/* <Route path='/allproducts' Component={() => <ProductsView api={allproductsApi} />} /> */}
 
         <Route path='/Grocery' Component={() => <ProductsView api={groceryApi} />} />
         <Route path='/Mobile' Component={() => <ProductsView api={mobileApi} />} />
