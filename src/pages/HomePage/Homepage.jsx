@@ -11,12 +11,14 @@ import Items from '../../components/Items/Items'
 import Cards from '../../components/CardsCaurosel/Cards'
 import { SliderData } from '../../components/CardsCaurosel/SliderData'
 import Tiles from '../../components/Tiles/Tiles'
+import BannerMain from '../../components/SlickCarousel/BannerMain'
 
 function Homepage() {
     return (
         <>
             {/* <CardPage/> */}
-            <Cards slides={SliderData} />;
+            {/* <Cards slides={SliderData} />; */}
+            <BannerMain/>
             <Items />
             <Adv1 />
             <Tiles/>
