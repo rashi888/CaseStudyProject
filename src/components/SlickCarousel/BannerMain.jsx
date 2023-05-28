@@ -16,16 +16,16 @@ export default class BannerMain extends Component {
       slidesToScroll: 1
     };
     return (
-      <div style={{maxWidth:'1250px',margin:'auto',marginTop:'30px',marginBottom:'50px'}}>
+      <div style={{margin:'auto',marginBottom:'50px',marginTop:'20px',backgroundColor:'orange'}}>
         <Slider {...settings}>
           <div>
-            <img src={image1} alt="" height="250px" width="100%"/>
+          <img src={image1} alt="" height="250px" width="100%"/>
           </div>
           <div>
           <img src={image2} alt="" height="250px" width="100%"/>
           </div>
           <div>
-          <img src={image3} alt="" height="250px"width="100%"/>
+          <img src={image3} alt="" height="250px" width="100%"/>
           </div>
           <div>
           <img src={image1} alt="" height="250px" width="100%"/>
