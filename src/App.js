@@ -47,6 +47,7 @@ import MobilesCate from './pages/MorePages/MobilesCate';
 import Products from './pages/HomePage/Products';
 import CartPage from './components/CartPage/CartPage';
 import SearchData from './pages/SearchData/SearchData';
+import Tiles from './components/Tiles/Tiles';
 // import AddItem from './pages/Cart/AddItem';
 // import Products from './components/Products';
 // import ImageAdd from './pages/ImageAdd';
