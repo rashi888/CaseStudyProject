@@ -116,7 +116,7 @@ function App() {
         <Route path="/productlist" Component={AddingProducts} />
         <Route path="/productadd" Component={ProductsAdd} />
         <Route path="/categoryadd" Component={CategoryAdd} />
-        <Route path="/productupdate" Component={ProductUpdate} />
+        <Route path="/updateproduct/:id" Component={ProductUpdate} />
 
         <Route path="/sc" Component={AddItem} />
         <Route path="/elctro" Component={Electronic} />

@@ -63,8 +63,8 @@ function AddingProducts() {
                                     <td >{item.category.categoryTitle}</td>
                                     <td>₹ {item.productPrice}</td>
                                     <td><button className="btnn btn-danger" style={{ padding: '4px 7px', borderRadius: '5px',marginTop:'-7px' }} onClick={() => deleteProduct(item.productId)}>Delete</button></td>
+                                    <td><Link to={'/updateproduct/'+item.productId} className="btnn btn-warning" style={{ padding: '4px 7px', borderRadius: '5px',marginTop:'-7px' }}>Update</Link></td>
 
-                                    <td><Link to='/productupdate' className="btnn btn-warning" style={{ padding: '8px 10px', borderRadius: '5px',marginTop:'20px' }}>Update</Link></td>
                                 </tr >
                             </tbody>
                         </>
