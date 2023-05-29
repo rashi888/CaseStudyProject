@@ -51,6 +51,7 @@ import ProductUpdate from './pages/Update/ProductUpdate';
 import BackToTop from './components/BackToTop/BackToTop';
 import OrderHistory from './components/OrderHistory/OrderHistory';
 import CategoryUpdate from './pages/Update/CategoryUpdate';
+import User from './pages/Userprofile/User';
 // import AddItem from './pages/Cart/AddItem';
 // import Products from './components/Products';
 // import ImageAdd from './pages/ImageAdd';
@@ -71,7 +72,7 @@ function App() {
       <Navbar />
       <Navy />
       <Routes>
-     
+
         <Route path='/' Component={Homepage} />
         {/* <Route path='home' Component={Homepage} /> */}
         <Route path="/login" Component={Login} />
@@ -112,7 +113,7 @@ function App() {
         <Route path="/productadd" Component={ProductsAdd} />
         <Route path="/categoryadd" Component={CategoryAdd} />
         <Route path="/updateproduct/:id" Component={ProductUpdate} />
-        <Route path='/orderhistory' Component={OrderHistory}/>
+        <Route path='/orderhistory' Component={OrderHistory} />
         <Route path="/updatecategory/:id" Component={CategoryUpdate} />
 
         <Route path="/sec" Component={AddItem} />
@@ -121,17 +122,17 @@ function App() {
 
         <Route path="/mcategory" Component={MobilesCate} />
         <Route path="/prody" Component={Products} />
-        <Route path='/userCart' Component={CartPage}/>
-        <Route path='/cartview' Component={AddItem}/>
+        <Route path='/userCart' Component={CartPage} />
+        <Route path='/cartview' Component={AddItem} />
 
-        <Route path='/tiles' Component={Tiles}/>
-        <Route path='/bannermain' Component={BannerMain}/>
-        <Route path='/user' Component={User}/>
-
-
+        <Route path='/tiles' Component={Tiles} />
+        <Route path='/bannermain' Component={BannerMain} />
+        <Route path='/user' Component={User} />
 
 
-      {/* HomePage Components  */}
+
+
+        {/* HomePage Components  */}
 
 
 
@@ -143,7 +144,7 @@ function App() {
       <Footer />
 
 
-<BackToTop/>
+      <BackToTop />
     </>
   );
 }
