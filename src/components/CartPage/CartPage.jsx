@@ -1,7 +1,31 @@
 import React from 'react'
 import "./CartPage.css"
+import axios from 'axios'
 
 function CartPage() {
+
+    const [cart, setCart] = React.useState([])
+    const [total, setTotal] = React.useState(0)
+
+    React.useEffect(() => {
+        axios.get('http://localhost:8080/api/cart/viewCart')
+            .then(res => {
+                console.log(res)
+                setCart(res.data)
+                let sum = 0
+                res.data.map(item => {
+                    sum += item.product.price * item.quantity
+                })
+                setTotal(sum)
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    }, [])
+
+
+
+
     return (
         <>
             <main>
@@ -31,7 +55,6 @@ function CartPage() {
                                                     <div class="d-flex justify-content-between">
                                                         <div>
                                                             <h5 >Blue denim shirt</h5>
-                                                            <p class="mb-3 text-uppercase small">Weight: <span ></span> grams</p>
                                                             <p class="mb-2 text-uppercase small">Category: <span ></span></p>
 
                                                         </div>
