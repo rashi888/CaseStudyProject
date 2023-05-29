@@ -72,7 +72,7 @@ const Navbar = () => {
             <div className="navbars  ">
                 <div className="logos">
 
-                    <Link to="/home">
+                    <Link to="/">
                         {/* <img src={logo} alt="" className="logo" /> */}
                         <img src={logoo} alt="" className="logo" />
                     </Link>

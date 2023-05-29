@@ -52,8 +52,7 @@ function AddingCategories() {
                                     <th >{item.categoryId}</th>
                                     <td >{item.categoryTitle}</td>
                                     <td><Link className="btn btn-danger" style={{ padding: '5px 10px', borderRadius: '2px' }} onClick={() => deletecategory(item.categoryId)}>Delete</Link></td>
-                                    <td><Link className="btn btn-warning" style={{ padding: '5px 10px', borderRadius: '2px' }}>Update</Link></td>
-
+                                    <td><Link className="btn btn-primary" style={{ padding: '5px 10px', borderRadius: '2px' }} to={"/updatecategory/" + item.categoryId}>Update</Link></td>
                                 </tr>
                             </tbody>
                         </>

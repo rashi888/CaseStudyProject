@@ -3,7 +3,8 @@ import "./Allproducts.css"
 import icon from "../../assets/All_Icons/user icon.png"
 // import img from "../../assets/MSignupImg/msignup.jpg"
 import img from "../../assets/PhoneImgs/phone1.webp"
-import { RiArrowDownSLine } from "react-icons/ri";
+import {RiArrowDownSLine} from "react-icons/ri";
+import Swal from 'sweetalert2';
 
 function Allproducts(props) {
   const [product, setProduct] = useState([]);
@@ -19,6 +20,33 @@ function Allproducts(props) {
     fetchData();
   }, []);
   console.log(product);
+
+  const addtocart = (id) => (e) => {
+    console.log(e.target.value);
+    const url = "http://localhost:8080/api/cart/addToCart" ;
+    const formdata = new FormData();
+    formdata.append("productId", id);
+
+    fetch(url, {
+      method: "POST",
+      body: formdata,
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        Swal.fire({
+          title: "Success",
+          text: "Product Added Successfully",
+          icon: "success",
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+    
+
 
   return (
     <>
@@ -62,8 +90,7 @@ function Allproducts(props) {
               <div className="price-section">
                 <h6>M.R.P ₹ <del>{item.productMRP}</del> </h6>
                 <h2 style={{ margin: '15px 0px' }}>₹ {item.productPrice}</h2>
-                <button type='button' className='btn-price btn-warning' >Add to Cart</button>
-
+                <button onClick={addtocart(item.productId)} type='button' className='btn-price btn-warning' >Add to Cart</button>
               </div>
             </div>
           </>

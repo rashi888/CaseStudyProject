@@ -47,10 +47,10 @@ import CartPage from './components/CartPage/CartPage';
 import SearchData from './pages/SearchData/SearchData';
 import Tiles from './components/Tiles/Tiles';
 import BannerMain from './components/SlickCarousel/BannerMain';
-import ProductUpdate from './pages/UpdateProduct/ProductUpdate';
+import ProductUpdate from './pages/Update/ProductUpdate';
 import BackToTop from './components/BackToTop/BackToTop';
 import OrderHistory from './components/OrderHistory/OrderHistory';
-import User from './pages/Userprofile/User';
+import CategoryUpdate from './pages/Update/CategoryUpdate';
 // import AddItem from './pages/Cart/AddItem';
 // import Products from './components/Products';
 // import ImageAdd from './pages/ImageAdd';
@@ -113,6 +113,7 @@ function App() {
         <Route path="/categoryadd" Component={CategoryAdd} />
         <Route path="/updateproduct/:id" Component={ProductUpdate} />
         <Route path='/orderhistory' Component={OrderHistory}/>
+        <Route path="/updatecategory/:id" Component={CategoryUpdate} />
 
         <Route path="/sec" Component={AddItem} />
         <Route path="/elctro" Component={Electronic} />
