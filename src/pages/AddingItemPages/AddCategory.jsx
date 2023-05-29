@@ -4,7 +4,7 @@ import axios from 'axios'
 import Swal from 'sweetalert2'
 import { useNavigate } from "react-router-dom";
 
-function CategoryAdd() {
+function AddCategory() {
     const [categoryTitle, setCategoryTitle] = useState("");
     const [categoryDescription, setCategoryDescription] = useState("");
     const navigate = useNavigate();
@@ -74,4 +74,4 @@ function CategoryAdd() {
     )
 }
 
-export default CategoryAdd
+export default AddCategory

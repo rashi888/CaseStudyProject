@@ -1,21 +1,17 @@
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
-import Home from './pages/HomePage/Home';
 // import Products from './components/Products';
 import ProductView from './pages/ViewSingleProduct/ProductsView';
 import ProductsView from './pages/ProductsView/ProductsView';
 // import Mobiles from './pages/Mobiles';
 // import Front from './pages/Front';
 // import AdBanner from './components/AdBanner/AdBanner';
-import AddItem from './pages/Cart/AddItem';
+
 // import MultiCarouselEffect from './components/MultiCarouselEffect';
 // import Merchant from './pages/Merchant';
 // import AdminDashboard from './pages/Admin/AdminDashboard';
-import AddingCategories from './pages/AddingItemPages/AddingCategories';
-import AddingProducts from './pages/AddingItemPages/AddingProducts';
-import Checkout from './pages/CheckoutPage/Checkout';
-import ProductsAdd from './pages/AddingItemPages/ProductsAdd';
-import CategoryAdd from './pages/AddingItemPages/CategoryAdd';
+
+
 // import MobilesCate from './pages/MobilesCate';
 // import CartView from "./components/Cart/CartView"
 
@@ -26,19 +22,15 @@ import Signup from './components/Signup/Signup';
 import Navy from './components/Navy/Navy';
 import Cart from './pages/MorePages/Cart';
 import Error from './pages/MorePages/Error';
-import Adv1 from './pages/AdvertiseBanners/Adv1';
-import Adv2 from './pages/AdvertiseBanners/Adv2';
-import Adv3 from './pages/AdvertiseBanners/Adv3';
+
 // import Homepage from './components/HomePage/Homepage';
-import CarouselPage from './pages/Caurosel/CarouselPage';
 // import UserProfile from './pages/Userprofile/UserProfile';
-import CardPage from './pages/Cards/CardPage';
-import Homepage from './pages/HomePage/Homepage';
+
 import MSignup from './pages/MerchantSignUp/MSignup';
 import DashM from './pages/MerchantDashboard/DashM';
 import AdBanner from './pages/AdvertiseBanners/AdBanner';
-import AdminDashboard from './pages/Admin/AdminDashboard';
-import Allproducts from './pages/AllUniPage/Allproducts';
+
+
 // import Cards from './components/Cards';
 import Electronic from './components/Items/Electronic';
 import MobilesCate from './pages/MorePages/MobilesCate';
@@ -53,10 +45,22 @@ import OrderHistory from './components/OrderHistory/OrderHistory';
 import CategoryUpdate from './pages/Update/CategoryUpdate';
 import User from './pages/Userprofile/User';
 // import AddItem from './pages/Cart/AddItem';
-// import Products from './components/Products';
-// import ImageAdd from './pages/ImageAdd';
-// import Mobiles from './pages/Mobiles';
-// import ShoppingCart from './components/ShoppingCart/ShoppingCart';
+
+
+
+import ProductList from './pages/AddingItemPages/ProductList';
+import CategoryList from './pages/AddingItemPages/CategoryList';
+import AddProduct from './pages/AddingItemPages/AddProduct';
+import AddCategory from './pages/AddingItemPages/AddCategory';
+import AdminDashboard from './pages/Admin/AdminDashboard';
+import Adv1 from './pages/AdvertiseBanners/Adv1';
+import Adv2 from './pages/AdvertiseBanners/Adv2';
+import Adv3 from './pages/AdvertiseBanners/Adv3';
+import Allproducts from './pages/AllProductsPage/Allproducts';
+import AddItem from './pages/Cart/AddItem';
+import Checkout from './pages/CheckoutPage/Checkout';
+import Homepage from './pages/HomePage/Homepage';
+import Home from './pages/HomePage/Home';
 
 
 function App() {
@@ -73,7 +77,7 @@ function App() {
       <Navy />
       <Routes>
 
-        <Route path='/' Component={Homepage} />
+       
         {/* <Route path='home' Component={Homepage} /> */}
         <Route path="/login" Component={Login} />
         <Route path="/signup" Component={Signup} />
@@ -82,18 +86,13 @@ function App() {
         <Route path="/mobcat" Component={MobilesCate} />
         <Route path="/products" Component={Products} />
         <Route path='/productView' Component={ProductView} />
-        <Route path="/adbanner" Component={AdBanner} />
-        <Route path="/addtocart" Component={AddItem} />
-        <Route path="/adv1" Component={Adv1} />
-        <Route path="/adv2" Component={Adv2} />
-        <Route path="/adv3" Component={Adv3} />
+
+       
+
         {/* <Route path="homepage" Component={Homepage} /> */}
-        <Route path="/Carousel" Component={CarouselPage} />
-        <Route path="/admindashboard" Component={AdminDashboard} />
-        <Route path="/checkout" Component={Checkout} />
-        <Route path='/cardpage' Component={CardPage} />
-        <Route path='/allproducts' Component={() => <Allproducts api={allproductsApi} />} />
-        {/* <Route path='/allproducts' Component={() => <ProductsView api={allproductsApi} />} /> */}
+       
+      
+
 
         <Route path='/Grocery' Component={() => <Allproducts api={groceryApi} />} />
         <Route path='/Mobile' Component={() => <Allproducts api={mobileApi} />} />
@@ -108,10 +107,7 @@ function App() {
         {/* Merchant Dashboard Field  */}
         <Route path='/msignup' Component={MSignup} />
         <Route path='/mdash' Component={DashM} />
-        <Route path="/categorylist" Component={AddingCategories} />
-        <Route path="/productlist" Component={AddingProducts} />
-        <Route path="/productadd" Component={ProductsAdd} />
-        <Route path="/categoryadd" Component={CategoryAdd} />
+
         <Route path="/updateproduct/:id" Component={ProductUpdate} />
         <Route path='/orderhistory' Component={OrderHistory} />
         <Route path="/updatecategory/:id" Component={CategoryUpdate} />
@@ -132,14 +128,21 @@ function App() {
 
 
 
-        {/* HomePage Components  */}
-
-
-
-
-
-
-
+        <Route path="/productlist" Component={ProductList} />
+        <Route path="/categorylist" Component={CategoryList} />
+        <Route path="/productadd" Component={AddProduct} />
+        <Route path="/categoryadd" Component={AddCategory} />
+        <Route path="/admindashboard" Component={AdminDashboard} />
+        <Route path="/adbanner" Component={AdBanner} />
+        <Route path="/adv1" Component={Adv1} />
+        <Route path="/adv2" Component={Adv2} />
+        <Route path="/adv3" Component={Adv3} />
+        <Route path='/allproducts' Component={() => <Allproducts api={allproductsApi} />} />
+        {/* <Route path='/allproducts' Component={() => <ProductsView api={allproductsApi} />} /> */}
+        <Route path="/addtocart" Component={AddItem} />
+        <Route path="/checkout" Component={Checkout} />
+        <Route path='/' Component={Homepage} />
+        <Route path='/homee' Component={Home} />
       </Routes>
       <Footer />
 

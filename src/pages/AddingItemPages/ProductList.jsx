@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import b1 from "../../assets/PhoneImgs/phone1.webp"
 import Swal from 'sweetalert2';
 
-function AddingProducts() {
+function ProductList() {
 
     const deleteProduct = (id) => {
         fetch("http://localhost:8080/api/products/" + id, {
@@ -95,4 +95,4 @@ function AddingProducts() {
     )
 }
 
-export default AddingProducts
+export default ProductList
