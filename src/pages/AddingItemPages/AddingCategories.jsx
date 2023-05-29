@@ -1,8 +1,24 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from "react-router-dom";
+import Swal from 'sweetalert2';
 
 function AddingCategories() {
     const [product, setProduct] = useState([]);
+
+    const deletecategory = (id) => {
+        fetch("http://localhost:8080/api/categories/" + id, {
+            method: "DELETE",
+        }).then(() => {
+            Swal.fire({
+                title: "Success",
+                text: "Category Deleted Successfully",
+                icon: "success",
+            });
+
+            fetchData();
+        });
+    };
+    
 
     const fetchData = () => {
         return fetch("http://localhost:8080/api/categories/")
@@ -35,7 +51,7 @@ function AddingCategories() {
                                 <tr >
                                     <th >{item.categoryId}</th>
                                     <td >{item.categoryTitle}</td>
-                                    <td><Link className="btn btn-danger">Delete</Link></td>
+                                    <td><Link className="btn btn-danger" style={{ padding: '5px 10px', borderRadius: '2px' }} onClick={() => deletecategory(item.categoryId)}>Delete</Link></td>
                                     <td><Link className="btn btn-warning" style={{ padding: '5px 10px', borderRadius: '2px' }}>Update</Link></td>
 
                                 </tr>

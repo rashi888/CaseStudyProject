@@ -41,6 +41,8 @@ function AddingProducts() {
             <div className="container-fluid my-5" style={{ backgroundColor: 'white',paddingBottom:'10px' }}>
 
                 <Link to="/productadd" style={{ margin: "2%  0px ", padding: '1%', width: '20%' }} className="btn btn-primary">Add Product</Link>
+                <Link to='/mdash' style={{ margin: "2%  10px ", padding: '1%', width: '20%' }} className="btn btn-primary">Back to Dashboard</Link>
+                <h2 style={{ marginBottom: '20px', padding: '10px 20px', color: '#48c1cf', backgroundColor: "white", marginLeft: '20px' }}>All Products</h2>
                 <table className="table">
                     <thead className="thead-light">
                         <tr>
