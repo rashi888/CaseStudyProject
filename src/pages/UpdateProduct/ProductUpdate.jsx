@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 
 
-function ProductsAdd() {
+function ProductUpdate() {
     const [category, setCategory] = useState([]);
     const [categoryId, setCategoryId] = useState("");
     const [productPhoto, setProductPhoto] = useState(null);
@@ -157,4 +157,4 @@ function ProductsAdd() {
     )
 }
 
-export default ProductsAdd
+export default ProductUpdate

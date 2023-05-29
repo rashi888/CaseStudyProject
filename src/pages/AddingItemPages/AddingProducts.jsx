@@ -1,8 +1,23 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from "react-router-dom";
 import b1 from "../../assets/PhoneImgs/phone1.webp"
+import Swal from 'sweetalert2';
 
 function AddingProducts() {
+
+    const deleteProduct = (id) => {
+        fetch("http://localhost:8080/api/products/" + id, {
+            method: "DELETE",
+        }).then(() => {
+            Swal.fire({
+                title: "Success",
+                text: "Product Deleted Successfully",
+                icon: "success",
+            });
+            fetchData();
+        });
+    };  
+
     const [product, setProduct] = useState([]);
 
     const fetchData = () => {
@@ -15,6 +30,10 @@ function AddingProducts() {
         fetchData();
     }, []);
     console.log(product);
+
+
+
+    
 
 
     return (
@@ -41,9 +60,9 @@ function AddingProducts() {
                                     <td >{item.productName}</td>
                                     <td >{item.category.categoryTitle}</td>
                                     <td>₹ {item.productPrice}</td>
+                                    <td><button className="btnn btn-danger" style={{ padding: '4px 7px', borderRadius: '5px',marginTop:'-7px' }} onClick={() => deleteProduct(item.productId)}>Delete</button></td>
 
-                                    <td><a href="" className="btn btn-danger">Delete</a></td>
-                                    <td><a href="" className="btnn btn-warning" style={{ padding: '8px 10px', borderRadius: '5px',marginTop:'20px' }}>Update</a></td>
+                                    <td><Link to='/productupdate' className="btnn btn-warning" style={{ padding: '8px 10px', borderRadius: '5px',marginTop:'20px' }}>Update</Link></td>
                                 </tr >
                             </tbody>
                         </>

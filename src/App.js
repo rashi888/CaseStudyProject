@@ -49,6 +49,7 @@ import CartPage from './components/CartPage/CartPage';
 import SearchData from './pages/SearchData/SearchData';
 import Tiles from './components/Tiles/Tiles';
 import BannerMain from './components/SlickCarousel/BannerMain';
+import ProductUpdate from './pages/UpdateProduct/ProductUpdate';
 // import AddItem from './pages/Cart/AddItem';
 // import Products from './components/Products';
 // import ImageAdd from './pages/ImageAdd';
@@ -115,6 +116,7 @@ function App() {
         <Route path="/productlist" Component={AddingProducts} />
         <Route path="/productadd" Component={ProductsAdd} />
         <Route path="/categoryadd" Component={CategoryAdd} />
+        <Route path="/productupdate" Component={ProductUpdate} />
 
         <Route path="/sc" Component={AddItem} />
         <Route path="/elctro" Component={Electronic} />

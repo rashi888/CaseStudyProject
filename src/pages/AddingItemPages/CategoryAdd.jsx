@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from "react-router-dom";
 import axios from 'axios'
+import Swal from 'sweetalert2'
+import { useNavigate } from "react-router-dom";
 
 function CategoryAdd() {
     const [categoryTitle, setCategoryTitle] = useState("");
     const [categoryDescription, setCategoryDescription] = useState("");
+    const navigate = useNavigate();
 
     const [data, setData] = useState({
         categoryTitle: "",
@@ -26,7 +29,13 @@ function CategoryAdd() {
             .then((resp) => {
                 console.log(resp["data"]["categoryId"]);
                 console.log("success log");
-                alert("Category added successfully!");
+                Swal.fire({
+                    title: "Success",
+                    text: "Category Added Successfully",
+                    icon: "success",
+                });
+                navigate("/mdash");
+                
             })
     }
 
