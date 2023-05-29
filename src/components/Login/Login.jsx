@@ -7,23 +7,18 @@ import { useNavigate } from "react-router-dom";
 import login from "../../assets/LoginSignupImg/login.gif";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import axios from "axios";
+import Swal from "sweetalert2";
 
 const Login = () => {
-  const navigate = useNavigate();
+
+
 
   const [data, setData] = useState({
     emailId: "",
     password: "",
   });
-  const [error, setError] = useState({
-    errors: {},
-    isError: false,
-  });
-
-  useEffect(() => {
-    console.log(data);
-  }, [data]);
-
+ 
   const handleChange = (event, property) => {
     setData({ ...data, [property]: event.target.value });
   };
@@ -34,48 +29,41 @@ const Login = () => {
     });
   };
 
+  const navigate = useNavigate();
+
   const submitForm = (event) => {
     event.preventDefault();
+    axios.post("http://localhost:8080/api/users/login", data).then((response) => {
+      console.log(response.data);
+      window.localStorage.setItem("token", response.data.token);
+      window.localStorage.setItem("userId", response.data.userId);
+      window.localStorage.setItem("name", response.data.name);
 
-    if (error.isError) {
-      // toast.error("Form data is invalid, check all details given ")
-      alert("Form data is invalid, check all details given ");
-      setError({ ...error, isError: false });
-      return;
-    }
-    
-
-    
-
-    console.log(data);
-
-    signIn(data)
-      .then((resp) => {
-        toast.success("🦄 Login!", {
-          position: "top-center",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "light",
-        });
-        console.log(resp);
-        console.log("success log");
-        navigate("/home");
-        
-      })
-      .catch((error) => {
-        console.log(error);
-        console.log("Error log");
-
-        setError({
-          errors: error,
-          isError: true,
-        });
+      Swal.fire({
+        title: "Login Successfull",
+        text: "You have successfully logged in!",
+        icon: "success",
       });
+
+      navigate("/home");
+      window.location.reload(true);
+    }).catch((error) => {
+      console.log(error);
+      toast.error("Invalid Credentials!", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+      });
+      resetData();
+      
+       
+    });
   };
+
+
+    
 
   return (
     <>
@@ -105,13 +93,9 @@ const Login = () => {
                 onChange={(e) => handleChange(e, "emailId")}
                 value={data.emailId}
                 required
-                invalid={
-                  error.errors?.response?.data?.emailId ? "true" : "false"
-                }
+                
               />
-              <FormFeedback>
-                {error.errors?.response?.data?.emailId}
-              </FormFeedback>
+              
               <label>Email Address</label>
             </div>
             <div className="field">
@@ -121,13 +105,9 @@ const Login = () => {
                 onChange={(e) => handleChange(e, "password")}
                 value={data.password}
                 required
-                invalid={
-                  error.errors?.response?.data?.password ? "true" : "false"
-                }
+                
               />
-              <FormFeedback>
-                {error.errors?.response?.data?.password}
-              </FormFeedback>{" "}
+              
               <label>Password</label>
             </div>
             <div className="content">

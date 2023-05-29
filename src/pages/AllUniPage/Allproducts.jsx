@@ -49,7 +49,7 @@ function Allproducts(props) {
 
               </div>
               <div className="price-section">
-                <h6>M.R.P ₹ <del>15000</del> </h6>
+                <h6>M.R.P ₹ <del>{item.productMRP}</del> </h6>
                 <h2 style={{ margin: '15px 0px' }}>₹ {item.productPrice}</h2>
                 <button type='button' className='btn-price btn-warning' >Add to Cart</button>
 
