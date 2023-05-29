@@ -8,6 +8,7 @@ import login from "../../assets/LoginSignupImg/login.gif";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 const Login = () => {
 
@@ -38,12 +39,18 @@ const Login = () => {
       window.localStorage.setItem("userId", response.data.userId);
       window.localStorage.setItem("name", response.data.name);
 
+      Swal.fire({
+        title: "Login Successfull",
+        text: "You have successfully logged in!",
+        icon: "success",
+      });
+
       navigate("/home");
       window.location.reload(true);
     }).catch((error) => {
       console.log(error);
-      toast.error("🦄 Invalid Credentials!", {
-        position: "top-center",
+      toast.error("Invalid Credentials!", {
+        position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
         closeOnClick: true,

@@ -9,6 +9,7 @@ import signup from "./Signup.css";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 
 const Signup = () => {
@@ -28,20 +29,17 @@ const Signup = () => {
   
   const submitForm = (event) => {
     event.preventDefault();
-    axios.post("http://localhost:8080/api/users/register", data).then((response) => {
+    axios.post("http://localhost:8080/api/users/signup", data).then((response) => {
       console.log(response.data);
-      toast.success("🦄 Registered Successfully!", {
-        position: "top-center",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
+      Swal.fire({
+        title: "Success",
+        text: "User Registered Successfully",
+        icon: "success",
       });
       navigate("/login");
-      window.location.reload(true);
     }).catch((error) => {
       console.log(error);
-      toast.error("🦄 Invalid Credentials!", {
+      toast.error(" Invalid Credentials!", {
         position: "top-center",
         autoClose: 5000,
         hideProgressBar: false,
