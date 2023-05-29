@@ -8,6 +8,9 @@ import { toast } from "react-toastify";
 import merchantimg from "../../assets/MSignupImg/Merchant Sign up page.png";
 import msignup from "../../assets/MSignupImg/msignup.jpg"
 import "./MSignup.css"
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 
 const MSignup = () => {
@@ -16,57 +19,40 @@ const MSignup = () => {
         mobileNumber: "",
         emailId: "",
         password: "",
-    });
-    const [error, setError] = useState({
-        errors: {},
-        isError: false,
-    });
-
-    useEffect(() => {
-        console.log(data);
-    }, [data]);
-
-    const handleChange = (event, property) => {
+      });
+      const navigate = useNavigate();
+      
+    
+      
+      const handleChange = (event, property) => {
         setData({ ...data, [property]: event.target.value });
-    };
-    const resetData = () => {
-        setData({
-            name: "",
-            emailId: "",
-            password: "",
-            mobileNumber: "",
-        });
-    };
-
-    const submitForm = (event) => {
+      };
+      
+      const submitForm = (event) => {
         event.preventDefault();
-
-        if (error.isError) {
-            // toast.error("Form data is invalid, check all details given ")
-            alert("Form data is invalid, check all details given ");
-            setError({ ...error, isError: false });
-            return;
-        }
-
-        console.log(data);
-
-        signUp(data)
-            .then((resp) => {
-                console.log(resp);
-                console.log("success log");
-                // toast.success("User registered successfully!")
-                alert("User registered successfully!");
-            })
-            .catch((error) => {
-                console.log(error);
-                console.log("Error log");
-
-                setError({
-                    errors: error,
-                    isError: true,
-                });
-            });
-    };
+        axios.post("http://localhost:8080/api/users/msignup", data).then((response) => {
+          console.log(response.data);
+          Swal.fire({
+            title: "Success",
+            text: "User Registered Successfully",
+            icon: "success",
+          });
+          navigate("/login");
+        }).catch((error) => {
+          console.log(error);
+          toast.error(" Invalid Credentials!", {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+          });
+    
+        });
+      };
+      
+    
+    
 
     return (
         <>
@@ -84,11 +70,8 @@ const MSignup = () => {
                                 id="name"
                                 onChange={(e) => handleChange(e, "name")}
                                 value={data.name} required
-                                invalid={error.errors?.response?.data?.name ? "true" : "false"}
                             />
-                            <FormFeedback>
-                                {error.errors?.response?.data?.name}
-                            </FormFeedback>
+                            
                             <label> Name</label>
                         </div>
                         <div className="field">
@@ -98,11 +81,8 @@ const MSignup = () => {
                                 id="emailId"
                                 onChange={(e) => handleChange(e, "emailId")}
                                 value={data.emailId} required
-                                invalid={error.errors?.response?.data?.emailId ? "true" : "false"}
                             />
-                            <FormFeedback>
-                                {error.errors?.response?.data?.emailId}
-                            </FormFeedback>
+                            
                             <label> Email</label>
                         </div>
                         <div className="field">
@@ -112,13 +92,9 @@ const MSignup = () => {
                                 id="mobileNumber"
                                 onChange={(e) => handleChange(e, "mobileNumber")}
                                 value={data.mobileNumber} required
-                                invalid={
-                                    error.errors?.response?.data?.mobileNumber ? "true" : "false"
-                                }
+                                
                             />
-                            <FormFeedback>
-                                {error.errors?.response?.data?.mobileNumber}
-                            </FormFeedback>
+                            
                             <label> Mobile</label>
                         </div>
                         <div className="field">
@@ -128,13 +104,9 @@ const MSignup = () => {
                                 id="password"
                                 onChange={(e) => handleChange(e, "password")}
                                 value={data.password} required
-                                invalid={
-                                    error.errors?.response?.data?.password ? "true" : "false"
-                                }
+                               
                             />
-                            <FormFeedback>
-                                {error.errors?.response?.data?.password}
-                            </FormFeedback>
+                            
 
                             <label>Password</label>
                         </div>
