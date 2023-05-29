@@ -1,12 +1,13 @@
 import React from 'react'
+import "./OrderHistory.css"
 
 function OrderHistory() {
     return (
         <>
             <div class="container-fluid">
-                <h1 style={{marginTop:'30px',marginBottom:'-10px'}}>Order History</h1>
+                <h1 >Order History</h1>
                 <a style={{ margin: '20px 0px', color: 'white', alignItems: 'right', marginLeft: '80%' }} class="btn btn-primary">Place New Order</a>
-                <table class="table">
+                <table class="table" style={{backgroundColor:'white'}}>
                     <thead class="thead-light">
                         <tr>
                             <th scope="col">Order No.</th>

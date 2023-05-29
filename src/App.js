@@ -1,12 +1,10 @@
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
-// import 'react-toastify/dist/ReactToastify.css';
 import Home from './pages/HomePage/Home';
 // import Products from './components/Products';
 import ProductView from './pages/ViewSingleProduct/ProductsView';
 import ProductsView from './pages/ProductsView/ProductsView';
 // import Mobiles from './pages/Mobiles';
-// import UserProfile from './pages/UserProfile';
 // import Front from './pages/Front';
 // import AdBanner from './components/AdBanner/AdBanner';
 import AddItem from './pages/Cart/AddItem';
@@ -33,7 +31,7 @@ import Adv2 from './pages/AdvertiseBanners/Adv2';
 import Adv3 from './pages/AdvertiseBanners/Adv3';
 // import Homepage from './components/HomePage/Homepage';
 import CarouselPage from './pages/Caurosel/CarouselPage';
-import UserProfile from './pages/Userprofile/UserProfile';
+// import UserProfile from './pages/Userprofile/UserProfile';
 import CardPage from './pages/Cards/CardPage';
 import Homepage from './pages/HomePage/Homepage';
 import MSignup from './pages/MerchantSignUp/MSignup';
@@ -52,6 +50,7 @@ import BannerMain from './components/SlickCarousel/BannerMain';
 import ProductUpdate from './pages/UpdateProduct/ProductUpdate';
 import BackToTop from './components/BackToTop/BackToTop';
 import OrderHistory from './components/OrderHistory/OrderHistory';
+import User from './pages/Userprofile/User';
 // import AddItem from './pages/Cart/AddItem';
 // import Products from './components/Products';
 // import ImageAdd from './pages/ImageAdd';
@@ -82,7 +81,6 @@ function App() {
         <Route path="/mobcat" Component={MobilesCate} />
         <Route path="/products" Component={Products} />
         <Route path='/productView' Component={ProductView} />
-        <Route path="/userProfile" Component={UserProfile} />
         <Route path="/adbanner" Component={AdBanner} />
         <Route path="/addtocart" Component={AddItem} />
         <Route path="/adv1" Component={Adv1} />
@@ -127,6 +125,7 @@ function App() {
 
         <Route path='/tiles' Component={Tiles}/>
         <Route path='/bannermain' Component={BannerMain}/>
+        <Route path='/user' Component={User}/>
 
 
 
