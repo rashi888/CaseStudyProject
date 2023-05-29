@@ -8,6 +8,7 @@ import login from "../../assets/LoginSignupImg/login.gif";
 import signup from "./Signup.css";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 
 const Signup = () => {
@@ -18,68 +19,42 @@ const Signup = () => {
     password: "",
   });
   const navigate = useNavigate();
-  const [error, setError] = useState({
-    errors: {},
-    isError: false,
-  });
+  
 
-  useEffect(() => {
-    console.log(data);
-  }, [data]);
-
+  
   const handleChange = (event, property) => {
     setData({ ...data, [property]: event.target.value });
   };
-  const resetData = () => {
-    setData({
-      name: "",
-      emailId: "",
-      password: "",
-      mobileNumber: "",
-    });
-  };
-
+  
   const submitForm = (event) => {
     event.preventDefault();
-
-    if (error.isError) {
-      // toast.error("Form data is invalid, check all details given ")
-      alert("Form data is invalid, check all details given ");
-      setError({ ...error, isError: false });
-      return;
-    }
-
-    console.log(data);
-
-    signUp(data)
-      .then((resp) => {
-        console.log(resp);
-        console.log("success log");
-        toast.success("🦄 Login!", {
-          position: "top-center",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "light",
-        });
-        resetData();
-        
-
-        // alert("User registered successfully!");
-      })
-      .catch((error) => {
-        console.log(error);
-        console.log("Error log");
-
-        setError({
-          errors: error,
-          isError: true,
-        });
+    axios.post("http://localhost:8080/api/users/register", data).then((response) => {
+      console.log(response.data);
+      toast.success("🦄 Registered Successfully!", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
       });
+      navigate("/login");
+      window.location.reload(true);
+    }).catch((error) => {
+      console.log(error);
+      toast.error("🦄 Invalid Credentials!", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+      });
+
+    });
   };
+  
+
+
+
 
   return (
     <>
@@ -110,11 +85,9 @@ const Signup = () => {
                 id="name"
                 onChange={(e) => handleChange(e, "name")}
                 value={data.name} required
-                invalid={error.errors?.response?.data?.name ? "true" : "false"}
+                
               />
-              <FormFeedback>
-                {error.errors?.response?.data?.name}
-              </FormFeedback>
+              
               <label> Name</label>
             </div>
             <div className="field">
@@ -124,11 +97,8 @@ const Signup = () => {
                 id="emailId"
                 onChange={(e) => handleChange(e, "emailId")}
                 value={data.emailId} required
-                invalid={error.errors?.response?.data?.emailId ? "true" : "false"}
               />
-              <FormFeedback>
-                {error.errors?.response?.data?.emailId}
-              </FormFeedback>
+             
               <label> Email</label>
             </div>
             <div className="field">
@@ -138,13 +108,9 @@ const Signup = () => {
                 id="mobileNumber"
                 onChange={(e) => handleChange(e, "mobileNumber")}
                 value={data.mobileNumber} required
-                invalid={
-                  error.errors?.response?.data?.mobileNumber ? "true" : "false"
-                }
+                
               />
-              <FormFeedback>
-                {error.errors?.response?.data?.mobileNumber}
-              </FormFeedback>
+             
               <label> Mobile</label>
             </div>
             <div className="field">
@@ -154,13 +120,9 @@ const Signup = () => {
                 id="password"
                 onChange={(e) => handleChange(e, "password")}
                 value={data.password} required
-                invalid={
-                  error.errors?.response?.data?.password ? "true" : "false"
-                }
+               
               />
-              <FormFeedback>
-                {error.errors?.response?.data?.password}
-              </FormFeedback>
+             
 
               <label>Password</label>
             </div>
