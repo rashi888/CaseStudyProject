@@ -1,0 +1,12 @@
+.back-to-top-button {
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    padding: 10px 20px;
+    background-color: #218d99;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
