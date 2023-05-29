@@ -25,8 +25,8 @@ function ProductUpdate() {
     
 
     useEffect(() => {
-        // console.log(data);
-    }, [data]);
+        fetchdata();
+    }, []);
 
     const handleChange = (event, property) => {
         setData({ ...data, [property]: event.target.value });
@@ -46,6 +46,16 @@ function ProductUpdate() {
                 navigate("/mdash");
             })
     }
+
+    const fetchdata = () => {
+        axios.get("http://localhost:8080/api/products/" + productId)
+            .then((resp) => {
+                console.log(resp["data"]);
+                setData(resp["data"]);
+            })
+    }
+
+
 
 
 
