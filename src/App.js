@@ -50,6 +50,8 @@ import SearchData from './pages/SearchData/SearchData';
 import Tiles from './components/Tiles/Tiles';
 import BannerMain from './components/SlickCarousel/BannerMain';
 import ProductUpdate from './pages/Update/ProductUpdate';
+import BackToTop from './components/BackToTop/BackToTop';
+import OrderHistory from './components/OrderHistory/OrderHistory';
 import CategoryUpdate from './pages/Update/CategoryUpdate';
 // import AddItem from './pages/Cart/AddItem';
 // import Products from './components/Products';
@@ -71,32 +73,27 @@ function App() {
       <Navbar />
       <Navy />
       <Routes>
-        {/* Sorted  */}
+     
         <Route path='/' Component={Homepage} />
-        {/* <Route path='/imageadd' Component={ImageAdd} /> */}
-        <Route path='home' Component={Homepage} />
-        <Route path="login" Component={Login} />
+        {/* <Route path='home' Component={Homepage} /> */}
+        <Route path="/login" Component={Login} />
         <Route path="/signup" Component={Signup} />
-        <Route path="cart" Component={Cart} />
-        <Route path="error" Component={Error} />
+        <Route path="/cart" Component={Cart} />
+        <Route path="/error" Component={Error} />
         <Route path="/mobcat" Component={MobilesCate} />
-        <Route path="products" Component={Products} />
-        <Route path='productView' Component={ProductView} />
-        <Route path="userProfile" Component={UserProfile} />
-        {/* <Route path="front" Component={Front} /> */}
-        <Route path="adbanner" Component={AdBanner} />
-        <Route path="addtocart" Component={AddItem} />
-        {/* <Route path="multicau" Component={MultiCarouselEffect} /> */}
-        {/* <Route path="merchant" Component={Merchant} /> */}
-        {/* <Route path="merchantD" Component={Merchant} /> */}
-        <Route path="adv1" Component={Adv1} />
-        <Route path="adv2" Component={Adv2} />
-        <Route path="adv3" Component={Adv3} />
-        <Route path="homepage" Component={Homepage} />
-        <Route path="Carousel" Component={CarouselPage} />
-        <Route path="admindashboard" Component={AdminDashboard} />
-        <Route path="checkout" Component={Checkout} />
-        <Route path='cardpage' Component={CardPage} />
+        <Route path="/products" Component={Products} />
+        <Route path='/productView' Component={ProductView} />
+        <Route path="/userProfile" Component={UserProfile} />
+        <Route path="/adbanner" Component={AdBanner} />
+        <Route path="/addtocart" Component={AddItem} />
+        <Route path="/adv1" Component={Adv1} />
+        <Route path="/adv2" Component={Adv2} />
+        <Route path="/adv3" Component={Adv3} />
+        {/* <Route path="homepage" Component={Homepage} /> */}
+        <Route path="/Carousel" Component={CarouselPage} />
+        <Route path="/admindashboard" Component={AdminDashboard} />
+        <Route path="/checkout" Component={Checkout} />
+        <Route path='/cardpage' Component={CardPage} />
         <Route path='/allproducts' Component={() => <Allproducts api={allproductsApi} />} />
         {/* <Route path='/allproducts' Component={() => <ProductsView api={allproductsApi} />} /> */}
 
@@ -106,7 +103,7 @@ function App() {
         <Route path='/Electronics' Component={() => <Allproducts api={electronicsApi} />} />
         <Route path='/Home' Component={() => <Allproducts api={homeApi} />} />
         <Route path='/Beauty' Component={() => <Allproducts api={beautyApi} />} />
-        <Route path='search' Component={() => <SearchData />} />
+        <Route path='/search' Component={() => <SearchData />} />
 
 
 
@@ -118,22 +115,37 @@ function App() {
         <Route path="/productadd" Component={ProductsAdd} />
         <Route path="/categoryadd" Component={CategoryAdd} />
         <Route path="/updateproduct/:id" Component={ProductUpdate} />
+        <Route path='/orderhistory' Component={OrderHistory}/>
         <Route path="/updatecategory/:id" Component={CategoryUpdate} />
 
-        <Route path="/sc" Component={AddItem} />
+        <Route path="/sec" Component={AddItem} />
         <Route path="/elctro" Component={Electronic} />
 
 
-        <Route path="/mc" Component={MobilesCate} />
+        <Route path="/mcategory" Component={MobilesCate} />
         <Route path="/prody" Component={Products} />
         <Route path='/userCart' Component={CartPage}/>
         <Route path='/cartview' Component={AddItem}/>
 
         <Route path='/tiles' Component={Tiles}/>
-        <Route path='/bm' Component={BannerMain}/>
+        <Route path='/bannermain' Component={BannerMain}/>
+
+
+
+
+      {/* HomePage Components  */}
+
+
+
+
+
+
+
       </Routes>
       <Footer />
 
+
+<BackToTop/>
     </>
   );
 }
