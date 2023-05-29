@@ -1,12 +1,10 @@
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
-// import 'react-toastify/dist/ReactToastify.css';
 import Home from './pages/HomePage/Home';
 // import Products from './components/Products';
 import ProductView from './pages/ViewSingleProduct/ProductsView';
 import ProductsView from './pages/ProductsView/ProductsView';
 // import Mobiles from './pages/Mobiles';
-// import UserProfile from './pages/UserProfile';
 // import Front from './pages/Front';
 // import AdBanner from './components/AdBanner/AdBanner';
 import AddItem from './pages/Cart/AddItem';
@@ -33,7 +31,7 @@ import Adv2 from './pages/AdvertiseBanners/Adv2';
 import Adv3 from './pages/AdvertiseBanners/Adv3';
 // import Homepage from './components/HomePage/Homepage';
 import CarouselPage from './pages/Caurosel/CarouselPage';
-import UserProfile from './pages/Userprofile/UserProfile';
+// import UserProfile from './pages/Userprofile/UserProfile';
 import CardPage from './pages/Cards/CardPage';
 import Homepage from './pages/HomePage/Homepage';
 import MSignup from './pages/MerchantSignUp/MSignup';
@@ -53,6 +51,7 @@ import ProductUpdate from './pages/Update/ProductUpdate';
 import BackToTop from './components/BackToTop/BackToTop';
 import OrderHistory from './components/OrderHistory/OrderHistory';
 import CategoryUpdate from './pages/Update/CategoryUpdate';
+import User from './pages/Userprofile/User';
 // import AddItem from './pages/Cart/AddItem';
 // import Products from './components/Products';
 // import ImageAdd from './pages/ImageAdd';
@@ -73,7 +72,7 @@ function App() {
       <Navbar />
       <Navy />
       <Routes>
-     
+
         <Route path='/' Component={Homepage} />
         {/* <Route path='home' Component={Homepage} /> */}
         <Route path="/login" Component={Login} />
@@ -83,7 +82,6 @@ function App() {
         <Route path="/mobcat" Component={MobilesCate} />
         <Route path="/products" Component={Products} />
         <Route path='/productView' Component={ProductView} />
-        <Route path="/userProfile" Component={UserProfile} />
         <Route path="/adbanner" Component={AdBanner} />
         <Route path="/addtocart" Component={AddItem} />
         <Route path="/adv1" Component={Adv1} />
@@ -115,7 +113,7 @@ function App() {
         <Route path="/productadd" Component={ProductsAdd} />
         <Route path="/categoryadd" Component={CategoryAdd} />
         <Route path="/updateproduct/:id" Component={ProductUpdate} />
-        <Route path='/orderhistory' Component={OrderHistory}/>
+        <Route path='/orderhistory' Component={OrderHistory} />
         <Route path="/updatecategory/:id" Component={CategoryUpdate} />
 
         <Route path="/sec" Component={AddItem} />
@@ -124,16 +122,17 @@ function App() {
 
         <Route path="/mcategory" Component={MobilesCate} />
         <Route path="/prody" Component={Products} />
-        <Route path='/userCart' Component={CartPage}/>
-        <Route path='/cartview' Component={AddItem}/>
+        <Route path='/userCart' Component={CartPage} />
+        <Route path='/cartview' Component={AddItem} />
 
-        <Route path='/tiles' Component={Tiles}/>
-        <Route path='/bannermain' Component={BannerMain}/>
+        <Route path='/tiles' Component={Tiles} />
+        <Route path='/bannermain' Component={BannerMain} />
+        <Route path='/user' Component={User} />
 
 
 
 
-      {/* HomePage Components  */}
+        {/* HomePage Components  */}
 
 
 
@@ -145,7 +144,7 @@ function App() {
       <Footer />
 
 
-<BackToTop/>
+      <BackToTop />
     </>
   );
 }

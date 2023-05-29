@@ -93,7 +93,6 @@ height: 100%;
     width: 250px;
     background-color: #48c1cf;
     color: white;
-    padding: 6px;
     border-radius: 3px;
     text-align: left;
     padding: 10px 20px;
@@ -104,9 +103,9 @@ height: 100%;
 .sorting:hover +.dropdown-sorting{
     cursor: pointer;
     display: block;
-  transition: 2ms;
+  transition: 1ms;
 }
 .dropdown-sorting:hover{
   display: block;
-  transition: 2ms;
+  transition: 1ms;
 } 

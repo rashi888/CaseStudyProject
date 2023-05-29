@@ -1,0 +1,96 @@
+.user-container{
+    /* background-color: white; */
+    width: 1250px;
+    height: 500px;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    border-radius:3px;
+    display: flex;
+}
+.left-side-contain{
+    background-color: white;
+    width: 30%;
+    height: 100%;
+    margin-right: 20px;
+    border-radius:3px;
+}
+.top-content{
+    background-color: #54b9c4;
+    height: 40%;
+    width: 100%;
+    display: flex;
+    padding: 20px;
+}
+.top-content img{
+    width: 50%;
+    height: 100%;
+    background-color: pink;
+}
+.top-content>h1{
+    padding-left:  40px;
+    margin: auto;
+    color: white;
+}
+.user-imgname{
+    display: flex;
+    background-color: yellow;
+}
+.bottom-content{
+    width: 100%;
+    height: 60%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* background-color: yellow; */
+}
+.myaccount{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    /* padding: 5px; */
+    width: 100%;
+    /* background-color: aquamarine; */
+    /* padding: 0 20px; */
+}
+.myaccount:hover{
+    cursor: pointer;
+    background-color: #54b9c4;
+    color: white;
+    border-radius: 3px;
+    /* padding:0 5px; */
+}
+.myaccount>h6{
+    font-weight: 400;
+}
+#icon1,#icon2,#icon3,#icon4,#icon5{
+    margin: 15px;
+    font-size: 1.2rem;
+    /* font-size: 130%; */
+}
+.headings{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    margin: 10px 5px;
+    font-size: 1.2rem;
+}
+
+
+
+/* Right Side css  */
+.right-side-content{
+    background-color: white;
+    width: 70%;
+    height: 100%;
+    padding: 40px 30px 10px 20px;
+    border-radius:3px;
+}
+.right-side-content .edit-button{
+    padding: 5px 50px;
+    margin-top: 5px;
+    background-color: #218d99;
+    border: none;
+}

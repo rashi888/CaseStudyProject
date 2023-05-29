@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import './Navy.css'
 import { Link } from "react-router-dom"
 
@@ -18,17 +18,17 @@ function Navy() {
     const [category, setCategory] = useState([]);
 
     const fetchData = () => {
-      
-      return fetch("http://localhost:8080/api/categories/")
-        .then((response) => response.json())
-        .then((data) => setCategory(data));
-        
-// haiu
+
+        return fetch("http://localhost:8080/api/categories/")
+            .then((response) => response.json())
+            .then((data) => setCategory(data));
+
+        // haiu
     };
-    
-  
+
+
     useEffect(() => {
-      fetchData();
+        fetchData();
     }, []);
     console.log(category);
     console.log("hello")
@@ -72,14 +72,14 @@ function Navy() {
                                 <img src={AllCategory} alt="" />
                                 <li className="allcategory nav-row-list"><Link to="" className="nav-row-list-link" >All Categories</Link></li>
                                 <div className="categories" >
-                                {category.map((item) => {
+                                    {category.map((item) => {
                                         return (
                                             <Link to={item.categoryTitle}  >
-                                            <p className='p1'>{item.categoryTitle}</p>
+                                                <p className='p1'>{item.categoryTitle}</p>
                                             </Link>
                                         );
                                     })}
-                                
+
                                 </div>
                             </Link>
 
