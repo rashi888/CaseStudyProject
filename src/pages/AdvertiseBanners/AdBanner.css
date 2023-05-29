@@ -1,23 +1,32 @@
 .section{
-    text-align: center;
-    padding-top: 30px;
+    height: 300px;
+    width: 1200px;
+    margin: auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    /* text-align: center;
+    padding-top: 30px; */
     background-color:yellow;
+    /* margin-top: 20px;
+    margin-bottom: 20px; */
+}
+.section>h2{
+    text-align: center;
 }
 .ads{
     display: flex;
-    /* height: 100%;
-    width: 100%; */
-    /* padding: 3% 5%; */
     padding:30px ;
    background-color: pink;
+   height: 80%;
+   /* margin-top: 15px; */
+   
 }
 .lefty{
-    /* height: 100%; */
+    height: 100%;
     width: 300px;
-    padding: 20px;
-    background-color: rgb(240, 240, 240);
-    background-color:white;
-    box-shadow:10px 10px 10px lightgray;
+    /* padding: 20px; */
+    margin-right:10px;
+    background-color: rgb(236, 73, 73);
 }
 .mid{
     height: 100%;
@@ -25,14 +34,14 @@
     padding: 6.5% 3%;
     margin: 0% 4%;
     background-color:white;
-    box-shadow:10px 10px 10px lightgray;
+    /* box-shadow:10px 10px 10px lightgray; */
 }
 .righty{
     height: 100%;
     width: 30%;
     padding: 3%;
     background-color:white;
-    box-shadow:10px 10px 10px lightgray;
+    /* box-shadow:10px 10px 10px lightgray; */
 }
 .img{
     height: 100%;

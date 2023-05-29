@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Link } from "react-router-dom";
 import Swal from 'sweetalert2';
 
-function AddingCategories() {
+function CategoryList() {
     const [product, setProduct] = useState([]);
 
     const deletecategory = (id) => {
@@ -67,4 +67,4 @@ function AddingCategories() {
     )
 }
 
-export default AddingCategories
+export default CategoryList
