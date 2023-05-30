@@ -1,0 +1,15 @@
+.carousel1-banner>img{
+    margin: auto;
+    max-width: 100vw;
+}
+/* .slick-next:before {
+    content: none !important;
+} */
+.slick-prev,
+.slick-next {
+  display: none !important;
+}
+
+
+
+

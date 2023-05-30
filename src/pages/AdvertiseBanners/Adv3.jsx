@@ -1,5 +1,5 @@
 import React from 'react'
-import "./Adv1.css";
+import "./Adv3.css";
 import Ad4 from "../../assets/AdsImg/Ad4.jpg"
 import Ad6 from "../../assets/AdsImg/Ad6.png"
 import Ad8 from "../../assets/AdsImg/Ad8.jpg"

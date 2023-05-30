@@ -17,11 +17,15 @@ const Footer = () => {
                             Email Us
                         </a>
                     </address>
+
+                    <div className="legal">
+                        <p>Copyright © 2023 by Shopease and its affiliates. All rights reserved.</p>
+                    </div>
                 </div>
-                <ul className="footer__nav">
-                    <li className="nav__item">
+                <div className="footer-content">
+                    <div className="store-info">
                         <h2 className="nav__title">Store Information</h2>
-                        <ul className="nav__ul">
+                        <ul >
                             <li>
                                 <a href="#">About Us</a>
                             </li>
@@ -35,10 +39,10 @@ const Footer = () => {
                                 <a href="#">Privacy Policy</a>
                             </li>
                         </ul>
-                    </li>
-                    <li className="nav__item nav__item--extra">
+                    </div>
+                    <div className="support">
                         <h2 className="nav__title">Support</h2>
-                        <ul className="nav__ul nav__ul--extra">
+                        <ul >
                             <li>
                                 <a href="#">Return Policy</a>
                             </li>
@@ -52,10 +56,10 @@ const Footer = () => {
                                 <a href="#">Store Locator</a>
                             </li>
                         </ul>
-                    </li>
-                    <li className="nav__item">
+                    </div>
+                    <div className="connect">
                         <h2 className="nav__title">Connect</h2>
-                        <ul className="nav__ul">
+                        <ul >
                             <li>
                                 <a href="#">Youtube</a>
                             </li>
@@ -72,17 +76,10 @@ const Footer = () => {
                                 <a href="#">From the Blog</a>
                             </li>
                         </ul>
-                    </li>
-                </ul>
-                <div className="legal">
-                    <p>Copyright © 2023 by Shopease and its affiliates. All rights reserved.</p>
-                    {/* <div className="legal__links">
-        <span>
-          Made with <span className="heart">♥</span> remotely from Anywhere
-        </span>
-      </div> */}
+                    </div>
                 </div>
             </footer>
+
         </>
 
     )

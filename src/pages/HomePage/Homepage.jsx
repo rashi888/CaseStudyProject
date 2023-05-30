@@ -12,6 +12,7 @@ import Items from '../../components/Items/Items'
 // import { SliderData } from '../../components/CardsCaurosel/SliderData'
 import Tiles from '../../components/Tiles/Tiles'
 import BannerMain from '../../components/MainBannerCarousel/BannerMain'
+import "./HomePage.css"
 
 function Homepage() {
     return (

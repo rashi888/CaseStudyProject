@@ -1,7 +1,5 @@
 .filesContainer{
     display: flex;
-    /* background-color: rgb(33, 163, 122); */
-    /* width: 100vw; */
     min-height: 200px;
     margin-top: 50px;
     margin-bottom: 50px;
