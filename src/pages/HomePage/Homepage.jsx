@@ -8,20 +8,20 @@ import Items from '../../components/Items/Items'
 // import Wrapper from '../../pages/Wrapper/Wrapper'
 // import CarouselPage from '../../pages/Caurosel/CarouselPage'
 // import Wrapper from '../Wrapper'
-import Cards from '../../components/CardsCaurosel/Cards'
-import { SliderData } from '../../components/CardsCaurosel/SliderData'
+// import Cards from '../../components/CardsCaurosel/Cards'
+// import { SliderData } from '../../components/CardsCaurosel/SliderData'
 import Tiles from '../../components/Tiles/Tiles'
-import BannerMain from '../../components/SlickCarousel/BannerMain'
+import BannerMain from '../../components/MainBannerCarousel/BannerMain'
 
 function Homepage() {
     return (
         <>
             {/* <CardPage/> */}
             {/* <Cards slides={SliderData} />; */}
-            <BannerMain/>
+            <BannerMain />
             <Items />
             <Adv1 />
-            <Tiles/>
+            <Tiles />
             {/* <Wrapper/> */}
             <Items />
             <Adv2 />

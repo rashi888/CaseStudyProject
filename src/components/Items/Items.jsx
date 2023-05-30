@@ -65,7 +65,6 @@ function Items() {
                     <NavLink to="/cart">
                       <button type="button" class="btn-Item btn-warning" style={{borderRadius:'4px'}}>Add to cart</button>
                     </NavLink>
-
                   </p>
                 </div>
                 {/* <Link to="mobiles"><script>const id = item.productId;</script>

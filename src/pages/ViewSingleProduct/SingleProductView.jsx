@@ -1,14 +1,11 @@
 import React from 'react'
-import './ProductsView.css';
+import './SingleProductView.css';
 import img1 from '../../assets/PhoneImgs/phone1.webp';
 import img2 from '../../assets/PhoneImgs/phone2.webp';
-import img3 from '../../assets/PhoneImgs/phone3.webp';
-import img4 from '../../assets/PhoneImgs/phone7.webp';
-import img5 from '../../assets/PhoneImgs/phone8.webp';
 import mainImg from "../../assets/PhoneImgs/phone2.webp"
 import { Link } from 'react-router-dom';
 
-function ProductsView() {
+function SingleProductView() {
   return (
     <>
       <div className="prod1" >
@@ -36,4 +33,4 @@ function ProductsView() {
   )
 }
 
-export default ProductsView
+export default SingleProductView

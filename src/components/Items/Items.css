@@ -27,8 +27,9 @@
   }
   .image-items{
     width: 100%;
-    margin-top: -13px;
+    /* margin-top: -13px; */
     height: 200px;
+    padding: 0px 20px;
   }
   .all-main-content{
     margin-top: 20px;
@@ -53,9 +54,13 @@
   .card-img-top{
     padding: 10px;
   }
+  /* .image-items>img{
+    height: 200px;
+    width: 150px;
+  } */
   .heading-main, .price-main, .description-main{
     margin: 10px;
-  
+    
     /* background-color: yellow; */
   }
   .btn-Item{
@@ -63,4 +68,8 @@
     position: relative;
     color: white;
     margin-top: 10px;
+    margin-bottom: 10px;
   }
+.description-main{
+  height: 50px;
+}

@@ -1,0 +1,3 @@
+Pages called in which .jsx file mentioned below:
+Items.jsx= multiple caurosel items inside HomePage
+Adv1.jsx,Adv2.jsx,Adv3.jsx = within HomePage
