@@ -35,15 +35,22 @@ function Allproducts(props) {
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
-        Swal.fire({
-          title: "Success",
-          text: "Product Added Successfully",
-          icon: "success",
-        });
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+        if (data.status === "SUCCESS") {
+          Swal.fire({
+            icon: "success",
+            title: "Product Added to Cart",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        } else {
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Something went wrong!",
+          });
+        }
+      } );
+
   };
 
     
