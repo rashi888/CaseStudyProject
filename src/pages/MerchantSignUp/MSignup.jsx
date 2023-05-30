@@ -57,9 +57,6 @@ const MSignup = () => {
     return (
         <>
             <div className="merchant-signup">
-                <div className="left-image">
-                    <img className="merchant-img" src={merchantimg} alt="" />
-                </div>
                 <div className="right-credantials">
                     <form className="loginform" onSubmit={submitForm}>
                         <div className="title"> Become a Merchant</div>
@@ -126,6 +123,9 @@ const MSignup = () => {
                             Already a member? <a href="login">Login</a>
                         </div>
                     </form>
+                </div>
+                <div className="left-image">
+                    <img className="merchant-img" src={merchantimg} alt="" height="100%" width="100%"/>
                 </div>
             </div>
         </>
