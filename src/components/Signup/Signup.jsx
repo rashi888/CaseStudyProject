@@ -38,7 +38,18 @@ const Signup = () => {
       });
       navigate("/login");
     }).catch((error) => {
-      console.log(error);
+      const errorMsg = error.response.data.message;
+      if(errorMsg.includes("Email"))
+      toast.error("Email already exists!", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+      });
+      else
+
+
       toast.error(" Invalid Credentials!", {
         position: "top-center",
         autoClose: 5000,
