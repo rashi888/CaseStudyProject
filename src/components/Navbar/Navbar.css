@@ -128,7 +128,16 @@
     transition: 1ms;
   }
   
-  
+  h6
+  {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  p{
+    margin-right: 20px;
+  }
   
     @media screen and (max-width:1000px) {
       .inputSearchs {
