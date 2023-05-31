@@ -45,8 +45,10 @@ const Login = () => {
         icon: "success",
       });
 
-      navigate("/home");
-      window.location.reload(true);
+      if(response.data.role==="USER")
+      navigate("/");
+      else
+      navigate("/mdash");
     }).catch((error) => {
       console.log(error);
       toast.error("Invalid Credentials!", {
