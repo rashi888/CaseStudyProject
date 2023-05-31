@@ -78,6 +78,7 @@ function CartPage() {
     navigate("/cart");
   }
 
+  const refresh = () => window.location.reload(true)
 
   const [data, setData] = useState({
     userId: userId,
@@ -99,9 +100,12 @@ function CartPage() {
           icon: "success",
         });
       })
+      
       .catch((error) => {
         console.log(error);
       });
+
+        refresh();
   };
 
   return (
