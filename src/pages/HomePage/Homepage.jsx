@@ -13,6 +13,9 @@ import Items from '../../components/Items/Items'
 import Tiles from '../../components/Tiles/Tiles'
 import BannerMain from '../../components/MainBannerCarousel/BannerMain'
 import "./HomePage.css"
+import Items1 from '../../components/Items/Items1'
+import Items3 from '../../components/Items/Items3'
+import Items2 from '../../components/Items/Items2'
 
 
 function Homepage() {
@@ -23,13 +26,15 @@ function Homepage() {
             <BannerMain />
             <Items />
             <Adv1 />
+            <Items1 />
             <Tiles />
             {/* <Wrapper/> */}
-            <Items />
+            <Items2/>
             <Adv2 />
-            <Items />
-            <Adv3 />
-        
+            <Items3 />
+            
+
+
         </>
     )
 }
