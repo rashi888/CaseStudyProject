@@ -9,10 +9,8 @@ import { useState } from "react";
 
 function CartPage() {
   const [cart, setCart] = React.useState([]);
-  const [cartId, setCartId] = React.useState(0);
   const [tprice, setTprice] = React.useState(0);
   const navigate = useNavigate();
-
   const userId = localStorage.getItem("userId");
 
   const fetchData = () => {
@@ -20,11 +18,9 @@ function CartPage() {
       .get(`http://localhost:8080/api/cart/viewCart?userId=${userId}`)
       .then((response) => {
         console.log(response.data);
-        setCartId(response.data.cartId);
         setCart(response.data.cartItem);
         setTprice(response.data.grandTotal);
-        setCartId(response.data.cartId);
-        console.log(cartId);
+        
       })
       .catch((error) => console.log(error));
   };
@@ -81,9 +77,11 @@ function CartPage() {
   if (cart.length === 0) {
     navigate("/cart");
   }
+ console.log("hi");
+  console.log(cart);
+  console.log(cartId);
 
   const [data, setData] = useState({
-    cartId: cartId,
     userId: userId,
     deliveryDetailsId: 1,
     paymentMethod: "COD",
