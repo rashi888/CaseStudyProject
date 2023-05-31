@@ -21,7 +21,7 @@ function ProductList() {
     const [product, setProduct] = useState([]);
 
     const fetchData = () => {
-        return fetch("http://localhost:8080/api/products?sortBy=category")
+        return fetch("http://localhost:8080/api/products?sortBy=category&pageSize=100")
             .then((response) => response.json())
             .then((data) => setProduct(data["content"]));
     };
