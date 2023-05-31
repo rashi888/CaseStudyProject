@@ -92,7 +92,7 @@ function Items() {
                   <p className='description-main'> {item.productDescription}</p>
                   <p>
                     <NavLink to="/cart">
-                      <button onClick={addtocart} type="button" class="btn-Item btn-warning" style={{ borderRadius: '4px', border: 'none' }}>Add to cart</button>
+                      <button onClick={addtocart(item.productId)} type="button" class="btn-Item btn-warning" style={{ borderRadius: '4px', border: 'none' }}>Add to cart</button>
                     </NavLink>
                   </p>
                 </div>
