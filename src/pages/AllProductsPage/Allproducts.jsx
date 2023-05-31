@@ -25,10 +25,12 @@ function Allproducts(props) {
 
   const addtocart = (id) => (e) => {
     console.log(e.target.value);
+    let userId = localStorage.getItem("userId");
     const url = "http://localhost:8080/api/cart/addToCart" ;
     const formdata = new FormData();
     setLoading(false);
     formdata.append("productId", id);
+    formdata.append("userId", userId);
 
     fetch(url, {
       method: "POST",
@@ -37,21 +39,17 @@ function Allproducts(props) {
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
-        if (data.status === "SUCCESS") {
-          Swal.fire({
-            icon: "success",
-            title: "Product Added to Cart",
-            showConfirmButton: false,
-            timer: 1500,
+        Swal.fire({
+          title: "Success",
+          text: "Product Added to Cart Successfully",
+          icon: "success",
           });
-        } else {
-          Swal.fire({
-            icon: "error",
-            title: "Oops...",
-            text: "Something went wrong!",
-          });
-        }
-      } );
+      })
+      .catch((error) => {
+        console.log(error);
+      }
+      );
+      
 
   };
 

@@ -53,7 +53,9 @@ display: -webkit-box;
 -webkit-box-orient: vertical;
 }
 .card-img-top{
-  padding: 20px 30px;
+  height: 200px;
+  width: 200px;
+  margin-top: 20px;
 }
 /* .image-items>img{
   height: 200px;

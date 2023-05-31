@@ -17,6 +17,35 @@ function Wrapper() {
   }, []);
   console.log(product);
 
+  const addtocart = (id) => (e) => {
+    console.log(e.target.value);
+    let userId = localStorage.getItem("userId");
+    const url = "http://localhost:8080/api/cart/addToCart" ;
+    const formdata = new FormData();
+    formdata.append("productId", id);
+    formdata.append("userId", userId);
+
+    fetch(url, {
+      method: "POST",
+      body: formdata,
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        Swal.fire({
+          title: "Success",
+          text: "Product Added to Cart Successfully",
+          icon: "success",
+          });
+      })
+      .catch((error) => {
+        console.log(error);
+      }
+      );
+      
+
+  };
+
   return (
     <>
     {product.map((item) => {
@@ -62,7 +91,7 @@ function Wrapper() {
                       </a>
                     </h5>
                     <div className="d-grid gap-2 my-4">
-                      <a href="#" className="btn btn-warning bold-btn">
+                      <a href="#" onClick={addtocart(item.productId)} className="btn btn-warning bold-btn">
                         add to cart
                       </a>
                     </div>

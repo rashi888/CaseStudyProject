@@ -112,7 +112,7 @@ const Navbar = () => {
 
                     <div className="cartdiv" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '10px' }}>
                         <p style={{ color: 'white', padding: '15px 0px 0px 0px' }}>Cart</p>
-                        <Link to="/cart">
+                        <Link to="/usercart">
                             <img className="cartimg" src={carts} alt="" />
                         </Link>
                     </div>
