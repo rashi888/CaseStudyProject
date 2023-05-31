@@ -1,6 +1,8 @@
 import React from 'react'
 import "./CartPage.css"
 import axios from 'axios'
+import HiMinusSm from "react-icons/hi"
+import {BiMinus} from "react-icons/bi"
 
 function CartPage() {
 
@@ -75,12 +77,17 @@ function CartPage() {
                                                     </div>
                                                     <div className="mt-5  justify-content-between align-items-center">
                                                         <div>
-                                                            <a href="#!" type="button" className="cardy-box-link-secondary small text-uppercase mr-3"><i
-                                                                className="fas fa-trash-alt mr-1"></i> Remove item </a>
+                                                        
+                                                            
+
 
                                                         </div>
                                                         <p className="mb-0"><span><strong>Product Price - ₹<span >{item.product.productPrice}</span></strong></span></p><br/>
-                                                        <p className="mb-0"><span><strong>Quantity<span >{item.quantity}</span></strong></span></p><br />
+                                                        <p className="mb-0"><span><strong>Quantity<div className="add-minus-quantity" style={{marginTop:'-25px'}}>
+                                                            <BiMinus className='fas fa-plus add'/>
+                                                            <input type="text" placeholder={item.quantity} />
+                                                        <i class="ri-add-line"></i>
+                                                        </div></strong></span></p><br />
                                                         <p className="mb-0"><span><strong>Total-₹<span >{item.totalProductPrice}</span></strong></span></p>
                                                     </div>
                                                 </div>
