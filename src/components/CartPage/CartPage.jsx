@@ -93,7 +93,6 @@ function CartPage() {
       .post("http://localhost:8080/api/order/", data)
       .then((response) => {
         console.log(response.data);
-        console;
         Swal.fire({
           title: "Success",
           text: "Order Placed Successfully",
