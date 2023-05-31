@@ -28,11 +28,11 @@ function OrderHistory() {
                 <table class="table" style={{backgroundColor:'white'}}>
                     <thead class="thead-light">
                         <tr>
-                            <th scope="col">Order No.</th>
+                            <th scope="col">Order Id.</th>
                             <th scope="col">Order Date</th>
-                            <th scope="col">Supplier</th>
-                            <th scope="col">Placed By</th>
-                            <th scope="col">Total</th>
+                            <th scope="col">Order Status</th>
+                            <th scope="col">Order Method</th>
+                            <th scope="col">Price</th>
                             <th scope="col">Status</th>
                         </tr>
                     </thead>

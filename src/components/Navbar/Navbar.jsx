@@ -68,7 +68,12 @@ const Navbar = () => {
         }
        
     }
-
+    const handleKeyDown = (event) => {
+        if (event.key === 'Enter') {
+          // 👇 Get input value
+          srch();
+        }
+      };
 
         
 
@@ -85,7 +90,7 @@ const Navbar = () => {
                 </div>
                 <div className="searchBars">
                     <input
-                        onKeyDown={srch}
+                        onKeyDown={handleKeyDown}
                         className="inputSearchs"
                         type="search"
                         placeholder="Items to Search..."
