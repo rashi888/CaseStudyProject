@@ -69,18 +69,19 @@ function CartPage() {
                                                     <div className="d-flex justify-content-between">
                                                         <div>
                                                             <h5 >{item.product.productName}</h5>
-                                                            <p className="mb-2 text-uppercase small">Category: <span ></span></p>
 
                                                         </div>
 
                                                     </div>
-                                                    <div className="mt-5 d-flex justify-content-between align-items-center">
+                                                    <div className="mt-5  justify-content-between align-items-center">
                                                         <div>
                                                             <a href="#!" type="button" className="cardy-box-link-secondary small text-uppercase mr-3"><i
                                                                 className="fas fa-trash-alt mr-1"></i> Remove item </a>
 
                                                         </div>
-                                                        <p className="mb-0"><span><strong>₹<span >29999</span></strong></span></p>
+                                                        <p className="mb-0"><span><strong>Product Price - ₹<span >{item.product.productPrice}</span></strong></span></p><br/>
+                                                        <p className="mb-0"><span><strong>Quantity<span >{item.quantity}</span></strong></span></p><br />
+                                                        <p className="mb-0"><span><strong>Total-₹<span >{item.totalProductPrice}</span></strong></span></p>
                                                     </div>
                                                 </div>
                                             </div>
