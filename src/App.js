@@ -92,7 +92,7 @@ function App() {
         <Route path="/updateproduct/:id" Component={ProductUpdate} />
         <Route path="/updatecategory/:id" Component={CategoryUpdate} />
         <Route path='/user' Component={User} />
-        <Route path='/singleproductview' Component={SingleProductView} />
+        <Route path='/singleproductview/:id' Component={SingleProductView} />
       </Routes>
       <Footer />
       <BackToTop />

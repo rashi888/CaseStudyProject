@@ -53,6 +53,12 @@ function Allproducts(props) {
 
   };
 
+  const viewProduct = (id) => (e) => {
+    console.log(e.target.value);
+    
+    window.location.href = "/singleproductview/" + id ;
+  };
+
     
 
 
@@ -89,7 +95,7 @@ function Allproducts(props) {
 
         {product.map((item) => {
           return (<>
-            <div className="card-one" >
+            <div onClick={viewProduct(item.productId)} className="card-one"  >
               <div className="img-section">
                 <img src={"http://localhost:8080/api/products/image/" + item.productPhoto} alt="" height="100%" style={{ padding: '25px 70px' }} />
               </div>
