@@ -3,6 +3,7 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { NavLink, Link } from 'react-router-dom'
 import "./Items.css";
+import Swal from "sweetalert2";
 
 function Items() {
 
