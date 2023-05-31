@@ -10,9 +10,9 @@ import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Swal from "sweetalert2";
-import { useFormik } from "formik";
-import * as Yup from "yup";
-import { Formik, Form, Field, ErrorMessage } from "formik";
+// import { useFormik } from "formik";
+// import * as Yup from "yup";
+// import { Formik, Form, Field, ErrorMessage } from "formik";
 
 
 
@@ -65,12 +65,6 @@ const Signup = () => {
     });
   };
   
-
-
-
-
-
-
 
   return (
     <>
