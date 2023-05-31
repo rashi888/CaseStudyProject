@@ -85,6 +85,7 @@ const Navbar = () => {
                 </div>
                 <div className="searchBars">
                     <input
+                        onKeyDown={srch}
                         className="inputSearchs"
                         type="search"
                         placeholder="Items to Search..."
