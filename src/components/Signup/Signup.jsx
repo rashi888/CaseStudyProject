@@ -133,7 +133,7 @@ const validate=(values)=>{
                 id="name"
                 onChange={(e) => handleChange(e, "name")}
                 value={data.name} required
-                placeholder="name"
+                // placeholder="name"
               />
               <label> Name</label>
               <p>{formErrors.name}</p>
