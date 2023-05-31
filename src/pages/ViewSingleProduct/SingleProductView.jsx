@@ -4,6 +4,7 @@ import img1 from '../../assets/PhoneImgs/phone1.webp';
 import img2 from '../../assets/PhoneImgs/phone2.webp';
 import mainImg from "../../assets/PhoneImgs/phone2.webp"
 import { Link } from 'react-router-dom';
+import Swal from "sweetalert2";
 
 function SingleProductView() {
 
