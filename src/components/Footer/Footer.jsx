@@ -28,7 +28,7 @@ const Footer = () => {
                     <div className="legal">
                         <p>Copyright © 2023 by Shopease and its affiliates. All rights reserved.</p>
                     </div>
-                    <Link style={{marginLeft:'-20px'}}>Become a Seller</Link>
+                    <Link to="/msignup" style={{marginLeft:'-20px'}}>Become a Seller</Link>
                 </div>
                 <div className="footer-content">
                     <div className="store-info"  style={{ width: '300px',height:'330px', padding: '0' }}>
