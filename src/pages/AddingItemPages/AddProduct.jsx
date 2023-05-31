@@ -146,7 +146,7 @@ function AddProduct() {
                             </div>
                             <p>Product Image</p>
                             <div className="custom-file">
-                                <input type="file" required className="custom-file-input" onChange={handleFileChange} name="productPhoto" value={data.productPhoto} accept="image/jpeg, image/png" id="productPhoto" />
+                                <input type="file"  className="custom-file-input" onChange={handleFileChange} name="productPhoto" value={data.productPhoto} accept="image/jpeg, image/png" id="productPhoto" />
                                 <label className="custom-file-label" for="productImage" > {selectedImage ? (
                                     <p style={{ fontWeight: 300 }}>{selectedImage}</p>
                                 ) : (

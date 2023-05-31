@@ -1,7 +1,25 @@
 import React from 'react'
 import "./OrderHistory.css"
+import axios from 'axios';
 
 function OrderHistory() {
+
+    const [order, setOrder] = React.useState([]);
+
+    const fetchData = () => {
+        return fetch("http://localhost:8080/api/order/userOrders/" + localStorage.getItem("userId"))
+            .then((response) => response.json())
+            .then((data) => setOrder(data));
+    };
+
+    React.useEffect(() => {
+        fetchData();
+    }, []);
+
+    console.log(order);
+
+    
+
     return (
         <>
             <div class="container-fluid">
