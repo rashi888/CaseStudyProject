@@ -7,7 +7,7 @@ import {BiMinus} from "react-icons/bi"
 function CartPage() {
 
     const [cart, setCart] = React.useState([])
-    const [total, setTotal] = React.useState(0)
+ const [tprice, setTprice] = React.useState(0)
 
     const userId = localStorage.getItem("userId")
    
@@ -17,7 +17,7 @@ function CartPage() {
             .then((response) => {
                 console.log(response.data)
                 setCart(response.data.cartItem)
-                setTotal(response.data.total)
+
             }
             )
             .catch((error) => console.log(error))
@@ -25,11 +25,43 @@ function CartPage() {
 
     }
 
+    
+
     React.useEffect(() => {
         fetchData()
     }, [])
 
+    
+    const decreaseQuantity = (id) => (e) => {
+        const formdata = new FormData()
+        formdata.append("productId", id)
+        formdata.append("userId", userId)
 
+        axios.post("http://localhost:8080/api/cart/removeFromCart", formdata)
+
+            .then((response) => {
+                console.log(response.data)
+                fetchData()
+                
+            })
+            .catch((error) => console.log(error))
+    }
+
+
+const addQuantity = (id) => (e) => {
+    const formdata = new FormData()
+    formdata.append("productId", id)
+    formdata.append("userId", userId)
+    
+    axios.post("http://localhost:8080/api/cart/addToCart", formdata)
+        
+    .then((response) => {
+        console.log(response.data)
+        fetchData()
+        
+    })
+    .catch((error) => console.log(error))
+}
 
     
 
@@ -84,9 +116,9 @@ function CartPage() {
                                                         </div>
                                                         <p className="mb-0"><span><strong>Product Price - ₹<span >{item.product.productPrice}</span></strong></span></p><br/>
                                                         <p className="mb-0"><span><strong>Quantity<div className="add-minus-quantity" style={{marginTop:'-25px'}}>
-                                                            <BiMinus className='fas fa-plus add'/>
+                                                            <BiMinus onClick={decreaseQuantity(item.product.productId)} className='fas fa-plus add'/>
                                                             <input type="text" placeholder={item.quantity} />
-                                                        <i class="ri-add-line"></i>
+                                                        <i class="ri-add-line" onClick={addQuantity(item.product.productId)}></i>
                                                         </div></strong></span></p><br />
                                                         <p className="mb-0"><span><strong>Total-₹<span >{item.totalProductPrice}</span></strong></span></p>
                                                     </div>
@@ -118,8 +150,10 @@ function CartPage() {
 
                                         <ul className="list-group list-group-flush">
                                             <li className="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
-                                            Price (1 item)
-                                                <span>₹<span  >19880</span></span>
+                                            Price 
+                                                <span>₹<span  >
+                                                    
+                                                    </span></span>
                                             </li>
                                             <li className="list-group-item d-flex justify-content-between align-items-center px-0">
                                             Delivery Charges
