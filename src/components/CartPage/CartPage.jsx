@@ -1,6 +1,9 @@
 import React from 'react'
 import "./CartPage.css"
 import axios from 'axios'
+import HiMinusSm from "react-icons/hi"
+import {BiMinus} from "react-icons/bi"
+
 
 function CartPage() {
 
@@ -30,12 +33,12 @@ function CartPage() {
         <>
             <main>
                 <div class="container-main">
-                   
+
                     <section class="mt-5 mb-4">
-                       
+
                         <div class="row">
                             <div class="col-lg-7">
-                               
+
                                 <div class="cardy-box wish-list mb-4" >
                                     <div class="cardy-box-body">
 
@@ -58,7 +61,11 @@ function CartPage() {
                                                             <p class="mb-2 text-uppercase small">Category: <span ></span></p>
 
                                                         </div>
-
+                                                        <div className="add-minus-quantity" style={{marginTop:'-25px'}}>
+                                                        <i class="ri-add-line"></i>
+                                                            <input type="text" placeholder="2" />
+                                                            <BiMinus className='fas fa-plus add'/>
+                                                        </div>
                                                     </div>
                                                     <div class="mt-5 d-flex justify-content-between align-items-center">
                                                         <div>
@@ -73,8 +80,7 @@ function CartPage() {
                                         </div>
                                         <hr class="mb-4" />
 
-                                        <p class="text-primary mb-0"><i class="fas fa-info-circle mr-1"></i> Do not delay the purchase, adding
-                                            items to your cart does not mean booking them.</p>
+
 
                                     </div>
                                 </div>
@@ -92,16 +98,16 @@ function CartPage() {
 
                                         <ul class="list-group list-group-flush">
                                             <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
-                                            Price (1 item)
+                                                Price (1 item)
                                                 <span>₹<span  >19880</span></span>
                                             </li>
                                             <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                                            Delivery Charges
+                                                Delivery Charges
                                                 <span>Free</span>
                                             </li>
-                                            
+
                                             <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                                            Secured Packaging Fee
+                                                Secured Packaging Fee
                                                 <span>₹99</span>
                                             </li>
                                             <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
@@ -115,7 +121,7 @@ function CartPage() {
                                             </li>
                                         </ul>
 
-                                        <a h class="btn btn-block" style={{backgroundColor:'#34c3d3',color:'white',fontWeight:500}}>Checkout</a>
+                                        <a h class="btn btn-block" style={{ backgroundColor: '#34c3d3', color: 'white', fontWeight: 500 }}>Checkout</a>
 
                                     </div>
                                 </div>

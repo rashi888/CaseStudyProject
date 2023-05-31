@@ -90,11 +90,10 @@ function AddProduct() {
         <>
 
             <div className="containerr" style={{ margin: '3% 7%', padding: '20px 40px', boxShadow: '10px 5px 10px lightgray', borderRadius: '2px', backgroundColor: 'white' }}>
-                <h3 style={{ marginBottom: '10px' }}>Add a new Product</h3>
-                <form onSubmit={submitForm}>
-                    <div className="row">
-                        <div className="col-sm-5">
-
+                <h3 style={{ marginBottom: '20px' }}>Add a new Product</h3>
+                <form onSubmit={submitForm} >
+                    <div className="row" >
+                        <div className="col-sm-5" >
                             <input type="hidden" name="id" />
                             <div className="form-group">
                                 <label for="productName">Name</label>
@@ -114,18 +113,17 @@ function AddProduct() {
                                     })}
                                 </select>
                             </div>
+                           
                             <div className="form-group">
                                 <label for="productPrice">Price</label>
                                 <input type="number" className="form-control" onChange={(e) => handleChange(e, "productPrice")}
                                     value={data.productPrice} required name="productPrice" id="productPrice"
                                     placeholder="Price" />
                             </div>
-                            <div className="form-group">
-                                <label for="productPrice">MRP</label>
-                                <input type="number" className="form-control" onChange={(e) => handleChange(e, "productMRP")}
-                                    value={data.productMRP} required name="productMRP" id="productMRP"
-                                    placeholder="MRP" />
-                            </div>
+                            
+
+                           
+                           
 
                             <div className="form-group">
                                 <label for="productDescription">Product Description</label>
@@ -134,6 +132,18 @@ function AddProduct() {
                             </div>
                         </div>
                         <div className="col-sm-5">
+                        <div className="form-group">
+                                <label for="productPrice">MRP</label>
+                                <input type="number" className="form-control" onChange={(e) => handleChange(e, "productMRP")}
+                                    value={data.productMRP} required name="productMRP" id="productMRP"
+                                    placeholder="MRP" />
+                            </div>
+                            <div className="form-group">
+                                <label for="stock">stock</label>
+                                <input type="text" className="form-control" onChange={(e) => handleChange(e, "stock")}
+                                    value={data.stock} required name="stock" id="stock"
+                                    placeholder="Stock" />
+                            </div>
                             <p>Product Image</p>
                             <div className="custom-file">
                                 <input type="file" className="custom-file-input" onChange={handleFileChange} name="productPhoto" value={data.productPhoto} accept="image/jpeg, image/png" id="productPhoto" />

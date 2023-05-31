@@ -14,6 +14,7 @@ import Tiles from '../../components/Tiles/Tiles'
 import BannerMain from '../../components/MainBannerCarousel/BannerMain'
 import "./HomePage.css"
 
+
 function Homepage() {
     return (
         <>
@@ -28,6 +29,7 @@ function Homepage() {
             <Adv2 />
             <Items />
             <Adv3 />
+        
         </>
     )
 }

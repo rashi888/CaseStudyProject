@@ -10,7 +10,8 @@ import Swal from 'sweetalert2';
 function Allproducts(props) {
   const [product, setProduct] = useState([]);
   const [api, setApi] = useState(props.api);
-
+  const [loading, setLoading] = useState(true);
+  
   const fetchData = () => {
     return fetch(api)
       .then((response) => response.json())
@@ -26,6 +27,7 @@ function Allproducts(props) {
     console.log(e.target.value);
     const url = "http://localhost:8080/api/cart/addToCart" ;
     const formdata = new FormData();
+    setLoading(false);
     formdata.append("productId", id);
 
     fetch(url, {
@@ -83,6 +85,10 @@ function Allproducts(props) {
           </div> */}
         </div>
 
+        {/* <div>{loading? ( <div>Loading...</div>):( "hello" )}</div> */}
+
+        
+
         {product.map((item) => {
           return (<>
             <div className="card-one" >
@@ -104,6 +110,9 @@ function Allproducts(props) {
           </>
           );
         })}
+
+
+        
         <nav aria-label="Page navigation example" style={{ margin: '30px 20px', padding: '10px' }}>
           <ul class="pagination" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <li class="page-item" style={{ backgroundColor: 'yellow' }}>

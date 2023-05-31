@@ -36,6 +36,7 @@ import ProductUpdate from './pages/Update/ProductUpdate';
 import CategoryUpdate from './pages/Update/CategoryUpdate';
 import User from './pages/Userprofile/User';
 import SingleProductView from './pages/ViewSingleProduct/SingleProductView';
+import AddressPage from './pages/CheckoutPage/AddressPage';
 
 
 
@@ -80,6 +81,7 @@ function App() {
         {/* <Route path='/allproducts' Component={() => <ProductsView api={allproductsApi} />} /> */}
         <Route path="/addtocart" Component={AddItem} />
         <Route path="/checkout" Component={Checkout} />
+        <Route path="/addresspage" Component={AddressPage} />
         <Route path='/' Component={Homepage} />
         <Route path='/mdash' Component={DashM} />
         <Route path='/msignup' Component={MSignup} />

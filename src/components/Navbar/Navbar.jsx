@@ -12,9 +12,10 @@ import "./Navbar.css";
 import profile from "../../assets/All_Icons/user.png"
 import carts from "../../assets/All_Icons/carty.png"
 // import logoo from "../../assets/NavbarImg/ShopEase1.png"
-import logoo from "../../assets/NavbarImg/log.jpg"
+// import logoo from "../../assets/NavbarImg/log.jpg"
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import logoo from "../../assets/NavbarImg/ShopEaseLogo1.png"
 
 const Navbar = () => {
     const [search, setSearch] = React.useState("");
@@ -24,19 +25,19 @@ const Navbar = () => {
         setSearch(event.target.value);
     };
     const refresh = () => window.location.reload(true)
-   
+
 
     const srch = () => {
         axios.get('http://localhost:8080/api/products/search/' + search)
-        .then(response => {
-            console.log(response.data);
-            navigate("/search", { state: { searchdata: response.data } });
-            refresh();
+            .then(response => {
+                console.log(response.data);
+                navigate("/search", { state: { searchdata: response.data } });
+                refresh();
 
-        })
-        .catch(error => {
-            console.log(error);
-        });
+            })
+            .catch(error => {
+                console.log(error);
+            });
     }
 
     const logout = () => {
@@ -44,7 +45,7 @@ const Navbar = () => {
         navigate("/login");
         refresh();
     }
-    
+
     if (window.localStorage.getItem("token") === null) {
         var Name = "Login"
     }
@@ -55,16 +56,11 @@ const Navbar = () => {
     if (window.localStorage.getItem("token") != null) {
         menu = (
             <div className="profile">
-            <h6>My Profile</h6>
-            <h6 onClick={logout}>LogOut</h6>
-        </div>
+                <h6>My Profile</h6>
+                <h6 onClick={logout}>LogOut</h6>
+            </div>
         )
     }
-
-            
-   
-
-
 
     return (
         <div>
@@ -84,9 +80,9 @@ const Navbar = () => {
                         placeholder="Items to Search..."
                         aria-label="Search"
                         onChange={(e) => handleChange(e, "search")}
-                value={search}
-                name="search"
-                id="search"
+                        value={search}
+                        name="search"
+                        id="search"
                     />
                     <div onClick={srch} className="searchIcons">
                         <BiSearch />
@@ -97,19 +93,19 @@ const Navbar = () => {
                     <div className="profilediv" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '10px' }}>
                         <p style={{ color: 'white', padding: '15px 0px 0px 0px' }}> {Name}</p>
                         <Link to="/login">
-                        <img className="profileimg" src={profile} alt="" />
-                        {/* <div className="profile">
+                            <img className="profileimg" src={profile} alt="" />
+                            {/* <div className="profile">
             <h6>My Profile</h6>
             <h6 onClick={logout}>LogOut</h6>
         </div> */}
-        {menu}
-
-                        
-                        
-                       
+                            {menu}
 
 
-                            
+
+
+
+
+
                         </Link>
                     </div>
 

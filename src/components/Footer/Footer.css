@@ -16,7 +16,7 @@
   .footer__addr {
     /* margin-right: 1.25em;
     margin-bottom: 1em; */
-    /* width: 200px; */
+    width: 400px;
    
     /* background-color: purple; */
   }
@@ -34,8 +34,17 @@
     font-size: 20px;
     margin-left: 20px;
   }
-  .store-info,.support,  .connect{
-    padding:20px 35px;
+  .store-info,.support, .promises{
+    padding:20px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    text-align: left;
+  }
+  .store-info{
+    width: 150px;
+    text-align: left;
   }
   
   .footer__logo {

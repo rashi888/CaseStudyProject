@@ -57,7 +57,7 @@ function UserList() {
                                     <th scope="row" key={item.userId}> {index + 1}</th>
                                     <td >{item.name}</td>
                                     <td >{item.mobileNumber}</td>
-                                    <td>₹ {item.emailId}</td>
+                                    <td>{item.emailId}</td>
                                     <td><button className="btnn btn-danger" style={{ padding: '4px 7px', borderRadius: '5px', marginTop: '-7px' }} onClick={() => deleteProduct(item.productId)}>Delete</button></td>
                                     <td><Link to={'/updateproduct/' + item.productId} className="btnn btn-warning" style={{ padding: '4px 7px', borderRadius: '5px', marginTop: '-7px' }}>Update</Link></td>
 

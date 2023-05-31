@@ -33,7 +33,8 @@
     "slick-carousel": "^1.8.1",
     "sweetalert2": "^11.7.8",
     "use-history": "^1.4.1",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "yup": "^1.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
