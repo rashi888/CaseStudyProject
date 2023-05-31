@@ -1,40 +1,62 @@
 import React from 'react'
-import { Link } from "react-router-dom"
+import './AdminDashboard.css';
+import { Link } from 'react-router-dom';
 
 function AdminDashboard() {
-    return (
-        <>
-            <div class="jumbotron text-center">
-                <h1 class="display-4">Welcome back, Admin</h1>
-                <p>Easily manage your data from this admin <mark>CMS</mark></p>
+  return (
+    <>
+      <div className="admin-dashboard" >
+        <h1 style={{textAlign:'center'}}>Welcome to Admin Dashboard!</h1>
+
+        <div className="row">
+          <div className="col-sm-3 pt-3" >
+            <div className="card-item-admin">
+              <div className="card-body">
+                <h4 className="card-title">View All Users</h4>
+                <p className="card-text">View users details here</p>
+                <Link to="/userlist" className="card-link btn btn-primary">View Users</Link>
+
+              </div>
             </div>
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-sm-3 pt-3 my-3" >
-                        <div class="cardy " style={{ backgroundColor: 'white', boxShadow: "2px 1px 5px #888888", borderRadius: '5%' }}>
-                            <div class="card-body">
-                                <h4 class="card-title">Categories</h4>
-                                <p class="card-text">Manage the categories section here.</p>
-                                <Link to="category" class="card-link btn btn-primary">Manage</Link>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-3 pt-3 my-3" >
-                        <div class="cardy" style={{ backgroundColor: 'white', boxShadow: "2px 1px 5px #888888", borderRadius: '5%' }}>
-                            <div class="card-body">
-                                <h4 class="card-title">Products</h4>
-                                <p class="card-text">Manage all the products here.</p>
-                                <Link class="card-link btn btn-primary">Manage</Link>
-                            </div>
-                        </div>
-                    </div>
+          </div>
 
-                </div>
+
+          <div className="col-sm-3 pt-3"  >
+            <div className="card-item-admin" > 
+              <div className="card-body">
+                <h4 className="card-title">View All Merchant</h4>
+                <p className="card-text">Manage all the products here.</p>
+                <Link to="/merchantlist" className="card-link btn btn-primary">View Merchant</Link>
+
+              </div>
             </div>
+          </div>
 
+          <div className="col-sm-3 pt-3" >
+            <div className="card-item-admin" >
+              <div className="card-body">
+                <h4 className="card-title">View Categories</h4>
+                <p className="card-text">View categories here. </p>
+                <Link to="/categorylist" className="card-link btn btn-primary">View Category</Link>
 
-        </>
-    )
+              </div>
+            </div>
+          </div>
+
+          <div className="col-sm-3 pt-3" >
+            <div className="card-item-admin" >
+              <div className="card-body">
+                <h4 className="card-title">View Products</h4>
+                <p className="card-text">View products here.</p>
+                <Link to="/productlist" className="card-link btn btn-primary">View Product</Link>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  )
 }
 
 export default AdminDashboard

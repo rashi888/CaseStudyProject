@@ -14,28 +14,30 @@ export default class BannerMain extends Component {
       infinite: true,
       speed: 500,
       slidesToShow: 1,
-      slidesToScroll: 1
+      slidesToScroll: 1,
+      autoplay: true, // Enable automatic transitions
+      autoplaySpeed: 2000,// Set the transition interval in milliseconds
     };
     return (
-      <div style={{margin:'auto',marginBottom:'50px',marginTop:'20px'}}>
+      <div style={{ margin: 'auto', marginBottom: '50px', marginTop: '20px' }}>
         <Slider {...settings}>
-          <div  className="carousel1-banner">
-          <img src={image1} alt="" height="250px" width="1250px"/>
+          <div className="carousel1-banner">
+            <img src={image1} alt="" height="250px" width="1250px" />
           </div>
-          <div  >
-          <img src={image2} alt="" height="250px" width="1250px"/>
+          <div className="carousel1-banner">
+            <img src={image2} alt="" height="250px" width="1250px" />
           </div>
-          <div  >
-          <img src={image3} alt="" height="250px" width="1250px"/>
+          <div className="carousel1-banner">
+            <img src={image3} alt="" height="250px" width="1250px" />
           </div>
-          <div  >
-          <img src={image1} alt="" height="250px" width="1250px"/>
+          <div className="carousel1-banner">
+            <img src={image1} alt="" height="250px" width="1250px" />
           </div>
-          <div  >
-          <img src={image2} alt="" height="250px" width="1250px"/>
+          <div className="carousel1-banner">
+            <img src={image2} alt="" height="250px" width="1250px" />
           </div>
-          <div  >
-          <img src={image3} alt="" height="250px" width="1250px"/>
+          <div className="carousel1-banner">
+            <img src={image3} alt="" height="250px" width="1250px" />
           </div>
         </Slider>
       </div>

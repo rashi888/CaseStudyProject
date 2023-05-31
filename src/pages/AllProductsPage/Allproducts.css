@@ -44,7 +44,7 @@ height: 100%;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 4; /* Number of lines to display */
+    -webkit-line-clamp: 3; /* Number of lines to display */
     -webkit-box-orient: vertical;
 }
 .price-section{

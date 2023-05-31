@@ -13,22 +13,33 @@ import Swal from "sweetalert2";
 
 
 const Signup = () => {
+  
   const [data, setData] = useState({
     name: "",
     mobileNumber: "",
     emailId: "",
     password: "",
   });
+
+  const [formErrors, setFormErrors] = useState({});
+  const [isSubmit, setIsSubmit] = useState(false);
   const navigate = useNavigate();
+
   
 
   
   const handleChange = (event, property) => {
+    // console.log(event.target);
+    const {name,value}=event.target;
     setData({ ...data, [property]: event.target.value });
+    console.log(data)
   };
   
   const submitForm = (event) => {
     event.preventDefault();
+    setFormErrors.validate(data);
+    setIsSubmit(true);
+
     axios.post("http://localhost:8080/api/users/signup", data).then((response) => {
       console.log(response.data);
       Swal.fire({
@@ -38,7 +49,18 @@ const Signup = () => {
       });
       navigate("/login");
     }).catch((error) => {
-      console.log(error);
+      const errorMsg = error.response.data.message;
+      if(errorMsg.includes("Email"))
+      toast.error("Email already exists!", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+      });
+      else
+
+
       toast.error(" Invalid Credentials!", {
         position: "top-center",
         autoClose: 5000,
@@ -49,9 +71,37 @@ const Signup = () => {
 
     });
   };
-  
 
+useEffect(()=>{
+  console.log(formErrors);
+  if(Object.keys(formErrors).length===0 && isSubmit){
+    console.log(data);
+  }
+},[formErrors]);
 
+const validate=(values)=>{
+  const errors={}
+  const regex=/^[^\$@]+@[^\$@]+\.[^\$@]{2,}$/i;
+  if(!values.name){
+    errors.name="Username is required";
+  }
+  if(!values.emailId){
+    errors.emailId="Email is required";
+  }else if(!regex.test(values.emailId)){
+    errors.emailId="This is not a valid email format!"
+  }
+  if(!values.password){
+    errors.password="Password is required";
+  }else if(!regex.test(values.password.lenght<4)){
+    errors.emailId="Password Must be more than 4 characters"
+  }else if(!regex.test(values.password.lenght>10)){
+    errors.emailId="Password cannot exceed more than 10 characters"
+  }
+  if(!values.mobileNumber){
+    errors.mobileNumber="Password is required";
+  }
+  return errors;
+}
 
 
   return (
@@ -69,12 +119,12 @@ const Signup = () => {
         theme="light"
       />
       <meta charSet="utf-8" />
-      <div className="wrapper" style={{ height: 'fit-content' }}>
-        <div className="formcont">
+      <div className="wrapper" style={{height: 'fit-content',margin:'40px 70px'}}>
+        <div className="formcont" style={{top:'-20px',margin:'10px 50px'}}>
           <img className="logingif" src={login} alt="" />
 
-
-          <form className="loginform" onSubmit={submitForm}>
+          <pre>{JSON.stringify(data,undefined,2)}</pre>
+          <form className="loginform" onSubmit={submitForm} style={{marginTop:'20px',width:'300px'}}>
             <div className="title">Sign-up</div>
             <div className="field">
               <input
@@ -83,10 +133,10 @@ const Signup = () => {
                 id="name"
                 onChange={(e) => handleChange(e, "name")}
                 value={data.name} required
-                
+                placeholder="name"
               />
-              
               <label> Name</label>
+              <p>{formErrors.name}</p>
             </div>
             <div className="field">
               <input
@@ -98,11 +148,13 @@ const Signup = () => {
               />
              
               <label> Email</label>
+              <p>{formErrors.emailId}</p>
             </div>
+
+
             <div className="field">
               <input
                 type="tel"
-
                 id="mobileNumber"
                 onChange={(e) => handleChange(e, "mobileNumber")}
                 value={data.mobileNumber} required
@@ -110,6 +162,8 @@ const Signup = () => {
               />
              
               <label> Mobile</label>
+              <p>{formErrors.mobileNumber}</p>
+
             </div>
             <div className="field">
               <input
@@ -123,7 +177,8 @@ const Signup = () => {
              
 
               <label>Password</label>
-            </div>
+              <p>{formErrors.password}</p>
+               </div>
             <div className="content">
               <div className="checkbox">
                 <input type="checkbox" id="remember-me" />

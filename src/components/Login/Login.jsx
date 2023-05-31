@@ -80,11 +80,11 @@ const Login = () => {
         theme="light"
       />
       <meta charSet="utf-8" />
-      <div className="wrapper" style={{ backgroundColor: "white" }}>
-        <div className="formcont">
-          <img class="logingif" src={login} alt="" />
+      <div className="wrapper" style={{height: 'fit-content',margin:'50px 70px',paddingBottom:'20px' }}>
+        <div className="formcont" style={{backgroundColor:'white',margin:'30px',padding:'20px'}}>
+          <img class="logingif" src={login} alt="" style={{marginTop:'-30px'}}/>
 
-          <form className="loginform" onSubmit={submitForm}>
+          <form className="loginform" onSubmit={submitForm} style={{marginTop:'-20px',height:'400px',width:'350px'}}>
             <div className="title">Login</div>
             <div className="field">
               <input

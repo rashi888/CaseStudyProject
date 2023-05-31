@@ -1,5 +1,6 @@
 import React from "react"
 import "./Footer.css"
+import {Link} from "react-router-dom"
 
 const Footer = () => {
     return (
@@ -13,9 +14,9 @@ const Footer = () => {
                     <address>
                         5534 Somewhere In. The World 22193-10212
                         <br />
-                        <a className="footer__btn" href="mailto:example@gmail.com">
+                        {/* <Link className="footer__btn" to="mailto:example@gmail.com">
                             Email Us
-                        </a>
+                        </Link> */}
                     </address>
 
                     <div className="legal">
@@ -27,16 +28,16 @@ const Footer = () => {
                         <h2 className="nav__title">Store Information</h2>
                         <ul >
                             <li>
-                                <a href="#">About Us</a>
+                                <Link to="#">About Us</Link>
                             </li>
                             <li>
-                                <a href="#">Customer Service</a>
+                                <Link to="#">Customer Service</Link>
                             </li>
                             <li>
-                                <a href="#">Term & Conditions</a>
+                                <Link to="#">Term & Conditions</Link>
                             </li>
                             <li>
-                                <a href="#">Privacy Policy</a>
+                                <Link to="#">Privacy Policy</Link>
                             </li>
                         </ul>
                     </div>
@@ -44,16 +45,16 @@ const Footer = () => {
                         <h2 className="nav__title">Support</h2>
                         <ul >
                             <li>
-                                <a href="#">Return Policy</a>
+                                <Link to="#">Return Policy</Link>
                             </li>
                             <li>
-                                <a href="#">Delivery Info</a>
+                                <Link to="#">Delivery Info</Link>
                             </li>
                             <li>
-                                <a href="#">Shipping Charges</a>
+                                <Link to="#">Shipping Charges</Link>
                             </li>
                             <li>
-                                <a href="#">Store Locator</a>
+                                <Link to="#">Store Locator</Link>
                             </li>
                         </ul>
                     </div>
@@ -61,19 +62,19 @@ const Footer = () => {
                         <h2 className="nav__title">Connect</h2>
                         <ul >
                             <li>
-                                <a href="#">Youtube</a>
+                                <Link to="#">Youtube</Link>
                             </li>
                             <li>
-                                <a href="#">Facebook</a>
+                                <Link to="#">Facebook</Link>
                             </li>
                             <li>
-                                <a href="#">Instagram</a>
+                                <Link to="#">Instagram</Link>
                             </li>
                             <li>
-                                <a href="#">RSS Feeds</a>
+                                <Link to="#">RSS Feeds</Link>
                             </li>
                             <li>
-                                <a href="#">From the Blog</a>
+                                <Link to="#">From the Blog</Link>
                             </li>
                         </ul>
                     </div>

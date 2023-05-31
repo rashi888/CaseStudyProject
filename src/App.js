@@ -16,6 +16,8 @@ import Tiles from './components/Tiles/Tiles';
 // Pages 
 import ProductList from './pages/AddingItemPages/ProductList';
 import CategoryList from './pages/AddingItemPages/CategoryList';
+import UserList from './pages/Admin/UserList';
+import MerchantList from './pages/Admin/MerchantList';
 import AddProduct from './pages/AddingItemPages/AddProduct';
 import AddCategory from './pages/AddingItemPages/AddCategory';
 import AdminDashboard from './pages/Admin/AdminDashboard';
@@ -34,6 +36,7 @@ import ProductUpdate from './pages/Update/ProductUpdate';
 import CategoryUpdate from './pages/Update/CategoryUpdate';
 import User from './pages/Userprofile/User';
 import SingleProductView from './pages/ViewSingleProduct/SingleProductView';
+
 
 
 function App() {
@@ -68,6 +71,8 @@ function App() {
 
         <Route path="/productlist" Component={ProductList} />
         <Route path="/categorylist" Component={CategoryList} />
+        <Route path="/userlist" Component={UserList} />
+        <Route path="/merchantlist" Component={MerchantList} />
         <Route path="/productadd" Component={AddProduct} />
         <Route path="/categoryadd" Component={AddCategory} />
         <Route path="/admindashboard" Component={AdminDashboard} />

@@ -13,7 +13,7 @@
     justify-content: center;
     align-items: center;
     position: relative;
-    top:30px;
+    /* top:-30px; */
 }
 .logingif{
   height: 450px;
@@ -21,9 +21,11 @@
   top: 0;
 }
 .wrapper {
-  background-color: #fcfcfc;
+  background-color: #ffffff;
 }
-
+.error {
+  color: red;
+}
 .wrapper .title{
   font-size: 35px;
   font-weight: 600;
