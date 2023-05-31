@@ -104,7 +104,7 @@ function AddProduct() {
                             </div>
                             <div className="form-group">
                                 <label for="category">Select Category</label>
-                                <select className="form-control" onChange={(e) => setCategoryId(e.target.value)} id="categoryId" name="categoryId">
+                                <select className="form-control" onChange={(e) => setCategoryId(e.target.value)} id="categoryId" name="categoryId" required>
                                     <option value="">Select Category</option>
                                     {category.map((item) => {
                                         return (
@@ -127,7 +127,7 @@ function AddProduct() {
 
                             <div className="form-group">
                                 <label for="productDescription">Product Description</label>
-                                <textarea className="form-control" onChange={(e) => handleChange(e, "productDescription")}
+                                <textarea className="form-control"required onChange={(e) => handleChange(e, "productDescription")}
                                     value={data.productDescription} rows="5" name="productDescription" id="productDescription"></textarea>
                             </div>
                         </div>
@@ -146,7 +146,7 @@ function AddProduct() {
                             </div>
                             <p>Product Image</p>
                             <div className="custom-file">
-                                <input type="file" className="custom-file-input" onChange={handleFileChange} name="productPhoto" value={data.productPhoto} accept="image/jpeg, image/png" id="productPhoto" />
+                                <input type="file" required className="custom-file-input" onChange={handleFileChange} name="productPhoto" value={data.productPhoto} accept="image/jpeg, image/png" id="productPhoto" />
                                 <label className="custom-file-label" for="productImage" > {selectedImage ? (
                                     <p style={{ fontWeight: 300 }}>{selectedImage}</p>
                                 ) : (
