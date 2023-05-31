@@ -62,6 +62,16 @@ const Navbar = () => {
         )
     }
 
+    function verifylogin() {
+        if (window.localStorage.getItem("token") === null) {
+            navigate("/login");
+        }
+       
+    }
+
+
+        
+
     return (
         <div>
 
@@ -92,7 +102,7 @@ const Navbar = () => {
                 <div className="icons"  >
                     <div className="profilediv" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '10px' }}>
                         <p style={{ color: 'white', padding: '15px 0px 0px 0px' }}> {Name}</p>
-                        <Link to="/login">
+                        <div onClick={verifylogin}>
                             <img className="profileimg" src={profile} alt="" />
                             {/* <div className="profile">
             <h6>My Profile</h6>
@@ -106,7 +116,7 @@ const Navbar = () => {
 
 
 
-                        </Link>
+                        </div>
                     </div>
 
 

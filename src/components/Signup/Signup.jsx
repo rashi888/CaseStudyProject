@@ -40,7 +40,10 @@ const Signup = () => {
         text: "User Registered Successfully",
         icon: "success",
       });
-      navigate("/login");
+      login();
+
+
+    
     }).catch((error) => {
       const errorMsg = error.response.data.message;
       if(errorMsg.includes("Email"))
@@ -64,6 +67,28 @@ const Signup = () => {
 
     });
   };
+
+  const login = () => { 
+    axios.post("http://localhost:8080/api/users/login", data).then((response) => {
+      console.log(response.data);
+      window.localStorage.setItem("token", response.data.token);
+      window.localStorage.setItem("userId", response.data.userId);
+      window.localStorage.setItem("role", response.data.role);
+      window.localStorage.setItem("name", response.data.name);
+      navigate("/");
+    }).catch((error) => {
+      const errorMsg = error.response.data.message;
+      if(errorMsg.includes("Email"))
+      toast.error("Email already exists!", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+      });
+    });
+  };
+    
   
 
   return (
