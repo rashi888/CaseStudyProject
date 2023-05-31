@@ -77,9 +77,7 @@ function CartPage() {
   if (cart.length === 0) {
     navigate("/cart");
   }
- console.log("hi");
-  console.log(cart);
-  console.log(cartId);
+
 
   const [data, setData] = useState({
     userId: userId,
