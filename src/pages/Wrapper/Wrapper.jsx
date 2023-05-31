@@ -91,7 +91,7 @@ function Wrapper() {
                       </a>
                     </h5>
                     <div className="d-grid gap-2 my-4">
-                      <a href="#" onClick={addtocart} className="btn btn-warning bold-btn">
+                      <a href="#" onClick={addtocart(item.productId)} className="btn btn-warning bold-btn">
                         add to cart
                       </a>
                     </div>

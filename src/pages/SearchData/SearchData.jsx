@@ -3,6 +3,7 @@ import { VscHeart } from "react-icons/vsc";
 import { useState, useEffect } from "react";
 import { useLocation } from 'react-router-dom';
 import {RiArrowDownSLine} from "react-icons/ri"; 
+import Swal from 'sweetalert2';
 
 const SearchData = (props) => {
   const [api, Api] = useState(props.api);
@@ -94,7 +95,7 @@ const SearchData = (props) => {
               <div className="price-section">
                 <h6>M.R.P ₹ <del>15000</del> </h6>
                 <h2 style={{ margin: '15px 0px' }}>₹ {item.productPrice}</h2>
-                <button onClick={addtocart} type='button' className='btn-price btn-warning' >Add to Cart</button>
+                <button onClick={addtocart(item.productId)} type='button' className='btn-price btn-warning' >Add to Cart</button>
 
               </div>
             </div>
