@@ -6,6 +6,35 @@ import mainImg from "../../assets/PhoneImgs/phone2.webp"
 import { Link } from 'react-router-dom';
 
 function SingleProductView() {
+
+  const addtocart = (id) => (e) => {
+    console.log(e.target.value);
+    let userId = localStorage.getItem("userId");
+    const url = "http://localhost:8080/api/cart/addToCart" ;
+    const formdata = new FormData();
+    formdata.append("productId", id);
+    formdata.append("userId", userId);
+
+    fetch(url, {
+      method: "POST",
+      body: formdata,
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        Swal.fire({
+          title: "Success",
+          text: "Product Added to Cart Successfully",
+          icon: "success",
+          });
+      })
+      .catch((error) => {
+        console.log(error);
+      }
+      );
+      
+
+  };
   return (
     <>
       <div className="prod1" >
@@ -26,7 +55,7 @@ function SingleProductView() {
           <h6>+ ₹49 Secured Packaging Fee</h6>
           <h6>Available offers</h6>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa vero fuga ipsum. Aperiam at ipsum atque quia nulla delectus quibusdam laborum pariatur reprehenderit dolores, obcaecati, ad magnam perspiciatis! Dignissimos, fuga.</p>
-         <Link to="/"><button>Add to cart</button></Link> 
+         <Link onClick={addtocart} to="/"><button>Add to cart</button></Link> 
         </div>
       </div>
     </>

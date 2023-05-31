@@ -14,7 +14,34 @@ const SearchData = (props) => {
   
 
 
-  
+  const addtocart = (id) => (e) => {
+    console.log(e.target.value);
+    let userId = localStorage.getItem("userId");
+    const url = "http://localhost:8080/api/cart/addToCart" ;
+    const formdata = new FormData();
+    formdata.append("productId", id);
+    formdata.append("userId", userId);
+
+    fetch(url, {
+      method: "POST",
+      body: formdata,
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        Swal.fire({
+          title: "Success",
+          text: "Product Added to Cart Successfully",
+          icon: "success",
+          });
+      })
+      .catch((error) => {
+        console.log(error);
+      }
+      );
+      
+
+  };
 
 
   
@@ -67,7 +94,7 @@ const SearchData = (props) => {
               <div className="price-section">
                 <h6>M.R.P ₹ <del>15000</del> </h6>
                 <h2 style={{ margin: '15px 0px' }}>₹ {item.productPrice}</h2>
-                <button type='button' className='btn-price btn-warning' >Add to Cart</button>
+                <button onClick={addtocart} type='button' className='btn-price btn-warning' >Add to Cart</button>
 
               </div>
             </div>

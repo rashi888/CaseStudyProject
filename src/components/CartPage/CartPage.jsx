@@ -3,11 +3,14 @@ import "./CartPage.css"
 import axios from 'axios'
 import HiMinusSm from "react-icons/hi"
 import {BiMinus} from "react-icons/bi"
+import { useNavigate } from 'react-router-dom'
 
 function CartPage() {
+    
 
     const [cart, setCart] = React.useState([])
  const [tprice, setTprice] = React.useState(0)
+  const navigate = useNavigate()
 
     const userId = localStorage.getItem("userId")
    
@@ -17,6 +20,7 @@ function CartPage() {
             .then((response) => {
                 console.log(response.data)
                 setCart(response.data.cartItem)
+                setTprice(response.data.grandTotal)
 
             }
             )
@@ -63,6 +67,26 @@ const addQuantity = (id) => (e) => {
     .catch((error) => console.log(error))
 }
 
+const deletePoduct = (id) => (e) => {
+    const formdata = new FormData()
+    formdata.append("productId", id)
+    formdata.append("userId", userId)
+
+    axios.post("http://localhost:8080/api/cart/removeProductFromCart", formdata)
+
+        .then((response) => {
+            console.log(response.data)
+            fetchData()
+
+        })
+        .catch((error) => console.log(error))
+}
+
+if (cart.length === 0) {
+    navigate("/cart")
+}
+
+
     
 
 
@@ -89,9 +113,10 @@ const addQuantity = (id) => (e) => {
                                
                                 <div className="cardy-box wish-list mb-4" >
                                     <div className="cardy-box-body">
-
+                                        
 
                                         <div className="row mb-4">
+                                        <div onClick={deletePoduct(item.product.productId)} className='Cross'>&#10006;</div>
                                             <div className="col-md-5 col-lg-3 col-xl-3">
                                                 <div className="mb-3 mb-md-0">
                                                     <img src={"http://localhost:8080/api/products/image/"+item.product.productPhoto} alt="img" className="img-fluid w-100" />
@@ -152,7 +177,7 @@ const addQuantity = (id) => (e) => {
                                             <li className="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
                                             Price 
                                                 <span>₹<span  >
-                                                    
+                                                    {tprice}
                                                     </span></span>
                                             </li>
                                             <li className="list-group-item d-flex justify-content-between align-items-center px-0">
@@ -160,10 +185,10 @@ const addQuantity = (id) => (e) => {
                                                 <span>Free</span>
                                             </li>
                                             
-                                            <li className="list-group-item d-flex justify-content-between align-items-center px-0">
+                                            {/* <li className="list-group-item d-flex justify-content-between align-items-center px-0">
                                             Secured Packaging Fee
                                                 <span>₹99</span>
-                                            </li>
+                                            </li> */}
                                             <li className="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
                                                 <div>
                                                     <strong>The total amount</strong>
@@ -171,7 +196,7 @@ const addQuantity = (id) => (e) => {
                                                         <p className="mb-0">(including VAT)</p>
                                                     </strong> */}
                                                 </div>
-                                                <span><strong>₹<span  >19979</span></strong></span>
+                                                <span><strong>₹<span  >{tprice}</span></strong></span>
                                             </li>
                                         </ul>
 

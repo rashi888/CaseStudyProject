@@ -41,6 +41,35 @@ function Items() {
     }
   };
 
+  const addtocart = (id) => (e) => {
+    console.log(e.target.value);
+    let userId = localStorage.getItem("userId");
+    const url = "http://localhost:8080/api/cart/addToCart" ;
+    const formdata = new FormData();
+    formdata.append("productId", id);
+    formdata.append("userId", userId);
+
+    fetch(url, {
+      method: "POST",
+      body: formdata,
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        Swal.fire({
+          title: "Success",
+          text: "Product Added to Cart Successfully",
+          icon: "success",
+          });
+      })
+      .catch((error) => {
+        console.log(error);
+      }
+      );
+      
+
+  };
+
   return (
     <>
       <div className="wrapperr">
@@ -63,7 +92,7 @@ function Items() {
                   <p className='description-main'> {item.productDescription}</p>
                   <p>
                     <NavLink to="/cart">
-                      <button type="button" class="btn-Item btn-warning" style={{ borderRadius: '4px', border: 'none' }}>Add to cart</button>
+                      <button onClick={addtocart} type="button" class="btn-Item btn-warning" style={{ borderRadius: '4px', border: 'none' }}>Add to cart</button>
                     </NavLink>
                   </p>
                 </div>
