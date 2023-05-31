@@ -1,5 +1,6 @@
 import React from 'react'
 import "./CartPage.css"
+import axios from 'axios'
 
 function CartPage() {
 
@@ -7,25 +8,28 @@ function CartPage() {
     const [total, setTotal] = React.useState(0)
 
     const userId = localStorage.getItem("userId")
-    const formdata = new FormData();
-    formdata.append("userId", userId);
+   
 
     const fetchData = () => {
-        return fetch("http://localhost:8080/api/cart/getCart", {
-            method: "GET",
-            body: formdata,
-        })
-            .then((response) => response.json())
-            .then((data) => {
-                setCart(data)
-                console.log(data)
-            });
-    };
+        axios.get(`http://localhost:8080/api/cart/viewCart?userId=${userId}`)
+            .then((response) => {
+                console.log(response.data)
+                setCart(response.data.cartItem)
+                setTotal(response.data.total)
+            }
+            )
+            .catch((error) => console.log(error))
+
+
+    }
 
     React.useEffect(() => {
-        fetchData();
-    }, []);
+        fetchData()
+    }, [])
 
+
+
+    
 
 
 
@@ -43,18 +47,20 @@ function CartPage() {
                        
                         <div className="row">
                             <div className="col-lg-7">
+                                
+                                {cart.map((item) => {
+
+                                    return (
+                                        <>
                                
                                 <div className="cardy-box wish-list mb-4" >
                                     <div className="cardy-box-body">
 
-                                        <h5 className="mb-4">Cart (<span >2</span> items)</h5>
 
                                         <div className="row mb-4">
                                             <div className="col-md-5 col-lg-3 col-xl-3">
                                                 <div className="mb-3 mb-md-0">
-                                                    <img className="img-fluid w-100"
-
-                                                        src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12a.jpg" alt="Sample" />
+                                                    <img src={"http://localhost:8080/api/products/image/"+item.product.productPhoto} alt="img" className="img-fluid w-100" />
 
                                                 </div>
                                             </div>
@@ -62,7 +68,7 @@ function CartPage() {
                                                 <div>
                                                     <div className="d-flex justify-content-between">
                                                         <div>
-                                                            <h5 >Blue denim shirt</h5>
+                                                            <h5 >{item.product.productName}</h5>
                                                             <p className="mb-2 text-uppercase small">Category: <span ></span></p>
 
                                                         </div>
@@ -81,11 +87,15 @@ function CartPage() {
                                         </div>
                                         <hr className="mb-4" />
 
-                                        <p className="text-primary mb-0"><i className="fas fa-info-circle mr-1"></i> Do not delay the purchase, adding
-                                            items to your cart does not mean booking them.</p>
+                                        
 
                                     </div>
                                 </div>
+                                </>
+                                    )
+                                })}
+                                <p className="text-primary mb-0"><i className="fas fa-info-circle mr-1"></i> Do not delay the purchase, adding
+                                            items to your cart does not mean booking them.</p>
 
 
 
