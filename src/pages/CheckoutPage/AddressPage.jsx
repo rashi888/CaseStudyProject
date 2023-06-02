@@ -1,32 +1,137 @@
-import React from 'react'
+import React, { useState } from 'react';
 import Dropdown from './Dropdown'
+import { Link } from "react-router-dom"
+import { FormGroup, Form, Input, Label, Row, Col } from 'reactstrap';
+
 
 function AddressPage() {
+    const [modal, setModal] = useState(false);
+    const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+
+    const toggleModal = () => {
+        setModal(!modal);
+    };
+
+    // if (modal) {
+    //     document.body.classList.add('active-modal')
+    // } else {
+    //     document.body.classList.remove('active-modal')
+    // }
+
+
+
+    const handleButtonClick = () => {
+        setIsPopupOpen(true);
+    };
+
+    const handleClosePopup = () => {
+        setIsPopupOpen(false);
+    };
+
+
     return (
         <>
             <div className="containerr mt-3">
                 <section className="mt-5 mb-4" style={{ margin: '5%' }}>
+                    <h1 style={{ textAlign: 'center', marginBottom: '-10px' }}>Checkout</h1>
                     <div className="row" >
+
                         <div className="col-lg-8 mb-4">
                             <div className="wish-list pb-1" style={{ margin: '5% 3%' }}>
-                                <div className="card-body" style={{ backgroundColor: 'lightgray', borderRadius: '3px', padding: '20px', boxShadow: "10px 10px 10px lightgray" }}>
+                                <div className="card-body" style={{ backgroundColor: 'white', borderRadius: '3px', padding: '20px', boxShadow: "10px 10px 10px lightgray" }}>
 
+                                    <div className="Address-main" style={{ marginBottom: '20px', padding: '20px' }}>
+                                        <h4>1. Delivery Address</h4>
+                                        <p>
+                                            Rashi dixit
+                                            Kala bagh balot bypass road, near Siddharth palace ward no.7
+                                            Ganj Basoda
+                                            Ganj Basoda, MADHYA PRADESH 464221</p>
 
-                                    <div className="delivery-address" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                                        <h2>2. Address</h2>
-                                        <div class="dropdown">
-                                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                Dropdown button
-                                            </button>
-                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                <a class="dropdown-item" href="#">Action</a>
-                                                <a class="dropdown-item" href="#">Another action</a>
-                                                <a class="dropdown-item" href="#">Something else here</a>
-                                            </div>
+                                        <div className="btn-order-page">
+                                            <Link onClick={handleButtonClick} > <i class="ri-add-line"></i> Add New Address</Link>
                                         </div>
+                                        {isPopupOpen && (
+                                            <div className="popup">
+                                                <div className="popup-content">
+                                                    <h5>Add New Address Here</h5>
+                                                    <Form>
+                                                        <FormGroup>
+                                                            <Label for="exampleAddress">
+                                                                Address
+                                                            </Label>
+                                                            <Input
+                                                                id="exampleAddress"
+                                                                name="address"
+                                                                placeholder="1234 Main St"
+                                                            />
+                                                        </FormGroup>
+                                                        <FormGroup>
+                                                            <Label for="exampleAddress2">
+                                                                Address 2
+                                                            </Label>
+                                                            <Input
+                                                                id="exampleAddress2"
+                                                                name="address2"
+                                                                placeholder="Apartment, studio, or floor"
+                                                            />
+                                                        </FormGroup>
+                                                        <Row>
+                                                            <Col md={6}>
+                                                                <FormGroup>
+                                                                    <Label for="exampleCity">
+                                                                        City
+                                                                    </Label>
+                                                                    <Input
+                                                                        id="exampleCity"
+                                                                        name="city"
+                                                                    />
+                                                                </FormGroup>
+                                                            </Col>
+                                                            <Col md={4}>
+                                                                <FormGroup>
+                                                                    <Label for="exampleState">
+                                                                        State
+                                                                    </Label>
+                                                                    <Input
+                                                                        id="exampleState"
+                                                                        name="state"
+                                                                    />
+                                                                </FormGroup>
+                                                            </Col>
+                                                            <Col md={2}>
+                                                                <FormGroup>
+                                                                    <Label for="exampleZip">
+                                                                        Zip
+                                                                    </Label>
+                                                                    <Input
+                                                                        id="exampleZip"
+                                                                        name="zip"
+                                                                    />
+                                                                </FormGroup>
+                                                            </Col>
+                                                        </Row>
+                                                    </Form>
+                                                    <button className='btn btn-success' onClick={handleClosePopup}>Done</button>
+                                                </div>
+                                            </div>
+                                        )}
+
                                     </div>
-                                    <div className="offers"></div>
-                                    <div className="items-and-delivery"></div>
+                                    <div className="payment-main">
+                                        <h4>2. Payment</h4>
+                                        {/* <button onClick={toggleModal} className="btn-modal">Open </button> */}
+                                        <Link to="/popup"> <i class="ri-add-line"></i> Payment methods</Link>
+                                    </div>
+                                    <div className="offers-main">
+                                        <h4>3. Offers</h4>
+                                        <Link> <i class="ri-add-line"></i> Show Offers</Link>
+                                    </div>
+                                    <div className="items-and-delivery">
+                                        <h4>4. Items and delivery</h4>
+                                        <Link> <i class="ri-add-line"></i> Items And Delivery</Link>
+                                    </div>
 
 
                                 </div>
@@ -43,7 +148,7 @@ function AddressPage() {
                                     <ul className="list-group list-group-flush">
                                         <li className="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
                                             Amount Payable
-                                            <span>₹<span ></span></span>
+                                            <span>₹<span >1000</span></span>
                                         </li>
                                         <li className="list-group-item d-flex justify-content-between align-items-center px-0">
                                             Shipping
@@ -56,7 +161,7 @@ function AddressPage() {
                                                     <p className="mb-0">(including VAT)</p>
                                                 </strong>
                                             </div>
-                                            <span><strong>₹<span></span></strong></span>
+                                            <span><strong>₹<span>1200</span></strong></span>
                                         </li>
                                     </ul>
 

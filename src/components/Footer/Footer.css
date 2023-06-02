@@ -14,9 +14,22 @@
   .footer__addr {
     /* margin-right: 1.25em;
     margin-bottom: 1em; */
-    width: 400px;
+    width: 350px;
+    height: 250px;
    
     /* background-color: purple; */
+  }
+  .line1{
+    height: 300px;
+    width: 1px;
+    margin: 0 20px;
+    background-color: rgb(255, 255, 255);
+  }
+  .become-seller{
+    /* background-color: #218d99; */
+    width: 250px;
+    text-align: center;
+   
   }
   .footer-content{
     /* background-color: green; */
@@ -30,9 +43,10 @@
   .nav__title {
     font-weight: 400;
     font-size: 20px;
-    margin-left: 20px;
+    margin-left: 20%;
+    margin-bottom: 10px;
   }
-  .store-info,.support, .promises{
+  .promises{
     padding:20px 20px;
     display: flex;
     flex-direction: column;
@@ -40,10 +54,15 @@
     justify-content: center;
     text-align: left;
   }
-  .store-info{
-    width: 150px;
+  .support{
+    padding:20px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
     text-align: left;
   }
+  
   
   .footer__logo {
     font-family: sans-serif;
@@ -123,7 +142,29 @@
   .heart {
     color: #2f2f2f;
   }
-  
+  .btn-merchant-signup{
+    border-radius: 5px;
+    padding: 10px 20px;
+    /* margin: 0px 20px ; */
+    margin-left: -30px;
+    background-color: #218d99;
+    border: none;
+    color: #fff;
+  }
+  .contact-us-div{
+    /* background-color: yellow; */
+    margin-top: 40px;
+  }
+  .btn-to-top{
+    border: none;
+    color: #595959;
+    margin: 5px;
+    background-color: #cfd0d0;
+
+  }
+  .btn-to-top:hover{
+    color:blue;
+  }
   /* @media screen and (min-width: 24.375em) {
     .legal .legal__links {
       margin-left: auto;

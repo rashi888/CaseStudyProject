@@ -17,6 +17,7 @@ import Swal from "sweetalert2";
 
 
 const Signup = () => {
+  
   const [data, setData] = useState({
     name: "",
     mobileNumber: "",

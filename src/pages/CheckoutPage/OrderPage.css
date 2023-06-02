@@ -1,0 +1,14 @@
+.order-cont{
+    background-color: rgb(209, 209, 209);
+    /* width: 1250px;
+    height: 400px; */
+    margin: auto;
+}
+.top-head-row{
+    display: flex;
+}
+.row-orderpage{
+    background-color: yellow;
+    height: 200px;
+    width: 100%;
+}

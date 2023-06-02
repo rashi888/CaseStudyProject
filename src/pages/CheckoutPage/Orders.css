@@ -1,0 +1,93 @@
+.cont-container{
+    /* background-color: yellowgreen; */
+    height: 500px;
+    width: 1250px;
+    margin:30px  auto;
+}
+.order-card1{
+    /* background-color: aqua; */
+    background-color: white;
+    height: 350px;
+    width: 100%;
+    border: 1px solid lightgray;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    
+   
+}
+.top-order-con{
+    background-color: lightgray;
+    height: 22%;
+    width: 100%;
+    padding: 0 20px;
+     display: flex;
+     align-items: center;
+     justify-content: space-around;
+     border-radius: 10px 10px 0 0;
+}
+.bottom-order-con{
+    padding:15px 30px;
+}
+.order-all{
+    display: flex;
+    padding: 5px 20px;
+}
+.img-order-img>img{
+    /* border: 2px solid lightgray; */
+    /* width: auto;
+    height: auto; */
+}
+.content-box{
+    /* background-color: brown; */
+    height: 180px;
+    width: 800px;
+    padding-left: 30px;
+    /* padding: 30px 60px; */
+}
+.head3{
+    text-align: start;
+    margin: -20px 40px 0px 40px;
+    padding: 0;
+}
+.content-box>head3{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Number of lines to display */
+    -webkit-box-orient: vertical;
+    text-align: left;
+    
+}
+.buttons-option{
+    /* background-color: yellow; */
+    padding: 5px 30px;
+
+}
+.btn-btn{
+    padding: 8px 50px;
+    margin: 10px 0;
+    /* border: none; */
+    border: 0.1px solid lightgray;
+    border-radius: 5px;
+}
+.add-hover{
+    position:fixed;
+    display: none;
+    box-sizing: border-box;
+    width: 250px;
+    /* height: 70px; */
+    background-color: white;
+    padding: 10px 20px;
+    border-radius: 3px;
+    right: 300px;
+    top: 260px;
+    z-index: 1;
+}
+.user-div:hover+.add-hover{
+    display: block;
+    transition: 1ms;
+}
+.add-hover:hover{
+    display: block;
+    transition: 1ms;
+}
