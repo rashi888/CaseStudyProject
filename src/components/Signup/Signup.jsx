@@ -4,7 +4,7 @@ import { signUp } from "../../services/user-service";
 import { ToastContainer, toast } from "react-toastify";
 // import signup from "./Signup.css";
 
-import login from "../../assets/LoginSignupImg/login.gif";
+import loginimg from "../../assets/LoginSignupImg/login.gif";
 import signup from "./Signup.css";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
@@ -108,7 +108,7 @@ const Signup = () => {
       <meta charSet="utf-8" />
       <div className="wrapper" style={{ height: 'fit-content' }}>
         <div className="formcont"  style={{backgroundColor:'white',paddingTop:'-30px',marginTop:'10px'}}>
-          <img className="logingif" src={login} alt="" />
+          <img className="logingif" src={loginimg} alt="" />
 
 
           <form className="loginform" onSubmit={submitForm}>
