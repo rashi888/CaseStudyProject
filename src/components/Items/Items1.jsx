@@ -4,15 +4,23 @@ import 'react-multi-carousel/lib/styles.css';
 import { NavLink, Link } from 'react-router-dom'
 import "./Items.css";
 import Swal from "sweetalert2";
+import { Spinner } from 'reactstrap'
 
 function Items1() {
 
   const [product, setProduct] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   const fetchData = () => {
+
+    setIsLoading(true);
+
     return fetch("http://localhost:8080/api/category/4/products")
       .then((response) => response.json())
-      .then((data) => setProduct(data["content"]));
+      .then((data) => {setProduct(data["content"])
+      setIsLoading(false);
+
+    });
   };
 
   useEffect(() => {
@@ -74,7 +82,12 @@ function Items1() {
   return (
     <>
       <div className="wrapperr">
-        <Carousel responsive={responsive}>
+
+      {isLoading ? (
+          <Spinner animation="border" role="status" color='primary' style={{marginLeft:'50%'}}/>
+        ) : (
+          <>
+           <Carousel responsive={responsive}>
           {product.map((item) => {
             return (<>
               <div className="cardy" >
@@ -120,6 +133,8 @@ function Items1() {
             );
           })}
         </Carousel>
+          </>)}
+       
       </div>
     </>
   )
