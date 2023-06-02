@@ -3,10 +3,17 @@ import "./Footer.css"
 import oneimg from "../../assets/FooterImg/original.png"
 import twoimg from "../../assets/FooterImg/return-policy-icon-17.png"
 import threeimg from "../../assets/FooterImg/free.png"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import logoo from "../../assets/NavbarImg/ShopEaseLogo1.png"
 
 const Footer = () => {
+    const navigate =useNavigate();
+
+    const handleClick = () => {
+        navigate('/new-route');
+        window.scrollTo(0, 0); // Scroll to the top of the page
+      };
+
     return (
         <>
             <header>{/* Content */}</header>
@@ -34,18 +41,18 @@ const Footer = () => {
                         <div className="list1-list">
                             <ul>
                                 <li>
-                                    <Link to="/aboutus">About Us</Link>
+                                    <Link to="/aboutus"> <button className="btn-to-top" onClick={handleClick}>About Us</button> </Link>
                                 </li>
                                 <li>
-                                    <Link to="/returnpolicy">Return Policy</Link>
+                                    <Link to="/returnpolicy"><button className="btn-to-top" onClick={handleClick}>Return Policy</button> </Link>
                                 </li></ul>
                         </div>
                         <div className="list1-list">
                             <ul> <li>
-                                <Link to="/termsandconditions">Term & Conditions</Link>
+                                <Link to="/termsandconditions"> <button className="btn-to-top" onClick={handleClick}>Term & Conditions</button> </Link>
                             </li>
                                 <li>
-                                    <Link to="/faq">FAQs</Link>
+                                    <Link to="/faq"> <button className="btn-to-top" onClick={handleClick}>FAQs</button> </Link>
                                 </li></ul>
                         </div>
 

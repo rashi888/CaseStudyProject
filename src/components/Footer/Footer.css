@@ -155,6 +155,16 @@
     /* background-color: yellow; */
     margin-top: 40px;
   }
+  .btn-to-top{
+    border: none;
+    color: #595959;
+    margin: 5px;
+    background-color: #cfd0d0;
+
+  }
+  .btn-to-top:hover{
+    color:blue;
+  }
   /* @media screen and (min-width: 24.375em) {
     .legal .legal__links {
       margin-left: auto;
