@@ -1,18 +1,10 @@
 import React from "react";
-// import logo from "../assets/logo.png";
 import { Link } from "react-router-dom";
 import { BiSearch } from "react-icons/bi";
-// import { FaUser } from "react-icons/fa";
-// import { FaShoppingBag } from "react-icons/fa";
 import "./Navbar.css";
-// import profile from "../../assets/NavbarImg/profile.png";
-// import carts from "../../assets/NavbarImg/cart1.png";
-// import logoo from "../../assets/NavbarImg/logoo.png";
 
 import profile from "../../assets/All_Icons/user.png"
 import carts from "../../assets/All_Icons/carty.png"
-// import logoo from "../../assets/NavbarImg/ShopEase1.png"
-// import logoo from "../../assets/NavbarImg/log.jpg"
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import logoo from "../../assets/NavbarImg/ShopEaseLogo1.png"
@@ -66,16 +58,16 @@ const Navbar = () => {
         if (window.localStorage.getItem("token") === null) {
             navigate("/login");
         }
-       
+
     }
     const handleKeyDown = (event) => {
         if (event.key === 'Enter') {
-          // 👇 Get input value
-          srch();
+            // 👇 Get input value
+            srch();
         }
-      };
+    };
 
-        
+
 
     return (
         <div>
@@ -115,21 +107,13 @@ const Navbar = () => {
             <h6 onClick={logout}>LogOut</h6>
         </div> */}
                             {menu}
-
-
-
-
-
-
-
                         </div>
                     </div>
 
-
-                    <div className="cartdiv" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '10px' }}>
+                    <div className="cartdiv" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '0px 0px'}}>
+                        <Link to="/usercart" style={{display:'flex', justifyContent: 'center', alignItems: 'center',margin:'0 30px ',padding:'0'}}>
                         <p style={{ color: 'white', padding: '15px 0px 0px 0px' }}>Cart</p>
-                        <Link to="/usercart">
-                            <img className="cartimg" src={carts} alt="" />
+                        <img className="cartimg" src={carts} alt="" style={{marginLeft:'-10px'}}/>
                         </Link>
                     </div>
 

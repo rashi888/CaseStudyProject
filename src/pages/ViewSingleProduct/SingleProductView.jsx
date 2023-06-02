@@ -66,7 +66,7 @@ function SingleProductView() {
 
       <div className="prod1" >
         <div className="imgMain">
-          <div className="image-big"><img height="400px" src={"http://localhost:8080/api/products/image/"+data.productPhoto} alt="" /></div> 
+          <div className="image-big" ><img height="400px" src={"http://localhost:8080/api/products/image/"+data.productPhoto} alt="" /></div> 
           <div className="image-small" >
             <div className="im1"><img src={"http://localhost:8080/api/products/image/"+data.productPhoto} alt="" height='100px' width='100px'/></div>
           
@@ -75,13 +75,20 @@ function SingleProductView() {
         </div>
         <div className="prodDetails">
           <h2>{data.productName}</h2>
-          <h5>4.21,143 Ratings & 99 Reviews</h5>
-          <h6>Extra ₹4000 off</h6>
-          <h1>{data.productPrice} <h6><del>₹18,999</del> <span style={{ color: 'darkgreen' }}>21% off</span> </h6></h1>
-          <h6>+ ₹49 Secured Packaging Fee</h6>
-          <h6>Available offers</h6>
+          <h5 style={{fontWeight:400,marginTop:'15px'}}>4.21,143 Ratings & 99 Reviews</h5>
+          <h6 style={{lbackgroundColor:'yellow',marginTop:'15px',textAlign:'start'}}>Extra ₹4000 off</h6>
+          <div className="pp" style={{display:'flex',justifyContent:'space-between',alignItems:'center'}}>
+
+          <h1>₹{data.productPrice} <h6><del>₹18,999</del> <span style={{ color: 'darkgreen' }}>21% off</span> </h6></h1>
+          <h6 style={{marginRight:'150px'}}>+ ₹49 Secured Packaging Fee</h6>
+          </div>
+          {/* <h6>Available offers</h6> */}
+          <hr style={{border:'1px solid gray'}} />
           <p>{data.productDescription}</p>
-         <Link onClick={addtocart} to="/"><button>Add to cart</button></Link> 
+          <div className="btn-add-div" style={{display:'flex',alignItems:'center',justifyContent:'space-around',marginLeft:'-30px'}}>
+         <Link onClick={addtocart} to="/"><button style={{backgroundColor:'#33bbca',borderRadius:'5px',fontSize:'20px'}}>Add to cart</button></Link> 
+         <Link> <button  style={{backgroundColor:'#33bbca',borderRadius:'5px',fontSize:'20px'}}>Buy Now</button> </Link>
+           </div>
         </div>
       </div>
     </>

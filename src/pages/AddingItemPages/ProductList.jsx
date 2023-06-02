@@ -32,10 +32,6 @@ function ProductList() {
     console.log(product);
 
 
-
-    
-
-
     return (
         <>
             <div className="container-fluid my-5" style={{ backgroundColor: 'white',paddingBottom:'10px' }}>

@@ -37,6 +37,14 @@ import CategoryUpdate from './pages/Update/CategoryUpdate';
 import User from './pages/Userprofile/User';
 import SingleProductView from './pages/ViewSingleProduct/SingleProductView';
 import AddressPage from './pages/CheckoutPage/AddressPage';
+import PopupPage from './pages/CheckoutPage/PopupPage';
+import OrderPage from './pages/CheckoutPage/OrderPage';
+import Orders from './pages/CheckoutPage/Orders';
+import Address from './pages/CheckoutPage/Address';
+import Aboutus from './pages/AdditionalPages/Aboutus';
+import Faq from './pages/AdditionalPages/Faq';
+import ReturnPolicy from './pages/AdditionalPages/ReturnPolicy';
+import TermsAndCondition from './pages/AdditionalPages/TermsAndCondition';
 
 
 
@@ -82,6 +90,17 @@ function App() {
         <Route path="/addtocart" Component={AddItem} />
         <Route path="/checkout" Component={Checkout} />
         <Route path="/addresspage" Component={AddressPage} />
+        <Route path="/address" Component={Address} />
+        <Route path="/orderpage" Component={OrderPage} />
+        <Route path="/orders" Component={Orders} />
+        <Route path="/popup" Component={PopupPage} />
+
+        <Route path="/aboutus" Component={Aboutus} />
+        <Route path="/faq" Component={Faq} />
+        <Route path="/termsandconditions" Component={TermsAndCondition} />
+        <Route path="/returnpolicy" Component={ReturnPolicy} />
+
+
         <Route path='/' Component={Homepage} />
         <Route path='/mdash' Component={DashM} />
         <Route path='/msignup' Component={MSignup} />

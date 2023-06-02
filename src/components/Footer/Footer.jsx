@@ -4,6 +4,7 @@ import oneimg from "../../assets/FooterImg/original.png"
 import twoimg from "../../assets/FooterImg/return-policy-icon-17.png"
 import threeimg from "../../assets/FooterImg/free.png"
 import { Link } from "react-router-dom"
+import logoo from "../../assets/NavbarImg/ShopEaseLogo1.png"
 
 const Footer = () => {
     return (
@@ -12,7 +13,8 @@ const Footer = () => {
             <main>{/* Content */}</main>
             <footer className="footer">
                 <div className="footer__addr">
-                    <h1 className="footer__logo">ShopEase</h1>
+                    {/* <h1 className="footer__logo">ShopEase</h1> */}
+                    <img src={logoo} alt="" style={{height:'58px',width:'220px',marginBottom:'20px'}}/>
                     
                     <p style={{margin:'2px',fontWeight:300}}>Facebook</p>
                     <p style={{margin:'2px',fontWeight:300}}>Twitter</p>
@@ -34,14 +36,17 @@ const Footer = () => {
                     <div className="store-info"  style={{ width: '300px',height:'330px', padding: '0' }}>
                         <h2 className="nav__title">Store Information</h2>
                         <ul >
-                            <li>
-                                <Link to="#">About Us</Link>
+                        <li>
+                                <Link to="#">Delivery Info</Link>
                             </li>
                             <li>
                                 <Link to="#">Customer Service</Link>
                             </li>
                             <li>
-                                <Link to="#">Term & Conditions</Link>
+                                <Link to="#">Shipping Charges</Link>
+                            </li>
+                            <li>
+                                <Link to="#">Store Locator</Link>
                             </li>
                             <li>
                                 <Link to="#">Privacy Policy</Link>
@@ -58,21 +63,22 @@ const Footer = () => {
                         </ul>
                     </div>
                    
-                    <div className="support" style={{ width: '230px',height:'240px', padding: '0' }}>
+                    <div className="support" style={{ width: '260px',height:'240px', padding: '0',marginTop:'-20px' }}>
                     <h2 className="nav__title">Support</h2>
                         <ul >
                             <li>
-                                <Link to="#">Return Policy</Link>
+                                <Link to="/aboutus">About Us</Link>
                             </li>
                             <li>
-                                <Link to="#">Delivery Info</Link>
+                                <Link to="/returnpolicy">Return Policy</Link>
                             </li>
                             <li>
-                                <Link to="#">Shipping Charges</Link>
+                                <Link to="/termsandconditions">Term & Conditions</Link>
                             </li>
                             <li>
-                                <Link to="#">Store Locator</Link>
+                                <Link to="/faq">FAQs</Link>
                             </li>
+                           
                         </ul>
                     </div>
                     <div className="promises" style={{ width: '420px',height:'250px', padding: '0' }}>

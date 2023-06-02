@@ -1,0 +1,11 @@
+.addresspage-con{
+    background-color: rgb(255, 255, 255);
+    width: 1000px;
+    margin:30px auto;
+    /* height: 600px; */
+    padding: 30px 40px;
+}
+.payment-methods{
+    margin-top: 40px;
+    background-color: rgb(61, 120, 247);
+}

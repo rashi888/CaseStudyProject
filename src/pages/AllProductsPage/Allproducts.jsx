@@ -8,6 +8,7 @@ import {RiArrowDownSLine} from "react-icons/ri";
 import Swal from 'sweetalert2';
 
 function Allproducts(props) {
+
   const [product, setProduct] = useState([]);
   const [api, setApi] = useState(props.api);
   const [loading, setLoading] = useState(true);
@@ -17,6 +18,7 @@ function Allproducts(props) {
       .then((response) => response.json())
       .then((data) => setProduct(data["content"]));
   };
+
 
   useEffect(() => {
     fetchData();
