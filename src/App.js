@@ -45,6 +45,7 @@ import Aboutus from './pages/AdditionalPages/Aboutus';
 import Faq from './pages/AdditionalPages/Faq';
 import ReturnPolicy from './pages/AdditionalPages/ReturnPolicy';
 import TermsAndCondition from './pages/AdditionalPages/TermsAndCondition';
+import MyOrders from './pages/MerchantDashboard/MyOrders';
 
 
 
@@ -103,6 +104,7 @@ function App() {
 
         <Route path='/' Component={Homepage} />
         <Route path='/mdash' Component={DashM} />
+        <Route path='/morders' Component={MyOrders} />
         <Route path='/msignup' Component={MSignup} />
         <Route path="/cart" Component={Cart} />
         <Route path="/error" Component={Error} />

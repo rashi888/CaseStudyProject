@@ -65,6 +65,16 @@ function DashM() {
             </div>
           </div>
 
+          <div className="col-sm-3 pt-3"  >
+            <div className="card-item" > 
+              <div className="card-body">
+                <h4 className="card-title">View My Orders</h4>
+                <p className="card-text">View all the orders here.</p>
+                <Link to="/morders" className="card-link btn btn-primary">View Orders</Link>
+
+              </div>
+            </div>
+          </div>
 
         </div>
       </div>
