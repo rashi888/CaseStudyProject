@@ -76,6 +76,9 @@ function MyOrders() {
                             <td>{item.orderStatus}</td>
                             <td><button onClick={toggleAccordion} style={{ border: 'none', backgroundColor: 'white' }}> <i class="ri-arrow-down-s-line"></i></button></td>
                         </tr >
+                        </>)
+                        })}
+
                         {isOpen && (
                             <div className='dropdown-cont-content' style={{ backgroundColor: 'lightgray', width: '90vw', height: '210px', position: 'absolute', zIndex: "99", display: 'flex',padding:'5px' }}>
 
@@ -113,10 +116,9 @@ function MyOrders() {
                                     <input type="text" style={{width:'100%',height:'35px',margin:'10px 0',borderRadius:'5px',border:'0.5px solid lightgray',backgroundColor:'white',color:'black',paddingLeft:'15px'}} placeholder='Remarks...'/>
                                 </div>
                             </div>
+
                         )}
-                        </>
-                        );
-                        })}
+                        
 
 
 
