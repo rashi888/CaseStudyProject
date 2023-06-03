@@ -2,8 +2,10 @@ import React, { useState, useEffect } from 'react'
 import { Link } from "react-router-dom";
 import b1 from "../../assets/PhoneImgs/phone1.webp"
 import Swal from 'sweetalert2';
+import { Spinner } from 'reactstrap'
 
 function UserList() {
+    const [isLoading, setIsLoading] = useState(false);
 
     const deleteProduct = (id) => {
         fetch("http://localhost:8080/api/products/" + id, {
@@ -21,10 +23,13 @@ function UserList() {
     const [product, setProduct] = useState([]);
 
     const fetchData = () => {
+        setIsLoading(true);
         return fetch("http://localhost:8080/api/products?sortBy=category")
        
             .then((response) => response.json())
-            .then((data) => setProduct(data["content"]));
+            .then((data) => {setProduct(data["content"])
+        
+            setIsLoading(false);});
     };
 
     useEffect(() => {
@@ -50,7 +55,11 @@ function UserList() {
                             <th scope="col">Update</th>
                         </tr>
                     </thead>
-                    {product.map((item, index) => {
+                    {isLoading ? (
+          <Spinner animation="border" role="status" color='primary' style={{marginLeft:'600px'}}/>
+        ) : (
+          <>
+           {product.map((item, index) => {
                         return (<>
                             <tbody>
                                 <tr >
@@ -66,6 +75,8 @@ function UserList() {
                         </>
                         );
                     })}
+          </>)}
+                   
                 </table>
 
 

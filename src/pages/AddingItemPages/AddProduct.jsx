@@ -139,7 +139,7 @@ function AddProduct() {
                                     placeholder="MRP" />
                             </div>
                             <div className="form-group">
-                                <label for="stock">stock</label>
+                                <label for="stock">Stock</label>
                                 <input type="text" className="form-control" onChange={(e) => handleChange(e, "stock")}
                                     value={data.stock} required name="stock" id="stock"
                                     placeholder="Stock" />

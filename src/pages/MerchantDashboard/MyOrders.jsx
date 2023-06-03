@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import "../../styles/Morder.css"
 
 import { Link } from 'react-router-dom';
 
@@ -53,7 +52,7 @@ function MyOrders() {
                             <td><button onClick={toggleAccordion} style={{ border: 'none', backgroundColor: 'white' }}> <i class="ri-arrow-down-s-line"></i></button></td>
                         </tr >
                         {isOpen && (
-                            <div className='dropdown-cont-content' style={{ backgroundColor: 'lightgray', width: '1260px', height: '210px', position: 'absolute', zIndex: "99", display: 'flex',padding:'5px' }}>
+                            <div className='dropdown-cont-content' style={{ backgroundColor: 'lightgray', width: '90vw', height: '210px', position: 'absolute', zIndex: "99", display: 'flex',padding:'5px' }}>
 
                                 <div className="left-contentdiv" style={{ width:'660px',padding:'10px 30px',marginRight:'10px' }}>
                                     <h5>Ship to: Name, Address, city, state, zip</h5>

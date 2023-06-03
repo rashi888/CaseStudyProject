@@ -29,7 +29,7 @@ const Footer = () => {
                         <p>Copyright © 2023 by Shopease and its affiliates. All rights reserved.</p>
                     </div>
                     <div className="become-seller" >
-                    <p style={{ fontSize: '22px', color: '#54b9c4', fontWeight: 600, marginTop: '10px' }}>BECOME A SELLER</p>
+                    <p style={{ fontSize: '22px', color: '#54b9c4', fontWeight: 700, marginTop: '10px' }}>BECOME A SELLER</p>
                     <p style={{ marginTop: '-13px', fontWeight: 400, fontSize: '14px' }}>REACH MORE CUSTOMERS</p>
                     <Link to="/msignup" ><button className="btn-merchant-signup">Sign Up Now</button> </Link>
                     </div>
@@ -58,7 +58,7 @@ const Footer = () => {
 
                     </div>
                     <div className="contact-us-div">
-                        <h2 className="nav__title" >Contact Us</h2>
+                        <h2 className="nav__title" style={{marginLeft:'93px',marginBottom:'20px'}} >Contact Us</h2>
                         <p style={{ marginLeft: '18px', marginTop: '15px' }}>Toll Free: 1800 1234 1234</p>
                         <p style={{ marginLeft: '18px', marginTop: '15px' }}>Mail Us at: customerservice@shopease.com</p>
                     </div>
@@ -72,11 +72,11 @@ const Footer = () => {
                     </div>
                     <div className="return-policy" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                         <img src={twoimg} alt="" height="70px" width="70px" />
-                        <p style={{ marginTop: '15px', marginLeft: '10px' }}> Return within 30 days of  receiving your order</p>
+                        <p style={{ marginTop: '15px', marginLeft: '10px' }}> Return within 15 days of  receiving your order</p>
                     </div>
                     <div className="free-delivery" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                         <img src={threeimg} alt="" height="70px" width="70px" />
-                        <p style={{ marginTop: '15px', marginLeft: '10px' }}> Get free delivery for every order above 799</p>
+                        <p style={{ marginTop: '15px', marginLeft: '10px' }}> Get free delivery for every order above 499</p>
                     </div>
                 </div>
 
