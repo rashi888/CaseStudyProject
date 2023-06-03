@@ -270,7 +270,7 @@ useEffect(() => {
                             onChange={(e) => setDatas({ ...datas, paymentMethod: e.target.value })}
                             />
                             <label class="form-check-label" for="flexRadioDefault5">
-                                Payment Online
+                                Pay Online
                             </label>
                         </div>
                         <div class="form-check">
