@@ -7,5 +7,27 @@
 }
 .payment-methods{
     margin-top: 40px;
-    background-color: rgb(61, 120, 247);
 }
+.form-check-delivery{
+    border: 1px solid lightgray;
+    padding: 10px 25px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    /* position: relative; */
+}
+.form-check-delivery>label{
+    margin-left: 15px;
+}
+.form-check-delivery>input{
+    font-size: 18px;
+    border: 2px solid lightgray;
+    margin-top:8px;
+    margin-left: -15px;
+    border-radius: 100px;
+}
+/* .form-check-delivery>label>i{
+   font-size: 20px;
+   margin-left: 70px;
+   margin-left: 10px;
+   position: absolute;
+} */

@@ -81,6 +81,9 @@ function Items3() {
     return (
         <>
             <div className="wrapperr">
+            <h3 className="wrapper-heading1" >ShopEase Originals </h3>
+        <hr className="horizontal-line"/>
+
                 {isLoading ? (
                     <Spinner animation="border" role="status" color='primary' style={{ marginLeft: '50%' }} />
                 ) : (

@@ -13,7 +13,7 @@ function DashM() {
             <div className="card-item">
               <div className="card-body">
                 <h4 className="card-title">Categories</h4>
-                <p className="card-text">Manage the categories section here. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam, tenetur.</p>
+                <p className="card-text">Manage the categories section here. </p>
                 <Link to="/categoryadd" className="card-link btn btn-primary">Add Category</Link>
 
               </div>
@@ -36,7 +36,7 @@ function DashM() {
             <div className="card-item" >
               <div className="card-body">
                 <h4 className="card-title">View Categories List</h4>
-                <p className="card-text">View categories here. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum rerum tempora molestiae natus est perferendis tenetur, iste debitis sint nihil.</p>
+                <p className="card-text">View categories here.</p>
                 <Link to="/categorylist" className="card-link btn btn-primary">View Category</Link>
 
               </div>

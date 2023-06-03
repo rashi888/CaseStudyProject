@@ -83,6 +83,9 @@ function Items2() {
     <>
       <div className="wrapperr">
 
+      <h3 className="wrapper-heading1" >All Products  </h3>
+        <hr className="horizontal-line"/>
+
       {isLoading ? (
     <Spinner animation="border" role="status" color='primary' style={{marginLeft:'50%'}}/>
   ) : (

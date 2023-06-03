@@ -15,7 +15,7 @@ function Items1() {
 
     setIsLoading(true);
 
-    return fetch("http://localhost:8080/api/category/4/products")
+    return fetch("http://localhost:8080/api/category/2/products")
       .then((response) => response.json())
       .then((data) => {setProduct(data["content"])
       setIsLoading(false);
@@ -82,6 +82,9 @@ function Items1() {
   return (
     <>
       <div className="wrapperr">
+      <h3 className="wrapper-heading1" > Smartphones & Devices  </h3>
+        <hr className="horizontal-line"/>
+
 
       {isLoading ? (
           <Spinner animation="border" role="status" color='primary' style={{marginLeft:'50%'}}/>
@@ -110,24 +113,6 @@ function Items1() {
                     </NavLink>
                   </p>
                 </div>
-                {/* <Link to="mobiles"><script>const id = item.productId;</script>
-                <div className="image-items">
-                  <img
-                    src={"http://localhost:8080/api/products/image/" + item.productPhoto}
-                    className="card-img-top"
-                    alt="product.title"
-                  />
-                </div>
-                </Link>
-                <h4 className="heading-main">{item.productName}</h4>
-                <p className='price-main'>₹ {item.productPrice}</p>
-                <p className='description-main'> {item.productDescription}</p>
-                <p>
-                  <NavLink to="/cart">
-                    <button type="button" class="btn-item btn-warning">Add to cart</button>
-                  </NavLink>
-
-                </p> */}
               </div>
             </>
             );
