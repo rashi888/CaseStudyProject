@@ -31,7 +31,7 @@ function Allproducts(props) {
 
   const fetchData = async () => {
     setIsLoading(true);
-    const url = api+"?pageSize=15&pageNumber="+pageNumber+"&sortDir=DESC&sortBy="+sortBy;
+    const url = api+"?pageSize=10&pageNumber="+pageNumber+"&sortDir=DESC&sortBy="+sortBy;
 
     const response = await fetch(url);
     const data = await response.json();
