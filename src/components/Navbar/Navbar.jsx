@@ -46,12 +46,21 @@ const Navbar = () => {
     }
     let menu;
     if (window.localStorage.getItem("token") != null) {
+        console.log(window.localStorage.getItem("role"))
+        if(window.localStorage.getItem("role") === "MERCHANT"){
+            menu = (
+                <div className="profile">
+                    <Link to="mdash" >DashBoard</Link>
+                    <h6 className="center" onClick={logout}>LogOut</h6>
+                </div>
+            )
+        }else{
         menu = (
             <div className="profile">
                 <Link to="orders" >Orders</Link>
                 <h6 className="center" onClick={logout}>LogOut</h6>
             </div>
-        )
+        )}
     }
 
     function verifylogin() {

@@ -4,20 +4,31 @@ import b1 from "../../assets/PhoneImgs/phone1.webp"
 import Swal from 'sweetalert2';
 import { Spinner } from 'reactstrap'
 
-function ProductList() {
+function MyProductList() {
 
     const [isLoading, setIsLoading] = useState(false);
 
-    
+    const deleteProduct = (id) => {
+        fetch("http://localhost:8080/api/products/" + id, {
+            method: "DELETE",
+        }).then(() => {
+            Swal.fire({
+                title: "Success",
+                text: "Product Deleted Successfully",
+                icon: "success",
+            });
+            fetchData();
+        });
+    };
 
     const [product, setProduct] = useState([]);
 
     const fetchData = () => {
         setIsLoading(true);
-        return fetch("http://localhost:8080/api/products?sortBy=category&pageSize=100")
+        return fetch("http://localhost:8080/api/products/mId/"+localStorage.getItem("userId"))
             .then((response) => response.json())
             .then((data) => {
-                setProduct(data["content"])
+                setProduct(data)
                 setIsLoading(false);
             });
     };
@@ -44,6 +55,7 @@ function ProductList() {
                             <th scope="col">Stock</th>
                             <th scope="col">Price</th>
                             {/* <th scope="col">Delete</th> */}
+                            <th scope="col">Update</th>
                         </tr>
                     </thead>
                     {isLoading ? (
@@ -60,6 +72,7 @@ function ProductList() {
                                             <td>{item.stock}</td>
                                             <td>₹ {item.productPrice}</td>
                                             {/* <td><button className="btnn btn-danger" style={{ padding: '4px 7px', borderRadius: '5px',marginTop:'-7px' }} onClick={() => deleteProduct(item.productId)}>Delete</button></td> */}
+                                            <td><Link to={'/updateproduct/' + item.productId} className="btnn btn-warning" style={{ padding: '4px 7px', borderRadius: '5px', marginTop: '-7px' }}>Update</Link></td>
 
                                         </tr >
                                     </tbody>
@@ -94,4 +107,4 @@ function ProductList() {
     )
 }
 
-export default ProductList
+export default MyProductList

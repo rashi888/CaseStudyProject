@@ -48,6 +48,7 @@ import TermsAndCondition from './pages/AdditionalPages/TermsAndCondition';
 import MyOrders from './pages/MerchantDashboard/MyOrders';
 import CategoryListAdmin from './pages/Admin/CategoryListAdmin';
 import ProductListAdmin from './pages/Admin/ProductListAdmin';
+import MyProductList from './pages/AddingItemPages/MyProductList';
 
 
 
@@ -83,6 +84,7 @@ function App() {
         <Route path='/search' Component={() => <SearchData />} />
 
         <Route path="/productlist" Component={ProductList} />
+        <Route path="/myproductlist" Component={MyProductList} />
         <Route path="/categorylist" Component={CategoryList} />
         <Route path="/productadd" Component={AddProduct} />
         <Route path="/categoryadd" Component={AddCategory} />

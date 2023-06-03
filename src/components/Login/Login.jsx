@@ -38,6 +38,7 @@ const Login = () => {
       window.localStorage.setItem("token", response.data.token);
       window.localStorage.setItem("userId", response.data.userId);
       window.localStorage.setItem("name", response.data.name);
+      window.localStorage.setItem("role", response.data.role);
 
       Swal.fire({
         title: "Login Successfull",
