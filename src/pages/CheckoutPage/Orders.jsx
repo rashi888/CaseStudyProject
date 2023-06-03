@@ -42,7 +42,7 @@ function Orders() {
                         <h6>OrderId <br />{item.orderId} </h6>
                     </div>
                     <div className="bottom-order-con">
-                        <h5 style={{ padding: '10px 20px' }}>Delivered 31-May-2023</h5>
+                        <h5 style={{ padding: '10px 20px' }}>{item.orderStatus}</h5>
                         <div className="order-all">
                             <div className="img-order-img">
                                 <img src={

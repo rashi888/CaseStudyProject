@@ -48,7 +48,7 @@ const Navbar = () => {
     if (window.localStorage.getItem("token") != null) {
         menu = (
             <div className="profile">
-                <Link to="orderhistory" >Orders</Link>
+                <Link to="orders" >Orders</Link>
                 <h6 className="center" onClick={logout}>LogOut</h6>
             </div>
         )

@@ -7,6 +7,8 @@ import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import cartimg from '../../assets/MoreImgs/cart.png'
+
 
 function CartPage() {
   const [cart, setCart] = React.useState([]);
@@ -75,9 +77,9 @@ function CartPage() {
       .catch((error) => console.log(error));
   };
 
-  if (cart.length === 0) {
-    navigate("/cart");
-  }
+ 
+
+  
 
   const refresh = () => window.location.reload(true)
 
@@ -107,6 +109,19 @@ function CartPage() {
 
         refresh();
   };
+
+  if (cart.length === 0) {
+    return (
+      <>
+         <div className="cart" style={{ width: "80%", margin: '2% 10%', textAlign: 'center' }}>
+                <img src={cartimg} alt="" style={{ margin: '0% 2%', marginTop: "-10%", height: '120%', width: "80%" }} />
+                <h5 style={{ marginTop: '-14%', fontWeight: '600' }}>ADD ITEMS TO CART AND DO SHOPPING WITH EASE!!!</h5>
+                <Link to="/">  <button type="button" class="btn btn-success" style={{ marginTop: '3%', padding: '8px 25px' }}>Continue Shopping</button></Link>
+            </div>
+      </>
+    );
+  }
+  else{
 
   return (
     <>
@@ -296,6 +311,7 @@ function CartPage() {
       </main>
     </>
   );
+                    }
 }
 
 export default CartPage;

@@ -10,7 +10,7 @@ function OrderHistory() {
     const fetchData = () => {
         return fetch("http://localhost:8080/api/order/userOrders/" + localStorage.getItem("userId"))
             .then((response) => response.json())
-            .then((data) => setOrder(data));
+            .then((data) => setOrder(data['content']));
     };
 
     React.useEffect(() => {
