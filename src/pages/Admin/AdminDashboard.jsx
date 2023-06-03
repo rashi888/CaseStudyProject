@@ -37,7 +37,7 @@ function AdminDashboard() {
               <div className="card-body">
                 <h4 className="card-title">View Categories</h4>
                 <p className="card-text">View categories here. </p>
-                <Link to="/categorylist" className="card-link btn btn-primary">View Category</Link>
+                <Link to="/categoryadminlist" className="card-link btn btn-primary">View Category</Link>
 
               </div>
             </div>
@@ -48,7 +48,7 @@ function AdminDashboard() {
               <div className="card-body">
                 <h4 className="card-title">View Products</h4>
                 <p className="card-text">View products here.</p>
-                <Link to="/productlist" className="card-link btn btn-primary">View Product</Link>
+                <Link to="/productadminlist" className="card-link btn btn-primary">View Product</Link>
 
               </div>
             </div>

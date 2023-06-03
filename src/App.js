@@ -46,6 +46,8 @@ import Faq from './pages/AdditionalPages/Faq';
 import ReturnPolicy from './pages/AdditionalPages/ReturnPolicy';
 import TermsAndCondition from './pages/AdditionalPages/TermsAndCondition';
 import MyOrders from './pages/MerchantDashboard/MyOrders';
+import CategoryListAdmin from './pages/Admin/CategoryListAdmin';
+import ProductListAdmin from './pages/Admin/ProductListAdmin';
 
 
 
@@ -82,11 +84,13 @@ function App() {
 
         <Route path="/productlist" Component={ProductList} />
         <Route path="/categorylist" Component={CategoryList} />
-        <Route path="/userlist" Component={UserList} />
-        <Route path="/merchantlist" Component={MerchantList} />
         <Route path="/productadd" Component={AddProduct} />
         <Route path="/categoryadd" Component={AddCategory} />
         <Route path="/admindashboard" Component={AdminDashboard} />
+        <Route path="/userlist" Component={UserList} />
+        <Route path="/merchantlist" Component={MerchantList} />
+        <Route path="/categoryadminlist" Component={CategoryListAdmin} />
+        <Route path="/productadminlist" Component={ProductListAdmin} />
         <Route path='/allproducts' Component={() => <Allproducts api={allproductsApi} />} />
         {/* <Route path='/allproducts' Component={() => <ProductsView api={allproductsApi} />} /> */}
         <Route path="/addtocart" Component={AddItem} />
