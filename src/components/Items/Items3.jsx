@@ -4,15 +4,22 @@ import 'react-multi-carousel/lib/styles.css';
 import { NavLink, Link } from 'react-router-dom'
 import "./Items.css";
 import Swal from "sweetalert2";
+import { Spinner } from 'reactstrap'
 
 function Items3() {
 
     const [product, setProduct] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
 
     const fetchData = () => {
+        setIsLoading(true);
+
         return fetch("http://localhost:8080/api/category/3/products")
             .then((response) => response.json())
-            .then((data) => setProduct(data["content"]));
+            .then((data) => {
+                setProduct(data["content"])
+                setIsLoading(false);
+            });
     };
 
     useEffect(() => {
@@ -74,30 +81,34 @@ function Items3() {
     return (
         <>
             <div className="wrapperr">
-                <Carousel responsive={responsive}>
-                    {product.map((item) => {
-                        return (<>
-                            <div className="cardy" >
-                                <div className="image-items">
-                                    <img
-                                        src={"http://localhost:8080/api/products/image/" + item.productPhoto}
-                                        className="card-img-top"
-                                        alt="product.title"
-                                        height='100%'
-                                        width='100%'
-                                    />
-                                </div>
-                                <div className="all-main-content">
-                                    <h4 className="heading-main">{item.productName}</h4>
-                                    <h5 className='price-main'>₹ {item.productPrice}</h5>
-                                    <p className='description-main'> {item.productDescription}</p>
-                                    <p>
-                                        <NavLink to="/cart">
-                                            <button onClick={addtocart(item.productId)} type="button" class="btn-Item btn-warning" style={{ borderRadius: '4px', border: 'none' }}>Add to cart</button>
-                                        </NavLink>
-                                    </p>
-                                </div>
-                                {/* <Link to="mobiles"><script>const id = item.productId;</script>
+                {isLoading ? (
+                    <Spinner animation="border" role="status" color='primary' style={{ marginLeft: '50%' }} />
+                ) : (
+                    <>
+                        <Carousel responsive={responsive}>
+                            {product.map((item) => {
+                                return (<>
+                                    <div className="cardy" >
+                                        <div className="image-items">
+                                            <img
+                                                src={"http://localhost:8080/api/products/image/" + item.productPhoto}
+                                                className="card-img-top"
+                                                alt="product.title"
+                                                height='100%'
+                                                width='100%'
+                                            />
+                                        </div>
+                                        <div className="all-main-content">
+                                            <h4 className="heading-main">{item.productName}</h4>
+                                            <h5 className='price-main'>₹ {item.productPrice}</h5>
+                                            <p className='description-main'> {item.productDescription}</p>
+                                            <p>
+                                                <NavLink to="/cart">
+                                                    <button onClick={addtocart(item.productId)} type="button" class="btn-Item btn-warning" style={{ borderRadius: '4px', border: 'none' }}>Add to cart</button>
+                                                </NavLink>
+                                            </p>
+                                        </div>
+                                        {/* <Link to="mobiles"><script>const id = item.productId;</script>
                 <div className="image-items">
                   <img
                     src={"http://localhost:8080/api/products/image/" + item.productPhoto}
@@ -115,11 +126,14 @@ function Items3() {
                   </NavLink>
 
                 </p> */}
-                            </div>
-                        </>
-                        );
-                    })}
-                </Carousel>
+                                    </div>
+                                </>
+                                );
+                            })}
+                        </Carousel>
+                    </>)}
+
+
             </div>
         </>
     )
