@@ -4,34 +4,54 @@ import imgg from "../../assets/PhoneImgs/phone1.webp"
 import { Link } from 'react-router-dom'
 
 function Orders() {
+    const [order, setOrder] = React.useState([]);
+
+    const fetchData = () => {
+        return fetch("http://localhost:8080/api/order/userOrders/" + localStorage.getItem("userId"))
+            .then((response) => response.json())
+            .then((data) => setOrder(data["content"]));
+    };
+
+    React.useEffect(() => {
+        fetchData();
+    }, []);
+
+    console.log(order);
     return (
         <>
             <div className="cont-container">
+
+                {order.map((item, index) => {
+                    return (
+                        <>
+                            
+                
+
                 <div className="order-card1">
                     <div className="top-order-con">
-                        <h6>ORDER PLACED <br /> 1 May 2023</h6>
-                        <h6>TOTAL <br /> Rs 1,899.00</h6>
+                        <h6>ORDER PLACED <br />{item.orderDate}</h6>
+                        <h6>TOTAL <br /> Rs.-{item.totalPrice}</h6>
                         <div className="user-div">
-                            <h6>SHIP TO <br /> User Name <i class="ri-arrow-down-s-line" > </i></h6></div>
+                            <h6>SHIP TO <br /> {item.shippedTo} <i class="ri-arrow-down-s-line" > </i></h6></div>
                         <div className="add-hover">
-                            <p >
-                                Rashi dixit,
-                                Kala bagh balot bypass road, near Siddharth palace <br /> ward no.7
-                                Ganj Basoda, MADHYA PRADESH 464221</p>
+                            <p >{item.address} </p>
                         </div>
 
 
 
-                        <h6>OrderId <br />2 </h6>
+                        <h6>OrderId <br />{item.orderId} </h6>
                     </div>
                     <div className="bottom-order-con">
                         <h5 style={{ padding: '10px 20px' }}>Delivered 31-May-2023</h5>
                         <div className="order-all">
                             <div className="img-order-img">
-                                <img src={imgg} alt="" height="150px" width="150px" />
+                                <img src={
+                          "http://localhost:8080/api/products/image/" +
+                          item.product.productPhoto
+                        } alt="" height="150px" width="150px" />
                             </div>
                             <div className="content-box">
-                                <Link ><h6 className="head3">SAMSUNG Galaxy S22 Ultra Cell Phone, Factory Unlocked Android Smartphone, 128GB, 8K Camera & Video, Brightest Display Screen, S Pen, Long Battery Life, Fast 4nm Processor, US Version, Green</h6></Link>
+                                <Link ><h6 className="head3">{item.product.productName}</h6></Link>
                                 <p style={{ marginLeft: '40px', marginTop: '-10px' }}>Return window closed on 10-June-2023</p>
                                 <button style={{ padding: '5px 20px', borderRadius: '5px', backgroundColor: 'rgb(255, 217, 0)', margin: '0 40px', border: 'none' }}>Buy it again</button>
                                 <button style={{ padding: '5px 20px', borderRadius: '5px', backgroundColor: 'white', margin: '0 -10px', border: '0.5px solid lightgray' }}>View your item</button>
@@ -47,6 +67,9 @@ function Orders() {
                         </div>
                     </div>
                 </div>
+                        </>
+                    );
+                })}
             </div>
         </>
     )
