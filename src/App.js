@@ -57,7 +57,8 @@ function App() {
   const electronicsApi = "http://localhost:8080/api/category/4/products";
   const homeApi = "http://localhost:8080/api/category/5/products";
   const beautyApi = "http://localhost:8080/api/category/6/products";
-  const allproductsApi = "http://localhost:8080/api/products?pageSize=100";
+  // const allproductsApi = "http://localhost:8080/api/products?pageSize=100";
+  const allproductsApi = "http://localhost:8080/api/products";
   return (
     <>
       <Navbar />
