@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
+import axios from 'axios';
 
 import { Link } from 'react-router-dom';
 
@@ -19,6 +20,28 @@ function MyOrders() {
             setOpen(id);
         }
     };
+
+    const [data, setData] = useState([]);
+
+    const order = () => {
+        axios.get('http://localhost:8080/api/order/merchantOrders/'+window.localStorage.getItem("userId"))
+            .then(response => {
+                console.log(response.data["content"]);
+                setData(response.data["content"]);
+            })
+            .catch(error => {
+                console.log(error);
+            });
+    }
+
+    useEffect(() => {
+        order();
+    }, []);
+
+
+
+
+
     return (
         <>
             <div className="container-fluid my-5" style={{ backgroundColor: 'white', paddingBottom: '10px' }}>
@@ -38,17 +61,19 @@ function MyOrders() {
                             <th scope="col">Status</th>
                             <th></th>
                         </tr>
-                    </thead>
-
+                    </thead>                        
+                    
                     <tbody >
+                        {data.map((item, index) => {
+                            return (<>
                         <tr >
-                            <th scope="row" key="1">02/06/2023 </th>
-                            <td >001234</td>
-                            <td >Tata Salt</td>
-                            <td>2</td>
-                            <td> ₹ 1290</td>
-                            <td>Card</td>
-                            <td>Pending</td>
+                            <th scope="row" key="1">{item.orderDate} </th>
+                            <td >{item.orderId}</td>
+                            <td >{item.product.productName}</td>
+                            <td>{item.quantity}</td>
+                            <td> ₹ {item.totalPrice}</td>
+                            <td>{item.paymentMethod}</td>
+                            <td>{item.orderStatus}</td>
                             <td><button onClick={toggleAccordion} style={{ border: 'none', backgroundColor: 'white' }}> <i class="ri-arrow-down-s-line"></i></button></td>
                         </tr >
                         {isOpen && (
@@ -89,9 +114,17 @@ function MyOrders() {
                                 </div>
                             </div>
                         )}
+                        </>
+                        );
+                        })}
+
 
 
                     </tbody>
+                    
+                          
+                       
+                        
 
                 </table>
 
