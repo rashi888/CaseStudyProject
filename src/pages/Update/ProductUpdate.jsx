@@ -90,10 +90,16 @@ function ProductUpdate() {
                                     placeholder="Price" />
                             </div>
                             <div className="form-group">
-                                <label for="productPrice">MRP</label>
+                                <label for="productMRP">MRP</label>
                                 <input type="number" className="form-control" onChange={(e) => handleChange(e, "productMRP")}
                                     value={data.productMRP} required name="productMRP" id="productMRP"
                                     placeholder="MRP" />
+                            </div>
+                            <div className="form-group">
+                                <label for="productStock">Stock</label>
+                                <input type="number" className="form-control" onChange={(e) => handleChange(e, "stock")}
+                                    value={data.stock} required name="productStock" id="productStock"
+                                    placeholder="Stock" />
                             </div>
 
                             <div className="form-group">

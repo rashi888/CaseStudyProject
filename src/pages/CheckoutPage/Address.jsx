@@ -1,11 +1,36 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import "./Address.css"
 import { Link } from "react-router-dom"
 import { FormGroup, Form, Input, Label, Row, Col } from 'reactstrap';
 import Modal from './Modal';
+import axios from 'axios';
 
+import Swal from 'sweetalert2';
 
 function Address() {
+
+    const [data, setData] = useState([]);
+    const [deliveryDetailsId, setDeliveryDetailsId] = useState(1);
+    const [paymentMethod, setPaymentMethod] = useState("COD");
+
+   const fetchdata = () => {
+    axios.get("http://localhost:8080/api/deliveryDetails/user/" + localStorage.getItem("userId"))
+    // axios.get("http://localhost:8080/api/deliveryDetails/" )
+        .then((resp) => {
+            console.log(resp["data"]);
+            setData(resp["data"]);
+        })
+}
+
+useEffect(() => {
+    fetchdata();
+}, []);
+
+
+    
+
+
+
 
     const [isPopupOpen, setIsPopupOpen] = useState(false);
     const handleButtonClick = () => {
@@ -27,6 +52,57 @@ function Address() {
         setIsOpen(false);
     };
 
+    const submitForm = (e) => {
+        e.preventDefault();
+        const formdata = new FormData(e.target);
+        const data = Object.fromEntries(formdata.entries());
+        data["userIds"] = localStorage.getItem("userId");
+        console.log(data);
+        axios.post("http://localhost:8080/api/deliveryDetails/", data)
+            .then((resp) => {
+                console.log("success log");
+                Swal.fire({
+                    title: "Success",
+                    text: "Address Added Successfully",
+                    icon: "success",
+                });
+                fetchdata();
+                closeModal();
+            }
+            )
+
+    }
+    const refresh = () => window.location.reload(true)
+
+  const [datas, setDatas] = useState({
+    userId: localStorage.getItem("userId"),
+    deliveryDetailsId: deliveryDetailsId,
+    paymentMethod: paymentMethod,
+  });
+
+ 
+  const checkout = (e) => {
+    e.preventDefault();
+    console.log(datas);
+    axios
+        .post("http://localhost:8080/api/order/", datas)
+        .then((resp) => {
+            console.log(resp["data"]);
+            Swal.fire({
+                title: "Success",
+                text: "Order Placed Successfully",
+                icon: "success",
+            });
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+};
+
+
+
+
+
 
     return (
         <>
@@ -35,32 +111,31 @@ function Address() {
                     <div className="delivery-first" >
 
                         <h3 style={{ marginBottom: '40px' }}>1. Delivery Address</h3>
-
+                        {
+                            data.map((item) => {
+                                return (
+                                    <>
+                        
                         <div class="form-check-delivery">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
+                            <input class="form-check-input" value={item.deliveryDetailsId} 
+                            onChange={(e) => setDatas({ ...datas, deliveryDetailsId: e.target.value })}
+                              type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
                             <label class="form-check-label" for="flexRadioDefault1">
-                                Rashi dixit,
-                                Kala bagh balot bypass road, near Siddharth palace ward no.7
-                                Ganj Basoda, MADHYA PRADESH 464221
+                                {item.name},
+                                {item.addressLine1},
+                                {item.addressLine2},
+                                {item.city},
+                                {item.pincode}
+                                <br />
+                                {item.state}
                                 <button onClick={openModal} style={{ border: '0', backgroundColor: 'white',marginLeft:'20px',color:'gray'}} ><i class="ri-pencil-fill" ></i></button>  
                             </label>
                         </div>
-                        <div class="form-check-delivery">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" />
-                            <label class="form-check-label" for="flexRadioDefault2">
-                                Samyak Jain,
-                                City Centre, Gwalior , MADHYA PRADESH 464221
-                                <button onClick={openModal} style={{ border: '0', backgroundColor: 'white',marginLeft:'390px',color:'gray' }} ><i class="ri-pencil-fill" ></i></button>  
-                            </label>
-                        </div>
-                        <div class="form-check-delivery">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" />
-                            <label class="form-check-label" for="flexRadioDefault2">
-                                Aditi Aliya, Gokuldham green city
-                                ganj basoda , MADHYA PRADESH 464221
-                              <button onClick={openModal} style={{ border: '0', backgroundColor: 'white',marginLeft:'300px',color:'gray' }} ><i class="ri-pencil-fill" ></i></button>  
-                            </label>
-                        </div>
+                        </>
+                                )
+                            })
+                        }
+
                        
 
 
@@ -69,7 +144,7 @@ function Address() {
                             <div className="modal-div" >
                                 <div className="popup-content">
                                     <h5 style={{ marginBottom: '30px' }}>Add New Address Here</h5>
-                                    <Form>
+                                    <Form onSubmit={submitForm} >
                                         <Row>
                                             <Col md={6}>
                                                 <FormGroup>
@@ -78,7 +153,7 @@ function Address() {
                                                     </Label>
                                                     <Input
                                                         id="name"
-                                                        name="text"
+                                                        name="name"
                                                         placeholder="name"
                                                         type="name"
                                                     />
@@ -86,12 +161,12 @@ function Address() {
                                             </Col>
                                             <Col md={6}>
                                                 <FormGroup>
-                                                    <Label for="mobileNumber">
+                                                    <Label for="mobile">
                                                         Mobile Number
                                                     </Label>
                                                     <Input
-                                                        id="mobileNumber"
-                                                        name="mobileNumber"
+                                                        id="mobile"
+                                                        name="mobile"
                                                         placeholder="Mobile Number"
                                                         type="tel"
                                                     />
@@ -104,7 +179,7 @@ function Address() {
                                             </Label>
                                             <Input
                                                 id="exampleAddress"
-                                                name="address"
+                                                name="addressLine1"
                                                 placeholder="1234 Main St"
                                             />
                                         </FormGroup>
@@ -114,7 +189,7 @@ function Address() {
                                             </Label>
                                             <Input
                                                 id="exampleAddress2"
-                                                name="address2"
+                                                name="addressLine2"
                                                 placeholder="Apartment, studio, or floor"
                                             />
                                         </FormGroup>
@@ -136,10 +211,10 @@ function Address() {
                                                         State
                                                     </Label>
                                                     <div class="input-group mb-3">
-                                                        <select class="form-select" id="inputGroupSelect02">
+                                                        <select class="form-select" name="state" id="inputGroupSelect02">
                                                             <option selected>Choose...</option>
-                                                            <option value="1"> Andhra Pradesh</option>
-                                                            <option value="2">Arunachal Pradesh</option>
+                                                            <option value="Andhra Pradesh"> Andhra Pradesh</option>
+                                                            <option value="Arunachal Pradesh">Arunachal Pradesh</option>
                                                             <option value="3">Assam</option>
                                                             <option value="4">Bihar</option>
                                                             <option value="5">Chhattisgarh</option>
@@ -177,13 +252,13 @@ function Address() {
                                                     </Label>
                                                     <Input
                                                         id="exampleZip"
-                                                        name="zip"
+                                                        name="pincode"
                                                     />
                                                 </FormGroup>
                                             </Col>
                                         </Row>
+                                    <button className='btn btn-success 'type='submit' onClick={handleClosePopup}>Done</button>
                                     </Form>
-                                    <button className='btn btn-success' onClick={handleClosePopup}>Done</button>
                                 </div>
                             </div>
                         </Modal>
@@ -191,17 +266,25 @@ function Address() {
                     <div className="payment-methods">
                         <h3 style={{ marginBottom: '40px' }}>2. Payment Methods </h3>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault5" />
+                            <input class="form-check-input" value="Online" type="radio" name="flexRadioDefault1" id="flexRadioDefault5" 
+                            onChange={(e) => setDatas({ ...datas, paymentMethod: e.target.value })}
+                            />
                             <label class="form-check-label" for="flexRadioDefault5">
                                 Payment Online
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault6" />
+                            <input class="form-check-input" type="radio" value="COD" name="flexRadioDefault1" id="flexRadioDefault6"
+                                onChange={(e) => setDatas({ ...datas, paymentMethod: e.target.value })}
+                             />
                             <label class="form-check-label" for="flexRadioDefault6">
                                 Cash On Delivery
                             </label>
                         </div>
+                        <div className="button" onClick={checkout} >
+                            <Link  style={{ border: '0', backgroundColor: 'green', marginTop: '10px' }} className="btn btn-primary">Continue</Link>
+                        </div>
+
                     </div>
 
 

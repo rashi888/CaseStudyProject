@@ -6,6 +6,7 @@ import { BiMinus } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function CartPage() {
   const [cart, setCart] = React.useState([]);
@@ -246,8 +247,8 @@ function CartPage() {
                       </li>
                     </ul>
 
-                    <a
-                      onClick={checkout}
+                    <Link
+                     to ="/address"
                       className="btn btn-block"
                       style={{
                         backgroundColor: "#34c3d3",
@@ -256,7 +257,7 @@ function CartPage() {
                       }}
                     >
                       Checkout
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <div className="cardy-box mb-4">

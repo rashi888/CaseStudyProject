@@ -8,7 +8,7 @@ function UserList() {
     const [isLoading, setIsLoading] = useState(false);
 
     const deleteProduct = (id) => {
-        fetch("http://localhost:8080/api/products/" + id, {
+        fetch("http://localhost:8080/api/users/" + id, {
             method: "DELETE",
         }).then(() => {
             Swal.fire({
@@ -24,10 +24,10 @@ function UserList() {
 
     const fetchData = () => {
         setIsLoading(true);
-        return fetch("http://localhost:8080/api/products?sortBy=category")
+        return fetch("http://localhost:8080/api/users/")
        
             .then((response) => response.json())
-            .then((data) => {setProduct(data["content"])
+            .then((data) => {setProduct(data)
         
             setIsLoading(false);});
     };
