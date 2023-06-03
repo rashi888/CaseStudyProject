@@ -48,6 +48,10 @@ function Items3() {
             items: 1
         }
     };
+    const viewProduct = (id) => (e) => {
+        console.log(e.target.value);
+        window.location.href = "/singleproductview/" + id;
+      };
 
     const addtocart = (id) => (e) => {
         console.log(e.target.value);
@@ -94,6 +98,7 @@ function Items3() {
                                     <div className="cardy" >
                                         <div className="image-items">
                                             <img
+                                            onClick={viewProduct(item.productId)}
                                                 src={"http://localhost:8080/api/products/image/" + item.productPhoto}
                                                 className="card-img-top"
                                                 alt="product.title"
@@ -106,7 +111,7 @@ function Items3() {
                                             <h5 className='price-main'>₹ {item.productPrice}</h5>
                                             <p className='description-main'> {item.productDescription}</p>
                                             <p>
-                                                <NavLink to="/cart">
+                                                <NavLink >
                                                     <button onClick={addtocart(item.productId)} type="button" class="btn-Item btn-warning" style={{ borderRadius: '4px', border: 'none' }}>Add to cart</button>
                                                 </NavLink>
                                             </p>
