@@ -136,9 +136,9 @@ function AddProduct() {
                             <div className="form-group">
                                 <label for="productDescription">Product Description</label>
                                 <JoditEditor
-                                    ref={editor}
+                                    // ref={editor}
                                     value={data.productDescription}
-                                    config={config}
+                                    // config={config}
                                     tabIndex={1} // tabIndex of textarea
                                     onBlur={(newContent) => setData({ ...data, productDescription: newContent })} // preferred to use only this option to update the content for performance reasons
                                     onChange={(newContent) => { }}
