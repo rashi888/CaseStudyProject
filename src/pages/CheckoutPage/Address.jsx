@@ -213,34 +213,35 @@ useEffect(() => {
                                                     <div class="input-group mb-3">
                                                         <select class="form-select" name="state" id="inputGroupSelect02">
                                                             <option selected>Choose...</option>
+                                                            <option selected>Choose...</option>
                                                             <option value="Andhra Pradesh"> Andhra Pradesh</option>
                                                             <option value="Arunachal Pradesh">Arunachal Pradesh</option>
-                                                            <option value="3">Assam</option>
-                                                            <option value="4">Bihar</option>
-                                                            <option value="5">Chhattisgarh</option>
-                                                            <option value="6">Goa</option>
-                                                            <option value="7">Gujarat</option>
-                                                            <option value="8">Haryana</option>
-                                                            <option value="9">Himachal Pradesh</option>
-                                                            <option value="10">Jharkhand</option>
-                                                            <option value="11">Karnataka</option>
-                                                            <option value="12">Kerala</option>
-                                                            <option value="13">Madhya Pradesh</option>
-                                                            <option value="14">Maharastra</option>
-                                                            <option value="15">Manipur</option>
-                                                            <option value="16">Meghalaya</option>
-                                                            <option value="17">Mizoram</option>
-                                                            <option value="18">Nagaland</option>
-                                                            <option value="19">Odisha</option>
-                                                            <option value="20">Punjab</option>
-                                                            <option value="21">Rajasthan</option>
-                                                            <option value="22">Sikkim</option>
-                                                            <option value="23">Tamil Nadu</option>
-                                                            <option value="24">Telangana</option>
-                                                            <option value="25">Tripura</option>
-                                                            <option value="26">Uttar Pradesh</option>
-                                                            <option value="27">Uttrakhand</option>
-                                                            <option value="28">West Bengal</option>
+                                                            <option value="Assam">Assam</option>
+                                                            <option value="Bihar">Bihar</option>
+                                                            <option value="Chhattisgarh">Chhattisgarh</option>
+                                                            <option value="Goa">Goa</option>
+                                                            <option value="Gujarat">Gujarat</option>
+                                                            <option value="Haryana">Haryana</option>
+                                                            <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                                            <option value="Jharkhand">Jharkhand</option>
+                                                            <option value="Karnataka">Karnataka</option>
+                                                            <option value="Kerala">Kerala</option>
+                                                            <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                                            <option value="Maharastra">Maharastra</option>
+                                                            <option value="Manipur">Manipur</option>
+                                                            <option value="Meghalaya">Meghalaya</option>
+                                                            <option value="Mizoram">Mizoram</option>
+                                                            <option value="Nagaland">Nagaland</option>
+                                                            <option value="Odisha">Odisha</option>
+                                                            <option value="Punjab">Punjab</option>
+                                                            <option value="Rajasthan">Rajasthan</option>
+                                                            <option value="Sikkim">Sikkim</option>
+                                                            <option value="Tamil Nadu">Tamil Nadu</option>
+                                                            <option value="Telangana">Telangana</option>
+                                                            <option value="Tripura">Tripura</option>
+                                                            <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                                            <option value="Uttrakhand">Uttrakhand</option>
+                                                            <option value="West Bengal">West Bengal</option>
                                                         </select>
                                                     </div>
                                                 </FormGroup>

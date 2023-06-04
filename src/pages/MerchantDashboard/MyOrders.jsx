@@ -108,12 +108,14 @@ function MyOrders() {
     }
 
     const currentdate = new Date();
+    var months = [ "January", "February", "March", "April", "May", "June",
+"July", "August", "September", "October", "November", "December" ];
 
 
     const delivered = (id) => {
         return () => {
             axios.put('http://localhost:8080/api/order/orderStatus/'+id,{
-                "orderStatus": "Order Delivered"+" on "+currentdate.getDate() 
+                "orderStatus": "Order Delivered"+" on "+currentdate.getDate() + " " + months[currentdate.getMonth()] + " " + currentdate.getFullYear()
                 })
             .then(response => {
                 console.log(response);

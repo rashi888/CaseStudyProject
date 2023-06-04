@@ -79,7 +79,7 @@ function SingleProductView() {
           <h6 style={{lbackgroundColor:'yellow',marginTop:'15px',textAlign:'start'}}>Extra {data.productMRP-data.productPrice} off</h6>
           <div className="pp" style={{display:'flex',justifyContent:'space-between',alignItems:'center'}}>
 
-          <h1>₹{data.productPrice} <h6><del>{data.productMRP}</del> <span style={{ color: 'darkgreen' }}>21% off</span> </h6></h1>
+          <h1>₹{data.productPrice} <h6><del>{data.productMRP}</del> <span style={{ color: 'darkgreen' }}>{(((data.productMRP-data.productPrice)*100)/data.productMRP).toFixed(2)}%</span> </h6></h1>
           {/* <h6 style={{marginRight:'150px'}}>+ ₹49 Secured Packaging Fee</h6> */}
           </div>
           {/* <h6>Available offers</h6> */}
