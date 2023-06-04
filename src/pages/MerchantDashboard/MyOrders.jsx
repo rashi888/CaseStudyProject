@@ -100,7 +100,7 @@ function MyOrders() {
                                         <div className="button" style={{ margin: '10px 10px' ,height:'50px', display:'grid' }}>
                                         <button className="btn btn-primary" style={{ margin: '10px 10px' ,height:'50px' }}>Mark it as delivered</button>
                                         <br />
-                                        </
+                                        </div>
                                     </div>
                                     
                                 </div>
