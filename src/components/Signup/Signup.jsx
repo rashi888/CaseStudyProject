@@ -30,7 +30,7 @@ const Signup = () => {
     };
     console.log(data);
 
-    axios.post("http://localhost:8080/api/users/signup", data).then((response) => {
+    axios.post("http://localhost:8080/api/users/OAuth", data).then((response) => {
       console.log(response.data);
       window.localStorage.setItem("token", response.data.token);
       window.localStorage.setItem("userId", response.data.userId);
@@ -60,6 +60,7 @@ const Signup = () => {
       auto_select: true,
       cancel_on_tap_outside: false
     });
+    
 
   google.accounts.id.renderButton(
     document.getElementById("singInDiv"),
