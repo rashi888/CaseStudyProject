@@ -73,7 +73,10 @@ function Tiles() {
           <a href="" style={{marginLeft:'-15px'}}>See all offers</a>
 
         </div>
-        <img src={img11} alt="" height="100%" width="25%" style={{padding:'10px -10px',backgroundColor:'white',borderRadius:'5px'}}/>
+        <div className="box-num4" style={{backgroundColor:'white',margin:'0',padding:'0'}}>
+
+        <img src={img11} alt="" height="80%"  width="100%" style={{backgroundColor:'white',borderRadius:'5px',margin:'35px 0',padding:'10px 0'}}/>
+        </div>
         {/* <div className="box-num4" style={{padding:'0px',margin:'0px'}}>
           <img src={img11} alt="" height="90%" width="90%"/>
         </div> */}

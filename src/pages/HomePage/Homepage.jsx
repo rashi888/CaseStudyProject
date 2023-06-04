@@ -35,10 +35,10 @@ function Homepage() {
             <BannerMain />
             <Items />
             {/* <Adv1 /> */}
-            <GroceryCol/>
             <Items1 />
             <Featured/>
             <Tiles />
+            <GroceryCol/>
             <BannersSmall/>
             <Items />
             {/* <Wrapper/> */}
