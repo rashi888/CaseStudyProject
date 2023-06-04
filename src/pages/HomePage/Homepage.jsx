@@ -16,6 +16,13 @@ import "./HomePage.css"
 import Items1 from '../../components/Items/Items1'
 import Items3 from '../../components/Items/Items3'
 import Items2 from '../../components/Items/Items2'
+import Items4 from '../../components/Items/Items4'
+import img13 from "../../assets/NewBannersImg/img13.png"
+import GroceryCol from '../AmazingBanners/GroceryCol'
+import SummerSpecials from '../AmazingBanners/SummerSpecials'
+import Featured from '../AmazingBanners/Featured'
+import img14 from "../../assets/NewBannersImg/img14.png"
+import BannersSmall from '../../components/MainBannerCarousel/BannersSmall'
 
 
 function Homepage() {
@@ -26,14 +33,21 @@ function Homepage() {
             <BannerMain />
             <Items />
             <Adv1 />
+            <GroceryCol/>
             <Items1 />
             <Tiles />
+            <BannersSmall/>
+            <Featured/>
+            <Items />
             {/* <Wrapper/> */}
             <Items2/>
+            <SummerSpecials/>
+            <Items4/>
             <Adv2 />
             <Items3 />
-            
-
+            <Items />
+            <img src={img14} alt="" height="100%" width="100%" style={{margin:'40px 0px'}}/>
+            <img src={img13} alt="" height="100%" width="100%" style={{margin:'40px 0px'}}/>
 
         </>
     )

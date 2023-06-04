@@ -6,7 +6,7 @@ import "./Items.css";
 import Swal from "sweetalert2";
 import { Spinner } from 'reactstrap'
 
-function Items3() {
+function Items4() {
 
     const [product, setProduct] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
@@ -37,7 +37,7 @@ function Items3() {
         },
         desktop: {
             breakpoint: { max: 3000, min: 1024 },
-            items: 4
+            items: 3
         },
         tablet: {
             breakpoint: { max: 1024, min: 464 },
@@ -51,7 +51,7 @@ function Items3() {
     const viewProduct = (id) => (e) => {
         console.log(e.target.value);
         window.location.href = "/singleproductview/" + id;
-      };
+    };
 
     const addtocart = (id) => (e) => {
         console.log(e.target.value);
@@ -84,9 +84,9 @@ function Items3() {
 
     return (
         <>
-            <div className="wrapperr" style={{margin:'50px auto'}}>
-            <h3 className="wrapper-heading1" >ShopEase Originals </h3>
-        <hr className="horizontal-line"/>
+            <div className="wrapperr" style={{ margin: '50px auto' }}>
+                <h3 className="wrapper-heading1" >ShopEase Originals </h3>
+                <hr className="horizontal-line" />
 
                 {isLoading ? (
                     <Spinner animation="border" role="status" color='primary' style={{ marginLeft: '50%' }} />
@@ -98,7 +98,7 @@ function Items3() {
                                     <div className="cardy" >
                                         <div className="image-items">
                                             <img
-                                            onClick={viewProduct(item.productId)}
+                                                onClick={viewProduct(item.productId)}
                                                 src={"http://localhost:8080/api/products/image/" + item.productPhoto}
                                                 className="card-img-top"
                                                 alt="product.title"
@@ -147,4 +147,4 @@ function Items3() {
     )
 }
 
-export default Items3
+export default Items4

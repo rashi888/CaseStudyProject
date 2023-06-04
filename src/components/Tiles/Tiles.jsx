@@ -2,6 +2,7 @@ import React from 'react'
 import "./Tiles.css"
 import electro from "../../assets/NavyImages/Electronics.webp"
 import home from "../../assets/NavyImages/Home.webp"
+import img11 from "../../assets/NewBannersImg/img11.jpg"
 
 function Tiles() {
   return (
@@ -72,6 +73,9 @@ function Tiles() {
           <a href="" style={{marginLeft:'-15px'}}>See all offers</a>
 
         </div>
+        {/* <div className="box-num4" style={{padding:'20px'}}>
+          <img src={img11} alt="" height="80%" width="80%"/>
+        </div> */}
         <div className="box-num4">
         <h4>More Items to consider</h4>
           <img src={electro} alt="" height="135px" width="135px"/>
