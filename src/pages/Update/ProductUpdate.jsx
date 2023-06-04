@@ -4,6 +4,7 @@ import Swal from 'sweetalert2'
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { useParams } from 'react-router-dom';
+import JoditEditor from 'jodit-react';
 
 
 
@@ -104,8 +105,8 @@ function ProductUpdate() {
 
                             <div className="form-group">
                                 <label for="productDescription">Product Description</label>
-                                <textarea className="form-control" onChange={(e) => handleChange(e, "productDescription")}
-                                    value={data.productDescription} rows="5" name="productDescription" id="productDescription"></textarea>
+                                <JoditEditor className="form-control" onChange={(e) => handleChange(e, "productDescription")}
+                                    value={data.productDescription} rows="5" name="productDescription" id="productDescription"></JoditEditor>
                             </div>
                         </div>
                         <div className="col-sm-5">
