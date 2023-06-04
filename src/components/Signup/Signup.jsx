@@ -4,6 +4,7 @@ import { signUp } from "../../services/user-service";
 import { ToastContainer, toast } from "react-toastify";
 // import signup from "./Signup.css";
 import jwt_decode from "jwt-decode";
+import google from "jwt-decode"
 
 
 import loginimg from "../../assets/LoginSignupImg/login.gif";
@@ -26,7 +27,7 @@ const Signup = () => {
     const data = {
       name: decoded.name,
       emailId: decoded.email,
-      
+
     };
     console.log(data);
 
@@ -40,20 +41,20 @@ const Signup = () => {
     }
     ).catch((error) => {
       const errorMsg = error.response.data.message;
-      if(errorMsg.includes("Email"))
-      toast.error("Email already exists!", {
-        position: "top-center",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-      });
+      if (errorMsg.includes("Email"))
+        toast.error("Email already exists!", {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+        });
 
 
     });
   }
 
-  useEffect(()=>{
+  useEffect(() => {
     google.accounts.id.initialize({
       client_id: '889458596682-oujv8pjnafnps4o28rdii03t9bhtn5qq.apps.googleusercontent.com',
       callback: handleCredentialResponse,
@@ -62,19 +63,19 @@ const Signup = () => {
     });
     
 
-  google.accounts.id.renderButton(
-    document.getElementById("singInDiv"),
-    {
-      theme: "outline",
-      size: "large",
-      text: "signIn",
-      shape: "rectangular",
-      logo_alignment: "left"
-    }
-  );
-  },[])
+    google.accounts.id.renderButton(
+      document.getElementById("singInDiv"),
+      {
+        theme: "outline",
+        size: "large",
+        text: "signIn",
+        shape: "rectangular",
+        logo_alignment: "left"
+      }
+    );
+  }, [])
 
-  
+
   const [data, setData] = useState({
     name: "",
     mobileNumber: "",
@@ -82,13 +83,13 @@ const Signup = () => {
     password: "",
   });
   const navigate = useNavigate();
-  
 
-  
+
+
   const handleChange = (event, property) => {
     setData({ ...data, [property]: event.target.value });
   };
-  
+
   const submitForm = (event) => {
     event.preventDefault();
     axios.post("http://localhost:8080/api/users/signup", data).then((response) => {
@@ -101,32 +102,32 @@ const Signup = () => {
       login();
 
 
-    
+
     }).catch((error) => {
       const errorMsg = error.response.data.message;
-      if(errorMsg.includes("Email"))
-      toast.error("Email already exists!", {
-        position: "top-center",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-      });
+      if (errorMsg.includes("Email"))
+        toast.error("Email already exists!", {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+        });
       else
 
 
-      toast.error(" Invalid Credentials!", {
-        position: "top-center",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-      });
+        toast.error(" Invalid Credentials!", {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+        });
 
     });
   };
 
-  const login = () => { 
+  const login = () => {
     axios.post("http://localhost:8080/api/users/login", data).then((response) => {
       console.log(response.data);
       window.localStorage.setItem("token", response.data.token);
@@ -136,22 +137,22 @@ const Signup = () => {
       navigate("/");
     }).catch((error) => {
       const errorMsg = error.response.data.message;
-      if(errorMsg.includes("Email"))
-      toast.error("Email already exists!", {
-        position: "top-center",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-      });
+      if (errorMsg.includes("Email"))
+        toast.error("Email already exists!", {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+        });
     });
   };
-    
-  
+
+
 
   return (
     <>
-    <ToastContainer
+      <ToastContainer
         position="bottom-center"
         autoClose={5000}
         hideProgressBar={false}
@@ -165,7 +166,7 @@ const Signup = () => {
       />
       <meta charSet="utf-8" />
       <div className="wrapper" style={{ height: 'fit-content' }}>
-        <div className="formcont"  style={{backgroundColor:'white',paddingTop:'-30px',marginTop:'10px'}}>
+        <div className="formcont" style={{ backgroundColor: 'white', paddingTop: '-30px', marginTop: '10px' }}>
           <img className="logingif" src={loginimg} alt="" />
 
 
@@ -178,9 +179,9 @@ const Signup = () => {
                 id="name"
                 onChange={(e) => handleChange(e, "name")}
                 value={data.name} required
-                
+
               />
-              
+
               <label> Name</label>
             </div>
             <div className="field">
@@ -191,7 +192,7 @@ const Signup = () => {
                 onChange={(e) => handleChange(e, "emailId")}
                 value={data.emailId} required
               />
-             
+
               <label> Email</label>
             </div>
             <div className="field">
@@ -201,9 +202,9 @@ const Signup = () => {
                 id="mobileNumber"
                 onChange={(e) => handleChange(e, "mobileNumber")}
                 value={data.mobileNumber} required
-                
+
               />
-             
+
               <label> Mobile</label>
             </div>
             <div className="field">
@@ -213,12 +214,12 @@ const Signup = () => {
                 id="password"
                 onChange={(e) => handleChange(e, "password")}
                 value={data.password} required
-               
-              />
-             
 
+              />
               <label>Password</label>
             </div>
+
+
             <div className="content">
               <div className="checkbox">
                 <input type="checkbox" id="remember-me" />
