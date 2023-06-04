@@ -11,6 +11,7 @@ function AddProduct() {
     const [productPhoto, setProductPhoto] = useState(null);
     const [productId, setProductId] = useState("");
     const [selectedImage, setSelectedImage] = useState('');
+    const userId = localStorage.getItem("userId");
 
     const navigate = useNavigate();
 
@@ -41,7 +42,7 @@ function AddProduct() {
 
     const submitForm = (event) => {
         event.preventDefault();
-        axios.post("http://localhost:8080/api/category/product/" + categoryId, data)
+        axios.post("http://localhost:8080/api/category/"+categoryId+"/product/"+ userId, data)
             .then((resp) => {
                 const proId = resp["data"]["productId"];
 

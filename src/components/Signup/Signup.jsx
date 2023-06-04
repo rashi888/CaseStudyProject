@@ -55,7 +55,7 @@ const Signup = () => {
 
   useEffect(()=>{
     google.accounts.id.initialize({
-      client_id: '216588976854-j5hk5astqjbo092vs3kn5rlo9uf928qt.apps.googleusercontent.com',
+      client_id: '889458596682-oujv8pjnafnps4o28rdii03t9bhtn5qq.apps.googleusercontent.com',
       callback: handleCredentialResponse,
       auto_select: true,
       cancel_on_tap_outside: false
