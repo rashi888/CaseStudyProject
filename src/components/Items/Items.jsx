@@ -111,7 +111,6 @@ function Items() {
                 <div className="all-main-content">
                   <h4 className="heading-main">{item.productName}</h4>
                   <h5 className='price-main'>₹ {item.productPrice}</h5>
-                  <p className='description-main'> {item.productDescription}</p>
                   <p>
                     <NavLink >
                       <button onClick={addtocart(item.productId)} type="button" class="btn-Item btn-warning" style={{ borderRadius: '4px', border: 'none' }}>Add to cart</button>
