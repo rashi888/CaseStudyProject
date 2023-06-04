@@ -5,7 +5,8 @@ import { toast } from "react-toastify";
 // import signup from "./Signup.css";
 
 // import login from "../../assets/LoginSignupImg/login.gif";
-import merchantimg from "../../assets/MSignupImg/Merchant Sign up page.png";
+// import merchantimg from "../../assets/MSignupImg/Merchant Sign up page.png";
+import merchantimg from "../../assets/MSignupImg/merchantbannImg.png";
 import msignup from "../../assets/MSignupImg/msignup.jpg"
 import "./MSignup.css"
 import axios from "axios";

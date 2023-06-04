@@ -1,7 +1,7 @@
 import React from 'react'
-import Adv1 from '../AdvertiseBanners/Adv1'
-import Adv2 from '../AdvertiseBanners/Adv2'
-import Adv3 from '../AdvertiseBanners/Adv3'
+// import Adv1 from '../AdvertiseBanners/Adv1'
+// import Adv2 from '../AdvertiseBanners/Adv2'
+// import Adv3 from '../AdvertiseBanners/Adv3'
 import Items from '../../components/Items/Items'
 // import CardPage from '../Cards/CardPage'
 // import Products from '../Products'
@@ -23,6 +23,8 @@ import SummerSpecials from '../AmazingBanners/SummerSpecials'
 import Featured from '../AmazingBanners/Featured'
 import img14 from "../../assets/NewBannersImg/img14.png"
 import BannersSmall from '../../components/MainBannerCarousel/BannersSmall'
+import { Link } from 'react-router-dom'
+import MsignBanner from '../AmazingBanners/MsignBanner'
 
 
 function Homepage() {
@@ -32,22 +34,24 @@ function Homepage() {
             {/* <Cards slides={SliderData} />; */}
             <BannerMain />
             <Items />
-            <Adv1 />
+            {/* <Adv1 /> */}
             <GroceryCol/>
             <Items1 />
+            <Featured/>
             <Tiles />
             <BannersSmall/>
-            <Featured/>
             <Items />
             {/* <Wrapper/> */}
+            <MsignBanner/>
+            <img src={img13} alt="" height="100%" width="100%" style={{margin:'40px 0px'}}/>
+          {/* <Link to="/msignup" >  <img src={img14} alt="" height="100%" width="100%" style={{margin:'40px 0px'}} /></Link> */}
             <Items2/>
             <SummerSpecials/>
             <Items4/>
-            <Adv2 />
+            {/* <Adv2 /> */}
             <Items3 />
             <Items />
-            <img src={img14} alt="" height="100%" width="100%" style={{margin:'40px 0px'}}/>
-            <img src={img13} alt="" height="100%" width="100%" style={{margin:'40px 0px'}}/>
+          
 
         </>
     )

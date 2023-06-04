@@ -73,10 +73,11 @@ function Tiles() {
           <a href="" style={{marginLeft:'-15px'}}>See all offers</a>
 
         </div>
-        {/* <div className="box-num4" style={{padding:'20px'}}>
-          <img src={img11} alt="" height="80%" width="80%"/>
+        <img src={img11} alt="" height="100%" width="25%" style={{padding:'10px -10px',backgroundColor:'white',borderRadius:'5px'}}/>
+        {/* <div className="box-num4" style={{padding:'0px',margin:'0px'}}>
+          <img src={img11} alt="" height="90%" width="90%"/>
         </div> */}
-        <div className="box-num4">
+        {/* <div className="box-num4">
         <h4>More Items to consider</h4>
           <img src={electro} alt="" height="135px" width="135px"/>
           <p>Silver; Material: Stainless Steel; Package Content: 1 - Piece Super Water Bottle (475 ml); Dimension in cms (L x W x H): 6.7 x 6.7 x 19.5)</p>
@@ -87,7 +88,7 @@ function Tiles() {
             <img src={home} alt="" height="60px" width="60px"/>
             <img src={home} alt="" height="60px" width="60px"/>
           </div>
-        </div>
+        </div> */}
     </div>
     </>
   )

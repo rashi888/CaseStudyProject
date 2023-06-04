@@ -31,7 +31,7 @@ const Footer = () => {
                     <div className="become-seller" >
                     <p style={{ fontSize: '22px', color: '#54b9c4', fontWeight: 700, marginTop: '10px' }}>BECOME A SELLER</p>
                     <p style={{ marginTop: '-13px', fontWeight: 400, fontSize: '14px' }}>REACH MORE CUSTOMERS</p>
-                    <Link to="/msignup" ><button className="btn-merchant-signup">Sign Up Now</button> </Link>
+                    <Link to="/msignup" ><button className="btn-merchant-signup" onClick={handleClick}>Sign Up Now</button> </Link>
                     </div>
                 </div>
                 <div className="line1"></div>
