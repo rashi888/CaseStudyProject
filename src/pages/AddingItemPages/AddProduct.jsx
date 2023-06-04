@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import Swal from 'sweetalert2'
 import { useNavigate } from "react-router-dom";
+import JoditEditor from 'jodit-react';
 
 
 
@@ -11,6 +12,7 @@ function AddProduct() {
     const [productPhoto, setProductPhoto] = useState(null);
     const [productId, setProductId] = useState("");
     const [selectedImage, setSelectedImage] = useState('');
+    const userId = localStorage.getItem("userId");
 
     const navigate = useNavigate();
 
@@ -41,7 +43,7 @@ function AddProduct() {
 
     const submitForm = (event) => {
         event.preventDefault();
-        axios.post("http://localhost:8080/api/category/product/" + categoryId, data)
+        axios.post("http://localhost:8080/api/category/"+categoryId+"/product/"+ userId, data)
             .then((resp) => {
                 const proId = resp["data"]["productId"];
 
@@ -127,8 +129,8 @@ function AddProduct() {
 
                             <div className="form-group">
                                 <label for="productDescription">Product Description</label>
-                                <textarea className="form-control"required onChange={(e) => handleChange(e, "productDescription")}
-                                    value={data.productDescription} rows="5" name="productDescription" id="productDescription"></textarea>
+                                <JoditEditor className="form-control"required onChange={(e) => handleChange(e, "productDescription")}
+                                    value={data.productDescription} rows="5" name="productDescription" id="productDescription"></JoditEditor>
                             </div>
                         </div>
                         <div className="col-sm-5">

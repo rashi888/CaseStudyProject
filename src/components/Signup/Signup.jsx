@@ -31,7 +31,7 @@ const Signup = () => {
     };
     console.log(data);
 
-    axios.post("http://localhost:8080/api/users/signup", data).then((response) => {
+    axios.post("http://localhost:8080/api/users/OAuth", data).then((response) => {
       console.log(response.data);
       window.localStorage.setItem("token", response.data.token);
       window.localStorage.setItem("userId", response.data.userId);
@@ -56,11 +56,12 @@ const Signup = () => {
 
   useEffect(() => {
     google.accounts.id.initialize({
-      client_id: '216588976854-j5hk5astqjbo092vs3kn5rlo9uf928qt.apps.googleusercontent.com',
+      client_id: '889458596682-oujv8pjnafnps4o28rdii03t9bhtn5qq.apps.googleusercontent.com',
       callback: handleCredentialResponse,
       auto_select: true,
       cancel_on_tap_outside: false
     });
+    
 
     google.accounts.id.renderButton(
       document.getElementById("singInDiv"),
