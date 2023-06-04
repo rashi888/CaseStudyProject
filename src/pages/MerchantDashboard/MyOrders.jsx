@@ -67,36 +67,42 @@ function MyOrders() {
                             <td >{item.orderId}</td>
                             <td >{item.product.productName}</td>
                             <td>{item.quantity}</td>
-                            <td> ₹ {item.totalPrice}</td>
+                            <td> ₹{item.totalPrice}</td>
                             <td>{item.paymentMethod}</td>
                             <td>{item.orderStatus}</td>
                             <td><button onClick={showOptions(index)}  style={{ border: 'none', backgroundColor: 'white' }}> <i class="ri-arrow-down-s-line"></i></button></td>
                         </tr>
                         <tr id={index} style={{ display: 'none' }}>
-                            <td colSpan="8">
+                            <td colSpan="6">
                                 <div className="row">
-                                    <div className="col-md-6">
-                                        <div className="card" style={{ width: '100%', margin: '10px 0px' }}>
+                                    <div className="col-md-15" style={{ width: '100%', margin: '10px 0px', display:'flex'  }}>
+                                        <div className="card" style={{ width: '100%', margin: '10px 0px'  }}>
                                             <div className="card-body">
                                                 <h5 className="card-title">Customer Details</h5>
-                                                <p className="card-text">Name : srijan sah</p>
-                                                <p className="card-text">Email :sr@gmail.com</p>
-                                                <p className="card-text">Phone : 7489581850</p>
-                                                <p className="card-text">Address : katni</p>
+                                                <p className="card-text">Name : {item.shippedTo}</p>
+                                                <p className="card-text">Email : {item.user.emailId}</p>
+                                                <p className="card-text">Phone : {item.user.mobileNumber}</p>
+                                                <p className="card-text">Address : {item.shippingAddress}</p>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div className="col-md-6">
-                                        <div className="card" style={{ width: '100%', margin: '10px 0px' }}>
-                                            <div className="card-body">
-                                                <h5 className="card-title">Merchant Details</h5>
-                                                <p className="card-text">Name :s jan</p>
-                                                <p className="card-text">Email : sj@gmaiul.com}</p>
-                                                <p className="card-text">Phone : 98498</p>
-                                                <p className="card-text">Address : bhej raha </p>
-                                            </div>
+                                        <div className="button" style={{ margin: '10px 10px' ,height:'50px', display:'grid' }}>
+                                        <button className="btn btn-primary" style={{ margin: '10px 10px' ,height:'50px' }}>Accept Order</button>
+                                        <br />
+                                        <button className="btn btn-danger" style={{ margin: '10px 10px' ,height:'50px' }}>Reject Order</button>
+                                        <input type="textbox"  name="reason" id="reason" placeholder=' Reason For Rejecting' style={{ margin: '10px 10px' ,height:'50px' }} />
                                         </div>
+                                        <div className="button" style={{ margin: '10px 10px' ,height:'50px', display:'grid' }}>
+                                        <button className="btn btn-primary" style={{ margin: '10px 10px' ,height:'50px' }}>Mark it as shipped</button>
+                                        <br />
+                                        <input type="textbox"  name="via" id="via" placeholder=' Shipped via' style={{ margin: '10px 10px' ,height:'50px' }} />
+                                        <input type="textbox"  name="tracking" id="tracking" placeholder=' Tracking Id' style={{ margin: '10px 10px' ,height:'50px' }} />
+                                        </div>
+                                        <div className="button" style={{ margin: '10px 10px' ,height:'50px', display:'grid' }}>
+                                        <button className="btn btn-primary" style={{ margin: '10px 10px' ,height:'50px' }}>Mark it as delivered</button>
+                                        <br />
+                                        </
                                     </div>
+                                    
                                 </div>
                             </td>
 
