@@ -84,6 +84,7 @@ useEffect(() => {
   const checkout = (e) => {
     e.preventDefault();
     console.log(datas);
+    if(paymentMethod==="COD"){
     axios
         .post("http://localhost:8080/api/order/", datas)
         .then((resp) => {
@@ -96,7 +97,8 @@ useEffect(() => {
         })
         .catch((error) => {
             console.log(error);
-        });
+        });}
+        
 };
 
 
