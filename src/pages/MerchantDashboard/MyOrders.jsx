@@ -2,6 +2,7 @@ import React, { useState,useEffect } from 'react';
 import axios from 'axios';
 
 import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 
 function MyOrders() {
@@ -34,6 +35,108 @@ function MyOrders() {
             }
         }
     }
+
+    const accept = (id) => {
+        return () => {
+            axios.put('http://localhost:8080/api/order/orderStatus/'+id,{
+                "orderStatus": "Order Accepted"})
+            .then(response => {
+                console.log(response);
+                Swal.fire({
+                    title: 'Success',
+                    text: 'Order Accepted',
+                    icon: 'success',
+                    confirmButtonText: 'OK'
+
+                })
+                order();
+            })
+            .catch(error => {
+                console.log(error);
+            });
+        }
+    }
+
+    const [reason, setReason] = useState("");
+    const [shippedvia, setShippedvia] = useState("");
+    const [trackingid, setTrackingid] = useState("");
+
+    const orderrejected = "Order Rejected : "+reason;
+
+
+
+    const reject = (id) => {
+        return () => {
+            axios.put('http://localhost:8080/api/order/orderStatus/'+id,{
+                "orderStatus": orderrejected
+                })
+            .then(response => {
+                console.log(response);
+                Swal.fire({
+                    title: 'Success',
+                    text: 'Order Rejected',
+                    icon: 'success',
+                    confirmButtonText: 'OK'
+                })
+                order();
+            })
+            .catch(error => {
+                console.log(error);
+            });
+        }
+    }
+
+    const shipped = (id) => {
+        return () => {
+            axios.put('http://localhost:8080/api/order/orderStatus/'+id,{
+                "orderStatus": "Order Shipped"+" via "+shippedvia+" with tracking id "+trackingid   
+                })
+            .then(response => {
+                console.log(response);
+                Swal.fire({
+                    title: 'Success',
+                    text: 'Order Shipped',
+                    icon: 'success',
+                    confirmButtonText: 'OK'
+                })
+                order();
+            })
+            .catch(error => {
+                console.log(error);
+            });
+        }
+    }
+
+    const currentdate = new Date();
+
+
+    const delivered = (id) => {
+        return () => {
+            axios.put('http://localhost:8080/api/order/orderStatus/'+id,{
+                "orderStatus": "Order Delivered"+" on "+currentdate.getDate() 
+                })
+            .then(response => {
+                console.log(response);
+                Swal.fire({
+                    title: 'Success',
+                    text: 'Order Delivered',
+                    icon: 'success',
+                    confirmButtonText: 'OK'
+                })
+                order();
+            })
+            .catch(error => {
+                console.log(error);
+            });
+        }
+    }
+
+
+
+
+
+
+
 
     
 
@@ -77,7 +180,7 @@ function MyOrders() {
                                 <div className="row">
                                     <div className="col-md-15" style={{ width: '100%', margin: '10px 0px', display:'flex'  }}>
                                         <div className="card" style={{ width: '100%', margin: '10px 0px'  }}>
-                                            <div className="card-body">
+                                            <div className="card-body"style={{ width: '110%', margin: '10px 0px'  }}>
                                                 <h5 className="card-title">Customer Details</h5>
                                                 <p className="card-text">Name : {item.shippedTo}</p>
                                                 <p className="card-text">Email : {item.user.emailId}</p>
@@ -86,19 +189,27 @@ function MyOrders() {
                                             </div>
                                         </div>
                                         <div className="button" style={{ margin: '10px 10px' ,height:'50px', display:'grid' }}>
-                                        <button className="btn btn-primary" style={{ margin: '10px 10px' ,height:'50px' }}>Accept Order</button>
+                                        <button onClick={accept(item.id)} className="btn btn-primary" style={{ margin: '10px 10px' ,height:'50px' }}>Accept Order</button>
                                         <br />
-                                        <button className="btn btn-danger" style={{ margin: '10px 10px' ,height:'50px' }}>Reject Order</button>
-                                        <input type="textbox"  name="reason" id="reason" placeholder=' Reason For Rejecting' style={{ margin: '10px 10px' ,height:'50px' }} />
+                                        <button onClick={reject(item.id)} className="btn btn-danger" style={{ margin: '10px 10px' ,height:'50px' }}>Reject Order</button>
+                                        <input type="textbox"  name="reason" id="reason" placeholder=' Reason For Rejecting' 
+                                        onChange={(e) => { setReason(e.target.value) }}
+
+
+                                        style={{ margin: '10px 10px' ,height:'50px' }} />
                                         </div>
                                         <div className="button" style={{ margin: '10px 10px' ,height:'50px', display:'grid' }}>
-                                        <button className="btn btn-primary" style={{ margin: '10px 10px' ,height:'50px' }}>Mark it as shipped</button>
+                                        <button onClick={shipped(item.id)} className="btn btn-primary" style={{ margin: '10px 10px' ,height:'50px' }}>Mark it as shipped</button>
                                         <br />
-                                        <input type="textbox"  name="via" id="via" placeholder=' Shipped via' style={{ margin: '10px 10px' ,height:'50px' }} />
-                                        <input type="textbox"  name="tracking" id="tracking" placeholder=' Tracking Id' style={{ margin: '10px 10px' ,height:'50px' }} />
+                                        <input type="textbox" 
+                                        onChange={(e) => { setShippedvia(e.target.value) }}
+                                         name="via" id="via" placeholder=' Shipped via' style={{ margin: '10px 10px',width:'max-content' ,height:'50px' }} />
+                                        <input type="textbox"  name="tracking" id="tracking" placeholder=' Tracking Id' 
+                                        onChange={(e) => { setTrackingid(e.target.value) }}
+                                        style={{ margin: '10px 10px' ,height:'50px' }} />
                                         </div>
-                                        <div className="button" style={{ margin: '10px 10px' ,height:'50px', display:'grid' }}>
-                                        <button className="btn btn-primary" style={{ margin: '10px 10px' ,height:'50px' }}>Mark it as delivered</button>
+                                        <div className="button" style={{ margin: '10px 10px',width:'max-content' ,height:'50px', display:'grid' }}>
+                                        <button onClick={delivered(item.id)} className="btn btn-primary" style={{ margin: '10px 10px' ,height:'50px' }}>Mark it as delivered</button>
                                         <br />
                                         </div>
                                     </div>
