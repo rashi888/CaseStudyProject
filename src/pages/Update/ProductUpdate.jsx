@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect,useRef, useMemo } from 'react'
 import axios from 'axios'
 import Swal from 'sweetalert2'
 import { useNavigate } from "react-router-dom";
@@ -56,6 +56,12 @@ function ProductUpdate() {
             })
     }
 
+    const editor = useRef(null)
+    const config = {
+        readonly: false // all options from https://xdsoft.net/jodit/doc/
+    }
+
+
 
 
 
@@ -83,6 +89,12 @@ function ProductUpdate() {
                                     placeholder="Enter name" />
 
                             </div>
+                            <div className="form-group">
+                                <label for="productStock">Stock</label>
+                                <input type="number" className="form-control" onChange={(e) => handleChange(e, "stock")}
+                                    value={data.stock} required name="productStock" id="productStock"
+                                    placeholder="Stock" />
+                            </div>
                             
                             <div className="form-group">
                                 <label for="productPrice">Price</label>
@@ -96,17 +108,17 @@ function ProductUpdate() {
                                     value={data.productMRP} required name="productMRP" id="productMRP"
                                     placeholder="MRP" />
                             </div>
-                            <div className="form-group">
-                                <label for="productStock">Stock</label>
-                                <input type="number" className="form-control" onChange={(e) => handleChange(e, "stock")}
-                                    value={data.stock} required name="productStock" id="productStock"
-                                    placeholder="Stock" />
-                            </div>
 
                             <div className="form-group">
                                 <label for="productDescription">Product Description</label>
-                                <JoditEditor className="form-control" onChange={(e) => handleChange(e, "productDescription")}
-                                    value={data.productDescription} rows="5" name="productDescription" id="productDescription"></JoditEditor>
+                                <JoditEditor
+                                    ref={editor}
+                                    value={data.productDescription}
+                                    config={config}
+                                    tabIndex={1} // tabIndex of textarea
+                                    onBlur={(newContent) => setData({ ...data, productDescription: newContent })} // preferred to use only this option to update the content for performance reasons
+                                    onChange={(newContent) => { }}
+                                />
                             </div>
                         </div>
                         <div className="col-sm-5">

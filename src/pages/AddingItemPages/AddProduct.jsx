@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect,useRef, useMemo } from 'react'
 import axios from 'axios'
 import Swal from 'sweetalert2'
 import { useNavigate } from "react-router-dom";
@@ -88,6 +88,12 @@ function AddProduct() {
     }, []);
     console.log(category);
 
+    const editor = useRef(null)
+    const config = {
+        readonly: false // all options from https://xdsoft.net/jodit/doc/
+    }
+
+
     return (
         <>
 
@@ -129,8 +135,14 @@ function AddProduct() {
 
                             <div className="form-group">
                                 <label for="productDescription">Product Description</label>
-                                <JoditEditor className="form-control"required onChange={(e) => handleChange(e, "productDescription")}
-                                    value={data.productDescription} rows="5" name="productDescription" id="productDescription"></JoditEditor>
+                                <JoditEditor
+                                    ref={editor}
+                                    value={data.productDescription}
+                                    config={config}
+                                    tabIndex={1} // tabIndex of textarea
+                                    onBlur={(newContent) => setData({ ...data, productDescription: newContent })} // preferred to use only this option to update the content for performance reasons
+                                    onChange={(newContent) => { }}
+                                />
                             </div>
                         </div>
                         <div className="col-sm-5">
