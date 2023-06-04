@@ -24,6 +24,19 @@ function MyOrders() {
         order();
     }, []);
 
+    const showOptions = (index) => {
+        return () => {
+            var x = document.getElementById(index);
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none"
+            }
+        }
+    }
+
+    
+
 
     return (
         <>
@@ -57,19 +70,37 @@ function MyOrders() {
                             <td> ₹ {item.totalPrice}</td>
                             <td>{item.paymentMethod}</td>
                             <td>{item.orderStatus}</td>
-                            <td><button  style={{ border: 'none', backgroundColor: 'white' }}> <i class="ri-arrow-down-s-line"></i></button></td>
-                            <div className="option">
-                                <div className="dropdown">
-                                    <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style={{ backgroundColor: 'white', border: 'none' }}>
-                                        <i class="ri-arrow-down-s-line"></i>
-                                    </button>
-                                    <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                        <li><Link className="dropdown-item" to="/productedit">Edit</Link></li>
-                                        <li><Link className="dropdown-item" to="/productdelete">Delete</Link></li>
-                                    </ul>
+                            <td><button onClick={showOptions(index)}  style={{ border: 'none', backgroundColor: 'white' }}> <i class="ri-arrow-down-s-line"></i></button></td>
+                        </tr>
+                        <tr id={index} style={{ display: 'none' }}>
+                            <td colSpan="8">
+                                <div className="row">
+                                    <div className="col-md-6">
+                                        <div className="card" style={{ width: '100%', margin: '10px 0px' }}>
+                                            <div className="card-body">
+                                                <h5 className="card-title">Customer Details</h5>
+                                                <p className="card-text">Name : srijan sah</p>
+                                                <p className="card-text">Email :sr@gmail.com</p>
+                                                <p className="card-text">Phone : 7489581850</p>
+                                                <p className="card-text">Address : katni</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="col-md-6">
+                                        <div className="card" style={{ width: '100%', margin: '10px 0px' }}>
+                                            <div className="card-body">
+                                                <h5 className="card-title">Merchant Details</h5>
+                                                <p className="card-text">Name :s jan</p>
+                                                <p className="card-text">Email : sj@gmaiul.com}</p>
+                                                <p className="card-text">Phone : 98498</p>
+                                                <p className="card-text">Address : bhej raha </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
 
-                            </div>
-                            </div>
+                            
                              
 
                         </tr >
