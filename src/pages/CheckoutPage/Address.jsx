@@ -56,7 +56,7 @@ useEffect(() => {
         e.preventDefault();
         const formdata = new FormData(e.target);
         const data = Object.fromEntries(formdata.entries());
-        data["userIds"] = localStorage.getItem("userId");
+        data["tempUserId"] = localStorage.getItem("userId");
         console.log(data);
         axios.post("http://localhost:8080/api/deliveryDetails/", data)
             .then((resp) => {

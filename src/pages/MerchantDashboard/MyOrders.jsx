@@ -5,21 +5,7 @@ import { Link } from 'react-router-dom';
 
 
 function MyOrders() {
-    const [isOpen, setIsOpen] = useState(false);
 
-    const toggleAccordion = () => {
-        setIsOpen(!isOpen);
-    };
-
-
-    const [open, setOpen] = useState('1');
-    const toggle = (id) => {
-        if (open === id) {
-            setOpen();
-        } else {
-            setOpen(id);
-        }
-    };
 
     const [data, setData] = useState([]);
 
@@ -37,9 +23,6 @@ function MyOrders() {
     useEffect(() => {
         order();
     }, []);
-
-
-
 
 
     return (
@@ -74,54 +57,29 @@ function MyOrders() {
                             <td> ₹ {item.totalPrice}</td>
                             <td>{item.paymentMethod}</td>
                             <td>{item.orderStatus}</td>
-                            <td><button onClick={toggleAccordion} style={{ border: 'none', backgroundColor: 'white' }}> <i class="ri-arrow-down-s-line"></i></button></td>
+                            <td><button  style={{ border: 'none', backgroundColor: 'white' }}> <i class="ri-arrow-down-s-line"></i></button></td>
+                            <div className="option">
+                                <div className="dropdown">
+                                    <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style={{ backgroundColor: 'white', border: 'none' }}>
+                                        <i class="ri-arrow-down-s-line"></i>
+                                    </button>
+                                    <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                        <li><Link className="dropdown-item" to="/productedit">Edit</Link></li>
+                                        <li><Link className="dropdown-item" to="/productdelete">Delete</Link></li>
+                                    </ul>
+
+                            </div>
+                            </div>
+                             
+
                         </tr >
+
+
+
                         </>)
                         })}
 
-                        {isOpen && (
-                            <div className='dropdown-cont-content' style={{ backgroundColor: 'lightgray', width: '90vw', height: '210px', position: 'absolute', zIndex: "99", display: 'flex',padding:'5px' }}>
-
-                                <div className="left-contentdiv" style={{ width:'660px',padding:'10px 30px',marginRight:'10px' }}>
-                                    <h5>Ship to: Name, Address, city, state, zip</h5>
-                                    <div className="three-btns" style={{ display: 'flex' }}>
-                                        <div className="three-btns1" style={{ width: '200px', display: 'flex', flexDirection: 'column',marginRight:"10px" }}>
-                                            <button style={{width:'130%',height:'42px',margin:'5px',borderRadius:'5px',border:'0.5px solid lightgray',backgroundColor:'green',color:'white',marginRight:'30px'}}>Accept order</button>
-                                            <button style={{width:'130%',height:'42px',margin:'5px',borderRadius:'5px',border:'0.5px solid lightgray',backgroundColor:'red',color:'white',marginRight:'30px'}}>Reject Order</button>
-                                            <input type="text" style={{width:'130%',height:'42px',margin:'5px',borderRadius:'5px',border:'0.5px solid lightgray',backgroundColor:'white',color:'black',marginRight:'30px',paddingLeft:'15px'}} placeholder='Reason for Rejecting...'/>
-                                            {/* <button style={{width:'130%',height:'42px',margin:'5px',borderRadius:'5px',border:'0.5px solid lightgray',backgroundColor:'white',color:'black',marginRight:'30px'}}>Reason for Rejecting...</button> */}
-                                        </div>
-
-                                        <div className="three-btns2" style={{ width: '200px', display: 'flex', flexDirection: 'column' }}>
-                                            <button style={{width:'130%',height:'42px',margin:'5px',borderRadius:'5px',border:'0.5px solid lightgray',backgroundColor:'#48c1cf',color:'white',marginLeft:'90px'}}>Mark it as Shipped</button>
-                                            <input type="text" style={{width:'130%',height:'42px',margin:'5px',borderRadius:'5px',border:'0.5px solid lightgray',backgroundColor:'white',color:'black',marginLeft:'90px',paddingLeft:'15px'}} placeholder='Shipped via...'/>
-                                            <input type="text" style={{width:'130%',height:'42px',margin:'5px',borderRadius:'5px',border:'0.5px solid lightgray',backgroundColor:'white',color:'black',marginLeft:'90px',paddingLeft:'15px'}} placeholder='Tracking id...'/>
-                                            {/* <button style={{width:'130%',height:'42px',margin:'5px',borderRadius:'5px',border:'0.5px solid lightgray',backgroundColor:'white',color:'black',marginLeft:'90px'}}>Shipped via...</button>
-                                            <button style={{width:'130%',height:'42px',margin:'5px',borderRadius:'5px',border:'0.5px solid lightgray',backgroundColor:'white',color:'black',marginLeft:'90px'}}>Tracking id...</button> */}
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <div className="right-contentdiv" style={{  width: '500px',marginLeft:'30px' }}>
-                                    <button style={{width:'100%',height:'35px',borderRadius:'5px',border:'0.5px solid lightgray',backgroundColor:'blue',color:'white'}}>Mark it as Delivered</button>
-                                    <div className="btn-second-col" style={{display:'flex'}}>
-                                        <button style={{width:'50%',height:'35px',margin:'10px 5px',borderRadius:'5px',border:'0.5px solid lightgray',backgroundColor:'#48c1cf',color:'white'}}>Accept Return Request</button>
-                                        <button style={{width:'50%',height:'35px',margin:'10px 5px',borderRadius:'5px',border:'0.5px solid lightgray',backgroundColor:'#48c1cf',color:'white'}}>Initiate Refund</button>
-                                    </div>
-                                    <div className="btn-third-col" style={{display:'flex'}}>
-                                        <button style={{width:'50%',height:'35px',margin:'5px',borderRadius:'5px',border:'0.5px solid lightgray',backgroundColor:'#48c1cf',color:'white'}}>Deny Return Request</button>
-                                        <button style={{width:'50%',height:'35px',margin:'5px',borderRadius:'5px',border:'0.5px solid lightgray',backgroundColor:'#48c1cf',color:'white'}}>Deny Refund</button>
-                                    </div>
-                                    {/* <button style={{width:'100%',height:'35px',margin:'10px 0',borderRadius:'5px',border:'0.5px solid lightgray',backgroundColor:'white',color:'black'}}>Remarks...</button> */}
-                                    <input type="text" style={{width:'100%',height:'35px',margin:'10px 0',borderRadius:'5px',border:'0.5px solid lightgray',backgroundColor:'white',color:'black',paddingLeft:'15px'}} placeholder='Remarks...'/>
-                                </div>
-                            </div>
-
-                        )}
                         
-
-
-
                     </tbody>
                     
                           
