@@ -10,6 +10,9 @@ import { Link } from 'react-router-dom'
 import { Form, FormGroup, Label, Input, FormText, Col, Button, FormGroupProps, Row } from "reactstrap"
 
 function User() {
+
+
+
     return (
         <>
             <div className="user-container">
@@ -22,7 +25,7 @@ function User() {
                         <div className="myaccount">
                             <BiUserCircle id='icon1' />
                             <Link to="/user" className='linking'><h6 className='headings'>My Account</h6></Link>
-                            
+
                         </div>
                         <div className="myaccount">
                             <RiShoppingCartFill id='icon2' />
@@ -45,7 +48,63 @@ function User() {
                 </div>
                 <div className="right-side-content">
                     <Form>
-                        <FormGroup>
+                    <Col md={6}>
+                                <FormGroup>
+                                    <Label for="username">
+                                        Username
+                                    </Label>
+                                    <Input
+                                        id="username"
+                                        name="text"
+                                        placeholder="Enter username"
+                                        type="text"
+                                    />
+                                </FormGroup>
+                            </Col>
+                        <Col md={6}>
+                            <FormGroup>
+                                <Label for="exampleEmail">
+                                    Email
+                                </Label>
+                                <Input
+                                    id="exampleEmail"
+                                    name="email"
+                                    placeholder="Enter Email"
+                                    type="email"
+                                />
+                            </FormGroup>
+                        </Col>
+                        <Col md={6}>
+                                <FormGroup>
+                                    <Label for="examplePassword">
+                                        Password
+                                    </Label>
+                                    <Input
+                                        id="examplePassword"
+                                        name="password"
+                                        placeholder="Enter Password"
+                                        type="password"
+                                    />
+                                </FormGroup>
+                            </Col>
+                          
+                        {/* <Row>
+                           
+                            <Col md={6}>
+                                <FormGroup>
+                                    <Label for="examplePassword">
+                                        Password
+                                    </Label>
+                                    <Input
+                                        id="examplePassword"
+                                        name="password"
+                                        placeholder="Enter Password"
+                                        type="password"
+                                    />
+                                </FormGroup>
+                            </Col>
+                        </Row>  */}
+                        {/* <FormGroup>
                             <Label for="exampleAddress">
                                 Address
                             </Label>
@@ -64,7 +123,7 @@ function User() {
                                 name="address2"
                                 placeholder="Address2"
                             />
-                        </FormGroup>
+                        </FormGroup> */}
                         {/* <Row>
                             <Col md={6}>
                                 <FormGroup>
@@ -100,7 +159,7 @@ function User() {
                                 </FormGroup>
                             </Col>
                         </Row> */}
-                        <FormGroup check style={{ margin: '10px 0px' }}>
+                        {/* <FormGroup check style={{ margin: '10px 0px' }}>
                             <Input
                                 id="exampleCheck"
                                 name="check"
@@ -113,9 +172,9 @@ function User() {
                             >
                                 Check me out
                             </Label>
-                        </FormGroup>
-                        <Button className='edit-button'>
-                            Edit Profile
+                        </FormGroup> */}
+                        <Button className='edit-button' style={{marginLeft:'15px',marginTop:'20px'}}>
+                            Update Profile
                         </Button>
                     </Form>
                 </div>

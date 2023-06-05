@@ -44,7 +44,7 @@ function AddressUser() {
                 </div>
                 <div className="right-side-content">
                     <Form>
-                        <Row>
+                        {/* <Row>
                             <Col md={6}>
                                 <FormGroup>
                                     <Label for="exampleEmail">
@@ -71,8 +71,8 @@ function AddressUser() {
                                     />
                                 </FormGroup>
                             </Col>
-                        </Row>
-                        {/* <FormGroup>
+                        </Row> */}
+                        <FormGroup>
                             <Label for="exampleAddress">
                                 Address
                             </Label>
@@ -91,8 +91,8 @@ function AddressUser() {
                                 name="address2"
                                 placeholder="Address2"
                             />
-                        </FormGroup> */}
-                        {/* <Row>
+                        </FormGroup>
+                        <Row>
                             <Col md={6}>
                                 <FormGroup>
                                     <Label for="exampleCity">
@@ -126,8 +126,8 @@ function AddressUser() {
                                     />
                                 </FormGroup>
                             </Col>
-                        </Row> */}
-                        <FormGroup check style={{ margin: '10px 0px' }}>
+                        </Row> 
+                        {/* <FormGroup check style={{ margin: '10px 0px' }}>
                             <Input
                                 id="exampleCheck"
                                 name="check"
@@ -140,7 +140,7 @@ function AddressUser() {
                             >
                                 Check me out
                             </Label>
-                        </FormGroup>
+                        </FormGroup> */}
                         <Button className='edit-button'>
                             Edit Profile
                         </Button>
