@@ -31,7 +31,7 @@ function Allproducts(props) {
       pageNumber +
       "&sortBy=" +
       sortBy +
-      "&dir=" +
+      "&sortDir=" +
       dir;
      
     fetch(url)
