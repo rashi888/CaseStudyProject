@@ -56,6 +56,9 @@ const Signup = () => {
   }
 
   useEffect(() => {
+    const script = document.createElement('script');
+        script.src = 'https://accounts.google.com/gsi/client';
+        script.async = true;
     google.accounts.id.initialize({
       client_id: '889458596682-oujv8pjnafnps4o28rdii03t9bhtn5qq.apps.googleusercontent.com',
       callback: handleCredentialResponse,
