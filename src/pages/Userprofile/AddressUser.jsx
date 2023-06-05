@@ -9,7 +9,7 @@ import { FiPower } from "react-icons/fi"
 import { Link } from 'react-router-dom'
 import { Form, FormGroup, Label, Input, FormText, Col, Button, FormGroupProps, Row } from "reactstrap"
 
-function User() {
+function AddressUser() {
     return (
         <>
             <div className="user-container">
@@ -21,8 +21,7 @@ function User() {
                     <div className="bottom-content">
                         <div className="myaccount">
                             <BiUserCircle id='icon1' />
-                            <Link to="/user" className='linking'><h6 className='headings'>My Account</h6></Link>
-                            
+                            <h6 className='headings'>My Account</h6>
                         </div>
                         <div className="myaccount">
                             <RiShoppingCartFill id='icon2' />
@@ -34,7 +33,7 @@ function User() {
                         </div> */}
                         <div className="myaccount">
                             <i class="ri-user-location-fill" id='icon3'></i>
-                            <Link to="/addressuser" className='linking'><h6 className='headings'> Addresses</h6></Link>
+                            <h6 className='headings'> Addresses</h6>
                         </div>
                         <div className="myaccount">
                             <FiPower id='icon5' />
@@ -45,7 +44,35 @@ function User() {
                 </div>
                 <div className="right-side-content">
                     <Form>
-                        <FormGroup>
+                        <Row>
+                            <Col md={6}>
+                                <FormGroup>
+                                    <Label for="exampleEmail">
+                                        Email
+                                    </Label>
+                                    <Input
+                                        id="exampleEmail"
+                                        name="email"
+                                        placeholder="Enter Email"
+                                        type="email"
+                                    />
+                                </FormGroup>
+                            </Col>
+                            <Col md={6}>
+                                <FormGroup>
+                                    <Label for="examplePassword">
+                                        Password
+                                    </Label>
+                                    <Input
+                                        id="examplePassword"
+                                        name="password"
+                                        placeholder="Enter Password"
+                                        type="password"
+                                    />
+                                </FormGroup>
+                            </Col>
+                        </Row>
+                        {/* <FormGroup>
                             <Label for="exampleAddress">
                                 Address
                             </Label>
@@ -64,7 +91,7 @@ function User() {
                                 name="address2"
                                 placeholder="Address2"
                             />
-                        </FormGroup>
+                        </FormGroup> */}
                         {/* <Row>
                             <Col md={6}>
                                 <FormGroup>
@@ -124,4 +151,4 @@ function User() {
     )
 }
 
-export default User
+export default AddressUser
