@@ -4,6 +4,10 @@ import { Link } from "react-router-dom"
 import { FormGroup, Form, Input, Label, Row, Col } from 'reactstrap';
 import Modal from './Modal';
 import axios from 'axios';
+import useRazorpay from "react-razorpay";
+
+
+
 
 import Swal from 'sweetalert2';
 
@@ -12,6 +16,7 @@ function Address() {
     const [data, setData] = useState([]);
     const [deliveryDetailsId, setDeliveryDetailsId] = useState(1);
     const [paymentMethod, setPaymentMethod] = useState("COD");
+    
 
    const fetchdata = () => {
     axios.get("http://localhost:8080/api/deliveryDetails/user/" + localStorage.getItem("userId"))
@@ -24,6 +29,9 @@ function Address() {
 
 useEffect(() => {
     fetchdata();
+    const script = document.createElement('script');
+        script.src = 'https://checkout.razorpay.com/v1/checkout.js';
+        script.async = true;
 }, []);
 
 
@@ -79,11 +87,13 @@ useEffect(() => {
     deliveryDetailsId: deliveryDetailsId,
     paymentMethod: paymentMethod,
   });
+  
 
  
   const checkout = (e) => {
     e.preventDefault();
     console.log(datas);
+    console.log(paymentMethod);
     if(paymentMethod==="COD"){
     axios
         .post("http://localhost:8080/api/order/", datas)
@@ -98,16 +108,72 @@ useEffect(() => {
         .catch((error) => {
             console.log(error);
         });}
+            
+        else{
+            axios
+            .post("http://localhost:8080/api/order/", datas)
+            .then((resp) => {
+                console.log(resp["data"]);
+                Swal.fire({
+                    title: "Success",
+                    text: "Order Placed Successfully",
+                    icon: "success",
+                });
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+        }
+    }
+    const PayByRazorPay = () => {
+        const options = {
+            key: "rzp_test_wg401zdYPekxAq",
+            amount: 10000,
+            currency: "INR",
+            name: "Acme Corp",
+            description: "Test Transaction",
+            
+            handler: function (response) {
+                console.log(response);
+                console.log(response.razorpay_payment_id);
+                console.log(response.razorpay_order_id);  
+                console.log(response.razorpay_signature);
+            },
+            prefill: {
+                name: "Gaurav Kumar",
+                email: "S@gmail.com",
+                contact: "9999999999",
+            },
+            notes: {
+                address: "Razorpay Corporate Office",
+            },
+            theme: {
+                color: "#3399cc",
+            },
+        };
+        const rzp1 = new window.Razorpay(options);
+        rzp1.open();
+    };
+
+    
+
+
+
+
         
-};
 
 
+ 
+
+
+    
 
 
 
 
     return (
         <>
+            <button onClick={PayByRazorPay}>Pay</button>
             <div>
                 <div className="addresspage-con">
                     <div className="delivery-first" >
@@ -270,16 +336,16 @@ useEffect(() => {
                         <h3 style={{ marginBottom: '40px' }}>2. Payment Methods </h3>
                         <div class="form-check">
                             <input class="form-check-input" value="Online" type="radio" name="flexRadioDefault1" id="flexRadioDefault5" 
-                            onChange={(e) => setDatas({ ...datas, paymentMethod: e.target.value })}
-                            />
+                            onChange={(e) => setPaymentMethod(e.target.value)}
+/>
                             <label class="form-check-label" for="flexRadioDefault5">
                                 Pay Online
                             </label>
                         </div>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" value="COD" name="flexRadioDefault1" id="flexRadioDefault6"
-                                onChange={(e) => setDatas({ ...datas, paymentMethod: e.target.value })}
-                             />
+                            onChange={(e) => setPaymentMethod(e.target.value)}
+                            />
                             <label class="form-check-label" for="flexRadioDefault6">
                                 Cash On Delivery
                             </label>

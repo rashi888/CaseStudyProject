@@ -15,37 +15,49 @@ function Allproducts(props) {
   const [totalpages, setTotalpages] = useState(0);
   const [pageNumber, setPageNumber] = useState(0);
   const [sortBy, setSortBy] = useState("productPrice");
-
- 
-
-
-
-
-  
+  const [dir, setDir] = useState("DESC");
 
   const setpage = (item) => (e) => {
     console.log(item);
-    setPageNumber(item-1);
+    setPageNumber(item - 1);
     fetchData();
   };
 
-  const fetchData = async () => {
+  const fetchData = () => {
     setIsLoading(true);
-    const url = api+"?pageSize=10&pageNumber="+pageNumber+"&sortDir=DESC&sortBy="+sortBy;
+    const url =
+      api +
+      "?pageSize=10&pageNumber=" +
+      pageNumber +
+      "&sortBy=" +
+      sortBy +
+      "&dir=" +
+      dir;
+     
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        setProduct(data ["content"]);
+      
 
-    const response = await fetch(url);
-    const data = await response.json();
+  
     setTotalpages(data["totalPages"]);
     setProduct(data["content"]);
     setIsLoading(false);
+      })
   };
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [
+    pageNumber,
+    sortBy,
+    dir,
+  ]);
   console.log(product);
   // console.log(totalpages);
-  const page=[];
+  const page = [];
 
   for (let i = 1; i <= totalpages; i++) {
     page.push(i);
@@ -82,10 +94,6 @@ function Allproducts(props) {
     console.log(e.target.value);
     window.location.href = "/singleproductview/" + id;
   };
- 
-  
-  
-  
 
   return (
     <>
@@ -119,21 +127,35 @@ function Allproducts(props) {
             </Link>
 
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <Link class="dropdown-item" href="#" 
-              onClick={()=>{setSortBy("productId");fetchData();}}
-              
+              <Link
+                class="dropdown-item"
+                href="#"
+                onClick={() => {
+                  setSortBy("productId");
+                  fetchData();
+                }}
               >
                 New Arrivals
               </Link>
-              <Link class="dropdown-item" href="#" 
-              onClick={()=>{setSortBy("productPrice");fetchData();}}
-              
+              <Link
+                class="dropdown-item"
+                href="#"
+                onClick={() => {
+                  setSortBy("productPrice");
+                  setDir("ASC");
+                  fetchData();
+                }}
               >
                 Price: Low to High
               </Link>
-              <Link class="dropdown-item" href="#"
-              onClick={()=>{setSortBy("productPrice");fetchData();}}
-              
+              <Link
+                class="dropdown-item"
+                href="#"
+                onClick={() => {
+                  setSortBy("productPrice");
+                  setDir("DESC");
+                  fetchData();
+                }}
               >
                 Price: High to Low
               </Link>
@@ -184,7 +206,11 @@ function Allproducts(props) {
                       <h4 style={{ marginBottom: "20px" }}>
                         {item.productName}
                       </h4>
-                      <div dangerouslySetInnerHTML={{ __html: item.productDescription }}></div>
+                      <div
+                        dangerouslySetInnerHTML={{
+                          __html: item.productDescription,
+                        }}
+                      ></div>
                       {/* <h2 style={{ margin: '10px 0px' }}>₹ <span>12000</span></h2> */}
                     </div>
                     <div className="price-section">
@@ -234,15 +260,20 @@ function Allproducts(props) {
             {page.map((item) => {
               return (
                 <>
-            <li class="page-item f-10" onClick={setpage(item)} >
-              <Link class="page-link" onClick={setpage(item)} href="#" style={{ fontSize: "24px" }}>
-                {item}
-              </Link>
-            </li>
+                  <li class="page-item f-10" onClick={setpage(item)}>
+                    <Link
+                      class="page-link"
+                      onClick={setpage(item)}
+                      href="#"
+                      style={{ fontSize: "24px" }}
+                    >
+                      {item}
+                    </Link>
+                  </li>
                 </>
               );
             })}
-            
+
             <li class="page-item">
               <Link
                 class="page-link"

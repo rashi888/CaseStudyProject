@@ -4,7 +4,7 @@ import { signUp } from "../../services/user-service";
 import { ToastContainer, toast } from "react-toastify";
 // import signup from "./Signup.css";
 import jwt_decode from "jwt-decode";
-import google from "jwt-decode"
+
 
 
 import loginimg from "../../assets/LoginSignupImg/login.gif";
