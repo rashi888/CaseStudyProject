@@ -9,7 +9,7 @@
     /* width: 1250px;
     height: 200px; */
     width: 1200px;
-    height: 200px;
+    height: 220px;
     /* margin: 20px; */
     margin: auto;
     margin-bottom: 20px;
@@ -41,6 +41,13 @@ height: 100%;
   -webkit-box-orient: vertical;
 }
 .content-section>p{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Number of lines to display */
+    -webkit-box-orient: vertical;
+}
+.prod-desc{
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;

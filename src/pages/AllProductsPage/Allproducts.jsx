@@ -184,7 +184,7 @@ function Allproducts(props) {
                       <h4 style={{ marginBottom: "20px" }}>
                         {item.productName}
                       </h4>
-                      <div dangerouslySetInnerHTML={{ __html: item.productDescription }}></div>
+                      <div className="prod-desc" dangerouslySetInnerHTML={{ __html: item.productDescription }}></div>
                       {/* <h2 style={{ margin: '10px 0px' }}>₹ <span>12000</span></h2> */}
                     </div>
                     <div className="price-section">

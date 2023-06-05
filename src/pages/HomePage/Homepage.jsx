@@ -37,20 +37,25 @@ function Homepage() {
             {/* <Adv1 /> */}
             <Items1 />
             <Featured/>
+            <Items />
+            <Items3 />
+            <SummerSpecials/>
             <Tiles />
-            <GroceryCol/>
             <BannersSmall/>
+            <Items2/>
+            <Items4/>
+            <GroceryCol/>
             <Items />
             {/* <Wrapper/> */}
             <MsignBanner/>
             <img src={img13} alt="" height="100%" width="100%" style={{margin:'40px 0px'}}/>
           {/* <Link to="/msignup" >  <img src={img14} alt="" height="100%" width="100%" style={{margin:'40px 0px'}} /></Link> */}
-            <Items2/>
-            <SummerSpecials/>
-            <Items4/>
+          
+           
+           
             {/* <Adv2 /> */}
-            <Items3 />
-            <Items />
+           
+        
           
 
         </>

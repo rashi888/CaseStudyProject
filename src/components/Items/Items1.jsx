@@ -87,7 +87,7 @@ function Items1() {
   return (
     <>
       <div className="wrapperr" style={{margin:'50px auto'}}>
-      <h3 className="wrapper-heading1" > Smartphones & Devices  </h3>
+      <h3 className="wrapper-heading1" >Appliances for your home | Upto 55% off  </h3>
         <hr className="horizontal-line"/>
 
 
