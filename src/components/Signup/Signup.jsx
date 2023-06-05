@@ -4,13 +4,16 @@ import { signUp } from "../../services/user-service";
 import { ToastContainer, toast } from "react-toastify";
 // import signup from "./Signup.css";
 import jwt_decode from "jwt-decode";
+// import google from "jwt-decode"
 
-import loginimg from "../../assets/LoginSignupImg/login.gif";
+// import loginimg from "../../assets/LoginSignupImg/login.gif";
+import loginimg from "../../assets/LoginSignupImg/loginsignup1.gif";
 import signup from "./Signup.css";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Swal from "sweetalert2";
+
 
 
 
