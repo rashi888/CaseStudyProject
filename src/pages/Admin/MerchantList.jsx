@@ -16,7 +16,7 @@ function MerchantList() {
             });
             fetchData();
         });
-    };  
+    };
 
     const [product, setProduct] = useState([]);
 
@@ -34,7 +34,7 @@ function MerchantList() {
 
     return (
         <>
-            <div className="container-fluid my-5" style={{ backgroundColor: 'white',paddingBottom:'10px' }}>
+            <div className="container-fluid my-5" style={{ backgroundColor: 'white', paddingBottom: '10px' }}>
 
                 <Link to="/productadd" style={{ margin: "2%  0px ", padding: '1%', width: '20%' }} className="btn btn-primary">Add Product</Link>
                 <Link to='/admindashboard' style={{ margin: "2%  10px ", padding: '1%', width: '20%' }} className="btn btn-primary">Back to Dashboard</Link>
@@ -42,8 +42,8 @@ function MerchantList() {
                 <table className="table">
                     <thead className="thead-light">
                         <tr>
-                            <th scope="col">Merchant Id</th>
-                            <th scope="col">Name</th>
+                            <th scope="col" style={{ width: '120px' }}>Merchant Id</th>
+                            <th scope="col" style={{ width: '530px' }}>Name</th>
                             <th scope="col">Contact</th>
                             <th scope="col">Email Id</th>
                             <th scope="col">Delete</th>
@@ -54,12 +54,12 @@ function MerchantList() {
                         return (<>
                             <tbody>
                                 <tr >
-                                    <th scope="row" key={item.productId}> {index + 1}</th>
-                                    <td >{item.productName}</td>
+                                    <th scope="row" style={{ width: '120px' }} key={item.productId}> {index + 1}</th>
+                                    <td style={{ width: '530px' }}>{item.productName}</td>
                                     <td >{item.category.categoryTitle}</td>
                                     <td>₹ {item.productPrice}</td>
-                                    <td><button className="btnn btn-danger" style={{ padding: '4px 7px', borderRadius: '5px',marginTop:'-7px' }} onClick={() => deleteProduct(item.productId)}>Delete</button></td>
-                                    <td><Link to={'/updateproduct/'+item.productId} className="btnn btn-warning" style={{ padding: '4px 7px', borderRadius: '5px',marginTop:'-7px' }}>Update</Link></td>
+                                    <td><button className="btnn btn-danger" style={{ padding: '4px 7px', borderRadius: '5px', marginTop: '-7px' }} onClick={() => deleteProduct(item.productId)}>Delete</button></td>
+                                    <td><Link to={'/updateproduct/' + item.productId} className="btnn btn-warning" style={{ padding: '4px 7px', borderRadius: '5px', marginTop: '-7px' }}>Update</Link></td>
 
                                 </tr >
                             </tbody>
@@ -69,7 +69,7 @@ function MerchantList() {
                 </table>
 
 
-                <nav aria-label="Page navigation example" style={{margin:'30px 0px',padding:'10px'}}>
+                <nav aria-label="Page navigation example" style={{ margin: '30px 0px', padding: '10px' }}>
                     <ul class="pagination " >
                         <li class="page-item">
                             <a class="page-link" href="#" aria-label="Previous">

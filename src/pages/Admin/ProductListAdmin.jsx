@@ -54,7 +54,7 @@ function ProductListAdmin() {
                             <th scope="col">Category</th>
                             <th scope="col">Stock</th>
                             <th scope="col">Price</th>
-                            {/* <th scope="col">Delete</th> */}
+                            <th scope="col">Delete</th>
                             <th scope="col">Update</th>
                         </tr>
                     </thead>
@@ -71,7 +71,7 @@ function ProductListAdmin() {
                                             <td >{item.category.categoryTitle}</td>
                                             <td>{item.stock}</td>
                                             <td>₹ {item.productPrice}</td>
-                                            {/* <td><button className="btnn btn-danger" style={{ padding: '4px 7px', borderRadius: '5px',marginTop:'-7px' }} onClick={() => deleteProduct(item.productId)}>Delete</button></td> */}
+                                            <td><button className="btnn btn-danger" style={{ padding: '4px 7px', borderRadius: '5px',marginTop:'-7px' }} onClick={() => deleteProduct(item.productId)}>Delete</button></td>
                                             <td><Link to={'/updateproduct/' + item.productId} className="btnn btn-warning" style={{ padding: '4px 7px', borderRadius: '5px', marginTop: '-7px' }}>Update</Link></td>
 
                                         </tr >

@@ -65,6 +65,16 @@
 .myaccount>h6{
     font-weight: 400;
 }
+.linking{
+    margin-left: -20px;
+    margin: -20px -20px;
+}
+.linking:hover{
+    text-decoration: none;
+    color: white;
+    font-weight: 400;
+    
+}
 #icon1,#icon2,#icon3,#icon4,#icon5{
     margin: 15px;
     font-size: 1.2rem;

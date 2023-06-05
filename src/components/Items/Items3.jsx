@@ -85,7 +85,7 @@ function Items3() {
     return (
         <>
             <div className="wrapperr" style={{margin:'50px auto'}}>
-            <h3 className="wrapper-heading1" >ShopEase Originals </h3>
+            <h3 className="wrapper-heading1" >Pick Your styles </h3>
         <hr className="horizontal-line"/>
 
                 {isLoading ? (

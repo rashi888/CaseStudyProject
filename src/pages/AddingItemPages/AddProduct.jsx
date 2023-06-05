@@ -121,18 +121,12 @@ function AddProduct() {
                                     })}
                                 </select>
                             </div>
-                           
                             <div className="form-group">
-                                <label for="productPrice">Price</label>
-                                <input type="number" className="form-control" onChange={(e) => handleChange(e, "productPrice")}
-                                    value={data.productPrice} required name="productPrice" id="productPrice"
-                                    placeholder="Price" />
+                                <label for="stock">Stock</label>
+                                <input type="text" className="form-control" onChange={(e) => handleChange(e, "stock")}
+                                    value={data.stock} required name="stock" id="stock"
+                                    placeholder="Stock" />
                             </div>
-                            
-
-                           
-                           
-
                             <div className="form-group">
                                 <label for="productDescription">Product Description</label>
                                 <JoditEditor
@@ -153,10 +147,10 @@ function AddProduct() {
                                     placeholder="MRP" />
                             </div>
                             <div className="form-group">
-                                <label for="stock">Stock</label>
-                                <input type="text" className="form-control" onChange={(e) => handleChange(e, "stock")}
-                                    value={data.stock} required name="stock" id="stock"
-                                    placeholder="Stock" />
+                                <label for="productPrice">Price</label>
+                                <input type="number" className="form-control" onChange={(e) => handleChange(e, "productPrice")}
+                                    value={data.productPrice} required name="productPrice" id="productPrice"
+                                    placeholder="Price" />
                             </div>
                             <p>Product Image</p>
                             <div className="custom-file">
