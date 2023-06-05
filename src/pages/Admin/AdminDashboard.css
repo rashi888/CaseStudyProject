@@ -1,7 +1,133 @@
 .admin-dashboard{
     background-color: rgb(255, 255, 255);
     box-shadow: 10px 10px 10px lightgray;
-    /* width: 950px; */
+    width: 1260px;
+    border-radius: 5px;
+    /* padding: 60px 40px; */
+    padding:10px;
+    margin:20px  auto;
+    /* margin: 40px 90px; */
+}
+.admin-dashboard>h2{
+    margin: 10px 10px 30px 10px;
+}
+.tiles-4{
+    width: 100%;
+    height: 160px;
+    /* background-color: bisque; */
+    display: flex;
+}
+.tile-1{
+    background-color: rgba(0, 145, 255, 0.604);
+    height: 100%;
+    width: 25%;
+    margin: 0 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 25px;
+}
+.icon-and-orders{
+   /* margin: 20px 0; */
+   padding: 20px 0;
+}
+.total-orders{
+    margin-top: 10px;
+}
+.icon-prop{
+    background-color: rgba(0, 0, 0, 0.12);
+    /* padding: 12px 16px; */
+    text-align: center;
+    padding-top: 5px;
+    font-size: 24px;
+    width: 50px;
+    height: 50px;
+    border-radius: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.tile-2{
+     background-color: rgba(255, 0, 72, 0.54);
+    height: 100%;
+    width: 25%;
+    text-align: center;
+    margin: 0 10px;
+    border-radius: 5px;
+     display: flex;
+    justify-content: space-between;
+    padding: 10px 25px;
+}
+.tile-3{
+     background-color: rgba(255, 174, 0, 0.669);
+    height: 100%;
+    width: 25%;
+    margin: 0 10px;
+    border-radius: 5px;
+    text-align: center;
+     display: flex;
+    justify-content: space-between;
+    padding: 10px 25px;
+}
+.tile-4{
+     background-color: rgba(0, 146, 63, 0.693);
+    height: 100%;
+    width: 25%;
+    margin: 0 10px;
+    border-radius: 5px;
+     display: flex;
+    justify-content: space-between;
+    padding: 10px 25px;
+    text-align: center;
+}
+.tile-5{
+    background-color: rgba(40, 193, 213, 0.693);
+   height: 100%;
+   width: 25%;
+   margin: 20px auto;
+   border-radius: 5px;
+    display: flex;
+   justify-content: space-between;
+   padding: 10px 25px;
+   text-align: center;
+}
+.Items-route{
+    width: 100%;
+    height: 400px;
+    /* margin-top: 20px; */
+    padding: 20px 100px;
+    margin: 20px auto;
+
+    /* display: flex; */
+    /* background-color: brown; */
+}
+.users-page,.merchant-page,.category-page,.product-page{
+    height: 35%;
+    width: 45%;
+    background-color: rgb(242, 240, 240);
+    box-shadow: 5px 10px 10px  rgb(166, 166, 166);
+    padding: 20px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+}
+.user-merchant-one,.category-product-two{
+    display: flex;
+}
+.admin-btns{
+    border: none;
+    background-color: #2a98a4;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+
+/* .admin-dashboard{
+    background-color: rgb(255, 255, 255);
+    box-shadow: 10px 10px 10px lightgray;
+    width: 950px;
     border-radius: 5px;
     padding: 60px 40px;
     margin: 40px 90px;
@@ -11,7 +137,7 @@
     font-family: Arial, Helvetica, sans-serif;
     margin-top: 0;
    margin-left: 0;
-    /* margin-bottom: 30px; */
+    margin-bottom: 30px;
 }
 .card-item-admin{
     height: 200px;
@@ -19,7 +145,7 @@
     border-radius:6px;
     box-shadow: 5px 10px 5px lightgray;
     position: relative;
-}
+} */
 .col-sm-3{
     /* margin-left: 30px;
     margin-right: 30px; */

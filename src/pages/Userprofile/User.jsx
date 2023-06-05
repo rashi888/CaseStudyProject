@@ -6,6 +6,7 @@ import { RiShoppingCartFill } from "react-icons/ri"
 import { RiHeartLine } from "react-icons/ri"
 import { RiSettings2Fill } from "react-icons/ri"
 import { FiPower } from "react-icons/fi"
+import { Link } from 'react-router-dom'
 import { Form, FormGroup, Label, Input, FormText, Col, Button, FormGroupProps, Row } from "reactstrap"
 
 function User() {
@@ -24,15 +25,15 @@ function User() {
                         </div>
                         <div className="myaccount">
                             <RiShoppingCartFill id='icon2' />
-                            <h6 className='headings'> Order History</h6>
+                         <Link to="orders" className='linking'><h6 className='headings'> Order History</h6></Link>
                         </div>
-                        <div className="myaccount">
+                        {/* <div className="myaccount">
                             <RiHeartLine id='icon3' />
                             <h6 className='headings'>Wishlist</h6>
-                        </div>
+                        </div> */}
                         <div className="myaccount">
-                            <RiSettings2Fill id='icon4' />
-                            <h6 className='headings'> Preferences</h6>
+                        <i class="ri-user-location-fill" id='icon3'></i>
+                            <h6 className='headings'> Addresses</h6>
                         </div>
                         <div className="myaccount">
                             <FiPower id='icon5' />
@@ -71,7 +72,7 @@ function User() {
                                 </FormGroup>
                             </Col>
                         </Row>
-                        <FormGroup>
+                        {/* <FormGroup>
                             <Label for="exampleAddress">
                                 Address
                             </Label>
@@ -90,8 +91,8 @@ function User() {
                                 name="address2"
                                 placeholder="Address2"
                             />
-                        </FormGroup>
-                        <Row>
+                        </FormGroup> */}
+                        {/* <Row>
                             <Col md={6}>
                                 <FormGroup>
                                     <Label for="exampleCity">
@@ -125,7 +126,7 @@ function User() {
                                     />
                                 </FormGroup>
                             </Col>
-                        </Row>
+                        </Row> */}
                         <FormGroup check style={{ margin: '10px 0px' }}>
                             <Input
                                 id="exampleCheck"

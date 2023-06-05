@@ -4,7 +4,7 @@ import { signUp } from "../../services/user-service";
 import { ToastContainer, toast } from "react-toastify";
 // import signup from "./Signup.css";
 import jwt_decode from "jwt-decode";
-// import google from "jwt-decode"
+import google from "jwt-decode"
 
 // import loginimg from "../../assets/LoginSignupImg/login.gif";
 import loginimg from "../../assets/LoginSignupImg/loginsignup1.gif";
@@ -62,7 +62,7 @@ const Signup = () => {
       auto_select: true,
       cancel_on_tap_outside: false
     });
-    
+
 
     google.accounts.id.renderButton(
       document.getElementById("singInDiv"),

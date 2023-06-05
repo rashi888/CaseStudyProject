@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 
 // import login from "../../assets/LoginSignupImg/login.gif";
 // import merchantimg from "../../assets/MSignupImg/Merchant Sign up page.png";
-import merchantimg from "../../assets/MSignupImg/merchantbannImg.png";
+import merchantimg from "../../assets/MSignupImg/msignupImg.png";
 import msignup from "../../assets/MSignupImg/msignup.jpg"
 import "./MSignup.css"
 import axios from "axios";
@@ -60,7 +60,7 @@ const MSignup = () => {
             <div className="merchant-signup">
                 <div className="right-credantials">
                     <form className="loginform" onSubmit={submitForm}>
-                        <div className="title"> Become a Merchant</div>
+                        <div className="title" style={{marginBottom:'-12px'}}> Become a Merchant</div>
                         <div className="field">
                             <input
                                 type="text"
@@ -104,9 +104,20 @@ const MSignup = () => {
                                 value={data.password} required
                                
                             />
+                            <label>Password</label>
+                        </div>
+                        <div className="field">
+                            <input
+                                type="password"
+
+                                id="password"
+                                onChange={(e) => handleChange(e, "password")}
+                                value={data.password} required
+                               
+                            />
                             
 
-                            <label>Password</label>
+                            <label>Confirm Password</label>
                         </div>
                         <div className="content">
                             <div className="checkbox">
