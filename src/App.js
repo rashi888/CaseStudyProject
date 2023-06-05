@@ -49,6 +49,7 @@ import MyOrders from './pages/MerchantDashboard/MyOrders';
 import CategoryListAdmin from './pages/Admin/CategoryListAdmin';
 import ProductListAdmin from './pages/Admin/ProductListAdmin';
 import MyProductList from './pages/AddingItemPages/MyProductList';
+import AddressUser from './pages/Userprofile/AddressUser';
 
 
 
@@ -120,6 +121,7 @@ function App() {
         <Route path="/updateproduct/:id" Component={ProductUpdate} />
         <Route path="/updatecategory/:id" Component={CategoryUpdate} />
         <Route path='/user' Component={User} />
+        <Route path='/addressuser' Component={AddressUser} />
         <Route path='/singleproductview/:id' Component={SingleProductView} />
       </Routes>
       <Footer />

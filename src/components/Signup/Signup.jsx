@@ -166,7 +166,7 @@ const Signup = () => {
         theme="light"
       />
       <meta charSet="utf-8" />
-      <div className="wrapper" style={{ height: 'fit-content' }}>
+      <div className="wrapper" style={{ height: 'fit-content', height: '600px', marginTop: '20px' }}>
         <div className="formcont" style={{ backgroundColor: 'white', paddingTop: '-30px', marginTop: '10px' }}>
           <img className="logingif" src={loginimg} alt="" />
 
@@ -218,6 +218,18 @@ const Signup = () => {
 
               />
               <label>Password</label>
+            </div>
+
+            <div className="field">
+              <input
+                type="password"
+
+                id="password"
+                onChange={(e) => handleChange(e, "password")}
+                value={data.password} required
+
+              />
+              <label>Confirm Password</label>
             </div>
 
 
