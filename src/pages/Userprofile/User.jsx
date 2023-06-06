@@ -35,6 +35,10 @@ function User() {
                             <RiHeartLine id='icon3' />
                             <h6 className='headings'>Wishlist</h6>
                         </div> */}
+                        {/* <Link to="/addressuser " className="linky">
+                                <i class="ri-user-location-fill" id='icon3'></i>
+                                <h6 className='headings'> Addresses</h6>
+                        </Link> */}
                         <div className="myaccount">
                             <i class="ri-user-location-fill" id='icon3'></i>
                             <Link to="/addressuser" className='linking'><h6 className='headings'> Addresses</h6></Link>
@@ -47,20 +51,21 @@ function User() {
 
                 </div>
                 <div className="right-side-content">
+                    <h3 style={{ marginTop: '-60px', marginBottom: '30px', color: 'gray' }}> Update Yor Profile!</h3>
                     <Form>
-                    <Col md={6}>
-                                <FormGroup>
-                                    <Label for="username">
-                                        Username
-                                    </Label>
-                                    <Input
-                                        id="username"
-                                        name="text"
-                                        placeholder="Enter username"
-                                        type="text"
-                                    />
-                                </FormGroup>
-                            </Col>
+                        <Col md={6}>
+                            <FormGroup>
+                                <Label for="username">
+                                    Name
+                                </Label>
+                                <Input
+                                    id="Name"
+                                    name="text"
+                                    placeholder="Enter username"
+                                    type="text"
+                                />
+                            </FormGroup>
+                        </Col>
                         <Col md={6}>
                             <FormGroup>
                                 <Label for="exampleEmail">
@@ -75,19 +80,32 @@ function User() {
                             </FormGroup>
                         </Col>
                         <Col md={6}>
-                                <FormGroup>
-                                    <Label for="examplePassword">
-                                        Password
-                                    </Label>
-                                    <Input
-                                        id="examplePassword"
-                                        name="password"
-                                        placeholder="Enter Password"
-                                        type="password"
-                                    />
-                                </FormGroup>
-                            </Col>
-                          
+                            <FormGroup>
+                                <Label for="examplePassword">
+                                    Password
+                                </Label>
+                                <Input
+                                    id="examplePassword"
+                                    name="password"
+                                    placeholder="Enter Password"
+                                    type="password"
+                                />
+                            </FormGroup>
+                        </Col>
+                        <Col md={6}>
+                            <FormGroup>
+                                <Label for="tel">
+                                    Mobile Number
+                                </Label>
+                                <Input
+                                    id="tel"
+                                    name="tel"
+                                    placeholder="Enter Mobile Number"
+                                    type="tel"
+                                />
+                            </FormGroup>
+                        </Col>
+
                         {/* <Row>
                            
                             <Col md={6}>
@@ -173,7 +191,8 @@ function User() {
                                 Check me out
                             </Label>
                         </FormGroup> */}
-                        <Button className='edit-button' style={{marginLeft:'15px',marginTop:'20px'}}>
+
+                        <Button className='edit-button' style={{ marginLeft: '15px', marginTop: '20px' }}>
                             Update Profile
                         </Button>
                     </Form>

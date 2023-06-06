@@ -1,7 +1,7 @@
 .user-container{
     /* background-color: white; */
     width: 1250px;
-    height: 500px;
+    height: 510px;
     margin: auto;
     margin-top: 40px;
     margin-bottom: 30px;
@@ -60,10 +60,12 @@
     background-color: #54b9c4;
     color: white;
     border-radius: 3px;
+    background-color: rgb(102, 102, 102);
     /* padding:0 5px; */
 }
 .myaccount>h6{
     font-weight: 400;
+
 }
 .linking{
     margin-left: -20px;

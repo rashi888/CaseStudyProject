@@ -17,10 +17,11 @@ function Items1() {
 
     return fetch("http://localhost:8080/api/category/2/products")
       .then((response) => response.json())
-      .then((data) => {setProduct(data["content"])
-      setIsLoading(false);
+      .then((data) => {
+        setProduct(data["content"])
+        setIsLoading(false);
 
-    });
+      });
   };
 
   useEffect(() => {
@@ -53,7 +54,7 @@ function Items1() {
   const addtocart = (id) => (e) => {
     console.log(e.target.value);
     let userId = localStorage.getItem("userId");
-    const url = "http://localhost:8080/api/cart/addToCart" ;
+    const url = "http://localhost:8080/api/cart/addToCart";
     const formdata = new FormData();
     formdata.append("productId", id);
     formdata.append("userId", userId);
@@ -69,13 +70,13 @@ function Items1() {
           title: "Success",
           text: "Product Added to Cart Successfully",
           icon: "success",
-          });
+        });
       })
       .catch((error) => {
         console.log(error);
       }
       );
-      
+
 
   };
 
@@ -86,46 +87,47 @@ function Items1() {
 
   return (
     <>
-      <div className="wrapperr" style={{margin:'50px auto'}}>
-      <h3 className="wrapper-heading1" >Appliances for your home | Upto 55% off  </h3>
-        <hr className="horizontal-line"/>
+      <div className="wrapperr" style={{ margin: '50px auto' }}>
+        <h3 className="wrapper-heading1" >Appliances for your home | Upto 55% off  </h3>
+        <hr className="horizontal-line" />
 
 
-      {isLoading ? (
-          <Spinner animation="border" role="status" color='primary' style={{marginLeft:'50%'}}/>
+        {isLoading ? (
+          <Spinner animation="border" role="status" color='primary' style={{ marginLeft: '50%' }} />
         ) : (
           <>
-           <Carousel responsive={responsive}>
-          {product.map((item) => {
-            return (<>
-              <div className="cardy" >
-                <div className="image-items">
-                  <img
-                  onClick={viewProduct(item.productId)}
-                    src={"http://localhost:8080/api/products/image/" + item.productPhoto}
-                    className="card-img-top"
-                    alt="product.title"
-                    height='100%'
-                    width='100%'
-                  />
-                </div>
-                <div className="all-main-content">
-                  <h4 className="heading-main">{item.productName}</h4>
-                  <h5 className='price-main'>₹ {item.productPrice}</h5>
-                  <p className='description-main'> {item.productDescription}</p>
-                  <p>
-                    <NavLink >
-                      <button onClick={addtocart(item.productId)} type="button" class="btn-Item btn-warning" style={{ borderRadius: '4px', border: 'none' }}>Add to cart</button>
-                    </NavLink>
-                  </p>
-                </div>
-              </div>
-            </>
-            );
-          })}
-        </Carousel>
+            <Carousel responsive={responsive}>
+              {product.map((item) => {
+                return (<>
+                  <div className="cardy" >
+                    <div className="image-items">
+                      <img
+                        onClick={viewProduct(item.productId)}
+                        src={"http://localhost:8080/api/products/image/" + item.productPhoto}
+                        className="card-img-top"
+                        alt="product.title"
+                        height='100%'
+                        width='100%'
+                      />
+                    </div>
+                    <div className="all-main-content">
+                      <h4 className="heading-main">{item.productName}</h4>
+                      <h5 className='price-main'>₹ <del> {item.productMRP}</del></h5>
+                      <h5 className='price-main'>₹ {item.productPrice}</h5>
+                      {/* <p className='description-main'> {item.productDescription}</p> */}
+                      <p>
+                        <NavLink >
+                          <button onClick={addtocart(item.productId)} type="button" class="btn-Item btn-warning" style={{ borderRadius: '4px', border: 'none' }}>Add to cart</button>
+                        </NavLink>
+                      </p>
+                    </div>
+                  </div>
+                </>
+                );
+              })}
+            </Carousel>
           </>)}
-       
+
       </div>
     </>
   )

@@ -51,7 +51,7 @@ function Items3() {
     const viewProduct = (id) => (e) => {
         console.log(e.target.value);
         window.location.href = "/singleproductview/" + id;
-      };
+    };
 
     const addtocart = (id) => (e) => {
         console.log(e.target.value);
@@ -84,9 +84,9 @@ function Items3() {
 
     return (
         <>
-            <div className="wrapperr" style={{margin:'50px auto'}}>
-            <h3 className="wrapper-heading1" >Pick Your styles </h3>
-        <hr className="horizontal-line"/>
+            <div className="wrapperr" style={{ margin: '50px auto' }}>
+                <h3 className="wrapper-heading1" >Pick Your styles </h3>
+                <hr className="horizontal-line" />
 
                 {isLoading ? (
                     <Spinner animation="border" role="status" color='primary' style={{ marginLeft: '50%' }} />
@@ -98,7 +98,7 @@ function Items3() {
                                     <div className="cardy" >
                                         <div className="image-items">
                                             <img
-                                            onClick={viewProduct(item.productId)}
+                                                onClick={viewProduct(item.productId)}
                                                 src={"http://localhost:8080/api/products/image/" + item.productPhoto}
                                                 className="card-img-top"
                                                 alt="product.title"
@@ -108,8 +108,9 @@ function Items3() {
                                         </div>
                                         <div className="all-main-content">
                                             <h4 className="heading-main">{item.productName}</h4>
+                                            <h5 className='price-main'>₹ <del> {item.productMRP}</del></h5>
                                             <h5 className='price-main'>₹ {item.productPrice}</h5>
-                                            <p className='description-main'> {item.productDescription}</p>
+                                            {/* <p className='description-main'> {item.productDescription}</p> */}
                                             <p>
                                                 <NavLink >
                                                     <button onClick={addtocart(item.productId)} type="button" class="btn-Item btn-warning" style={{ borderRadius: '4px', border: 'none' }}>Add to cart</button>

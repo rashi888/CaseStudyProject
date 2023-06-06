@@ -74,7 +74,7 @@ const SearchData = (props) => {
     <>
       <div className="universal-page">
         <div className="heading-allproducts">
-        <h2 style={{ marginBottom: '20px', padding: '10px 20px', color: '#48c1cf', backgroundColor: "white", marginLeft: '20px' }}>All Products</h2>
+        <h2 style={{ marginBottom: '20px', padding: '10px 20px', color: '#48c1cf', marginLeft: '20px' }}>All Products</h2>
         <div className="sorting-div">
           <p className='sorting'>Sort by: <bold>New Arrivals</bold></p>
          <i className='sorting'><RiArrowDownSLine/></i> 
@@ -94,7 +94,7 @@ const SearchData = (props) => {
               </div>
               <div className="content-section">
                 <h4 style={{ marginBottom: '20px' }} >{item.productName}</h4>
-                <div dangerouslySetInnerHTML={{ __html: item.productDescription }} style={{ marginBottom: '20px' }}></div>
+                <div  className="desc-mobile" dangerouslySetInnerHTML={{ __html: item.productDescription }} style={{ marginBottom: '20px' }}></div>
                 {/* <h2 style={{ margin: '10px 0px' }}>₹ <span>12000</span></h2> */}
 
               </div>

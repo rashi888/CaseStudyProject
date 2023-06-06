@@ -4,7 +4,7 @@ import { signUp } from "../../services/user-service";
 import { ToastContainer, toast } from "react-toastify";
 // import signup from "./Signup.css";
 import jwt_decode from "jwt-decode";
-
+// import google from "jwt-decode"
 
 // import loginimg from "../../assets/LoginSignupImg/login.gif";
 import loginimg from "../../assets/LoginSignupImg/loginsignup1.gif";
@@ -20,7 +20,65 @@ import Swal from "sweetalert2";
 
 const Signup = () => {
 
-  
+  const handleCredentialResponse = (response) => {
+    console.log(response.credential);
+    const token = response.credential;
+    const decoded = jwt_decode(token);
+    // console.log(decoded);
+    const data = {
+      name: decoded.name,
+      emailId: decoded.email,
+
+    };
+    console.log(data);
+
+    axios.post("http://localhost:8080/api/users/OAuth", data).then((response) => {
+      console.log(response.data);
+      window.localStorage.setItem("token", response.data.token);
+      window.localStorage.setItem("userId", response.data.userId);
+      window.localStorage.setItem("role", response.data.role);
+      window.localStorage.setItem("name", response.data.name);
+      navigate("/");
+    }
+    ).catch((error) => {
+      const errorMsg = error.response.data.message;
+      if (errorMsg.includes("Email"))
+        toast.error("Email already exists!", {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+        });
+
+
+    });
+  }
+
+  useEffect(() => {
+    const script = document.createElement('script');
+        script.src = 'https://accounts.google.com/gsi/client';
+        script.async = true;
+    google.accounts.id.initialize({
+      client_id: '889458596682-oujv8pjnafnps4o28rdii03t9bhtn5qq.apps.googleusercontent.com',
+      callback: handleCredentialResponse,
+      auto_select: true,
+      cancel_on_tap_outside: false
+    });
+
+
+    google.accounts.id.renderButton(
+      document.getElementById("singInDiv"),
+      {
+        theme: "outline",
+        size: "large",
+        text: "signIn",
+        shape: "rectangular",
+        logo_alignment: "left"
+      }
+    );
+  }, [])
+
 
   const [data, setData] = useState({
     name: "",
@@ -117,7 +175,7 @@ const Signup = () => {
 
 
           <form className="loginform" onSubmit={submitForm}>
-            <div className="title">Sign-up</div>
+            <div className="title" style={{marginBottom:'-20px',marginTop:'20px'}}>Sign-up</div>
             <div className="field">
               <input
                 type="text"
@@ -169,8 +227,8 @@ const Signup = () => {
               <input
                 type="password"
 
-                id="password"
-                onChange={(e) => handleChange(e, "password")}
+                id="confirmpassword"
+                onChange={(e) => handleChange(e, "confirmpassword")}
                 value={data.password} required
 
               />
@@ -191,6 +249,7 @@ const Signup = () => {
               <input type="submit" value="Register" />
             </div>
 
+            <div className="google-btn" id="singInDiv"></div>
 
             <div className="signup-link">
               Already a member? <a href="login">Login</a>

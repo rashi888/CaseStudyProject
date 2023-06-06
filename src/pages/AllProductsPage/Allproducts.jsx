@@ -207,6 +207,7 @@ function Allproducts(props) {
                         {item.productName}
                       </h4>
                       <div
+                      className="desc-mobile"
                         dangerouslySetInnerHTML={{
                           __html: item.productDescription,
                         }}
