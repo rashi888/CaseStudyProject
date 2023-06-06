@@ -4,7 +4,7 @@ import { signUp } from "../../services/user-service";
 import { ToastContainer, toast } from "react-toastify";
 // import signup from "./Signup.css";
 import jwt_decode from "jwt-decode";
-// import google from "jwt-decode"
+import google from "jwt-decode"
 
 // import loginimg from "../../assets/LoginSignupImg/login.gif";
 import loginimg from "../../assets/LoginSignupImg/loginsignup1.gif";
@@ -57,8 +57,8 @@ const Signup = () => {
 
   useEffect(() => {
     const script = document.createElement('script');
-        script.src = 'https://accounts.google.com/gsi/client';
-        script.async = true;
+    script.src = 'https://accounts.google.com/gsi/client';
+    script.async = true;
     google.accounts.id.initialize({
       client_id: '889458596682-oujv8pjnafnps4o28rdii03t9bhtn5qq.apps.googleusercontent.com',
       callback: handleCredentialResponse,
