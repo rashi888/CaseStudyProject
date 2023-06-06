@@ -20,13 +20,14 @@ function CategoryList() {
             fetchData();
         });
     };
-    
+
 
     const fetchData = () => {
         setIsLoading(true);
         return fetch("http://localhost:8080/api/categories/")
             .then((response) => response.json())
-            .then((data) => {setProduct(data)
+            .then((data) => {
+                setProduct(data)
                 setIsLoading(false);
             });
     };
@@ -39,7 +40,7 @@ function CategoryList() {
     return (
         <>
             <div className="container my-5" style={{ display: 'block', height: '100%' }}><Link to='/categoryadd' style={{ margin: "2%  0px ", padding: '1%', width: '20%' }} className=" d-block     btn btn-primary ">Add Category</Link>
-            <Link to='/mdash' style={{ margin: "2%  0px ", padding: '1%', width: '20%' }} className=" d-block      btn btn-primary ">Back To DashBoard</Link>
+                <Link to='/mdash' style={{ margin: "2%  0px ", padding: '1%', width: '20%' }} className=" d-block      btn btn-primary ">Back To DashBoard</Link>
 
                 <table className="table" >
                     <thead className="thead-light">
@@ -52,24 +53,24 @@ function CategoryList() {
                     </thead>
 
                     {isLoading ? (
-          <Spinner animation="border" role="status" color='primary' style={{marginLeft:'600px'}}/>
-        ) : (
-          <>
-            {product.map((item,index) => {
-                        return (<>
-                            <tbody>
-                                <tr >
-                                    <th >{item.categoryId}</th>
-                                    <td >{item.categoryTitle}</td>
-                                    {/* <td><Link className="btn btn-danger" style={{ padding: '5px 10px', borderRadius: '2px' }} onClick={() => deletecategory(item.categoryId)}>Delete</Link></td> */}
-                                    <td><Link className="btn btn-primary" style={{ padding: '5px 10px', borderRadius: '2px' }} to={"/updatecategory/" + item.categoryId}>Update</Link></td>
-                                </tr>
-                            </tbody>
-                        </>
-                        );
-                    })}
-          </>)}
-                  
+                        <Spinner animation="border" role="status" color='primary' style={{ marginLeft: '600px' }} />
+                    ) : (
+                        <>
+                            {product.map((item, index) => {
+                                return (<>
+                                    <tbody>
+                                        <tr >
+                                            <th >{item.categoryId}</th>
+                                            <td >{item.categoryTitle}</td>
+                                            {/* <td><Link className="btn btn-danger" style={{ padding: '5px 10px', borderRadius: '2px' }} onClick={() => deletecategory(item.categoryId)}>Delete</Link></td> */}
+                                            <td><Link className="btn btn-primary" style={{ padding: '5px 10px', borderRadius: '2px' }} to={"/updatecategory/" + item.categoryId}>Update</Link></td>
+                                        </tr>
+                                    </tbody>
+                                </>
+                                );
+                            })}
+                        </>)}
+
 
 
                 </table>

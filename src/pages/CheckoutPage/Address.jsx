@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import "./Address.css"
 import { Link } from "react-router-dom"
 import { FormGroup, Form, Input, Label, Row, Col } from 'reactstrap';
@@ -16,28 +16,23 @@ function Address() {
     const [data, setData] = useState([]);
     const [deliveryDetailsId, setDeliveryDetailsId] = useState(1);
     const [paymentMethod, setPaymentMethod] = useState("COD");
-    
 
-   const fetchdata = () => {
-    axios.get("http://localhost:8080/api/deliveryDetails/user/" + localStorage.getItem("userId"))
-    // axios.get("http://localhost:8080/api/deliveryDetails/" )
-        .then((resp) => {
-            console.log(resp["data"]);
-            setData(resp["data"]);
-        })
-}
 
-useEffect(() => {
-    fetchdata();
-    const script = document.createElement('script');
+    const fetchdata = () => {
+        axios.get("http://localhost:8080/api/deliveryDetails/user/" + localStorage.getItem("userId"))
+            // axios.get("http://localhost:8080/api/deliveryDetails/" )
+            .then((resp) => {
+                console.log(resp["data"]);
+                setData(resp["data"]);
+            })
+    }
+
+    useEffect(() => {
+        fetchdata();
+        const script = document.createElement('script');
         script.src = 'https://checkout.razorpay.com/v1/checkout.js';
         script.async = true;
-}, []);
-
-
-    
-
-
+    }, []);
 
 
     const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -82,47 +77,48 @@ useEffect(() => {
     }
     const refresh = () => window.location.reload(true)
 
-  const [datas, setDatas] = useState({
-    userId: localStorage.getItem("userId"),
-    deliveryDetailsId: deliveryDetailsId,
-    paymentMethod: paymentMethod,
-  });
-  
+    const [datas, setDatas] = useState({
+        userId: localStorage.getItem("userId"),
+        deliveryDetailsId: deliveryDetailsId,
+        paymentMethod: paymentMethod,
+    });
 
- 
-  const checkout = (e) => {
-    e.preventDefault();
-    console.log(datas);
-    console.log(paymentMethod);
-    if(paymentMethod==="COD"){
-    axios
-        .post("http://localhost:8080/api/order/", datas)
-        .then((resp) => {
-            console.log(resp["data"]);
-            Swal.fire({
-                title: "Success",
-                text: "Order Placed Successfully",
-                icon: "success",
-            });
-        })
-        .catch((error) => {
-            console.log(error);
-        });}
-            
-        else{
+
+
+    const checkout = (e) => {
+        e.preventDefault();
+        console.log(datas);
+        console.log(paymentMethod);
+        if (paymentMethod === "COD") {
             axios
-            .post("http://localhost:8080/api/order/", datas)
-            .then((resp) => {
-                console.log(resp["data"]);
-                Swal.fire({
-                    title: "Success",
-                    text: "Order Placed Successfully",
-                    icon: "success",
+                .post("http://localhost:8080/api/order/", datas)
+                .then((resp) => {
+                    console.log(resp["data"]);
+                    Swal.fire({
+                        title: "Success",
+                        text: "Order Placed Successfully",
+                        icon: "success",
+                    });
+                })
+                .catch((error) => {
+                    console.log(error);
                 });
-            })
-            .catch((error) => {
-                console.log(error);
-            });
+        }
+
+        else {
+            axios
+                .post("http://localhost:8080/api/order/", datas)
+                .then((resp) => {
+                    console.log(resp["data"]);
+                    Swal.fire({
+                        title: "Success",
+                        text: "Order Placed Successfully",
+                        icon: "success",
+                    });
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
         }
     }
     const PayByRazorPay = () => {
@@ -132,11 +128,11 @@ useEffect(() => {
             currency: "INR",
             name: "Acme Corp",
             description: "Test Transaction",
-            
+
             handler: function (response) {
                 console.log(response);
                 console.log(response.razorpay_payment_id);
-                console.log(response.razorpay_order_id);  
+                console.log(response.razorpay_order_id);
                 console.log(response.razorpay_signature);
             },
             prefill: {
@@ -155,18 +151,18 @@ useEffect(() => {
         rzp1.open();
     };
 
-    
 
 
 
 
-        
 
 
- 
 
 
-    
+
+
+
+
 
 
 
@@ -183,31 +179,31 @@ useEffect(() => {
                             data.map((item) => {
                                 return (
                                     <>
-                        
-                        <div class="form-check-delivery">
-                            <input class="form-check-input" value={item.deliveryDetailsId} 
-                            onChange={(e) => setDatas({ ...datas, deliveryDetailsId: e.target.value })}
-                              type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
-                            <label class="form-check-label" for="flexRadioDefault1">
-                                {item.name},
-                                {item.addressLine1},
-                                {item.addressLine2},
-                                {item.city},
-                                {item.pincode}
-                                <br />
-                                {item.state}
-                                <button onClick={openModal} style={{ border: '0', backgroundColor: 'white',marginLeft:'20px',color:'gray'}} ><i class="ri-pencil-fill" ></i></button>  
-                            </label>
-                        </div>
-                        </>
+
+                                        <div class="form-check-delivery">
+                                            <input class="form-check-input" value={item.deliveryDetailsId}
+                                                onChange={(e) => setDatas({ ...datas, deliveryDetailsId: e.target.value })}
+                                                type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
+                                            <label class="form-check-label" for="flexRadioDefault1">
+                                                {item.name},
+                                                {item.addressLine1},
+                                                {item.addressLine2},
+                                                {item.city},
+                                                {item.pincode}
+                                                <br />
+                                                {item.state}
+                                                <button onClick={openModal} style={{ border: '0', backgroundColor: 'white', marginLeft: '20px', color: 'gray' }} ><i class="ri-pencil-fill" ></i> <i class="ri-delete-bin-6-fill mx-3"></i></button>
+                                            </label>
+                                        </div>
+                                    </>
                                 )
                             })
                         }
 
-                       
 
 
-                        <button onClick={openModal} style={{ border: '0', backgroundColor: 'white',marginTop:'10px' }} ><i class="ri-add-line"></i> Add New Address</button>
+
+                        <button onClick={openModal} style={{ border: '0', backgroundColor: 'white', marginTop: '10px' }} ><i class="ri-add-line"></i> Add New Address</button>
                         <Modal isOpen={isOpen} onClose={closeModal}>
                             <div className="modal-div" >
                                 <div className="popup-content">
@@ -326,32 +322,35 @@ useEffect(() => {
                                                 </FormGroup>
                                             </Col>
                                         </Row>
-                                    <button className='btn btn-success 'type='submit' onClick={handleClosePopup}>Done</button>
+                                        <button className='btn btn-success ' type='submit' onClick={handleClosePopup}>Done</button>
                                     </Form>
                                 </div>
                             </div>
                         </Modal>
                     </div>
+
+
+                    
                     <div className="payment-methods">
                         <h3 style={{ marginBottom: '40px' }}>2. Payment Methods </h3>
                         <div class="form-check">
-                            <input class="form-check-input" value="Online" type="radio" name="flexRadioDefault1" id="flexRadioDefault5" 
-                            onChange={(e) => setPaymentMethod(e.target.value)}
-/>
+                            <input class="form-check-input" value="Online" type="radio" name="flexRadioDefault1" id="flexRadioDefault5"
+                                onChange={(e) => setPaymentMethod(e.target.value)}
+                            />
                             <label class="form-check-label" for="flexRadioDefault5">
                                 Pay Online
                             </label>
                         </div>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" value="COD" name="flexRadioDefault1" id="flexRadioDefault6"
-                            onChange={(e) => setPaymentMethod(e.target.value)}
+                                onChange={(e) => setPaymentMethod(e.target.value)}
                             />
                             <label class="form-check-label" for="flexRadioDefault6">
                                 Cash On Delivery
                             </label>
                         </div>
                         <div className="button" onClick={checkout} >
-                            <Link  style={{ border: '0', backgroundColor: 'green', marginTop: '10px' }} className="btn btn-primary">Continue</Link>
+                            <Link style={{ border: '0', backgroundColor: 'green', marginTop: '10px' }} className="btn btn-primary">Continue</Link>
                         </div>
 
                     </div>
