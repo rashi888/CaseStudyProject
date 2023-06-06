@@ -39,10 +39,10 @@ function CategoryList() {
 
     return (
         <>
-            <div className="container my-5" style={{ display: 'block', height: '100%' }}><Link to='/categoryadd' style={{ margin: "2%  0px ", padding: '1%', width: '20%' }} className=" d-block     btn btn-primary ">Add Category</Link>
+            <div className="container my-5" style={{ display: 'block', height: '100%',backgroundColor:'white',padding:'20px' }}><Link to='/categoryadd' style={{ margin: "2%  0px ", padding: '1%', width: '20%' }} className=" d-block     btn btn-primary ">Add Category</Link>
                 <Link to='/mdash' style={{ margin: "2%  0px ", padding: '1%', width: '20%' }} className=" d-block      btn btn-primary ">Back To DashBoard</Link>
 
-                <table className="table" >
+                <table className="table" style={{width:'100%',margin:'auto'}} >
                     <thead className="thead-light">
                         <tr>
                             <th scope="col">SN</th>

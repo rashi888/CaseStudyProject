@@ -74,7 +74,7 @@ const SearchData = (props) => {
     <>
       <div className="universal-page">
         <div className="heading-allproducts">
-        <h2 style={{ marginBottom: '20px', padding: '10px 20px', color: '#48c1cf', backgroundColor: "white", marginLeft: '20px' }}>All Products</h2>
+        <h2 style={{ marginBottom: '20px', padding: '10px 20px', color: '#48c1cf', marginLeft: '20px' }}>All Products</h2>
         <div className="sorting-div">
           <p className='sorting'>Sort by: <bold>New Arrivals</bold></p>
          <i className='sorting'><RiArrowDownSLine/></i> 

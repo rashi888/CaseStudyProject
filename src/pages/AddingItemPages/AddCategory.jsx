@@ -64,7 +64,7 @@ function AddCategory() {
                             </div>
 
                             <button type="submit" className="btn btn-primary">Add Category</button>
-                            <Link to='/mdash' style={{ margin: "2%  0px ", padding: '1%', width: '55%' }} className=" d-block      btn btn-primary ">Back To DashBoard</Link>
+                            <Link to='/mdash' style={{ margin: "2%  0px ", padding: '3%', width: '70%' }} className=" d-block btn btn-primary ">Back To DashBoard</Link>
 
                         </form>
                     </div>

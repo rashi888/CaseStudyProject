@@ -95,7 +95,7 @@ function AdminDashboard() {
 
             <Link to="/userlist" className="users-page" onClick={scrollToTop}>
               <h5>View All Users</h5>
-              <p>View all users and manage all the users from here.</p>
+              <p>Manage and View all users from here.</p>
               {/* <Link to="/userlist"> <button className='admin-btns'> View All Users</button></Link> */}
             </Link>
 

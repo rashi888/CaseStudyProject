@@ -1,4 +1,4 @@
-import React, { useState, useEffect,useRef, useMemo } from 'react'
+import React, { useState, useEffect, useRef, useMemo } from 'react'
 import axios from 'axios'
 import Swal from 'sweetalert2'
 import { useNavigate } from "react-router-dom";
@@ -43,7 +43,7 @@ function AddProduct() {
 
     const submitForm = (event) => {
         event.preventDefault();
-        axios.post("http://localhost:8080/api/category/"+categoryId+"/product/"+ userId, data)
+        axios.post("http://localhost:8080/api/category/" + categoryId + "/product/" + userId, data)
             .then((resp) => {
                 const proId = resp["data"]["productId"];
 
@@ -98,7 +98,7 @@ function AddProduct() {
         <>
 
             <div className="containerr" style={{ margin: '3% 7%', padding: '20px 40px', boxShadow: '10px 5px 10px lightgray', borderRadius: '2px', backgroundColor: 'white' }}>
-                <h3 style={{ marginBottom: '20px' }}>Add a new Product</h3>
+                <h3 style={{ marginBottom: '20px',color:'gray' }}>Add a new Product</h3>
                 <form onSubmit={submitForm} >
                     <div className="row" >
                         <div className="col-sm-5" >
@@ -127,20 +127,27 @@ function AddProduct() {
                                     value={data.stock} required name="stock" id="stock"
                                     placeholder="Stock" />
                             </div>
-                            <div className="form-group">
+                            {/* <div className="form-group">
                                 <label for="productDescription">Product Description</label>
                                 <JoditEditor
                                     // ref={editor}
+                                    style={{
+                                        width: '100%',
+                                        height: '300px',
+                                        border: '1px solid #ccc',
+                                        borderRadius: '5px',
+                                        // Add more CSS properties as needed
+                                    }}
                                     value={data.productDescription}
                                     // config={config}
                                     tabIndex={1} // tabIndex of textarea
                                     onBlur={(newContent) => setData({ ...data, productDescription: newContent })} // preferred to use only this option to update the content for performance reasons
                                     onChange={(newContent) => { }}
                                 />
-                            </div>
+                            </div> */}
                         </div>
                         <div className="col-sm-5">
-                        <div className="form-group">
+                            <div className="form-group">
                                 <label for="productPrice">MRP</label>
                                 <input type="number" className="form-control" onChange={(e) => handleChange(e, "productMRP")}
                                     value={data.productMRP} required name="productMRP" id="productMRP"
@@ -154,7 +161,7 @@ function AddProduct() {
                             </div>
                             <p>Product Image</p>
                             <div className="custom-file">
-                                <input type="file"  className="custom-file-input" onChange={handleFileChange} name="productPhoto" value={data.productPhoto} accept="image/jpeg, image/png" id="productPhoto" />
+                                <input type="file" className="custom-file-input" onChange={handleFileChange} name="productPhoto" value={data.productPhoto} accept="image/jpeg, image/png" id="productPhoto" />
                                 <label className="custom-file-label" for="productImage" > {selectedImage ? (
                                     <p style={{ fontWeight: 300 }}>{selectedImage}</p>
                                 ) : (
@@ -165,9 +172,34 @@ function AddProduct() {
 
                             </div>
 
-                            <button type="submit" className="btn btn-primary" style={{marginTop:'20px'}}>Add product</button>
+                            {/* <button type="submit" className="btn btn-primary" style={{ marginTop: '20px' }}>Add product</button> */}
+
+
+                            
                         </div>
                     </div>
+
+                    <div className="form-group">
+                                <label for="productDescription">Product Description</label>
+                                <JoditEditor
+                                    // ref={editor}
+                                    style={{
+                                        width: '100%',
+                                        height: '300px',
+                                        border: '1px solid #ccc',
+                                        borderRadius: '5px',
+                                        // Add more CSS properties as needed
+                                    }}
+                                    value={data.productDescription}
+                                    // config={config}
+                                    tabIndex={1} // tabIndex of textarea
+                                    onBlur={(newContent) => setData({ ...data, productDescription: newContent })} // preferred to use only this option to update the content for performance reasons
+                                    onChange={(newContent) => { }}
+                                />
+                            </div>
+
+                            <button type="submit" className="btn btn-primary" style={{ marginTop: '20px' }}>Add product</button>
+
                 </form>
             </div>
 

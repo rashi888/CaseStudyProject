@@ -175,7 +175,7 @@ const Signup = () => {
 
 
           <form className="loginform" onSubmit={submitForm}>
-            <div className="title">Sign-up</div>
+            <div className="title" style={{marginBottom:'-20px',marginTop:'20px'}}>Sign-up</div>
             <div className="field">
               <input
                 type="text"
@@ -227,8 +227,8 @@ const Signup = () => {
               <input
                 type="password"
 
-                id="password"
-                onChange={(e) => handleChange(e, "password")}
+                id="confirmpassword"
+                onChange={(e) => handleChange(e, "confirmpassword")}
                 value={data.password} required
 
               />
@@ -248,9 +248,7 @@ const Signup = () => {
             <div className="field">
               <input type="submit" value="Register" />
             </div>
-
-            <div className="google-btn" id="singInDiv"></div>
-
+            <div className="google-btn" style={{margin:'10px'}} id="singInDiv"></div>
             <div className="signup-link">
               Already a member? <a href="login">Login</a>
             </div>
