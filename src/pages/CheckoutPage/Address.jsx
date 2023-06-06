@@ -55,6 +55,19 @@ function Address() {
         setIsOpen(false);
     };
 
+    // ===========================
+    const [isSecondModalOpen, setIsSecondModalOpen] = useState(false);
+
+    const openSecondModal = () => {
+        setIsSecondModalOpen(true);
+    };
+
+    const closeSecondModal = () => {
+        setIsSecondModalOpen(false);
+    };
+
+
+
     const submitForm = (e) => {
         e.preventDefault();
         const formdata = new FormData(e.target);
@@ -152,21 +165,6 @@ function Address() {
     };
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     return (
         <>
             <button onClick={PayByRazorPay}>Pay</button>
@@ -201,11 +199,133 @@ function Address() {
                         }
 
 
-
-
-                        <button onClick={openModal} style={{ border: '0', backgroundColor: 'white', marginTop: '10px' }} ><i class="ri-add-line"></i> Add New Address</button>
+                        <button onClick={openSecondModal} style={{ border: '0', backgroundColor: 'white', marginTop: '10px' }} ><i class="ri-add-line"></i> Add New Address</button>
                         <Modal isOpen={isOpen} onClose={closeModal}>
                             <div className="modal-div" >
+                                <div className="popup-content">
+                                    <h5 style={{ marginBottom: '30px' }}>Add New Address Here</h5>
+                                    <Form onSubmit={submitForm} >
+                                        <Row>
+                                            <Col md={6}>
+                                                <FormGroup>
+                                                    <Label for="name">
+                                                        Name
+                                                    </Label>
+                                                    <Input
+                                                        id="name"
+                                                        name="name"
+                                                        placeholder="name"
+                                                        type="name"
+                                                    />
+                                                </FormGroup>
+                                            </Col>
+                                            <Col md={6}>
+                                                <FormGroup>
+                                                    <Label for="mobile">
+                                                        Mobile Number
+                                                    </Label>
+                                                    <Input
+                                                        id="mobile"
+                                                        name="mobile"
+                                                        placeholder="Mobile Number"
+                                                        type="tel"
+                                                    />
+                                                </FormGroup>
+                                            </Col>
+                                        </Row>
+                                        <FormGroup>
+                                            <Label for="exampleAddress">
+                                                Address
+                                            </Label>
+                                            <Input
+                                                id="exampleAddress"
+                                                name="addressLine1"
+                                                placeholder="1234 Main St"
+                                            />
+                                        </FormGroup>
+                                        <FormGroup>
+                                            <Label for="exampleAddress2">
+                                                Address 2
+                                            </Label>
+                                            <Input
+                                                id="exampleAddress2"
+                                                name="addressLine2"
+                                                placeholder="Apartment, studio, or floor"
+                                            />
+                                        </FormGroup>
+                                        <Row>
+                                            <Col md={4}>
+                                                <FormGroup>
+                                                    <Label for="exampleCity">
+                                                        City
+                                                    </Label>
+                                                    <Input
+                                                        id="exampleCity"
+                                                        name="city"
+                                                    />
+                                                </FormGroup>
+                                            </Col>
+                                            <Col md={5}>
+                                                <FormGroup>
+                                                    <Label for="exampleState">
+                                                        State
+                                                    </Label>
+                                                    <div class="input-group mb-3">
+                                                        <select class="form-select" name="state" id="inputGroupSelect02">
+                                                            <option selected>Choose...</option>
+                                                            <option selected>Choose...</option>
+                                                            <option value="Andhra Pradesh"> Andhra Pradesh</option>
+                                                            <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                                                            <option value="Assam">Assam</option>
+                                                            <option value="Bihar">Bihar</option>
+                                                            <option value="Chhattisgarh">Chhattisgarh</option>
+                                                            <option value="Goa">Goa</option>
+                                                            <option value="Gujarat">Gujarat</option>
+                                                            <option value="Haryana">Haryana</option>
+                                                            <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                                            <option value="Jharkhand">Jharkhand</option>
+                                                            <option value="Karnataka">Karnataka</option>
+                                                            <option value="Kerala">Kerala</option>
+                                                            <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                                            <option value="Maharastra">Maharastra</option>
+                                                            <option value="Manipur">Manipur</option>
+                                                            <option value="Meghalaya">Meghalaya</option>
+                                                            <option value="Mizoram">Mizoram</option>
+                                                            <option value="Nagaland">Nagaland</option>
+                                                            <option value="Odisha">Odisha</option>
+                                                            <option value="Punjab">Punjab</option>
+                                                            <option value="Rajasthan">Rajasthan</option>
+                                                            <option value="Sikkim">Sikkim</option>
+                                                            <option value="Tamil Nadu">Tamil Nadu</option>
+                                                            <option value="Telangana">Telangana</option>
+                                                            <option value="Tripura">Tripura</option>
+                                                            <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                                            <option value="Uttrakhand">Uttrakhand</option>
+                                                            <option value="West Bengal">West Bengal</option>
+                                                        </select>
+                                                    </div>
+                                                </FormGroup>
+                                            </Col>
+                                            <Col md={3}>
+                                                <FormGroup>
+                                                    <Label for="exampleZip">
+                                                        Zip
+                                                    </Label>
+                                                    <Input
+                                                        id="exampleZip"
+                                                        name="pincode"
+                                                    />
+                                                </FormGroup>
+                                            </Col>
+                                        </Row>
+                                        <button className='btn btn-success ' type='submit' onClick={handleClosePopup}>Update Address</button>
+                                    </Form>
+                                </div>
+                            </div>
+                        </Modal>
+
+                        <Modal isOpen={isSecondModalOpen} onClose={closeSecondModal}>
+                        <div className="modal-div" >
                                 <div className="popup-content">
                                     <h5 style={{ marginBottom: '30px' }}>Add New Address Here</h5>
                                     <Form onSubmit={submitForm} >
@@ -327,10 +447,11 @@ function Address() {
                                 </div>
                             </div>
                         </Modal>
+
                     </div>
 
 
-                    
+
                     <div className="payment-methods">
                         <h3 style={{ marginBottom: '40px' }}>2. Payment Methods </h3>
                         <div class="form-check">
