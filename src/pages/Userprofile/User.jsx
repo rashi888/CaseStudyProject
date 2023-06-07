@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import "./User.css"
 import userIcon from "../../assets/All_Icons/userimg.jpeg"
 import { BiUserCircle } from "react-icons/bi"
@@ -7,9 +7,55 @@ import { RiHeartLine } from "react-icons/ri"
 import { RiSettings2Fill } from "react-icons/ri"
 import { FiPower } from "react-icons/fi"
 import { Link } from 'react-router-dom'
+import axios from "axios"
 import { Form, FormGroup, Label, Input, FormText, Col, Button, FormGroupProps, Row } from "reactstrap"
 
 function User() {
+
+    const [name, setName] = useState('');
+    const [emailId, setEmailId] = useState('');
+    const [password, setPassword] = useState('');
+    const [mobileNumber, setMobileNumber] = useState('');
+
+    const userId=localStorage.getItem("userId");
+  
+    const handleFormSubmit = async (e) => {
+      e.preventDefault();
+  
+      const updatedProfile = {
+        name,
+        emailId,
+        password,
+        mobileNumber
+      };
+
+      try {
+        const response = await axios.put(`http://localhost:8080/api/users/${userId}`, updatedProfile, {
+        headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        // authorization: localStorage.getItem("token"),
+
+        },
+        });
+        console.log(response.data);
+        return response.data;
+        } catch (error) {
+        return error.response.data;
+        }
+        
+  
+      // Send the updated profile data to the backend API
+    //   axios.put(`http://localhost:8080/api/users/${userId}`, updatedProfile)
+    //     .then(response => {
+    //       // Handle the response here (e.g., show success message, redirect, etc.)
+    //       console.log(response.data);
+    //     })
+    //     .catch(error => {
+    //       // Handle error response here (e.g., show error message, etc.)
+    //       console.error(error);
+    //     });
+    };
 
 
 
@@ -31,14 +77,7 @@ function User() {
                             <RiShoppingCartFill id='icon2' />
                             <Link to="orders" className='linking'><h6 className='headings'> Order History</h6></Link>
                         </div>
-                        {/* <div className="myaccount">
-                            <RiHeartLine id='icon3' />
-                            <h6 className='headings'>Wishlist</h6>
-                        </div> */}
-                        {/* <Link to="/addressuser " className="linky">
-                                <i class="ri-user-location-fill" id='icon3'></i>
-                                <h6 className='headings'> Addresses</h6>
-                        </Link> */}
+                       
                         <div className="myaccount">
                             <i class="ri-user-location-fill" id='icon3'></i>
                             <Link to="/addressuser" className='linking'><h6 className='headings'> Addresses</h6></Link>
@@ -59,23 +98,27 @@ function User() {
                                     Name
                                 </Label>
                                 <Input
-                                    id="Name"
-                                    name="text"
-                                    placeholder="Enter username"
+                                    id="name"
+                                    name="name"
+                                    placeholder="Enter Name"
                                     type="text"
+                                    value={name}
+                                    onChange={(e)=>setName(e.target.value)}
                                 />
                             </FormGroup>
                         </Col>
                         <Col md={6}>
                             <FormGroup>
-                                <Label for="exampleEmail">
+                                <Label for="emailId">
                                     Email
                                 </Label>
                                 <Input
-                                    id="exampleEmail"
-                                    name="email"
+                                    id="emailId"
+                                    name="emailId"
                                     placeholder="Enter Email"
                                     type="email"
+                                    value={emailId}
+                                    onChange={(e)=>setEmailId(e.target.value)}
                                 />
                             </FormGroup>
                         </Col>
@@ -85,114 +128,31 @@ function User() {
                                     Password
                                 </Label>
                                 <Input
-                                    id="examplePassword"
+                                    id="password"
                                     name="password"
                                     placeholder="Enter Password"
                                     type="password"
+                                    value={password}
+                                    onChange={(e)=>setPassword(e.target.value)}
                                 />
                             </FormGroup>
                         </Col>
                         <Col md={6}>
                             <FormGroup>
-                                <Label for="tel">
+                                <Label for="mobileNumber">
                                     Mobile Number
                                 </Label>
                                 <Input
-                                    id="tel"
-                                    name="tel"
+                                    id="mobileNumber"
+                                    name="mobileNumber"
                                     placeholder="Enter Mobile Number"
                                     type="tel"
+                                    value={mobileNumber}
+                                    onChange={(e)=>setMobileNumber(e.target.value)}
                                 />
                             </FormGroup>
                         </Col>
-
-                        {/* <Row>
-                           
-                            <Col md={6}>
-                                <FormGroup>
-                                    <Label for="examplePassword">
-                                        Password
-                                    </Label>
-                                    <Input
-                                        id="examplePassword"
-                                        name="password"
-                                        placeholder="Enter Password"
-                                        type="password"
-                                    />
-                                </FormGroup>
-                            </Col>
-                        </Row>  */}
-                        {/* <FormGroup>
-                            <Label for="exampleAddress">
-                                Address
-                            </Label>
-                            <Input
-                                id="exampleAddress"
-                                name="address"
-                                placeholder="Address1"
-                            />
-                        </FormGroup>
-                        <FormGroup>
-                            <Label for="exampleAddress2">
-                                Address 2
-                            </Label>
-                            <Input
-                                id="exampleAddress2"
-                                name="address2"
-                                placeholder="Address2"
-                            />
-                        </FormGroup> */}
-                        {/* <Row>
-                            <Col md={6}>
-                                <FormGroup>
-                                    <Label for="exampleCity">
-                                        City
-                                    </Label>
-                                    <Input
-                                        id="exampleCity"
-                                        name="city"
-                                    />
-                                </FormGroup>
-                            </Col>
-                            <Col md={4}>
-                                <FormGroup>
-                                    <Label for="exampleState">
-                                        State
-                                    </Label>
-                                    <Input
-                                        id="exampleState"
-                                        name="state"
-                                    />
-                                </FormGroup>
-                            </Col>
-                            <Col md={2}>
-                                <FormGroup>
-                                    <Label for="exampleZip">
-                                        Zip
-                                    </Label>
-                                    <Input
-                                        id="exampleZip"
-                                        name="zip"
-                                    />
-                                </FormGroup>
-                            </Col>
-                        </Row> */}
-                        {/* <FormGroup check style={{ margin: '10px 0px' }}>
-                            <Input
-                                id="exampleCheck"
-                                name="check"
-                                type="checkbox"
-                            />
-                            <Label
-                                check
-                                for="exampleCheck"
-
-                            >
-                                Check me out
-                            </Label>
-                        </FormGroup> */}
-
-                        <Button className='edit-button' style={{ marginLeft: '15px', marginTop: '20px' }}>
+                        <Button onClick={handleFormSubmit} className='edit-button' style={{ marginLeft: '15px', marginTop: '20px' }}>
                             Update Profile
                         </Button>
                     </Form>
