@@ -16,6 +16,10 @@ function Address() {
     const [data, setData] = useState([]);
     const [deliveryDetailsId, setDeliveryDetailsId] = useState(1);
     const [paymentMethod, setPaymentMethod] = useState("COD");
+    const [grandtotal, setGrandtotal] = useState(0);
+    
+    const name = localStorage.getItem("name");
+
 
 
     const fetchdata = () => {
@@ -27,12 +31,23 @@ function Address() {
             })
     }
 
+    const usercart=() => {
+        let userId = localStorage.getItem("userId");
+        axios.get(`http://localhost:8080/api/cart/viewCart?userId=${userId}`)
+            .then((response) => {
+                console.log(response.data);
+                setGrandtotal(response.data.grandTotal);
+            })
+    }
+
+
     useEffect(() => {
         fetchdata();
         const script = document.createElement('script');
         script.src = 'https://checkout.razorpay.com/v1/checkout.js';
         script.async = true;
-    }, []);
+        usercart();
+    }, [paymentMethod]);
 
 
     const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -66,6 +81,8 @@ function Address() {
         setIsSecondModalOpen(false);
     };
 
+    
+
 
 
     const submitForm = (e) => {
@@ -98,11 +115,14 @@ function Address() {
 
 
 
+
+
     const checkout = (e) => {
         e.preventDefault();
         console.log(datas);
         console.log(paymentMethod);
-        if (paymentMethod === "COD") {
+        
+        if (datas.paymentMethod === "COD") {
             axios
                 .post("http://localhost:8080/api/order/", datas)
                 .then((resp) => {
@@ -119,39 +139,37 @@ function Address() {
         }
 
         else {
-            axios
-                .post("http://localhost:8080/api/order/", datas)
-                .then((resp) => {
-                    console.log(resp["data"]);
-                    Swal.fire({
-                        title: "Success",
-                        text: "Order Placed Successfully",
-                        icon: "success",
-                    });
-                })
-                .catch((error) => {
-                    console.log(error);
-                });
-        }
+          setPaymentMethod("Online");
+           PayByRazorPay();
     }
+}
     const PayByRazorPay = () => {
         const options = {
             key: "rzp_test_wg401zdYPekxAq",
-            amount: 10000,
+            amount: grandtotal * 100,
             currency: "INR",
-            name: "Acme Corp",
-            description: "Test Transaction",
+            name: "ShopEase",
+            description: "Pay to ShopEase",
 
             handler: function (response) {
                 console.log(response);
                 console.log(response.razorpay_payment_id);
                 console.log(response.razorpay_order_id);
                 console.log(response.razorpay_signature);
+                axios.post("http://localhost:8080/api/order/", datas)
+                    .then((resp) => {
+                        console.log(resp["data"]);
+                        Swal.fire({
+                            title: "Success",
+                            text: "Order Placed Successfully",
+                            icon: "success",
+                        });
+                    }
+                    )
             },
             prefill: {
-                name: "Gaurav Kumar",
-                email: "S@gmail.com",
-                contact: "9999999999",
+                name: name,
+                
             },
             notes: {
                 address: "Razorpay Corporate Office",
@@ -167,7 +185,6 @@ function Address() {
 
     return (
         <>
-            <button onClick={PayByRazorPay}>Pay</button>
             <div>
                 <div className="addresspage-con">
                     <div className="delivery-first" >
@@ -456,15 +473,15 @@ function Address() {
                         <h3 style={{ marginBottom: '40px' }}>2. Payment Methods </h3>
                         <div class="form-check">
                             <input class="form-check-input" value="Online" type="radio" name="flexRadioDefault1" id="flexRadioDefault5"
-                                onChange={(e) => setPaymentMethod(e.target.value)}
-                            />
+                                onChange={(e) => setDatas({ ...datas, paymentMethod: e.target.value })}
+    />
                             <label class="form-check-label" for="flexRadioDefault5">
                                 Pay Online
                             </label>
                         </div>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" value="COD" name="flexRadioDefault1" id="flexRadioDefault6"
-                                onChange={(e) => setPaymentMethod(e.target.value)}
+                                onChange={(e) => setDatas({ ...datas, paymentMethod: e.target.value }) }
                             />
                             <label class="form-check-label" for="flexRadioDefault6">
                                 Cash On Delivery

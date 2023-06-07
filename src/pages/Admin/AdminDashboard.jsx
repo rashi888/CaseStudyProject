@@ -1,7 +1,8 @@
-import React,{useState,useEffect} from 'react'
+import React,{useEffect,useState} from 'react'
 import './AdminDashboard.css';
 import { Link } from 'react-router-dom';
 import BackToTop from '../../components/BackToTop/BackToTop';
+import axios from 'axios';
 
 function AdminDashboard() {
 
@@ -25,6 +26,28 @@ function AdminDashboard() {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+  
+  const stat =()=>{
+    axios.get("http://localhost:8080/api/stats/admin")
+    .then((resp) => {
+      console.log(resp["data"]);
+      setData(resp["data"]);
+    })
+  }
+  const [data, setData] = useState({
+    totalOrders: "",
+    totalUsers: "",
+    totalMerchants: "",
+    totalProducts: "",
+    totalTurnover: "",
+  });
+  useEffect(() => {
+    stat();
+  }, []);
+
+
+  
+  
 
   return (
     <>
@@ -37,9 +60,9 @@ function AdminDashboard() {
               <h5>Total Orders</h5>
             </div>
             <div className="total-orders">
-              <h2 style={{marginTop:'20px'}}>{data.totalOrders}</h2>
-              <p>New</p>
-              {/* <h6>6,00,00</h6> */}
+              <h2>{data.totalOrders}</h2>
+              {/* <p>New</p>
+              <h6>6,00,00</h6> */}
             </div>
           </div>
           <div className="tile-2">
@@ -48,9 +71,9 @@ function AdminDashboard() {
               <h5>Total Users</h5>
             </div>
             <div className="total-orders">
-              <h2 style={{marginTop:'20px'}}>{data.totalUsers}</h2>
-              <p>New</p>
-              {/* <h6>32,000</h6> */}
+              <h2>{data.totalUsers}</h2>
+              {/* <p>New</p>
+              <h6>32,000</h6> */}
             </div>
           </div>
           <div className="tile-3">
@@ -59,9 +82,9 @@ function AdminDashboard() {
               <h5>Total Merchants</h5>
             </div>
             <div className="total-orders">
-              <h2 style={{marginTop:'20px'}}>{data.totalMerchants}</h2>
-              <p>New</p>
-              {/* <h6>12,000</h6> */}
+              <h2>{data.totalMerchants}</h2>
+              {/* <p>New</p>
+              <h6>12,000</h6> */}
             </div>
           </div>
         </div>
@@ -73,9 +96,9 @@ function AdminDashboard() {
               <h5>Total Products</h5>
             </div>
             <div className="total-orders">
-              <h2 style={{marginTop:'20px'}}>{data.totalProducts}</h2>
-              <p>Today</p>
-              {/* <h6>25,000</h6> */}
+              <h2>{data.totalProducts}</h2>
+              {/* <p>Today</p>
+              <h6>25,000</h6> */}
             </div>
           </div>
           <div className="tile-5">
@@ -84,9 +107,9 @@ function AdminDashboard() {
               <h5>Total Turnover</h5>
             </div>
             <div className="total-orders">
-              <h2 style={{marginTop:'20px'}}>{data.totalTurnover}</h2>
-              <p>Today</p>
-              {/* <h6>25,000</h6> */}
+              <h2>{data.totalTurnover}</h2>
+              {/* <p>Today</p>
+              <h6>25,000</h6> */}
             </div>
           </div>
 

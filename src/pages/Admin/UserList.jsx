@@ -3,31 +3,54 @@ import { Link } from "react-router-dom";
 import b1 from "../../assets/PhoneImgs/phone1.webp"
 import Swal from 'sweetalert2';
 import { Spinner } from 'reactstrap'
+import axios from 'axios';
 
 function UserList() {
     const [isLoading, setIsLoading] = useState(false);
 
-    const deleteProduct = (id) => {
-        fetch("http://localhost:8080/api/users/" + id, {
-            method: "DELETE",
-        }).then(() => {
-            Swal.fire({
-                title: "Success",
-                text: "Product Deleted Successfully",
-                icon: "success",
-            });
-            fetchData();
-        });
-    };
+    const refresh = () => { window.location.reload(); }
 
-    const [product, setProduct] = useState([]);
+    const deleteUser = (userId) => {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: 'You will not be able to recover this User!',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Yes, delete it!',
+            cancelButtonText: 'No, keep it',
+
+        }).then((result) => {
+            if (result.isConfirmed) {
+                axios.delete("http://localhost:8080/api/users/" + userId)
+                    .then((resp) => {
+                        console.log(resp["data"]);
+                        console.log("success log");
+                        Swal.fire({
+                            title: "Success",
+                            text: "User Deleted Successfully",
+                            icon: "success",
+                        });
+                        refresh();
+                    })
+            } else if (result.dismiss === Swal.DismissReason.cancel) {
+                Swal.fire(
+                    'Cancelled',
+                    'User is safe :)',
+                    'error'
+                )
+            }
+        })
+    }
+
+
+    const [user, setUser] = useState([]);
 
     const fetchData = () => {
         setIsLoading(true);
         return fetch("http://localhost:8080/api/users/")
        
             .then((response) => response.json())
-            .then((data) => {setProduct(data)
+            .then((data) => {setUser(data)
         
             setIsLoading(false);});
     };
@@ -35,13 +58,12 @@ function UserList() {
     useEffect(() => {
         fetchData();
     }, []);
-    console.log(product);
 
     return (
         <>
             <div className="container-fluid my-5" style={{ backgroundColor: 'white', paddingBottom: '10px' }}>
 
-                <Link to="/productadd" style={{ margin: "2%  0px ", padding: '1%', width: '20%' }} className="btn btn-primary">Add Product</Link>
+                <Link to="/useradd" style={{ margin: "2%  0px ", padding: '1%', width: '20%' }} className="btn btn-primary">Add User</Link>
                 <Link to='/admindashboard' style={{ margin: "2%  10px ", padding: '1%', width: '20%' }} className="btn btn-primary">Back to Dashboard</Link>
                 <h2 style={{ marginBottom: '20px', padding: '10px 20px', color: '#48c1cf', marginLeft: '20px' }}>All Users</h2>
                 <table className="table">
@@ -59,7 +81,7 @@ function UserList() {
           <Spinner animation="border" role="status" color='primary' style={{marginLeft:'600px'}}/>
         ) : (
           <>
-           {product.map((item, index) => {
+           {user.map((item, index) => {
                         return (<>
                             <tbody>
                                 <tr >
@@ -67,8 +89,8 @@ function UserList() {
                                     <td >{item.name}</td>
                                     <td >{item.mobileNumber}</td>
                                     <td>{item.emailId}</td>
-                                    <td><button className="btnn btn-danger" style={{ padding: '4px 7px', borderRadius: '5px', marginTop: '-7px' }} onClick={() => deleteProduct(item.productId)}>Delete</button></td>
-                                    <td><Link to={'/updateproduct/' + item.productId} className="btnn btn-warning" style={{ padding: '4px 7px', borderRadius: '5px', marginTop: '-7px' }}>Update</Link></td>
+                                    <td><button className="btnn btn-danger" style={{ padding: '4px 7px', borderRadius: '5px', marginTop: '-7px' }} onClick={() => deleteUser(item.userId)}>Delete</button></td>
+                                    <td><Link to={'/updateuser/' + item.UserId} className="btnn btn-warning" style={{ padding: '4px 7px', borderRadius: '5px', marginTop: '-7px' }}>Update</Link></td>
 
                                 </tr >
                             </tbody>

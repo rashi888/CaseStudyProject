@@ -197,13 +197,13 @@ const Login = () => {
               <input type="submit" value="Login" />
             </div>
             <div className="google-btn" id="singInDiv"></div>
-            <div className="github-btn">
+            {/* <div className="github-btn">
               <GitHubLogin clientId="b2d3426448bdd9f60237"
                 onSuccess={onSuccess}
                 onFailure={onFailure}
                 redirectUri=""
               />
-            </div>
+            </div> */}
 
             <div className="signup-link">
               Not a member? <a href="signup">Signup now</a>
