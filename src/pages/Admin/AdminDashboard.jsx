@@ -6,6 +6,14 @@ import axios from 'axios';
 
 function AdminDashboard() {
 
+
+  const [data, setData] = useState({
+    totalOrders: "",
+    totalUsers: "",
+    totalMerchants: "",
+    totalProducts: "",
+    totalTurnover: "",
+  });
   
   const fetchData=()=>{
     return fetch("http://localhost:8080/api/stats/admin")
@@ -33,13 +41,7 @@ function AdminDashboard() {
       setData(resp["data"]);
     })
   }
-  const [data, setData] = useState({
-    totalOrders: "",
-    totalUsers: "",
-    totalMerchants: "",
-    totalProducts: "",
-    totalTurnover: "",
-  });
+ 
   useEffect(() => {
     stat();
   }, []);
