@@ -16,6 +16,10 @@ function Address() {
     const [data, setData] = useState([]);
     const [deliveryDetailsId, setDeliveryDetailsId] = useState(1);
     const [paymentMethod, setPaymentMethod] = useState("COD");
+    const [grandtotal, setGrandtotal] = useState(0);
+    const [name, setName] = useState("");
+    const [emailId, setEmailId] = useState("");
+
 
 
     const fetchdata = () => {
@@ -27,11 +31,22 @@ function Address() {
             })
     }
 
+    const usercart=() => {
+        let userId = localStorage.getItem("userId");
+        axios.get(`http://localhost:8080/api/cart/viewCart?userId=${userId}`)
+            .then((response) => {
+                console.log(response.data);
+                setGrandtotal(response.data.grandTotal);
+            })
+    }
+
+
     useEffect(() => {
         fetchdata();
         const script = document.createElement('script');
         script.src = 'https://checkout.razorpay.com/v1/checkout.js';
         script.async = true;
+        usercart();
     }, []);
 
 
@@ -106,28 +121,16 @@ function Address() {
         }
 
         else {
-            axios
-                .post("http://localhost:8080/api/order/", datas)
-                .then((resp) => {
-                    console.log(resp["data"]);
-                    Swal.fire({
-                        title: "Success",
-                        text: "Order Placed Successfully",
-                        icon: "success",
-                    });
-                })
-                .catch((error) => {
-                    console.log(error);
-                });
-        }
+           PayByRazorPay();
     }
+}
     const PayByRazorPay = () => {
         const options = {
             key: "rzp_test_wg401zdYPekxAq",
-            amount: 10000,
+            amount: grandtotal * 100,
             currency: "INR",
-            name: "Acme Corp",
-            description: "Test Transaction",
+            name: "ShopEase",
+            description: "Pay to ShopEase",
 
             handler: function (response) {
                 console.log(response);
@@ -136,9 +139,9 @@ function Address() {
                 console.log(response.razorpay_signature);
             },
             prefill: {
-                name: "Gaurav Kumar",
-                email: "S@gmail.com",
-                contact: "9999999999",
+                name: "",
+                email: "",
+                
             },
             notes: {
                 address: "Razorpay Corporate Office",
@@ -169,7 +172,6 @@ function Address() {
 
     return (
         <>
-            <button onClick={PayByRazorPay}>Pay</button>
             <div>
                 <div className="addresspage-con">
                     <div className="delivery-first" >
