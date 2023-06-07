@@ -10,6 +10,7 @@ import { useNavigate } from "react-router-dom";
 import logoo from "../../assets/NavbarImg/ShopEaseLogo1.png"
 
 const Navbar = () => {
+
     const [search, setSearch] = React.useState("");
     const navigate = useNavigate();
 
@@ -47,20 +48,21 @@ const Navbar = () => {
     let menu;
     if (window.localStorage.getItem("token") != null) {
         console.log(window.localStorage.getItem("role"))
-        if(window.localStorage.getItem("role") === "MERCHANT"){
+        if (window.localStorage.getItem("role") === "MERCHANT") {
             menu = (
                 <div className="profile">
                     <Link to="mdash" >DashBoard</Link>
                     <h6 className="center" onClick={logout}>LogOut</h6>
                 </div>
             )
-        }else{
-        menu = (
-            <div className="profile">
-                <Link to="orders" >Orders</Link>
-                <h6 className="center" onClick={logout}>LogOut</h6>
-            </div>
-        )}
+        } else {
+            menu = (
+                <div className="profile">
+                    <Link to="orders" >Orders</Link>
+                    <h6 className="center" onClick={logout}>LogOut</h6>
+                </div>
+            )
+        }
     }
 
     function verifylogin() {
@@ -119,10 +121,10 @@ const Navbar = () => {
                         </div>
                     </div>
 
-                    <div className="cartdiv" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '0px 0px'}}>
-                        <Link to="/usercart" style={{display:'flex', justifyContent: 'center', alignItems: 'center',margin:'0 30px ',padding:'0'}}>
-                        <p style={{ color: 'white', padding: '15px 0px 0px 0px' }}>Cart</p>
-                        <img className="cartimg" src={carts} alt="" style={{marginLeft:'-10px'}}/>
+                    <div className="cartdiv" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '0px 0px' }}>
+                        <Link to="/usercart" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', margin: '0 30px ', padding: '0' }}>
+                            <p style={{ color: 'white', padding: '15px 0px 0px 0px' }}>Cart</p>
+                            <img className="cartimg" src={carts} alt="" style={{ marginLeft: '-10px' }} />
                         </Link>
                     </div>
 

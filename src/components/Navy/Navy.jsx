@@ -31,7 +31,7 @@ function Navy() {
         fetchData();
     }, []);
     console.log(category);
-    console.log("hello")
+    // console.log("hello")
     console.log(setCategory);
 
     return (
@@ -44,30 +44,7 @@ function Navy() {
                     <nav className="featured-category">
                         <ul className="nav-row">
 
-                            {/* <div className="category1">
-                                <img src={AllCategory} alt="" height='50px' width='50px' />
-                                <li className="allcategory nav-row-list"><Link to="" style={{ textDecoration: 'none' }} className='nav-row-list-link'>All category</Link></li>
-
-                                <div className="box-inside-dropdown">
-                                    <div className="item-box" >
-                                        <p>Smartphones</p>
-                                        <p>Furniture</p>
-                                        <p>Toys</p>
-                                        <p>Computing</p>
-                                        <p>Games</p>
-                                        <p>Automotive</p>
-                                    </div>
-                                    <div className="inside-item-box">
-                                        <p>iphone</p>
-                                        <p>Samsung Galaxy</p>
-                                        <p>Realme</p>
-                                        <p>Redmi</p>
-                                        <p>Intex</p>
-                                    </div>
-
-                                </div>
-                            </div> */}
-
+    
                             <Link to='/allproducts' className="all-category1">
                                 <img src={AllCategory} alt="" />
                                 <li className="allcategory nav-row-list"><Link to="" className="nav-row-list-link" >All Categories</Link></li>
