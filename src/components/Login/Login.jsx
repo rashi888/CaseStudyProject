@@ -11,12 +11,15 @@ import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import Swal from "sweetalert2";
 import GitHubLogin from 'react-github-login';
+import jwt_decode from "jwt-decode"
+
+
 const Login = () => {
 
   const onSuccess = (response) => console.log(response);
 
   const onFailure = (response) => console.error(response);
-  
+
 
 
 
@@ -25,7 +28,7 @@ const Login = () => {
     console.log(response.credential);
     const token = response.credential;
     const decoded = jwt_decode(token);
-    // console.log(decoded);
+    console.log(decoded);
     const data = {
       name: decoded.name,
       emailId: decoded.email,
@@ -58,8 +61,8 @@ const Login = () => {
 
   useEffect(() => {
     const script = document.createElement('script');
-        script.src = 'https://accounts.google.com/gsi/client';
-        script.async = true;
+    script.src = 'https://accounts.google.com/gsi/client';
+    script.async = true;
     google.accounts.id.initialize({
       client_id: '889458596682-oujv8pjnafnps4o28rdii03t9bhtn5qq.apps.googleusercontent.com',
       callback: handleCredentialResponse,
@@ -86,7 +89,7 @@ const Login = () => {
     emailId: "",
     password: "",
   });
- 
+
   const handleChange = (event, property) => {
     setData({ ...data, [property]: event.target.value });
   };
@@ -114,10 +117,10 @@ const Login = () => {
         icon: "success",
       });
 
-      if(response.data.role==="USER")
-      navigate("/");
+      if (response.data.role === "USER")
+        navigate("/");
       else
-      navigate("/mdash");
+        navigate("/mdash");
     }).catch((error) => {
       console.log(error);
       toast.error("Invalid Credentials!", {
@@ -128,13 +131,13 @@ const Login = () => {
         pauseOnHover: true,
       });
       resetData();
-      
-       
+
+
     });
   };
 
 
-    
+
 
   return (
     <>
@@ -151,11 +154,11 @@ const Login = () => {
         theme="light"
       />
       <meta charSet="utf-8" />
-      <div className="wrapper" style={{height: 'fit-content',margin:'50px 70px',paddingBottom:'20px' }}>
-        <div className="formcont" style={{backgroundColor:'white',margin:'30px',padding:'20px'}}>
-          <img class="logingif" src={login} alt="" style={{marginTop:'-30px'}}/>
+      <div className="wrapper" style={{ height: 'fit-content', margin: '50px 70px', paddingBottom: '20px' }}>
+        <div className="formcont" style={{ backgroundColor: 'white', margin: '30px', padding: '20px' }}>
+          <img class="logingif" src={login} alt="" style={{ marginTop: '-30px' }} />
 
-          <form className="loginform" onSubmit={submitForm} style={{marginTop:'-20px',height:'400px',width:'350px'}}>
+          <form className="loginform" onSubmit={submitForm} style={{ marginTop: '-20px', height: '400px', width: '350px' }}>
             <div className="title">Login</div>
             <div className="field">
               <input
@@ -164,9 +167,9 @@ const Login = () => {
                 onChange={(e) => handleChange(e, "emailId")}
                 value={data.emailId}
                 required
-                
+
               />
-              
+
               <label>Email Address</label>
             </div>
             <div className="field">
@@ -176,9 +179,9 @@ const Login = () => {
                 onChange={(e) => handleChange(e, "password")}
                 value={data.password}
                 required
-                
+
               />
-              
+
               <label>Password</label>
             </div>
             <div className="content">

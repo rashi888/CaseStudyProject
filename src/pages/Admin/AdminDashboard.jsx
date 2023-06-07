@@ -5,6 +5,24 @@ import BackToTop from '../../components/BackToTop/BackToTop';
 import axios from 'axios';
 
 function AdminDashboard() {
+
+  const [data,setData]=useState([]);
+  
+  const fetchData=()=>{
+    return fetch("http://localhost:8080/api/stats/admin")
+      .then((response) => response.json())
+      .then((data) => {
+        setData(data)
+      });
+  }
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+  console.log(data);
+
+
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -69,18 +87,6 @@ function AdminDashboard() {
               <h6>12,000</h6> */}
             </div>
           </div>
-          {/* <div className="tile-3">
-            <div className="icon-and-orders">
-              <div className="icon-prop"><i class="ri-line-chart-line"></i></div>
-              <h5>Sales</h5>
-            </div>
-            <div className="total-orders">
-              <h2>90%</h2>
-              <p>Growth</p>
-              <h6>34,000</h6>
-            </div>
-          </div> */}
-
         </div>
 
         <div className="tiles-4" style={{ display: 'flex', alignItems: 'center', margin: '20px 0px' }}>

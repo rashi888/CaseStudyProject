@@ -50,6 +50,7 @@ import CategoryListAdmin from './pages/Admin/CategoryListAdmin';
 import ProductListAdmin from './pages/Admin/ProductListAdmin';
 import MyProductList from './pages/AddingItemPages/MyProductList';
 import AddressUser from './pages/Userprofile/AddressUser';
+import CardSix from './components/Items/CardSix';
 
 
 
@@ -123,6 +124,8 @@ function App() {
         <Route path='/user' Component={User} />
         <Route path='/addressuser' Component={AddressUser} />
         <Route path='/singleproductview/:id' Component={SingleProductView} />
+
+        <Route path='/cardsix' Component={CardSix} />
       </Routes>
       <Footer />
       <BackToTop />
