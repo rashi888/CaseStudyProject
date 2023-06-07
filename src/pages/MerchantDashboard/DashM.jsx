@@ -1,11 +1,31 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import './DashM.css';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 function DashM() {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
+const stat =()=>{
+  axios.get("http://localhost:8080/api/stats/merchant/"+localStorage.getItem("userId"))
+  .then((resp) => {
+    console.log(resp["data"]);
+    setData(resp["data"]);
+  })
+}
+
+const [data, setData] = useState({
+  myOrders: "",
+  myTurnover: ""
+});
+useEffect(() => {
+  stat();
+}, []);
+
+
+
 
 
   return (
@@ -19,9 +39,9 @@ function DashM() {
               <h5>Total Orders</h5>
             </div>
             <div className="total-orders">
-              <h2>690</h2>
-              <p>New</p>
-              <h6>6,00,00</h6>
+              <h2>{data.myOrders}</h2>
+              {/* <p>New</p>
+              <h6>6,00,00</h6> */}
             </div>
           </div>
           <div className="tile-2" style={{margin:'auto',width:'400px'}}>
@@ -30,9 +50,9 @@ function DashM() {
               <h5>My Turnover</h5>
             </div>
             <div className="total-orders">
-              <h2>1200</h2>
-              <p>New</p>
-              <h6>32,000</h6>
+              <h2>{data.myTurnover}</h2>
+              {/* <p>New</p>
+              <h6>32,000</h6> */}
             </div>
           </div>
           </div>
