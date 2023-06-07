@@ -6,7 +6,6 @@ import axios from 'axios';
 
 function AdminDashboard() {
 
-  const [data,setData]=useState([]);
   
   const fetchData=()=>{
     return fetch("http://localhost:8080/api/stats/admin")
