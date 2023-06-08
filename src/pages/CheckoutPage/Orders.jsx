@@ -29,17 +29,18 @@ function Orders() {
 
                 <div className="order-card1">
                     <div className="top-order-con">
-                        <h6>ORDER PLACED <br />{item.orderDate}</h6>
-                        <h6>TOTAL <br /> Rs.-{item.totalPrice}</h6>
+                        <h6 style={{color:'white'}}>ORDER PLACED <br />{item.orderDate}</h6>
+                        <h6 style={{color:'white'}}>TOTAL <br /> Rs.-{item.totalPrice}</h6>
                         <div className="user-div">
-                            <h6>SHIP TO <br /> {item.shippedTo} <i class="ri-arrow-down-s-line" > </i></h6></div>
+                            <h6 style={{color:'white'}}>SHIP TO <br /> {item.shippedTo} <i class="ri-arrow-down-s-line" > </i></h6></div>
                         <div className="add-hover">
-                            <p >{item.address} </p>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, vel.</p>
+                            <p style={{color:'white'}}>{item.address} </p>
                         </div>
 
 
 
-                        <h6>OrderId <br />{item.orderId} </h6>
+                        <h6 style={{color:'white'}}>OrderId <br />{item.orderId} </h6>
                     </div>
                     <div className="bottom-order-con">
                         <h5 style={{ padding: '10px 20px' }}>{item.orderStatus}</h5>
