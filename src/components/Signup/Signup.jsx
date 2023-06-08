@@ -144,6 +144,8 @@ const Signup = () => {
               <input
                 type="tel"
                 pattern="[6-9]{1}[0-9]{9}"
+                minLength={10}
+                maxLength={10}
                 id="mobileNumber"
                 onChange={(e) => handleChange(e, "mobileNumber")}
                 value={data.mobileNumber} required
@@ -155,7 +157,7 @@ const Signup = () => {
             <div className="field">
               <input
                 type="password"
-
+                minLength={8}
                 id="password"
                 onChange={(e) => handleChange(e, "password")}
                 value={data.password} required
