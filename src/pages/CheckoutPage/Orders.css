@@ -71,7 +71,7 @@
     border-radius: 5px;
 }
 .add-hover{
-    position:fixed;
+    position:absolute;
     display: none;
     box-sizing: border-box;
     width: 250px;
@@ -79,8 +79,10 @@
     background-color: white;
     padding: 10px 20px;
     border-radius: 3px;
-    right: 300px;
-    top: 260px;
+    /* right: 300px;
+    top: 260px; */
+    left: 65%;
+    margin-top: 220px;
     z-index: 1;
 }
 .user-div:hover+.add-hover{
