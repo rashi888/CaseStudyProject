@@ -75,7 +75,6 @@ function SingleProductView() {
         </div>
         <div className="prodDetails">
           <h2>{data.productName}</h2>
-          <h5 style={{fontWeight:400,marginTop:'15px'}}>4.21,143 Ratings & 99 Reviews</h5>
           <h6 style={{lbackgroundColor:'yellow',marginTop:'15px',textAlign:'start'}}>Extra {data.productMRP-data.productPrice} off</h6>
           <div className="pp" style={{display:'flex',justifyContent:'space-between',alignItems:'center'}}>
 

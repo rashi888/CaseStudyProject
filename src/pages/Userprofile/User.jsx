@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React, { useState } from 'react'
 import "./User.css"
 import userIcon from "../../assets/All_Icons/userimg.jpeg"
 import { BiUserCircle } from "react-icons/bi"
@@ -8,6 +8,7 @@ import { RiSettings2Fill } from "react-icons/ri"
 import { FiPower } from "react-icons/fi"
 import { Link } from 'react-router-dom'
 import axios from "axios"
+import Swal from "sweetalert2";
 import { Form, FormGroup, Label, Input, FormText, Col, Button, FormGroupProps, Row } from "reactstrap"
 
 function User() {
@@ -17,44 +18,49 @@ function User() {
     const [password, setPassword] = useState('');
     const [mobileNumber, setMobileNumber] = useState('');
 
-    const userId=localStorage.getItem("userId");
-  
+    const userId = localStorage.getItem("userId");
+
     const handleFormSubmit = async (e) => {
-      e.preventDefault();
-  
-      const updatedProfile = {
-        name,
-        emailId,
-        password,
-        mobileNumber
-      };
+        e.preventDefault();
 
-      try {
-        const response = await axios.put(`http://localhost:8080/api/users/${userId}`, updatedProfile, {
-        headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-        // authorization: localStorage.getItem("token"),
+        const updatedProfile = {
+            name,
+            emailId,
+            password,
+            mobileNumber
+        };
 
-        },
-        });
-        console.log(response.data);
-        return response.data;
+        try {
+            const response = await axios.put(`http://localhost:8080/api/users/${userId}`, updatedProfile, {
+                headers: {
+                    "Content-Type": "application/json",
+                    Accept: "application/json",
+                    // authorization: localStorage.getItem("token"),
+
+                },
+            });
+            console.log(response.data);
+            Swal.fire({
+                title: "Success",
+                text: "User Profile Updated Successfully",
+                icon: "success",
+            });
+            return response.data;
         } catch (error) {
-        return error.response.data;
+            return error.response.data;
         }
-        
-  
-      // Send the updated profile data to the backend API
-    //   axios.put(`http://localhost:8080/api/users/${userId}`, updatedProfile)
-    //     .then(response => {
-    //       // Handle the response here (e.g., show success message, redirect, etc.)
-    //       console.log(response.data);
-    //     })
-    //     .catch(error => {
-    //       // Handle error response here (e.g., show error message, etc.)
-    //       console.error(error);
-    //     });
+
+
+        // Send the updated profile data to the backend API
+        //   axios.put(`http://localhost:8080/api/users/${userId}`, updatedProfile)
+        //     .then(response => {
+        //       // Handle the response here (e.g., show success message, redirect, etc.)
+        //       console.log(response.data);
+        //     })
+        //     .catch(error => {
+        //       // Handle error response here (e.g., show error message, etc.)
+        //       console.error(error);
+        //     });
     };
 
 
@@ -75,9 +81,9 @@ function User() {
                         </div>
                         <div className="myaccount">
                             <RiShoppingCartFill id='icon2' />
-                            <Link to="orders" className='linking'><h6 className='headings'> Order History</h6></Link>
+                            <Link to="/orders" className='linking'><h6 className='headings'> Order History</h6></Link>
                         </div>
-                       
+
                         <div className="myaccount">
                             <i class="ri-user-location-fill" id='icon3'></i>
                             <Link to="/addressuser" className='linking'><h6 className='headings'> Addresses</h6></Link>
@@ -103,7 +109,7 @@ function User() {
                                     placeholder="Enter Name"
                                     type="text"
                                     value={name}
-                                    onChange={(e)=>setName(e.target.value)}
+                                    onChange={(e) => setName(e.target.value)}
                                 />
                             </FormGroup>
                         </Col>
@@ -118,7 +124,7 @@ function User() {
                                     placeholder="Enter Email"
                                     type="email"
                                     value={emailId}
-                                    onChange={(e)=>setEmailId(e.target.value)}
+                                    onChange={(e) => setEmailId(e.target.value)}
                                 />
                             </FormGroup>
                         </Col>
@@ -133,7 +139,7 @@ function User() {
                                     placeholder="Enter Password"
                                     type="password"
                                     value={password}
-                                    onChange={(e)=>setPassword(e.target.value)}
+                                    onChange={(e) => setPassword(e.target.value)}
                                 />
                             </FormGroup>
                         </Col>
@@ -148,7 +154,7 @@ function User() {
                                     placeholder="Enter Mobile Number"
                                     type="tel"
                                     value={mobileNumber}
-                                    onChange={(e)=>setMobileNumber(e.target.value)}
+                                    onChange={(e) => setMobileNumber(e.target.value)}
                                 />
                             </FormGroup>
                         </Col>
