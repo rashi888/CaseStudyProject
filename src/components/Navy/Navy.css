@@ -143,16 +143,18 @@ label, a {
   transition: 3ms;
 }
 .categories{
-  position:fixed;
+    position:fixed;
     display: none;
     box-sizing: border-box;
-    width: 200px;
+    width: 240px;
     background-color: #48c1cf;
+    /* background-color: white; */
     color: white;
     padding: 6px;
     border-radius: 3px;
-    top: 170px;
-    left: 50px;
+    top: 160px;
+    padding-left: 20px;
+    left: 20px;
     z-index: 1;
 }
 .allcategory:hover +.categories{

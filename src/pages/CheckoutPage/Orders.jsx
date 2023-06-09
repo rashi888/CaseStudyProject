@@ -58,11 +58,11 @@ function Orders() {
                                         </div>
                                         <div className="buttons-option">
                                             <div className="option1-div">
-                                                <button className='btn-btn'>Cancel the Order</button>
+                                                <button className='btn-btn' style={{width:'230px'}}>Cancel the Order</button>
                                             </div>
-                                            <div className="option2-div">
+                                            {/* <div className="option2-div">
                                                 <button className='btn-btn'>Return Order</button>
-                                            </div>
+                                            </div> */}
                                         </div>
                                     </div>
                                 </div>
