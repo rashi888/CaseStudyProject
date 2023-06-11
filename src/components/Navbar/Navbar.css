@@ -154,9 +154,15 @@
       a{
         padding: 5px;
       }
-  
-      
-        
-        
+
     }
     
+    
+@media (max-width: 1000px) {
+  body {
+    font-size: 14px;
+  }
+  .searchIcons{
+    display: none;
+  }
+}

@@ -19,7 +19,7 @@ function Faq() {
   return (
     <>
       <div className="faq" style={{ backgroundColor: 'white', width: '1000px', margin: '30px auto', padding: '30px 80px', boxShadow: '0px 5px 10px lightgray' }}>
-      <h3 style={{ marginBottom: '40px', marginTop: '10px' }}>Frequently Asked Questions(FAQs)</h3>
+      <h3 style={{ marginBottom: '40px', marginTop: '10px',color: 'gray' }}>Frequently Asked Questions(FAQs)</h3>
       <Accordion open={open} toggle={toggle}>
         <AccordionItem>
           <AccordionHeader targetId="1">1. How can I create an account on Shopease?</AccordionHeader>
@@ -67,6 +67,7 @@ function Faq() {
         <AccordionItem>
           <AccordionHeader targetId="7">7. How can I track my order?</AccordionHeader>
           <AccordionBody accordionId="7">
+            (To be implemented later)
           Once your order is shipped, you will receive a confirmation email or SMS with a tracking number. You can use this tracking number to monitor the progress of your delivery through our website or the courier company's tracking portal.
           </AccordionBody>
         </AccordionItem>

@@ -19,6 +19,14 @@
     border-radius: 5px;
     box-shadow: 10px 10px 20px lightgray;
     background-color: white;
+     transition: transform 0.4s ease-in-out;
+}
+
+.box-num1:hover,.box-num2:hover,
+.box-num3:hover,.box-num4:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+    color: black;
 }
 .box-num1,.box-num3{
     padding: 20px 20px 10px 40px;
