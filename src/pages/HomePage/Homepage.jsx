@@ -25,6 +25,7 @@ import img14 from "../../assets/NewBannersImg/img14.png"
 import BannersSmall from '../../components/MainBannerCarousel/BannersSmall'
 import { Link } from 'react-router-dom'
 import MsignBanner from '../AmazingBanners/MsignBanner'
+import shoppy from "../../assets/NewBannersImg/img10.png"
 
 
 function Homepage() {
@@ -43,6 +44,7 @@ function Homepage() {
             <Tiles />
             <BannersSmall/>
             <Items2/>
+        <img src={shoppy} height="100%" width="100%"/>
             <Items4/>
             <GroceryCol/>
             <Items />

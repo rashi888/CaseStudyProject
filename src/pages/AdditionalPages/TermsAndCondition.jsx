@@ -4,7 +4,7 @@ function TermsAndCondition() {
   return (
     <>
       <div className="faq" style={{ backgroundColor: 'white', width: '1100px', margin: '30px auto', padding: '30px 50px', boxShadow: '0px 5px 10px lightgray' }}>
-        <h2 style={{ marginBottom: '40px', fontWeight: 400, textAlign: 'center' }}>Terms and Conditions of Shopease</h2>
+        <h2 style={{ marginBottom: '40px', fontWeight: 400, textAlign: 'center',color:'#48c1cf' }}>Terms and Conditions of Shopease</h2>
         <p>
           Please read these Terms and Conditions ("Terms") carefully before using the Shopease website (the "Website") operated by Shopease ("we," "us," or "our"). Your access to and use of the Website is conditioned upon your acceptance of and compliance with these Terms. By accessing or using the Website, you agree to be bound by these Terms. If you do not agree to these Terms, please refrain from using the Website.
           <br /> <br />

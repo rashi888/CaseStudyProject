@@ -3,8 +3,8 @@ import React from 'react'
 function ReturnPolicy() {
   return (
     <>
-      <div className="faq" style={{ backgroundColor: 'white', width: '1100px', margin: '30px auto', padding: '30px 60px', boxShadow: '0px 5px 10px lightgray' }}>
-        <h2 style={{ marginBottom: '40px', fontWeight: 400, textAlign: 'center' }}>Return Policy of Shopease</h2>
+      <div className="faq" style={{ backgroundColor: 'white', width: '1100px', margin: '30px auto', padding: '30px 60px', boxShadow: '0px 5px 10px lightgray',borderRadius:'6px' }}>
+        <h2 style={{ marginBottom: '40px', fontWeight: 400, textAlign: 'center',color: 'gray' }}>Return Policy of Shopease</h2>
         
         <p>
 
@@ -15,7 +15,7 @@ At Shopease, we strive to ensure your satisfaction with every purchase. If you a
 <br /><br />
 2. Return Process
    - To initiate a return, please follow these steps:
-     a. Contact our customer support within [number of days] days of receiving the product to notify us of your intention to return.
+     a. Contact our customer support within 15 days of receiving the product to notify us of your intention to return.
      b. Provide your order details, including the order number, product(s) being returned, and reason for the return.
      c. Our customer support team will guide you through the return process and provide you with a return authorization if applicable.
      d. Package the product securely, including all original accessories, manuals, and any promotional items that came with it.
