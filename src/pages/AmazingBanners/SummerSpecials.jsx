@@ -11,8 +11,8 @@ function SummerSpecials() {
         <img src={summerspecial} alt="" width="46%"  style={{ marginLeft:'28%',marginBottom:'10px' }} />
         {/* <h1 style={{margin:'40px 20px',textAlign:'center' }}>Summer Specials</h1> */}
         <div className="img-container-menwo" style={{ display: 'flex',padding:' 0 5px' }}>
-          <img src={mens} alt="" height="50%" width="50%" />
-          <img src={womens} alt="" height="50%" width="50%" />
+          <img src={mens} alt="" height="50%" width="50%" className='imgFearured1'/>
+          <img src={womens} alt="" height="50%" width="50%" className='imgFearured1'/>
         </div>
 
       </div>
