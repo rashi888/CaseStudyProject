@@ -55,11 +55,26 @@ const Navbar = () => {
                     <h6 className="center" onClick={logout}>LogOut</h6>
                 </div>
             )
-        } else {
+        } else if(window.localStorage.getItem("role") === "USER"){
             menu = (
                 <div className="profile">
                     <Link to="orders" >Orders</Link>
                     <h6 className="center" onClick={logout}>LogOut</h6>
+                </div>
+            )
+        }
+        else if (window.localStorage.getItem("role") === "ADMIN") {
+            menu = (
+                <div className="profile">
+                    <Link to="admindashboard" >DashBoard</Link>
+                    <h6 className="center" onClick={logout}>LogOut</h6>
+                </div>
+            )
+        }
+        else {
+            menu = (
+                <div className="profile">
+                    <Link to="login" >Login</Link>
                 </div>
             )
         }

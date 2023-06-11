@@ -16,7 +16,17 @@ import jwt_decode from "jwt-decode"
 
 const Login = () => {
 
-  const onSuccess = (response) => console.log(response);
+  const onSuccess = async (response) =>{
+    console.log(response.code);
+    accessToken = response.code;
+
+
+  }
+    
+
+
+
+
 
   const onFailure = (response) => console.error(response);
 
@@ -121,8 +131,13 @@ const Login = () => {
 
       if (response.data.role === "USER")
         navigate("/");
-      else
+      else if (response.data.role === "MERCHANT")
         navigate("/mdash");
+      else if (response.data.role === "ADMIN")
+        navigate("/admindashboard");
+      else
+        navigate("/login");
+        
     }).catch((error) => {
       console.log(error);
       toast.error("Invalid Credentials!", {
