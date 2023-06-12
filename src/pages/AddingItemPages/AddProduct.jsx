@@ -28,7 +28,7 @@ function AddProduct() {
         productName: "",
         productPrice: "",
         productDescription: "",
-        productPhoto: "",
+        
         productMRP: "",
     });
 
@@ -49,6 +49,7 @@ function AddProduct() {
 
                 const formData = new FormData();
                 formData.append('image', productPhoto);  // Add product image to form data')
+                console.log(formData);
 
 
                 axios.post("http://localhost:8080/api/products/img_upload/" + proId, formData, {
