@@ -1,10 +1,6 @@
-import { FormFeedback } from "reactstrap";
-import { Link } from "react-router-dom";
-import "./Login.css";
+import "./Login.css"
 import React, { useEffect, useState } from "react";
-import { signIn, signUp } from "../../services/user-service";
 import { useNavigate } from "react-router-dom";
-// import login from "../../assets/LoginSignupImg/login.gif";
 import login from "../../assets/LoginSignupImg/loginsignup1.gif";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -14,19 +10,14 @@ import GitHubLogin from 'react-github-login';
 import jwt_decode from "jwt-decode"
 
 
-const Login = () => {
 
-  const onSuccess = (response) =>{
+function Login() {
+
+  const onSuccess = (response) => {
     console.log(response);
   }
 
-
-
   const onFailure = (response) => console.error(response);
-
-
-
-
 
   const handleCredentialResponse = (response) => {
     console.log(response.credential);
@@ -75,9 +66,8 @@ const Login = () => {
       cancel_on_tap_outside: false
     });
 
-
     google.accounts.id.renderButton(
-      document.getElementById("singInDiv"),
+      document.getElementById("signInDiv"),
       {
         theme: "outline",
         size: "large",
@@ -86,9 +76,6 @@ const Login = () => {
       }
     );
   }, [])
-
-
-
 
   const [data, setData] = useState({
     emailId: "",
@@ -115,7 +102,7 @@ const Login = () => {
       window.localStorage.setItem("userId", response.data.userId);
       window.localStorage.setItem("name", response.data.name);
       window.localStorage.setItem("role", response.data.role);
-     
+
 
       Swal.fire({
         title: "Login Successfull",
@@ -131,7 +118,7 @@ const Login = () => {
         navigate("/admindashboard");
       else
         navigate("/login");
-        
+
     }).catch((error) => {
       console.log(error);
       toast.error("Invalid Credentials!", {
@@ -146,9 +133,6 @@ const Login = () => {
 
     });
   };
-
-
-
 
   return (
     <>
@@ -165,11 +149,14 @@ const Login = () => {
         theme="light"
       />
       <meta charSet="utf-8" />
-      <div className="wrapper" style={{ height: 'fit-content', margin: '50px 70px', paddingBottom: '20px' }}>
-        <div className="formcont" style={{ backgroundColor: 'white', margin: '30px', padding: '20px' }}>
-          <img class="logingif" src={login} alt="" style={{ marginTop: '-30px' }} />
 
-          <form className="loginform" onSubmit={submitForm} style={{ marginTop: '-20px', height: '400px', width: '350px' }}>
+      <div className="login-form-container">
+        <div className="left-gif-portion">
+          <img class="logingif" src={login} />
+        </div>
+        <div className="right-content-portion">
+
+          <form className="loginformy" onSubmit={submitForm}>
             <div className="title">Login</div>
             <div className="field">
               <input
@@ -180,8 +167,7 @@ const Login = () => {
                 required
 
               />
-
-              <label>Email Address</label>
+              <label >Email Address</label>
             </div>
             <div className="field">
               <input
@@ -195,36 +181,39 @@ const Login = () => {
 
               <label>Password</label>
             </div>
-            <div className="content">
+            {/* <div className="content">
               <div className="checkbox">
                 <input type="checkbox" id="remember-me" />
                 <label htmlFor="remember-me">Remember me</label>
               </div>
-              {/* <div className="pass-link">
-          <a href="#">Forgot password?</a>
-        </div> */}
-            </div>
+            </div> */}
             <div className="field">
               <input type="submit" value="Login" />
             </div>
-            <div className="google-btn" id="singInDiv"></div>
+            <div className="midd">
+              <div className="hrline"></div>
+              <h6 style={{ fontWeight: 300 }}>Or</h6>
+              <div className="hrline"></div>
+            </div>
+            <div className="google-btn" id="signInDiv"></div>
             <div className="github-btn">
+              <i class="ri-github-fill" ></i>
               <GitHubLogin clientId="7c2801c627dcd73b7745"
                 onSuccess={onSuccess}
                 onFailure={onFailure}
                 redirectUri=""
+                className="github-style"
               />
             </div>
 
             <div className="signup-link">
-              Not a member? <a href="signup">Signup now</a>
+              Not a member? <a href="signup" style={{ textDecoration: 'none' }}>Signup now</a>
             </div>
           </form>
         </div>
       </div>
-      
     </>
-  );
-};
+  )
+}
 
-export default Login;
+export default Login
