@@ -101,7 +101,7 @@ function Items() {
                   <div className="cardy" >
                     <div className="image-items">
                       <img onClick={viewProduct(item.productId)}
-                        src={"http://localhost:8080/api/products/image/" + item.productPhoto}
+                        src={"http://localhost:8080/api/products/image/" + item.productPhoto[0]}
                         className="card-img-top"
                         alt="product.title"
                         height='100%'

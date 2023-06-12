@@ -20,47 +20,61 @@ const MSignup = () => {
         mobileNumber: "",
         emailId: "",
         password: "",
-      });
-      const navigate = useNavigate();
-      
-    
-      
-      const handleChange = (event, property) => {
+    });
+    const navigate = useNavigate();
+
+
+
+    const handleChange = (event, property) => {
         setData({ ...data, [property]: event.target.value });
-      };
-      
-      const submitForm = (event) => {
+    };
+
+    const submitForm = (event) => {
         event.preventDefault();
+
+        if (data.password !== data.confirmPassword) {
+            toast.error("Passwords do not match!", {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+            });
+            return;
+        }
+
+
+
         axios.post("http://localhost:8080/api/users/msignup", data).then((response) => {
-          console.log(response.data);
-          Swal.fire({
-            title: "Success",
-            text: "User Registered Successfully",
-            icon: "success",
-          });
-          navigate("/login");
+            console.log(response.data);
+            Swal.fire({
+                title: "Success",
+                text: "User Registered Successfully",
+                icon: "success",
+            });
+            navigate("/login");
         }).catch((error) => {
-          console.log(error);
-          toast.error(" Invalid Credentials!", {
-            position: "top-center",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-          });
-    
+            console.log(error);
+            toast.error(" Invalid Credentials!", {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+            });
+
         });
-      };
-      
-    
-    
+    };
+
+
+
 
     return (
         <>
             <div className="merchant-signup">
                 <div className="right-credantials">
                     <form className="loginform" onSubmit={submitForm}>
-                        <div className="title" style={{marginBottom:'-12px'}}> Become a Merchant</div>
+                        <div className="title" style={{ marginBottom: '-12px' }}> Become a Merchant</div>
                         <div className="field">
                             <input
                                 type="text"
@@ -69,7 +83,7 @@ const MSignup = () => {
                                 onChange={(e) => handleChange(e, "name")}
                                 value={data.name} required
                             />
-                            
+
                             <label> Name</label>
                         </div>
                         <div className="field">
@@ -80,7 +94,7 @@ const MSignup = () => {
                                 onChange={(e) => handleChange(e, "emailId")}
                                 value={data.emailId} required
                             />
-                            
+
                             <label> Email</label>
                         </div>
                         <div className="field">
@@ -90,9 +104,9 @@ const MSignup = () => {
                                 id="mobileNumber"
                                 onChange={(e) => handleChange(e, "mobileNumber")}
                                 value={data.mobileNumber} required
-                                
+
                             />
-                            
+
                             <label> Mobile</label>
                         </div>
                         <div className="field">
@@ -102,23 +116,23 @@ const MSignup = () => {
                                 id="password"
                                 onChange={(e) => handleChange(e, "password")}
                                 value={data.password} required
-                               
+
                             />
                             <label>Password</label>
                         </div>
                         <div className="field">
                             <input
                                 type="password"
-
-                                id="password"
-                                onChange={(e) => handleChange(e, "password")}
-                                value={data.password} required
-                               
+                                id="confirmpassword"
+                                onChange={(e) => handleChange(e, "confirmPassword")} // Update the property name
+                                value={data.confirmPassword} // Update the property name
+                                required
                             />
-                            
 
                             <label>Confirm Password</label>
                         </div>
+
+
                         <div className="content">
                             <div className="checkbox">
                                 <input type="checkbox" id="remember-me" />
@@ -137,7 +151,7 @@ const MSignup = () => {
                     </form>
                 </div>
                 <div className="left-image">
-                    <img className="merchant-img" src={merchantimg} alt="" height="100%" width="100%"/>
+                    <img className="merchant-img" src={merchantimg} alt="" height="100%" width="100%" />
                 </div>
             </div>
         </>

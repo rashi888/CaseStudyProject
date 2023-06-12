@@ -6,6 +6,7 @@ label, a {
   ul {
     list-style: none;
     padding: 0;
+    text-decoration: none;
   }
   header {
     box-shadow: 2px 9px 49px -17px rgba(0, 0, 0, 0.3);
@@ -156,21 +157,24 @@ label, a {
     padding-left: 20px;
     left: 20px;
     z-index: 1;
+    text-decoration: none;
 }
 .allcategory:hover +.categories{
   display: block;
   transition: 1ms;
+  text-decoration: none;
 }
 .categories:hover{
   display: block;
   transition: 1ms;
-  
+  text-decoration: none;
 } 
 .categories .p1:hover,.categories .p2:hover
 ,.categories .p3:hover,.categories .p4:hover,
 .categories .p5:hover,.categories .p6:hover{
   color: #54b9c4;
   background-color: white;
+  text-decoration: none;
 }
 
 
@@ -280,6 +284,11 @@ label, a {
     position: relative;
     transition: 100ms all linear 0s;
   }
+
+  .categories>Link>p:hover{
+    text-decoration: none;
+  }
+
   @media (max-width: 991px) {
     .container .nav-content .nav-content-list .nav-content-item {
       padding: 0 5px;
@@ -386,6 +395,7 @@ label, a {
   }
   .nav-container .nav-row .nav-row-list {
     flex: auto;
+    text-decoration: none;
   }
   .nav-container .nav-row .nav-row-list .nav-row-list-link {
     align-items: center;
@@ -393,6 +403,7 @@ label, a {
     height: 40px;
     justify-content: center;
     transition: 100ms all linear 0s;
+    text-decoration: none;
   }
   .nav-container .nav-row .nav-row-list .nav-row-list-link:hover {
     /* background: #e1e1e1; */
