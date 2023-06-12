@@ -206,7 +206,7 @@ function Login() {
               />
             </div>
 
-            <div className="signup-link">
+            <div className="login-link">
               Not a member? <a href="signup" style={{ textDecoration: 'none' }}>Signup now</a>
             </div>
           </form>

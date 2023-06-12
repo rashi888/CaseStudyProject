@@ -133,18 +133,18 @@
   form .field input[type="submit"]:active{
     transform: scale(0.95);
   }
-  form .signup-link{
+  form .login-link{
     color: #262626;
     margin-top: 20px;
     text-align: center;
   }
   form .pass-link a,
-  form .signup-link a{
+  form .login-link a{
     color: #4158d0;
     text-decoration: none;
   }
   form .pass-link a:hover,
-  form .signup-link a:hover{
+  form .login-link a:hover{
     text-decoration: underline;
   }
   .midd{
@@ -169,16 +169,17 @@
  }
 .github-btn{
     background-color: white  ;
-    width: 240px;
-    border:1px solid  black;
+    width: 200px;
+    border:1px solid  rgb(81, 81, 81);
     border-radius: 50px;
-    /* padding: 0px 5px; */
+    padding: 2px 0px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .ri-github-fill{
-  font-size:28px;
+  /* font-size:28px; */
+  font-size: 20px;
   margin-right:  10px;
 }
 .github-style{
