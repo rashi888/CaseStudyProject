@@ -6,7 +6,7 @@ function BackToTop() {
 
   const handleScroll = () => {
     const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-    setIsVisible(scrollTop > 300); // Show the button when scrolled down 300 pixels
+    setIsVisible(scrollTop > 300); 
   };
 
   const scrollToTop = () => {
@@ -14,11 +14,9 @@ function BackToTop() {
   };
 
   useEffect(() => {
-    // Attach scroll event listener
     window.addEventListener('scroll', handleScroll);
 
     return () => {
-      // Cleanup: Remove scroll event listener
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
