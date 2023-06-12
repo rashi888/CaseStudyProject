@@ -89,7 +89,7 @@ const ProductsView = (props) => {
               <div className="card-main">
                 <div >
                 <img
-                    src={"http://localhost:8080/api/products/image/" + item.productPhoto}
+                    src={"http://localhost:8080/api/products/image/" + item.productPhoto[0]}
                     className="card-img-top"
                     alt="product.title"
                   />

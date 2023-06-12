@@ -15,18 +15,32 @@ function SingleProductView() {
   const productId = id;
   console.log(productId);
 
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(
+    {
+      "productId": 0,
+      "productName": "",
+      "productDescription": "",
+      "productPrice": 0,
+      "productMRP": 0,
+      "productPhoto": [],
+    }
+
+  );
 
   const fetchdata = () => {
     axios.get("http://localhost:8080/api/products/" + productId)
       .then((resp) => {
         console.log(resp["data"]);
         setData(resp["data"]);
+        console.log("length of product");
+        const lengthofproduct=resp.data.productPhoto.length;
+        console.log(lengthofproduct);
       })
   }
 
   useEffect(() => {
     fetchdata();
+   
   }, []);
 
   console.log(data);
@@ -61,14 +75,28 @@ function SingleProductView() {
       
 
   };
+
   return (
     <>
 
       <div className="prod1" >
         <div className="imgMain">
-          <div className="image-big" ><img height="400px" src={"http://localhost:8080/api/products/image/"+data.productPhoto} alt="" /></div> 
+          <div className="image-big" >
+            <img height="400px" src={"http://localhost:8080/api/products/image/"+data.productPhoto[0]} alt="" />
+            </div> 
           <div className="image-small" >
-            <div className="im1"><img src={"http://localhost:8080/api/products/image/"+data.productPhoto} alt="" height='100px' width='100px'/></div>
+            
+            <div className="im1">
+            {
+              data.productPhoto.map((item) => {
+                return (
+                  <img height="100px" src={"http://localhost:8080/api/products/image/"+item} alt="" />
+                )
+              }
+              )
+            }
+              {/* <img src={"http://localhost:8080/api/products/image/"+data.productPhoto} alt="" height='100px' width='100px'/> */}
+              </div>
           
         
           </div>

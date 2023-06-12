@@ -90,7 +90,7 @@ const SearchData = (props) => {
           return (<>
             <div className="card-one"  > 
               <div className="img-section">
-                <img onClick={viewProduct(item.productId)} src={"http://localhost:8080/api/products/image/" + item.productPhoto} alt="" height="100%" style={{ padding: '25px 70px' }} />
+                <img onClick={viewProduct(item.productId)} src={"http://localhost:8080/api/products/image/" + item.productPhoto[0]} alt="" height="100%" style={{ padding: '25px 70px' }} />
               </div>
               <div className="content-section">
                 <h4 style={{ marginBottom: '20px' }} >{item.productName}</h4>

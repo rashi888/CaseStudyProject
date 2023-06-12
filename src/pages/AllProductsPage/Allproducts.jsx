@@ -195,7 +195,7 @@ function Allproducts(props) {
                         onClick={viewProduct(item.productId)}
                         src={
                           "http://localhost:8080/api/products/image/" +
-                          item.productPhoto
+                          item.productPhoto[0]
                         }
                         alt=""
                         height="100%"
