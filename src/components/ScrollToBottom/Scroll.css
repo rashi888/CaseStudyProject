@@ -5,7 +5,7 @@
   }
   
   .bottom-arrow {
-    background-color: #48c1cf;
+    background-color: #218d99;
     color: #fff;
     width: 40px;
     height: 40px;
@@ -18,7 +18,7 @@
   }
   
   .bottom-arrow:hover {
-    background-color: #48c1cf;
+    background-color: #218d99;
   }
   
   .bottom-arrow svg {

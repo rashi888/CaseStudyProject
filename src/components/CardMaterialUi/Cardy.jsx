@@ -6,11 +6,11 @@ import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions } from '@mui/material';
 import "./Cardy.css";
 
-export default function Cardy({ title, description, image }) {
+export default function Cardy({ title, description, image ,api}) {
 
 
     return (
-        <Card sx={{ maxWidth: 390, margin: 'auto', padding: '10px'}} className='cardy-prop'>
+        <Card onClick={()=>api} sx={{ maxWidth: 390, margin: 'auto', padding: '10px'}} className='cardy-prop'>
             <CardActionArea>
                 <CardMedia
                     component="img"
