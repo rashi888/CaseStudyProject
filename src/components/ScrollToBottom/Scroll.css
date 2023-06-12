@@ -1,0 +1,28 @@
+.scroll-to-bottom {
+    position: fixed;
+    bottom: 20px;
+    right: 40px;
+  }
+  
+  .bottom-arrow {
+    background-color: #48c1cf;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .bottom-arrow:hover {
+    background-color: #48c1cf;
+  }
+  
+  .bottom-arrow svg {
+    width: 24px;
+    height: 24px;
+  }
+  

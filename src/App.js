@@ -50,6 +50,7 @@ import CategoryListAdmin from './pages/Admin/CategoryListAdmin';
 import ProductListAdmin from './pages/Admin/ProductListAdmin';
 import MyProductList from './pages/AddingItemPages/MyProductList';
 import AddressUser from './pages/Userprofile/AddressUser';
+import ScrollToBottom from './components/ScrollToBottom/ScrollToBottom';
 
 
 
@@ -126,6 +127,8 @@ function App() {
 
       </Routes>
       <Footer />
+
+      <ScrollToBottom />
       <BackToTop />
     </>
   );

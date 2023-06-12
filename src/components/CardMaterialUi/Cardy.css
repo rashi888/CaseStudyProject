@@ -1,0 +1,8 @@
+.cardy-prop{
+    transition: transform 0.6s ease;
+    background-color: transparent;
+}
+.cardy-prop:hover{
+    transform: scale(1.1);
+    background-color: transparent;
+}

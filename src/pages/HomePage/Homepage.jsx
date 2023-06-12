@@ -26,6 +26,7 @@ import BannersSmall from '../../components/MainBannerCarousel/BannersSmall'
 import { Link } from 'react-router-dom'
 import MsignBanner from '../AmazingBanners/MsignBanner'
 import shoppy from "../../assets/NewBannersImg/img10.png"
+import Groupcard from '../../components/CardMaterialUi/Groupcard'
 
 
 function Homepage() {
@@ -50,6 +51,7 @@ function Homepage() {
             <Items />
             {/* <Wrapper/> */}
             <MsignBanner/>
+           <Groupcard/>
             <img src={img13} alt="" height="100%" width="100%" style={{margin:'40px 0px'}}/>
           {/* <Link to="/msignup" >  <img src={img14} alt="" height="100%" width="100%" style={{margin:'40px 0px'}} /></Link> */}
         
