@@ -2,6 +2,7 @@ import { FormFeedback } from "reactstrap";
 import React, { useEffect, useState } from "react";
 import { signUp } from "../../services/user-service";
 import { toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 // import signup from "./Signup.css";
 
 // import login from "../../assets/LoginSignupImg/login.gif";
@@ -71,6 +72,18 @@ const MSignup = () => {
 
     return (
         <>
+            <ToastContainer
+                position="bottom-center"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+            />
             <div className="merchant-signup">
                 <div className="right-credantials">
                     <form className="loginform" onSubmit={submitForm}>
@@ -133,16 +146,18 @@ const MSignup = () => {
                         </div>
 
 
-                        <div className="content">
+                        {/* <div className="content">
                             <div className="checkbox">
                                 <input type="checkbox" id="remember-me" />
                                 <label htmlFor="remember-me">Remember me</label>
                             </div>
-                            {/* <div className="pass-link">
+                            <div className="pass-link">
           <a href="#">Forgot password?</a>
-        </div> */}
-                        </div>
-                        <div className="field register-btn">
+        </div>
+                        </div> */}
+
+
+                        <div className="field register-btn" style={{marginTop:'30px'}}>
                             <input type="submit" value="Register" />
                         </div>
                         <div className="signup-link">
