@@ -16,15 +16,9 @@ import jwt_decode from "jwt-decode"
 
 const Login = () => {
 
-  const onSuccess = async (response) =>{
-    console.log(response.code);
-    accessToken = response.code;
-
-
+  const onSuccess = (response) =>{
+    console.log(response);
   }
-    
-
-
 
 
 
@@ -215,7 +209,7 @@ const Login = () => {
             </div>
             <div className="google-btn" id="singInDiv"></div>
             <div className="github-btn">
-              <GitHubLogin clientId="b2d3426448bdd9f60237"
+              <GitHubLogin clientId="7c2801c627dcd73b7745"
                 onSuccess={onSuccess}
                 onFailure={onFailure}
                 redirectUri=""
