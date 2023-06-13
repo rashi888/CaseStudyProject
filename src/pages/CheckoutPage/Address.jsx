@@ -103,8 +103,33 @@ function Address() {
                 closeModal();
             }
             )
+            
 
     }
+
+    const updateForm = (id) => (e) => {
+        e.preventDefault();
+        const formdata = new FormData(e.target);
+        const data = Object.fromEntries(formdata.entries());
+        data["tempUserId"] = localStorage.getItem("userId");
+        console.log(data);
+        axios.put("http://localhost:8080/api/deliveryDetails/" + id, data)
+            .then((resp) => {
+                console.log("success log");
+                Swal.fire({
+                    title: "Success",
+                    text: "Address Updated Successfully",
+                    icon: "success",
+                });
+                fetchdata();
+                closeModal();
+            }
+            )
+    }
+
+
+    
+
     const refresh = () => window.location.reload(true)
 
     const [datas, setDatas] = useState({
@@ -159,6 +184,18 @@ function Address() {
                 axios.post("http://localhost:8080/api/order/", datas)
                     .then((resp) => {
                         console.log(resp["data"]);
+                        console.log(resp);
+                        console.log(resp.data[0]["id"]);
+                        const id=resp["data"][0]["id"];
+                        console.log(id);
+                        const orderStatus = "Order Placed";
+                        axios.put("http://localhost:8080/api/order/orderStatus/"+id, 
+                        {orderStatus}
+                        )
+                        .then((resp) => {
+                            console.log(resp["data"]);
+                        })
+
                         Swal.fire({
                             title: "Success",
                             text: "Order Placed Successfully",
@@ -221,7 +258,7 @@ function Address() {
                             <div className="modal-div" >
                                 <div className="popup-content">
                                     <h5 style={{ marginBottom: '30px' }}>Add New Address Here</h5>
-                                    <Form onSubmit={submitForm} >
+                                    <Form onSubmit={updateForm(deliveryDetailsId)} >
                                         <Row>
                                             <Col md={6}>
                                                 <FormGroup>
