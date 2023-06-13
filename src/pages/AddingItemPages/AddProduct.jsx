@@ -48,11 +48,11 @@ function AddProduct() {
                 const proId = resp["data"]["productId"];
 
                 const formData = new FormData();
-                formData.append('image', productPhoto);  // Add product image to form data')
+                formData.append('images', productPhoto);  // Add product image to form data')
                 console.log(formData);
 
 
-                axios.post("http://localhost:8080/api/products/img_upload/" + proId, formData, {
+                axios.post("http://localhost:8080/api/products/multiImg_upload/" + proId, formData, {
                     headers: {
                         'Content-Type': 'multipart/form-data'
                     }
@@ -162,7 +162,7 @@ function AddProduct() {
                             </div>
                             <p>Product Image</p>
                             <div className="custom-file">
-                                <input type="file" className="custom-file-input" onChange={handleFileChange} name="productPhoto" value={data.productPhoto} accept="image/jpeg, image/png" id="productPhoto" />
+                                <input type="file" className="custom-file-input" onChange={handleFileChange} name="productPhoto[]" value={data.productPhoto} accept="image/jpeg, image/png" id="productPhoto" multiple />
                                 <label className="custom-file-label" for="productImage" > {selectedImage ? (
                                     <p style={{ fontWeight: 300 }}>{selectedImage}</p>
                                 ) : (
