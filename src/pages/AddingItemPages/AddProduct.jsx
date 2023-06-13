@@ -102,10 +102,10 @@ function AddProduct() {
         <>
 
             <div className="containerr" style={{ margin: '3% 7%', padding: '20px 40px', boxShadow: '10px 5px 10px lightgray', borderRadius: '2px', backgroundColor: 'white' }}>
-                <h3 style={{ marginBottom: '20px',color:'gray' }}>Add a new Product</h3>
+                <h2 style={{ marginBottom: '20px',color:'gray' }}>Add a new Product</h2>
                 <form onSubmit={submitForm} >
                     <div className="row" >
-                        <div className="col-sm-5" >
+                        <div className="col-sm-5"  >
                             <input type="hidden" name="id" />
                             <div className="form-group">
                                 <label for="productName">Name</label>

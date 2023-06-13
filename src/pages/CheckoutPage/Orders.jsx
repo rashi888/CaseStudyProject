@@ -30,7 +30,7 @@ function Orders() {
                             <div className="order-card1">
                                 <div className="top-order-con">
                                     <h6 style={{ color: 'white' }}>ORDER PLACED <br />{item.orderDate}</h6>
-                                    <h6 style={{ color: 'white' }}>TOTAL <br /> Rs.-{item.totalPrice}</h6>
+                                    <h6 style={{ color: 'white' }}>TOTAL <br /> Rs. {item.totalPrice}</h6>
                                     <div className="user-div">
                                         <h6 style={{ color: 'white' }}>SHIP TO <br /> {item.shippedTo} <i class="ri-arrow-down-s-line" > </i></h6></div>
                                     <div className="add-hover">
