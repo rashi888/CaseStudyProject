@@ -56,7 +56,11 @@ function Items() {
     let userId = localStorage.getItem("userId");
     if(userId==null){
 
-      const url = "http://localhost:8080/api/cart/addToCart?productId="+id;
+      Swal.fire({
+        title: "Error",
+        text: "Please Login to Add to Cart",
+        icon: "alert",
+      });
 
     }
     else{
