@@ -34,9 +34,14 @@
   /* border: 0.3px solid lightgray; */
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 5px;
+  transition: transform 0.3s ease-in-out;
+  backface-visibility: hidden;
+  will-change: transform;
 }
 .cardy:hover{
   cursor: pointer;
+  transform: scale(1.09);
+  transform-origin: center;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
 }
 .image-items{
