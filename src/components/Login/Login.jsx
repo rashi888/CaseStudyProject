@@ -19,6 +19,9 @@ function Login() {
     document.body.appendChild(script);
   }
 
+  window.onload = loadscripts;
+  window.addEventListener('load', loadscripts);
+
   
 
 
