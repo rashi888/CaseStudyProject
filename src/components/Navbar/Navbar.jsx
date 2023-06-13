@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
 import { Link } from "react-router-dom";
 import { BiSearch } from "react-icons/bi";
 import "./Navbar.css";
@@ -55,7 +55,7 @@ const Navbar = () => {
                     <h6 className="center" onClick={logout}>LogOut</h6>
                 </div>
             )
-        } else if(window.localStorage.getItem("role") === "USER"){
+        } else if (window.localStorage.getItem("role") === "USER") {
             menu = (
                 <div className="profile">
                     <Link to="orders" >Orders</Link>
@@ -94,12 +94,32 @@ const Navbar = () => {
     };
 
 
+    //Back To Top
+    const [isVisible, setIsVisible] = useState(false);
+
+    const handleScroll = () => {
+        const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        setIsVisible(scrollTop > 300);
+    };
+
+    const scrollToTop = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
 
     return (
         <div>
 
             <div className="navbars  ">
-                <div className="logos">
+                <div className="logos" onClick={scrollToTop}>
 
                     <Link to="/">
                         {/* <img src={logo} alt="" className="logo" /> */}

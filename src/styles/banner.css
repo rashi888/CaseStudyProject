@@ -9,6 +9,7 @@ logo-slider {
     /* margin: 0 auto; */
     position: relative;
     display: flex;
+    background-color: rgb(250, 250, 250);
   }
   logo-slider:hover div {
     animation-play-state: paused;
