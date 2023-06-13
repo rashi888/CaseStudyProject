@@ -56,6 +56,14 @@ function Items3() {
     const addtocart = (id) => (e) => {
         console.log(e.target.value);
         let userId = localStorage.getItem("userId");
+        if(userId==null){
+            Swal.fire({
+              title: "Error",
+              text: "Please Login First",
+              icon: "alert",
+            });
+      
+          }else{
         const url = "http://localhost:8080/api/cart/addToCart";
         const formdata = new FormData();
         formdata.append("productId", id);
@@ -78,6 +86,7 @@ function Items3() {
                 console.log(error);
             }
             );
+        }
 
 
     };
