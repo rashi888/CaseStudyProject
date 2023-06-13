@@ -86,17 +86,17 @@ function SingleProductView() {
             </div> 
           <div className="image-small" >
             
-            <div className="im1">
             {
               data.productPhoto.map((item) => {
                 return (
+                  <div className="im1">
                   <img height="100px" src={"http://localhost:8080/api/products/image/"+item} alt="" />
+              </div>
                 )
               }
               )
             }
               {/* <img src={"http://localhost:8080/api/products/image/"+data.productPhoto} alt="" height='100px' width='100px'/> */}
-              </div>
           
         
           </div>
