@@ -11,17 +11,15 @@ function AddProduct() {
     const [categoryId, setCategoryId] = useState("");
     const [productPhoto, setProductPhoto] = useState(null);
     const [productId, setProductId] = useState("");
-    const [selectedImage, setSelectedImage] = useState('');
+    const [selectedImage, setSelectedImage] = useState([]);
     const userId = localStorage.getItem("userId");
 
     const navigate = useNavigate();
 
-    const handleFileChange = (event) => {
-        setProductPhoto(event.target.files[0]);
-        console.log(event.target.files[0]);
+    const handleFileChange = (e) => {
+        setProductPhoto(e.target.files);
+        setSelectedImage(e.target.files[0].name);
 
-        const file = event.target.files[0]
-        setSelectedImage(file ? file.name : null);
     };
 
     const [data, setData] = useState({
@@ -48,7 +46,12 @@ function AddProduct() {
                 const proId = resp["data"]["productId"];
 
                 const formData = new FormData();
-                formData.append('images', productPhoto);  // Add product image to form data')
+                // formData.append('images', productPhoto);  // Add product image to form data')
+                for (let i = 0; i < productPhoto.length; i++) {
+                    formData.append('images', productPhoto[i]);
+                }
+                console.log(productPhoto);
+                console.log(selectedImage)
                 console.log(formData);
 
 
@@ -162,7 +165,7 @@ function AddProduct() {
                             </div>
                             <p>Product Image</p>
                             <div className="custom-file">
-                                <input type="file" className="custom-file-input" onChange={handleFileChange} name="productPhoto[]" value={data.productPhoto} accept="image/jpeg, image/png" id="productPhoto" multiple />
+                                <input type="file" className="custom-file-input" onChange={handleFileChange} name="productPhoto" value={data.productPhoto} accept="image/jpeg, image/png" id="productPhoto" multiple />
                                 <label className="custom-file-label" for="productImage" > {selectedImage ? (
                                     <p style={{ fontWeight: 300 }}>{selectedImage}</p>
                                 ) : (
