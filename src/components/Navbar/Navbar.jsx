@@ -58,6 +58,7 @@ const Navbar = () => {
         } else if (window.localStorage.getItem("role") === "USER") {
             menu = (
                 <div className="profile">
+                    <Link to="user" >My Profile</Link>
                     <Link to="orders" >Orders</Link>
                     <h6 className="center" onClick={logout}>LogOut</h6>
                 </div>
