@@ -1,8 +1,5 @@
-import React,{useState,useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import './SingleProductView.css';
-import img1 from '../../assets/PhoneImgs/phone1.webp';
-import img2 from '../../assets/PhoneImgs/phone2.webp';
-import mainImg from "../../assets/PhoneImgs/phone2.webp"
 import { Link } from 'react-router-dom';
 import Swal from "sweetalert2";
 import { useParams } from 'react-router-dom';
@@ -33,14 +30,14 @@ function SingleProductView() {
         console.log(resp["data"]);
         setData(resp["data"]);
         console.log("length of product");
-        const lengthofproduct=resp.data.productPhoto.length;
+        const lengthofproduct = resp.data.productPhoto.length;
         console.log(lengthofproduct);
       })
   }
 
   useEffect(() => {
     fetchdata();
-   
+
   }, []);
 
   console.log(data);
@@ -50,7 +47,7 @@ function SingleProductView() {
   const addtocart = (id) => (e) => {
     console.log(e.target.value);
     let userId = localStorage.getItem("userId");
-    const url = "http://localhost:8080/api/cart/addToCart" ;
+    const url = "http://localhost:8080/api/cart/addToCart";
     const formdata = new FormData();
     formdata.append("productId", id);
     formdata.append("userId", userId);
@@ -66,60 +63,112 @@ function SingleProductView() {
           title: "Success",
           text: "Product Added to Cart Successfully",
           icon: "success",
-          });
+        });
       })
       .catch((error) => {
         console.log(error);
       }
       );
-      
+
 
   };
 
   return (
     <>
+      <div className="container-main-product">
 
-      <div className="prod1" >
+        <div className="single-product-top">
+          <div className="left-for-images">
+            <div className="left-of-left">
+              {
+                data.productPhoto.map((item) => {
+                  return (
+                    <div className="image-group">
+                      <img height="100px" src={"http://localhost:8080/api/products/image/" + item} alt="" />
+                    </div>
+                  )
+                }
+                )
+              }
+            </div>
+            <div className="right-of-left">
+              <img src={"http://localhost:8080/api/products/image/" + data.productPhoto[0]} height="80%" width="80%" />
+            </div>
+          </div>
+          <div className="right-for-content">
+
+            <h2>{data.productName}</h2>
+            <h6 style={{ marginTop: '15px', textAlign: 'start' }}>Extra {data.productMRP - data.productPrice} off</h6>
+            <div className="pp" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+
+              <h1>₹{data.productPrice} <h6><del>{data.productMRP}</del> <span style={{ color: 'darkgreen' }}>{(((data.productMRP - data.productPrice) * 100) / data.productMRP).toFixed(2)}%</span> </h6></h1>
+            </div>
+            {/* <hr style={{ border: '1px solid gray' }} />
+            <h6 style={{ fontWeight: 400 }}>Description</h6>
+            <div dangerouslySetInnerHTML={{ __html: data.productDescription }}></div> */}
+
+            <div className="btn-add-div" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-around', marginLeft: '-30px' }}>
+              <Link onClick={addtocart} to="/"><button style={{ backgroundColor: '#33bbca', borderRadius: '5px', fontSize: '20px' }}>Add to cart</button></Link>
+              <Link> <button style={{ backgroundColor: '#33bbca', borderRadius: '5px', fontSize: '20px' }}>Buy Now</button> </Link>
+            </div>
+
+          </div>
+        </div>
+
+        <div className="single-product-bottom">
+        <hr style={{ border: '1px solid gray' }} />
+            {/* <h6 style={{ fontWeight: 400 }}>Description</h6> */}
+           <h2 style={{marginBottom:'20px'}}>Product Description</h2>
+            <div dangerouslySetInnerHTML={{ __html: data.productDescription }}></div>
+          </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+      {/* <div className="prod1" >
         <div className="imgMain">
           <div className="image-big" >
-            <img height="400px" src={"http://localhost:8080/api/products/image/"+data.productPhoto[0]} alt="" />
-            </div> 
+            <img height="400px" src={"http://localhost:8080/api/products/image/" + data.productPhoto[0]} alt="" />
+          </div>
           <div className="image-small" >
-            
             {
               data.productPhoto.map((item) => {
                 return (
                   <div className="im1">
-                  <img height="100px" src={"http://localhost:8080/api/products/image/"+item} alt="" />
-              </div>
+                    <img height="100px" src={"http://localhost:8080/api/products/image/" + item} alt="" />
+                  </div>
                 )
               }
               )
             }
-              {/* <img src={"http://localhost:8080/api/products/image/"+data.productPhoto} alt="" height='100px' width='100px'/> */}
-          
-        
           </div>
         </div>
         <div className="prodDetails">
           <h2>{data.productName}</h2>
-          <h6 style={{lbackgroundColor:'yellow',marginTop:'15px',textAlign:'start'}}>Extra {data.productMRP-data.productPrice} off</h6>
-          <div className="pp" style={{display:'flex',justifyContent:'space-between',alignItems:'center'}}>
+          <h6 style={{ lbackgroundColor: 'yellow', marginTop: '15px', textAlign: 'start' }}>Extra {data.productMRP - data.productPrice} off</h6>
+          <div className="pp" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
 
-          <h1>₹{data.productPrice} <h6><del>{data.productMRP}</del> <span style={{ color: 'darkgreen' }}>{(((data.productMRP-data.productPrice)*100)/data.productMRP).toFixed(2)}%</span> </h6></h1>
-          {/* <h6 style={{marginRight:'150px'}}>+ ₹49 Secured Packaging Fee</h6> */}
+            <h1>₹{data.productPrice} <h6><del>{data.productMRP}</del> <span style={{ color: 'darkgreen' }}>{(((data.productMRP - data.productPrice) * 100) / data.productMRP).toFixed(2)}%</span> </h6></h1>
           </div>
-          {/* <h6>Available offers</h6> */}
-          <hr style={{border:'1px solid gray'}} />
-          <h6 style={{fontWeight:400}}>Description</h6>
+          <hr style={{ border: '1px solid gray' }} />
+          <h6 style={{ fontWeight: 400 }}>Description</h6>
           <div dangerouslySetInnerHTML={{ __html: data.productDescription }}></div>
-          
-          <div className="btn-add-div" style={{display:'flex',alignItems:'center',justifyContent:'space-around',marginLeft:'-30px'}}>
-         <Link onClick={addtocart} to="/"><button style={{backgroundColor:'#33bbca',borderRadius:'5px',fontSize:'20px'}}>Add to cart</button></Link> 
-         <Link> <button  style={{backgroundColor:'#33bbca',borderRadius:'5px',fontSize:'20px'}}>Buy Now</button> </Link>
-           </div>
+
+          <div className="btn-add-div" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-around', marginLeft: '-30px' }}>
+            <Link onClick={addtocart} to="/"><button style={{ backgroundColor: '#33bbca', borderRadius: '5px', fontSize: '20px' }}>Add to cart</button></Link>
+            <Link> <button style={{ backgroundColor: '#33bbca', borderRadius: '5px', fontSize: '20px' }}>Buy Now</button> </Link>
+          </div>
         </div>
-      </div>
+      </div> */}
     </>
   )
 }
