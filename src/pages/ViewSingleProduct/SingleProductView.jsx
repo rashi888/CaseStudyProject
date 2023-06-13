@@ -84,7 +84,7 @@ function SingleProductView() {
                 data.productPhoto.map((item) => {
                   return (
                     <div className="image-group">
-                      <img  src={"http://localhost:8080/api/products/image/" + item} alt="" height="90%" width="90%"/>
+                      <img  src={"http://localhost:8080/api/products/image/" + item} alt="" height="100px" />
                     </div>
                   )
                 }
