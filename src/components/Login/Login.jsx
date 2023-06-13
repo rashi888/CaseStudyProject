@@ -12,15 +12,6 @@ import jwt_decode from "jwt-decode"
 
 
 function Login() {
- const loadscripts=()=>{
-    const script = document.createElement('script');
-    script.src = 'https://accounts.google.com/gsi/client';
-    script.async = true;
-    document.body.appendChild(script);
-  }
-
-  window.onload = loadscripts;
-  window.addEventListener('load', loadscripts);
 
   
 
@@ -97,17 +88,16 @@ function Login() {
   }
 
   useEffect(() => {
+    makeAPICall();
     const script = document.createElement('script');
     script.src = 'https://accounts.google.com/gsi/client';
-    loadscripts().then(() => {
+    script.async = true;
     google.accounts.id.initialize({
       client_id: '889458596682-oujv8pjnafnps4o28rdii03t9bhtn5qq.apps.googleusercontent.com',
       callback: handleCredentialResponse,
       auto_select: true,
       cancel_on_tap_outside: false
-        
     });
-  });
 
     google.accounts.id.renderButton(
       document.getElementById("signInDiv"),
@@ -255,7 +245,10 @@ function Login() {
           </form>
         </div>
       </div>
+      <script src="https://accounts.google.com/gsi/client"></script>
+
     </>
+    
   )
 }
 
