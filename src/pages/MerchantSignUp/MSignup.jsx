@@ -87,7 +87,7 @@ const MSignup = () => {
             <div className="merchant-signup">
                 <div className="right-credantials">
                     <form className="loginform" onSubmit={submitForm}>
-                        <div className="title" style={{ marginBottom: '-12px' }}> Become a Merchant</div>
+                        <div className="title" > Become a Merchant</div>
                         <div className="field">
                             <input
                                 type="text"
