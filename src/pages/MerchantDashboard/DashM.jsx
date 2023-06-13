@@ -31,7 +31,7 @@ useEffect(() => {
   return (
     <>
       <div className="merchant-dashboard" >
-        <h1 style={{ color: '#54b9c4', margin: '5px 10px 40px 10px' }}>Welcome to Merchant Page</h1>
+        <h1 style={{ color: 'gray', margin: '5px 10px 40px 10px' }}>Welcome to Merchant Page</h1>
         <div className="tiles-4" >
           <div className="tile-4" style={{margin:'auto',width:'400px'}}> 
             <div className="icon-and-orders">

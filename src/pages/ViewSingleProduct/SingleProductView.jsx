@@ -116,11 +116,11 @@ function SingleProductView() {
         </div>
 
         <div className="single-product-bottom">
-        <hr style={{ border: '1px solid gray' }} />
-            {/* <h6 style={{ fontWeight: 400 }}>Description</h6> */}
-           <h2 style={{marginBottom:'20px'}}>Product Description</h2>
-            <div dangerouslySetInnerHTML={{ __html: data.productDescription }}></div>
-          </div>
+          <hr style={{ border: '1px solid gray' }} />
+          {/* <h6 style={{ fontWeight: 400 }}>Description</h6> */}
+          <h2 style={{ marginBottom: '20px' }}>Product Description</h2>
+          <div dangerouslySetInnerHTML={{ __html: data.productDescription }} ></div>
+        </div>
       </div>
 
 

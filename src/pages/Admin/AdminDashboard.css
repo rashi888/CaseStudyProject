@@ -18,7 +18,9 @@
     display: flex;
 }
 .tile-1{
-    background-color: rgba(0, 145, 255, 0.604);
+    /* background-color: rgba(0, 145, 255, 0.604); */
+    background-color: #22b9c9;
+    color: white;
     height: 100%;
     width: 28%;
     margin: 0 10px;
@@ -47,7 +49,9 @@
     margin-bottom: 20px;
 }
 .tile-2{
-     background-color: rgba(255, 0, 72, 0.54);
+     /* background-color: rgba(255, 0, 72, 0.54); */
+     background-color: #22b9c9;
+     color: white;
     height: 100%;
     width: 28%;
     text-align: center;
@@ -58,7 +62,9 @@
     padding: 10px 25px;
 }
 .tile-3{
-     background-color: rgba(255, 174, 0, 0.669);
+     /* background-color: rgba(255, 174, 0, 0.669); */
+     background-color: #22b9c9;
+     color: white;
     height: 100%;
     width: 28%;
     margin: 0 10px;
@@ -69,7 +75,9 @@
     padding: 10px 25px;
 }
 .tile-4{
-     background-color: rgba(0, 146, 63, 0.693);
+     /* background-color: rgba(0, 146, 63, 0.693); */
+     background-color: #22b9c9;
+     color: white;
     height: 100%;
     width: 28%;
     margin: 0 10px;
@@ -80,7 +88,9 @@
     text-align: center;
 }
 .tile-5{
-    background-color: rgba(40, 193, 213, 0.693);
+    /* background-color: rgba(40, 193, 213, 0.693); */
+    background-color: #22b9c9;
+    color: white;
    height: 100%;
    width: 28%;
    margin: 20px auto;

@@ -53,7 +53,7 @@ function AdminDashboard() {
   return (
     <>
       <div className="admin-dashboard">
-        <h1 style={{ color: '#54b9c4', margin: '10px 10px 40px 10px' }}>Welcome to Admin Dashboard</h1>
+        <h1 style={{ color: 'gray', margin: '10px 10px 40px 40px' }}>Welcome to Admin Dashboard</h1>
         <div className="tiles-4" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-around' }}>
           <div className="tile-1">
             <div className="icon-and-orders">
