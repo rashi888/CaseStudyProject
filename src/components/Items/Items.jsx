@@ -57,9 +57,9 @@ function Items() {
     if(userId==null){
 
       Swal.fire({
-        title: "Error",
+        
         text: "Please Login to Add to Cart",
-        icon: "alert",
+        icon: "info",
       });
 
     }

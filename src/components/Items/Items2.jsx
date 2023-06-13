@@ -55,9 +55,9 @@ function Items2() {
     let userId = localStorage.getItem("userId");
     if(userId==null){
       Swal.fire({
-        title: "Error",
+        
         text: "Please Login First",
-        icon: "alert",
+        icon: "info",
       });
 
     }else{

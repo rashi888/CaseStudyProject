@@ -57,9 +57,9 @@ function Items1() {
 
     if(userId==null){
       Swal.fire({
-        title: "Error",
+       
         text: "Please Login First",
-        icon: "alert",
+        icon: "info",
       });
 
     }else{
