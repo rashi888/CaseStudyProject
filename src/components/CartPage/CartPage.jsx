@@ -17,6 +17,20 @@ function CartPage() {
   const userId = localStorage.getItem("userId");
 
   const fetchData = () => {
+    const userId = localStorage.getItem("userId");
+    if(userId==null){
+      axios.get(`http://localhost:8080/api/cart/viewCart`)
+      .then((response) => {
+        console.log(response.data);
+        setCart(response.data.cartItem);
+        setTprice(response.data.grandTotal);
+        
+      }
+      )
+      .catch((error) => console.log(error));
+
+    }
+    else{
     axios
       .get(`http://localhost:8080/api/cart/viewCart?userId=${userId}`)
       .then((response) => {
@@ -26,6 +40,7 @@ function CartPage() {
         
       })
       .catch((error) => console.log(error));
+    }
   };
 
   React.useEffect(() => {

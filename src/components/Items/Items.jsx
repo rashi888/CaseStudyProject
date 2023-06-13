@@ -54,6 +54,12 @@ function Items() {
   const addtocart = (id) => (e) => {
     console.log(e.target.value);
     let userId = localStorage.getItem("userId");
+    if(userId==null){
+
+      const url = "http://localhost:8080/api/cart/addToCart?productId="+id;
+
+    }
+    else{
     const url = "http://localhost:8080/api/cart/addToCart";
     const formdata = new FormData();
     formdata.append("productId", id);
@@ -76,6 +82,7 @@ function Items() {
         console.log(error);
       }
       );
+    }
 
 
   };
