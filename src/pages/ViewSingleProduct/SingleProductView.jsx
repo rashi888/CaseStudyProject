@@ -8,6 +8,8 @@ import singleprod from "../../assets/MoreImgs/shopease single product view2.png"
 
 function SingleProductView() {
 
+  const [image, setImage] = useState([]);
+
   const { id } = useParams();
   const productId = id;
   console.log(productId);
@@ -32,6 +34,7 @@ function SingleProductView() {
         console.log("length of product");
         const lengthofproduct = resp.data.productPhoto.length;
         console.log(lengthofproduct);
+        setImage("http://localhost:8080/api/products/image/" + resp.data.productPhoto[0]);
       })
   }
 
@@ -73,6 +76,11 @@ function SingleProductView() {
 
   };
 
+  const changeImage = (item) => (e) => {
+    console.log(item);
+    setImage("http://localhost:8080/api/products/image/" + item);
+  }
+
   return (
     <>
       <div className="container-main-product">
@@ -84,7 +92,7 @@ function SingleProductView() {
                 data.productPhoto.map((item) => {
                   return (
                     <div className="image-group">
-                      <img  src={"http://localhost:8080/api/products/image/" + item} height="83px" />
+                      <img  src={"http://localhost:8080/api/products/image/" + item} onClick={changeImage(item)} height="83px" />
                     </div>
                   )
                 }
@@ -92,7 +100,7 @@ function SingleProductView() {
               }
             </div>
             <div className="right-of-left">
-              <img src={"http://localhost:8080/api/products/image/" + data.productPhoto[0]} height="106%" width="106%" />
+              <img src={image} setImage={"http://localhost:8080/api/products/image/" + data.productPhoto[0]} height="106%" width="106%" />
             </div>
           </div>
           <div className="right-for-content">
