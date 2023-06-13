@@ -41,7 +41,12 @@ function AddProduct() {
 
     const submitForm = (event) => {
         event.preventDefault();
-        axios.post("http://localhost:8080/api/category/" + categoryId + "/product/" + userId, data)
+        axios.post("http://localhost:8080/api/category/" + categoryId + "/product/" + userId, data,{
+        headers: {
+            "Authorization": "Bearer " + localStorage.getItem("token"),
+        }
+    }
+        )
             .then((resp) => {
                 const proId = resp["data"]["productId"];
 
