@@ -55,29 +55,8 @@ function Items() {
     console.log(e.target.value);
     let userId = localStorage.getItem("userId");
     if(userId==null){
-      
 
       const url = "http://localhost:8080/api/cart/addToCart?productId="+id;
-      fetch(url, {
-        method: "POST",
-      })
-        .then((response) => response.json())
-        .then((data) => {
-          const {
-            cart: { cartItems },} = data;
-          console.log(cartItems);
-          Cookies.set("cartItems", JSON.stringify(cartItems));
-          
-          console.log(data);
-          Swal.fire({
-            title: "Success",
-            text: "Product Added to Cart Successfully",
-            icon: "success",
-          });
-        }
-        
-        )
-
 
     }
     else{
