@@ -30,6 +30,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 86px;
 }
   .right-of-left{
     /* background-color: rgb(178, 103, 103); */
