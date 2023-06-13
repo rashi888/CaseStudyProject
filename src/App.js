@@ -51,6 +51,7 @@ import ProductListAdmin from './pages/Admin/ProductListAdmin';
 import MyProductList from './pages/AddingItemPages/MyProductList';
 import AddressUser from './pages/Userprofile/AddressUser';
 import ScrollToBottom from './components/ScrollToBottom/ScrollToBottom';
+import NoOrders from './pages/MorePages/NoOrders';
 
 
 
@@ -125,6 +126,7 @@ function App() {
         <Route path='/addressuser' Component={AddressUser} />
         <Route path='/singleproductview/:id' Component={SingleProductView} />
 
+        <Route path='/norders' Component={NoOrders} />
       </Routes>
       <Footer />
 
