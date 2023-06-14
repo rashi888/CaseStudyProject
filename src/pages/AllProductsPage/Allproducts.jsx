@@ -20,7 +20,6 @@ function Allproducts(props) {
   const setpage = (item) => (e) => {
     console.log(item);
     setPageNumber(item - 1);
-    fetchData();
   };
  
 
