@@ -120,9 +120,9 @@ const Navbar = () => {
 
 
     return (
-        <div>
+        <div style={{zIndex:'1000'}}>
 
-            <div className="navbars" style={{zIndex:'100'}}>
+            <div className="navbars" >
                 <div className="logos" onClick={scrollToTop}>
 
                     <Link to="/">
