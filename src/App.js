@@ -1,5 +1,5 @@
 import './App.css';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useParams } from 'react-router-dom';
 
 //Components
 import BackToTop from './components/BackToTop/BackToTop';
@@ -72,6 +72,9 @@ function App() {
   const personalcareforherApi = "http://localhost:8080/api/category/14/products";
   const householdcareApi = "http://localhost:8080/api/category/14/products";
   const allproductsApi = "http://localhost:8080/api/products";
+  const refresh = () => { 
+    window.location.reload();
+}
 
 
   return (
@@ -86,7 +89,8 @@ function App() {
         <Route path="/signup" Component={Signup} />
         <Route path='/tiles' Component={Tiles} />
         <Route path='/inbuiltcartview' Component={AddItem} />
-
+        
+        <Route  path='/category/:id' Component={()=> <Allproducts api={"http://localhost:8080/api/category/"+useParams().id+"/products"} />} />
         <Route path='/Grocery' Component={() => <Allproducts api={groceryApi} title="Grocery" />} />
         <Route path='/Mobile' Component={() => <Allproducts api={mobileApi} title="Mobile" />} />
         <Route path='/Fashion' Component={() => <Allproducts api={fashionApi} title="Fashion" />} />

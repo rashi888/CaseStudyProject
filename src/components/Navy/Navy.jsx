@@ -14,7 +14,7 @@ import Beauty from "../../assets/NavyImages/Beauty 2.png"
 // http://localhost:8080/api/categories/
 
 function Navy() {
-
+   
     const [category, setCategory] = useState([]);
 
     const fetchData = () => {
@@ -55,8 +55,8 @@ function Navy() {
                                 <div className="categories">
                                     {category.map((item) => {
                                         return (
-                                            <Link to={item.categoryTitle} className='custom-link'>
-                                                <p className='p1' style={{margin:'-20px auto',width:'200px',padding:'12px'}}>{item.categoryTitle}</p>
+                                            <Link to={"category/"+item.categoryId} className='custom-link'>
+                                                <p  className='p1' style={{margin:'-20px auto',width:'200px',padding:'12px'}}>{item.categoryTitle}</p>
                                             </Link>
                                         );
                                     })}

@@ -9,12 +9,16 @@ import featured from "../../assets/Featured brands/featuredTitle.png"
 import "./amazingbanners.css"
 
 function Featured() {
+
+ 
+    
+
   return (
     <>
     <div className="featured-container" style={{margin:'50px auto',padding:'0 3rem'}}>
     <img src={featured} alt="" width="46%"  style={{ marginLeft:'28%',marginBottom:'10px' }} />
       <div className="one-img" style={{display:'flex',margin:'50px auto',justifyContent:'space-around'}}>
-        <img src={third} alt=""  height="45%" width="45%" className='imgFearured1'/>
+        <img  src={third} alt=""  height="45%" width="45%" className='imgFearured1'/>
         <img src={second} alt=""  height="45%" width="45%" className='imgFearured1'/>
       </div>
       <div className="two-img" style={{display:'flex',margin:'50px 20px',justifyContent:'space-around'}}>

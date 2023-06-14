@@ -22,6 +22,7 @@ function Allproducts(props) {
     setPageNumber(item - 1);
     fetchData();
   };
+ 
 
   const fetchData = () => {
     setIsLoading(true);
@@ -51,7 +52,7 @@ function Allproducts(props) {
     setIsLoading(false);
       })
   };
-
+ 
   
 
   useEffect(() => {
@@ -60,7 +61,6 @@ function Allproducts(props) {
     pageNumber,
     sortBy,
     dir,
-    
   ]);
   console.log(product);
   // console.log(totalpages);
