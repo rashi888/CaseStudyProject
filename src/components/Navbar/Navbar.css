@@ -153,6 +153,23 @@
   p{
     margin-right: 20px;
   }
+
+  .custom-link {
+    text-decoration: none;
+    color: black;
+  }
+  
+  .custom-link,
+  .custom-link:hover,
+  .custom-link:visited,
+  .custom-link:focus {
+    text-decoration: none;}
+  
+  .custom-link:active {
+    text-decoration: none;
+    outline: none; /* Optionally remove the outline when the link is active */
+  }
+  
   
     @media screen and (max-width:1000px) {
       .inputSearchs {

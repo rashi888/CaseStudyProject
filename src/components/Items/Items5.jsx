@@ -6,7 +6,7 @@ import "./Items.css";
 import Swal from "sweetalert2";
 import { Spinner } from 'reactstrap'
 
-function Items() {
+function Items5() {
 
   const [product, setProduct] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -14,7 +14,7 @@ function Items() {
   const fetchData = () => {
     setIsLoading(true);
 
-    return fetch("http://localhost:8080/api/products?pageNumber=0&pageSize=10&sortBy=productId&sortDir=desc",{
+    return fetch("http://localhost:8080/api/products?pageNumber=0&pageSize=10&sortBy=productId&sortDir=asc",{
       headers: {
           "Authorization": "Bearer " + localStorage.getItem("token"),
       }
@@ -23,6 +23,7 @@ function Items() {
       .then((data) => {
         setProduct(data["content"])
         setIsLoading(false);
+
       });
   };
 
@@ -30,8 +31,6 @@ function Items() {
     fetchData();
   }, []);
   console.log(product);
-
-
 
   //for multicaurosel
 
@@ -59,15 +58,13 @@ function Items() {
     console.log(e.target.value);
     let userId = localStorage.getItem("userId");
     if(userId==null){
-
       Swal.fire({
         
-        text: "Please Login to Add to Cart",
+        text: "Please Login First",
         icon: "info",
       });
 
-    }
-    else{
+    }else{
     const url = "http://localhost:8080/api/cart/addToCart";
     const formdata = new FormData();
     formdata.append("productId", id);
@@ -105,10 +102,12 @@ function Items() {
     window.location.href = "/singleproductview/" + id;
   };
 
+
   return (
     <>
       <div className="wrapperr" style={{ margin: '50px auto' }}>
-        <h3 className="wrapper-heading1" >NEW ARRIVALS  </h3>
+
+        <h3 className="wrapper-heading1" >Shop with Shopease</h3>
         <hr className="horizontal-line" />
 
         {isLoading ? (
@@ -120,7 +119,8 @@ function Items() {
                 return (<>
                   <div className="cardy" >
                     <div className="image-items">
-                      <img onClick={viewProduct(item.productId)}
+                      <img
+                        onClick={viewProduct(item.productId)}
                         src={"http://localhost:8080/api/products/image/" + item.productPhoto[0]}
                         className="card-img-top"
                         alt="product.title"
@@ -130,32 +130,15 @@ function Items() {
                     </div>
                     <div className="all-main-content">
                       <h4 className="heading-main">{item.productName}</h4>
-                      <p className='price-main'>MRP ₹ <del> {item.productMRP}</del></p>
-                      <h3 className='price-main'>₹ {item.productPrice}</h3>
+                      <h5 className='price-main'>₹ <del> {item.productMRP}</del></h5>
+                      <h5 className='price-main'>₹ {item.productPrice}</h5>
+                      {/* <p className='description-main'> {item.productDescription}</p> */}
                       <p>
                         <NavLink >
                           <button onClick={addtocart(item.productId)} type="button" class="btn-Item btn-warning" style={{ borderRadius: '4px', border: 'none' }}>Add to cart</button>
                         </NavLink>
                       </p>
                     </div>
-                    {/* <Link to="mobiles"><script>const id = item.productId;</script>
-                <div className="image-items">
-                  <img
-                    src={"http://localhost:8080/api/products/image/" + item.productPhoto}
-                    className="card-img-top"
-                    alt="product.title"
-                  />
-                </div>
-                </Link>
-                <h4 className="heading-main">{item.productName}</h4>
-                <p className='price-main'>₹ {item.productPrice}</p>
-                <p className='description-main'> {item.productDescription}</p>
-                <p>
-                  <NavLink to="/cart">
-                    <button type="button" class="btn-item btn-warning">Add to cart</button>
-                  </NavLink>
-
-                </p> */}
                   </div>
                 </>
                 );
@@ -169,4 +152,4 @@ function Items() {
   )
 }
 
-export default Items
+export default Items5

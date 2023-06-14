@@ -54,7 +54,7 @@ const Navbar = () => {
         if (window.localStorage.getItem("role") === "MERCHANT") {
             menu = (
                 <div className="profile">
-                    <Link to="mdash" >DashBoard</Link>
+                    <Link to="mdash" className="custom-link">DashBoard</Link>
                     <h6 className="center" onClick={logout}>LogOut</h6>
                 </div>
             )
@@ -122,7 +122,7 @@ const Navbar = () => {
     return (
         <div>
 
-            <div className="navbars  ">
+            <div className="navbars" style={{zIndex:'100'}}>
                 <div className="logos" onClick={scrollToTop}>
 
                     <Link to="/">

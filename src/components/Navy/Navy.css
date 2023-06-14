@@ -147,34 +147,60 @@ label, a {
     position:fixed;
     display: none;
     box-sizing: border-box;
-    width: 240px;
-    background-color: #48c1cf;
-    /* background-color: white; */
+    width: 800px;
+    /* background-color: #48c1cf; */
+    background-color: white;
     color: white;
     padding: 6px;
     border-radius: 3px;
-    top: 160px;
+    top: 170px;
     padding-left: 20px;
     left: 20px;
     z-index: 1;
     text-decoration: none;
 }
 .allcategory:hover +.categories{
-  display: block;
+  /* display: block; */
   transition: 1ms;
   text-decoration: none;
+  color: black;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 .categories:hover{
-  display: block;
+  /* display: block; */
   transition: 1ms;
   text-decoration: none;
+  display: flex;
+  flex-wrap: wrap;
+  color: black;
+  justify-content: space-between;
 } 
-.categories .p1:hover,.categories .p2:hover
-,.categories .p3:hover,.categories .p4:hover,
-.categories .p5:hover,.categories .p6:hover{
-  color: #54b9c4;
+.categories .p1:hover{
+  color: black;
   background-color: white;
   text-decoration: none;
+  /* width: calc(50% - 20px);  */
+  /* margin: auto; */
+  padding:13px ;
+  border-radius: 3px;
+  color: white;
+  background-color: #54b9c4;
+}
+.custom-link {
+  text-decoration: none;
+}
+
+.custom-link,
+.custom-link:hover,
+.custom-link:visited,
+.custom-link:focus {
+  text-decoration: none;}
+
+.custom-link:active {
+  text-decoration: none;
+  outline: none; /* Optionally remove the outline when the link is active */
 }
 
 

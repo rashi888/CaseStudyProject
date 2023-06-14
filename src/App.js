@@ -63,6 +63,14 @@ function App() {
   const electronicsApi = "http://localhost:8080/api/category/4/products";
   const homeApi = "http://localhost:8080/api/category/5/products";
   const beautyApi = "http://localhost:8080/api/category/6/products";
+  const toysApi="http://localhost:8080/api/category/7/products";
+  const starbucksApi="http://localhost:8080/api/category/9/products";
+  const watchesApi="http://localhost:8080/api/category/10/products";
+  const footwearApi="http://localhost:8080/api/category/11/products";
+  const personalcareApi="http://localhost:8080/api/category/11/products";
+  const personalcareforhimApi="http://localhost:8080/api/category/12/products";
+  const personalcareforherApi="http://localhost:8080/api/category/13/products";
+  const householdcareApi="http://localhost:8080/api/category/11/products";
   // const allproductsApi = "http://localhost:8080/api/products?pageSize=100";
   const allproductsApi = "http://localhost:8080/api/products";
   return (
@@ -84,6 +92,14 @@ function App() {
         <Route path='/Electronics' Component={() => <Allproducts api={electronicsApi} />} />
         <Route path='/Home' Component={() => <Allproducts api={homeApi} />} />
         <Route path='/Beauty' Component={() => <Allproducts api={beautyApi} />} />
+        <Route path='/Toys' Component={() => <Allproducts api={toysApi} />} />
+        <Route path='/Starbucks' Component={() => <Allproducts api={starbucksApi} />} />
+        <Route path='/Watches' Component={() => <Allproducts api={watchesApi} />} />
+        <Route path='/Footwear' Component={() => <Allproducts api={footwearApi} />} />
+        <Route path='/personalcare' Component={() => <Allproducts api={personalcareApi} />} />
+        <Route path='/personalcareforhim' Component={() => <Allproducts api={personalcareforhimApi} />} />
+        <Route path='/personalcareforher' Component={() => <Allproducts api={personalcareforherApi} />} />
+        <Route path='/householdcare' Component={() => <Allproducts api={householdcareApi} />} />
         <Route path='/search' Component={() => <SearchData />} />
 
         <Route path="/productlist" Component={ProductList} />

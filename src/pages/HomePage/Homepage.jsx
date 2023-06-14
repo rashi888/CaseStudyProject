@@ -1,15 +1,5 @@
 import React from 'react'
-// import Adv1 from '../AdvertiseBanners/Adv1'
-// import Adv2 from '../AdvertiseBanners/Adv2'
-// import Adv3 from '../AdvertiseBanners/Adv3'
 import Items from '../../components/Items/Items'
-// import CardPage from '../Cards/CardPage'
-// import Products from '../Products'
-// import Wrapper from '../../pages/Wrapper/Wrapper'
-// import CarouselPage from '../../pages/Caurosel/CarouselPage'
-// import Wrapper from '../Wrapper'
-// import Cards from '../../components/CardsCaurosel/Cards'
-// import { SliderData } from '../../components/CardsCaurosel/SliderData'
 import Tiles from '../../components/Tiles/Tiles'
 import BannerMain from '../../components/MainBannerCarousel/BannerMain'
 import "./HomePage.css"
@@ -27,41 +17,30 @@ import { Link } from 'react-router-dom'
 import MsignBanner from '../AmazingBanners/MsignBanner'
 import shoppy from "../../assets/NewBannersImg/img10.png"
 import Groupcard from '../../components/CardMaterialUi/Groupcard'
+import Items5 from '../../components/Items/Items5'
+import Items6 from '../../components/Items/Items6'
 
 
 function Homepage() {
     return (
         <>
-            {/* <CardPage/> */}
-            {/* <Cards slides={SliderData} />; */}
             <BannerMain />
             <Items />
-            {/* <Adv1 /> */}
             <Items1 />
             <Featured/>
-            <Items />
+            <Items2 />
             <Items3 />
             <SummerSpecials/>
             <Tiles />
             <BannersSmall/>
-            <Items2/>
-        <img src={shoppy} height="100%" width="100%"/>
             <Items4/>
+        <img src={shoppy} height="100%" width="100%"/>
+            <Items5 />
             <GroceryCol/>
-            <Items />
-            {/* <Wrapper/> */}
             <MsignBanner/>
+            <Items6/>
            <Groupcard/>
             <img src={img13} alt="" height="100%" width="100%" style={{margin:'40px 0px'}}/>
-          {/* <Link to="/msignup" >  <img src={img14} alt="" height="100%" width="100%" style={{margin:'40px 0px'}} /></Link> */}
-        
-           
-           
-            {/* <Adv2 /> */}
-           
-        
-          
-
         </>
     )
 }

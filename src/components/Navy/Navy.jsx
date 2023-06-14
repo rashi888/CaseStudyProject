@@ -49,14 +49,14 @@ function Navy() {
                         <ul className="nav-row">
 
     
-                            <Link to='/allproducts' className="all-category1">
+                            <Link to='/allproducts' className="all-category1 custom-link">
                                 <img src={AllCategory} alt="" />
-                                <li className="allcategory nav-row-list"><Link to="" className="nav-row-list-link" >All Categories</Link></li>
-                                <div className="categories" >
+                                <li className="allcategory nav-row-list" ><Link to="" className="nav-row-list-link" >All Categories</Link></li>
+                                <div className="categories">
                                     {category.map((item) => {
                                         return (
-                                            <Link to={item.categoryTitle}  >
-                                                <p className='p1'>{item.categoryTitle}</p>
+                                            <Link to={item.categoryTitle} className='custom-link'>
+                                                <p className='p1' style={{margin:'-20px auto',width:'200px',padding:'12px'}}>{item.categoryTitle}</p>
                                             </Link>
                                         );
                                     })}
@@ -64,7 +64,7 @@ function Navy() {
                                 </div>
                             </Link>
 
-                            <Link to="/Grocery" className="category1">
+                            <Link to="/Grocery" className="category1 custom-link">
                                 <img src={Grocery} alt="" />
                                 <li className="grocery nav-row-list"><Link to="/Grocery" className="nav-row-list-link" >Grocery</Link></li>
                                 {/* <div className="groce" >
@@ -72,23 +72,23 @@ function Navy() {
                                     <h6>product2</h6>
                                 </div> */}
                             </Link>
-                            <Link to="/Mobile" className="category1">
+                            <Link to="/Mobile" className="category1 custom-link">
                                 <img src={Mobile} alt="" />
                                 <li className="nav-row-list"><Link to="/Mobile" className="nav-row-list-link" >Mobile</Link></li>
                             </Link>
-                            <Link to="/Fashion" className="category1">
+                            <Link to="/Fashion" className="category1 custom-link">
                                 <img src={Fashion} alt="" />
                                 <li className="nav-row-list"><Link to="/Fashion" className="nav-row-list-link" >Fashion</Link></li>
                             </Link >
-                            <Link to="/Electronics" className="category1">
+                            <Link to="/Electronics" className="category1 custom-link">
                                 <img src={Electronics} alt="" />
                                 <li className="nav-row-list"><Link to="/Electronics" className="nav-row-list-link" >Electronics</Link></li>
                             </Link>
-                            <Link to="/Home" className="category1">
+                            <Link to="/Home" className="category1 custom-link">
                                 <img src={Home} alt="" />
                                 <li className="nav-row-list"><Link to="/Home" className="nav-row-list-link" >Home</Link></li>
                             </Link>
-                            <Link to="/Beauty" className="category1">
+                            <Link to="/Beauty" className="category1 custom-link">
                                 <img src={Beauty} alt="" />
                                 <li className="nav-row-list"><Link to="/Beauty" className="nav-row-list-link" >Beauty</Link></li>
                             </Link>
