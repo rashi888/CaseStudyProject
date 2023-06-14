@@ -116,9 +116,9 @@ function AddProduct() {
                 <h2 style={{ marginBottom: '40px',color:'#54b9c4',textAlign:'center',marginTop:'20px' }}>Add a new Product</h2>
                 <form onSubmit={submitForm} >
                     <div className="row" style={{width:'100%',margin:'auto',paddingLeft:'130px',paddingBottom:'30px'}}>
-                        <div className="col-sm-5"  >
+                        <div className="col-sm-5"  style={{marginLeft:'-25px',marginRight:'65px'}}>
                             <input type="hidden" name="id" />
-                            <div className="form-group">
+                            <div className="form-group" >
                                 <label for="productName">Name</label>
                                 <input type="text" className="form-control" onChange={(e) => handleChange(e, "productName")}
                                     value={data.productName} required name="productName" id="productName"
@@ -176,7 +176,7 @@ function AddProduct() {
                         </div>
                     </div>
 
-                    <div className="form-group" style={{padding:'0px 100px'}}>
+                    <div className="form-group" style={{padding:'-5px 120px'}}>
                                 <label for="productDescription">Product Description</label>
                                 <JoditEditor
                                     // ref={editor}

@@ -87,7 +87,7 @@ function ProductUpdate() {
                 <h2  style={{ marginBottom: '40px',color:'#54b9c4',textAlign:'center',marginTop:'20px' }}>Update Product</h2>
                 <form onSubmit={submitForm}>
                     <div className="row" style={{width:'100%',margin:'auto',paddingLeft:'130px',paddingBottom:'30px'}}>
-                        <div className="col-sm-5">
+                        <div className="col-sm-5" style={{marginLeft:'-25px',marginRight:'65px'}}>
                             <input type="hidden" name="id" />
                             <div className="form-group">
                                 <label for="productName">Name</label>
@@ -120,7 +120,7 @@ function ProductUpdate() {
                         </div>
                     </div>
 
-                    <div className="form-group" style={{padding:'0px 100px'}}>
+                    <div className="form-group"  style={{padding:'0 120px'}}>
                         <label for="productDescription">Product Description</label>
                         <JoditEditor
                             // ref={editor}

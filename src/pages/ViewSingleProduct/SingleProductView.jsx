@@ -134,7 +134,9 @@ function SingleProductView() {
             {/* <hr style={{ border: '1px solid gray' }} />
             <h6 style={{ fontWeight: 400 }}>Description</h6>
             <div dangerouslySetInnerHTML={{ __html: data.productDescription }}></div> */}
+              <hr style={{ border: '0.05px solid gray',margin:'0',padding:'0' }} />
             <img src={singleprod} height="40%" width="70%" style={{display:'flex',alignItems:'center',marginLeft:'10%'}}/>
+  
             <div className="btn-add-div" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-around', marginLeft: '-30px' }}>
               <Link onClick={addtocart} to="/"><button style={{ backgroundColor: '#33bbca', borderRadius: '5px', fontSize: '20px' }}>Add to cart</button></Link>
               <Link> <button style={{ backgroundColor: '#33bbca', borderRadius: '5px', fontSize: '20px' }}>Buy Now</button> </Link>
