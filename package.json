@@ -43,6 +43,7 @@
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.3.11",
     "sweetalert2": "^11.7.8",
+    "use-deps": "^0.0.1",
     "use-history": "^1.4.1",
     "web-vitals": "^2.1.4",
     "yup": "^1.2.0"

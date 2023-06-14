@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,useDeps } from "react";
 import "./Allproducts.css";
 import { Link } from "react-router-dom";
 import icon from "../../assets/All_Icons/user icon.png";
@@ -52,12 +52,15 @@ function Allproducts(props) {
       })
   };
 
+  
+
   useEffect(() => {
     fetchData();
   }, [
     pageNumber,
     sortBy,
     dir,
+    
   ]);
   console.log(product);
   // console.log(totalpages);
