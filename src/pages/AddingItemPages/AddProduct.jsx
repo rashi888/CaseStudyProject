@@ -106,10 +106,10 @@ function AddProduct() {
     return (
         <>
 
-            <div className="containerr" style={{ margin: '3% 7%', padding: '20px 40px', boxShadow: '10px 5px 10px lightgray', borderRadius: '2px', backgroundColor: 'white' }}>
-                <h2 style={{ marginBottom: '20px',color:'gray' }}>Add a new Product</h2>
+            <div className="containerr" style={{ margin: '30px auto',width:'1100px',padding:'20px 40px', boxShadow: '10px 5px 10px lightgray', borderRadius: '2px',backgroundColor:'white' }}>
+                <h2 style={{ marginBottom: '40px',color:'gray',textAlign:'center' }}>Add a new Product</h2>
                 <form onSubmit={submitForm} >
-                    <div className="row" >
+                    <div className="row" style={{width:'100%',margin:'auto',paddingLeft:'130px',paddingBottom:'30px'}}>
                         <div className="col-sm-5"  >
                             <input type="hidden" name="id" />
                             <div className="form-group">
@@ -136,24 +136,6 @@ function AddProduct() {
                                     value={data.stock} required name="stock" id="stock"
                                     placeholder="Stock" />
                             </div>
-                            {/* <div className="form-group">
-                                <label for="productDescription">Product Description</label>
-                                <JoditEditor
-                                    // ref={editor}
-                                    style={{
-                                        width: '100%',
-                                        height: '300px',
-                                        border: '1px solid #ccc',
-                                        borderRadius: '5px',
-                                        // Add more CSS properties as needed
-                                    }}
-                                    value={data.productDescription}
-                                    // config={config}
-                                    tabIndex={1} // tabIndex of textarea
-                                    onBlur={(newContent) => setData({ ...data, productDescription: newContent })} // preferred to use only this option to update the content for performance reasons
-                                    onChange={(newContent) => { }}
-                                />
-                            </div> */}
                         </div>
                         <div className="col-sm-5">
                             <div className="form-group">
@@ -188,7 +170,7 @@ function AddProduct() {
                         </div>
                     </div>
 
-                    <div className="form-group">
+                    <div className="form-group" style={{padding:'0px 100px'}}>
                                 <label for="productDescription">Product Description</label>
                                 <JoditEditor
                                     // ref={editor}
@@ -207,7 +189,7 @@ function AddProduct() {
                                 />
                             </div>
 
-                            <button type="submit" className="btn btn-primary" style={{ marginTop: '20px' }}>Add product</button>
+                            <button type="submit" className="btn btn-primary" style={{ marginTop: '20px',marginLeft:'43%',marginBottom:'30px' }}>Add product</button>
 
                 </form>
             </div>
