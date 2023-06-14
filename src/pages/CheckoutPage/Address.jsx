@@ -23,7 +23,11 @@ function Address() {
 
 
     const fetchdata = () => {
-        axios.get("http://localhost:8080/api/deliveryDetails/user/" + localStorage.getItem("userId"))
+        axios.get("http://localhost:8080/api/deliveryDetails/user/" + localStorage.getItem("userId"),{
+            headers: {
+                "Authorization": "Bearer " + localStorage.getItem("token"),
+            }
+        })
             // axios.get("http://localhost:8080/api/deliveryDetails/" )
             .then((resp) => {
                 console.log(resp["data"]);
@@ -33,7 +37,11 @@ function Address() {
 
     const usercart=() => {
         let userId = localStorage.getItem("userId");
-        axios.get(`http://localhost:8080/api/cart/viewCart?userId=${userId}`)
+        axios.get(`http://localhost:8080/api/cart/viewCart?userId=${userId}`,{
+            headers: {
+                "Authorization": "Bearer " + localStorage.getItem("token"),
+            }
+        })
             .then((response) => {
                 console.log(response.data);
                 setGrandtotal(response.data.grandTotal);
@@ -91,7 +99,11 @@ function Address() {
         const data = Object.fromEntries(formdata.entries());
         data["tempUserId"] = localStorage.getItem("userId");
         console.log(data);
-        axios.post("http://localhost:8080/api/deliveryDetails/", data)
+        axios.post("http://localhost:8080/api/deliveryDetails/", data,{
+            headers: {
+                "Authorization": "Bearer " + localStorage.getItem("token"),
+            }
+        })
             .then((resp) => {
                 console.log("success log");
                 Swal.fire({
@@ -113,7 +125,11 @@ function Address() {
         const data = Object.fromEntries(formdata.entries());
         data["tempUserId"] = localStorage.getItem("userId");
         console.log(data);
-        axios.put("http://localhost:8080/api/deliveryDetails/" + id, data)
+        axios.put("http://localhost:8080/api/deliveryDetails/" + id, data,{
+            headers: {
+                "Authorization": "Bearer " + localStorage.getItem("token"),
+            }
+        })
             .then((resp) => {
                 console.log("success log");
                 Swal.fire({
@@ -149,7 +165,11 @@ function Address() {
         
         if (datas.paymentMethod === "COD") {
             axios
-                .post("http://localhost:8080/api/order/", datas)
+                .post("http://localhost:8080/api/order/", datas,{
+                    headers: {
+                        "Authorization": "Bearer " + localStorage.getItem("token"),
+                    }
+                })
                 .then((resp) => {
                     console.log(resp["data"]);
                     Swal.fire({
@@ -181,7 +201,11 @@ function Address() {
                 console.log(response.razorpay_payment_id);
                 console.log(response.razorpay_order_id);
                 console.log(response.razorpay_signature);
-                axios.post("http://localhost:8080/api/order/", datas)
+                axios.post("http://localhost:8080/api/order/", datas,{
+                    headers: {
+                        "Authorization": "Bearer " + localStorage.getItem("token"),
+                    }
+                })
                     .then((resp) => {
                         console.log(resp["data"]);
                         console.log(resp);
@@ -190,7 +214,11 @@ function Address() {
                         console.log(id);
                         const orderStatus = "Order Placed";
                         axios.put("http://localhost:8080/api/order/orderStatus/"+id, 
-                        {orderStatus}
+                        {orderStatus},{
+                            headers: {
+                                "Authorization": "Bearer " + localStorage.getItem("token"),
+                            }
+                        }
                         )
                         .then((resp) => {
                             console.log(resp["data"]);

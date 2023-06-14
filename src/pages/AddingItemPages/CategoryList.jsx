@@ -10,6 +10,9 @@ function CategoryList() {
     const deletecategory = (id) => {
         fetch("http://localhost:8080/api/categories/" + id, {
             method: "DELETE",
+            headers: {
+                "Authorization": "Bearer " + localStorage.getItem("token"),
+            }
         }).then(() => {
             Swal.fire({
                 title: "Success",
@@ -24,7 +27,11 @@ function CategoryList() {
 
     const fetchData = () => {
         setIsLoading(true);
-        return fetch("http://localhost:8080/api/categories/")
+        return fetch("http://localhost:8080/api/categories/",{
+            headers: {
+                "Authorization": "Bearer " + localStorage.getItem("token"),
+            }
+        })
             .then((response) => response.json())
             .then((data) => {
                 setProduct(data)

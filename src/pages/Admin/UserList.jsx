@@ -21,7 +21,11 @@ function UserList() {
 
         }).then((result) => {
             if (result.isConfirmed) {
-                axios.delete("http://localhost:8080/api/users/" + userId)
+                axios.delete("http://localhost:8080/api/users/" + userId,{
+                    headers: {
+                        "Authorization": "Bearer " + localStorage.getItem("token"),
+                    }
+                })
                     .then((resp) => {
                         console.log(resp["data"]);
                         console.log("success log");
@@ -47,7 +51,11 @@ function UserList() {
 
     const fetchData = () => {
         setIsLoading(true);
-        return fetch("http://localhost:8080/api/users/")
+        return fetch("http://localhost:8080/api/users/",{
+            headers: {
+                "Authorization": "Bearer " + localStorage.getItem("token"),
+            }
+        })
        
             .then((response) => response.json())
             .then((data) => {setUser(data)

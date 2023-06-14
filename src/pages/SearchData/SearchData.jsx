@@ -26,6 +26,9 @@ const SearchData = (props) => {
     fetch(url, {
       method: "POST",
       body: formdata,
+      headers: {
+        "Authorization": "Bearer " + localStorage.getItem("token"),
+      },
     })
       .then((response) => response.json())
       .then((data) => {
@@ -54,9 +57,12 @@ const SearchData = (props) => {
   
 
   const fetchData = () => {
-    return fetch(api
-      // "http://localhost:8080/api/products?pageNumber=0&pageSize=5&sortBy=productId&sortDir=desc"
-      // "http://localhost:8080/api/category/1/products"
+    return fetch(api,{
+      headers: {
+          "Authorization": "Bearer " + localStorage.getItem("token"),
+      }
+  }
+      
     )
       .then((response) => response.json())
       .then((data) => setProduct(data["content"]));

@@ -25,7 +25,12 @@ function AddCategory() {
 
     const submitForm = (event) => {
         event.preventDefault();
-        axios.post("http://localhost:8080/api/categories/", data)
+        axios.post("http://localhost:8080/api/categories/", data,
+        {
+            headers: {
+                "Authorization": "Bearer " + localStorage.getItem("token"),
+            }
+        })
             .then((resp) => {
                 console.log(resp["data"]["categoryId"]);
                 console.log("success log");

@@ -24,7 +24,11 @@ function CategoryListAdmin() {
 
     const fetchData = () => {
         setIsLoading(true);
-        return fetch("http://localhost:8080/api/categories/")
+        return fetch("http://localhost:8080/api/categories/",{
+            headers: {
+                "Authorization": "Bearer " + localStorage.getItem("token"),
+            }
+        })
             .then((response) => response.json())
             .then((data) => {setProduct(data)
                 setIsLoading(false);

@@ -27,7 +27,11 @@ function SingleProductView() {
   );
 
   const fetchdata = () => {
-    axios.get("http://localhost:8080/api/products/" + productId)
+    axios.get("http://localhost:8080/api/products/" + productId,{
+      headers: {
+          "Authorization": "Bearer " + localStorage.getItem("token"),
+      }
+  })
       .then((resp) => {
         console.log(resp["data"]);
         setData(resp["data"]);
@@ -58,6 +62,9 @@ function SingleProductView() {
     fetch(url, {
       method: "POST",
       body: formdata,
+      headers: {
+        "Authorization": "Bearer " + localStorage.getItem("token"),
+      },
     })
       .then((response) => response.json())
       .then((data) => {

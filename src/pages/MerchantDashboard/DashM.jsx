@@ -9,7 +9,11 @@ function DashM() {
   };
 
 const stat =()=>{
-  axios.get("http://localhost:8080/api/stats/merchant/"+localStorage.getItem("userId"))
+  axios.get("http://localhost:8080/api/stats/merchant/"+localStorage.getItem("userId"),{
+    headers: {
+        "Authorization": "Bearer " + localStorage.getItem("token"),
+    }
+})
   .then((resp) => {
     console.log(resp["data"]);
     setData(resp["data"]);

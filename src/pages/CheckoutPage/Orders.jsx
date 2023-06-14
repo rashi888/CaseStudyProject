@@ -7,7 +7,11 @@ function Orders() {
     const [order, setOrder] = React.useState([]);
 
     const fetchData = () => {
-        return fetch("http://localhost:8080/api/order/userOrders/" + localStorage.getItem("userId"))
+        return fetch("http://localhost:8080/api/order/userOrders/" + localStorage.getItem("userId"),{
+            headers: {
+                "Authorization": "Bearer " + localStorage.getItem("token"),
+            }
+        })
             .then((response) => response.json())
             .then((data) => setOrder(data["content"]));
     };

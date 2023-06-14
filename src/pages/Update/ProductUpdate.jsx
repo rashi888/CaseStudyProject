@@ -35,7 +35,11 @@ function ProductUpdate() {
 
     const submitForm = (event) => {
         event.preventDefault();
-        axios.put("http://localhost:8080/api/products/" + productId, data)
+        axios.put("http://localhost:8080/api/products/" + productId, data,{
+            headers: {
+                "Authorization": "Bearer " + localStorage.getItem("token"),
+            }
+        })
             .then((resp) => {
                 console.log(resp["data"]["productId"]);
                 console.log("success log");
@@ -49,7 +53,11 @@ function ProductUpdate() {
     }
 
     const fetchdata = () => {
-        axios.get("http://localhost:8080/api/products/" + productId)
+        axios.get("http://localhost:8080/api/products/" + productId,{
+            headers: {
+                "Authorization": "Bearer " + localStorage.getItem("token"),
+            }
+        })
             .then((resp) => {
                 console.log(resp["data"]);
                 setData(resp["data"]);
