@@ -52,13 +52,16 @@ function Allproducts(props) {
       })
   };
 
-  useDeps(() => {
-    fetchData();
-  }, []);
+  
 
   useEffect(() => {
     fetchData();
-  }, [pageNumber, sortBy, dir]);
+  }, [
+    pageNumber,
+    sortBy,
+    dir,
+    
+  ]);
   console.log(product);
   // console.log(totalpages);
   const page = [];
