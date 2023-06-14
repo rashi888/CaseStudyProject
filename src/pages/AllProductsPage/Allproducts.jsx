@@ -117,7 +117,7 @@ function Allproducts(props) {
               marginLeft: "20px",
             }}
           >
-            All Products
+            {props.title}
           </h2>
           <div class="dropdown show">
             <Link
@@ -171,21 +171,10 @@ function Allproducts(props) {
               </Link>
             </div>
           </div>
-          {/* <div className="sorting-div">
-            <p className='sorting'>Sort by: <bold>New Arrivals</bold></p>
-            <i className='sorting'><RiArrowDownSLine /></i>
-            <div className="dropdown-sorting">
-              <p>New Arrivals</p>
-              <p>Price: Low to High</p>
-              <p>Price: High to Low</p>
-            </div>
-          </div> */}
+        
         </div>
 
-        {/* <div>{loading? ( <div>Loading...</div>):( "hello" )}</div> */}
-        {/* <Spinner color="primary" >
-          Loading...
-        </Spinner> */}
+     
 
         {isLoading ? (
           <Spinner
