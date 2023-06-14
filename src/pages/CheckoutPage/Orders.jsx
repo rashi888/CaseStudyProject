@@ -51,7 +51,7 @@ function Orders() {
                                         <div className="img-order-img">
                                             <img src={
                                                 "http://localhost:8080/api/products/image/" +
-                                                item.product.productPhoto
+                                                item.product.productPhoto[0]
                                             } alt="" height="150px" width="150px" />
                                         </div>
                                         <div className="content-box">
