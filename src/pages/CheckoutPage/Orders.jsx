@@ -49,8 +49,8 @@ function Orders() {
                                             <h6 style={{ color: 'white' }}>TOTAL <br /> Rs. {item.totalPrice}</h6>
                                             <div className="user-div">
                                                 <h6 style={{ color: 'white' }}>SHIP TO <br /> {item.shippedTo} <i class="ri-arrow-down-s-line" > </i></h6></div>
-                                            <div className="add-hover">
-                                                <p style={{ top: '5px' }}>{item.shippingAddress} </p>
+                                            <div className="add-hover" >
+                                                <p >{item.shippingAddress} </p>
                                             </div>
 
 
@@ -76,9 +76,6 @@ function Orders() {
                                                     <div className="option1-div">
                                                         <button className='btn-btn' style={{ width: '230px' }}>Cancel the Order</button>
                                                     </div>
-                                                    {/* <div className="option2-div">
-                                                <button className='btn-btn'>Return Order</button>
-                                            </div> */}
                                                 </div>
                                             </div>
                                         </div>
