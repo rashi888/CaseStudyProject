@@ -186,7 +186,7 @@ function CartPage() {
                                 <img
                                   src={
                                     "http://localhost:8080/api/products/image/" +
-                                    item.product.productPhoto
+                                    item.product.productPhoto[0]
                                   }
                                   alt="img"
                                   className="img-fluid w-100"

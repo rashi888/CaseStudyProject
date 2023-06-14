@@ -50,21 +50,32 @@ function SingleProductView() {
   console.log(data);
 
 
-
-  const addtocart = (id) => (e) => {
+  const addtocart = (e) => {
     console.log(e.target.value);
     let userId = localStorage.getItem("userId");
+    
+
+    if(userId==null){
+      Swal.fire({
+       
+        text: "Please Login First",
+        icon: "info",
+      });
+
+    }else{
     const url = "http://localhost:8080/api/cart/addToCart";
     const formdata = new FormData();
-    formdata.append("productId", id);
+    formdata.append("productId", productId);
     formdata.append("userId", userId);
 
     fetch(url, {
       method: "POST",
       body: formdata,
-      headers: {
-        "Authorization": "Bearer " + localStorage.getItem("token"),
-      },
+      
+        headers: {
+            "Authorization": "Bearer " + localStorage.getItem("token"),
+        
+    }
     })
       .then((response) => response.json())
       .then((data) => {
@@ -79,6 +90,7 @@ function SingleProductView() {
         console.log(error);
       }
       );
+    }
 
 
   };
