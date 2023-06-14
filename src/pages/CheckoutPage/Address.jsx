@@ -5,6 +5,7 @@ import { FormGroup, Form, Input, Label, Row, Col } from 'reactstrap';
 import Modal from './Modal';
 import axios from 'axios';
 import useRazorpay from "react-razorpay";
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -13,9 +14,11 @@ import Swal from 'sweetalert2';
 
 function Address() {
 
+    const navigate = useNavigate();
+
     const [data, setData] = useState([]);
-    const [deliveryDetailsId, setDeliveryDetailsId] = useState(1);
-    const [paymentMethod, setPaymentMethod] = useState("COD");
+    const [deliveryDetailsId, setDeliveryDetailsId] = useState(null);
+    const [paymentMethod, setPaymentMethod] = useState(null);
     const [grandtotal, setGrandtotal] = useState(0);
     
     const name = localStorage.getItem("name");
@@ -162,6 +165,15 @@ function Address() {
         e.preventDefault();
         console.log(datas);
         console.log(paymentMethod);
+
+        if(datas.deliveryDetailsId==null || datas.paymentMethod==null){
+            Swal.fire({
+                title: "Error",
+                text: "Please Select Delivery Address and Payment Method",
+                icon: "error",
+            });
+        }
+        else{
         
         if (datas.paymentMethod === "COD") {
             axios
@@ -187,6 +199,7 @@ function Address() {
           setPaymentMethod("Online");
            PayByRazorPay();
     }
+}
 }
     const PayByRazorPay = () => {
         const options = {
@@ -229,6 +242,8 @@ function Address() {
                             text: "Order Placed Successfully",
                             icon: "success",
                         });
+                        navigate("/orders");
+
                     }
                     )
             },
