@@ -17,7 +17,7 @@ function Allproducts(props) {
   const [totalpages, setTotalpages] = useState(0);
   const [pageNumber, setPageNumber] = useState(0);
   const [sortBy, setSortBy] = useState("productId");
-  const [dir, setDir] = useState("ASC");
+  const [dir, setDir] = useState("DESC");
 
   const setpage = (item) => (e) => {
     console.log(item);
@@ -27,7 +27,7 @@ function Allproducts(props) {
   if(api !== props.api){
     setApi(props.api);
     setPageNumber(0);
-    
+
   }
  
 
@@ -65,10 +65,10 @@ function Allproducts(props) {
   useEffect(() => {
     fetchData();
   }, [
+    api,
     pageNumber,
     sortBy,
     dir,
-    api,
     location.key
   ]);
   console.log(product);
@@ -151,7 +151,6 @@ function Allproducts(props) {
                 href="#"
                 onClick={() => {
                   setSortBy("productId");
-                  fetchData();
                 }}
               >
                 New Arrivals
@@ -162,7 +161,7 @@ function Allproducts(props) {
                 onClick={() => {
                   setSortBy("productPrice");
                   setDir("ASC");
-                  fetchData();
+                  
                 }}
               >
                 Price: Low to High
@@ -173,7 +172,6 @@ function Allproducts(props) {
                 onClick={() => {
                   setSortBy("productPrice");
                   setDir("DESC");
-                  fetchData();
                 }}
               >
                 Price: High to Low
