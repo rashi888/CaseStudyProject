@@ -24,7 +24,6 @@ function Items1() {
       .then((data) => {
         setProduct(data["content"])
         setIsLoading(false);
-
       });
   };
 

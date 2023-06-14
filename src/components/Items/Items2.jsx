@@ -14,7 +14,7 @@ function Items2() {
   const fetchData = () => {
     setIsLoading(true);
 
-    return fetch("http://localhost:8080/api/products?pageNumber=0&pageSize=10&sortBy=productId&sortDir=asc",{
+    return fetch("http://localhost:8080/api/category/2/products?pageNumber=0&pageSize=10&sortBy=productId&sortDir=desc",{
       headers: {
           "Authorization": "Bearer " + localStorage.getItem("token"),
       }
@@ -36,7 +36,6 @@ function Items2() {
 
   const responsive = {
     superLargeDesktop: {
-      // the naming can be any, depends on you.
       breakpoint: { max: 4000, min: 3000 },
       items: 10
     },
@@ -107,7 +106,7 @@ function Items2() {
     <>
       <div className="wrapperr" style={{ margin: '50px auto' }}>
 
-        <h3 className="wrapper-heading1" >All Products  </h3>
+        <h3 className="wrapper-heading1" >Packed with features  </h3>
         <hr className="horizontal-line" />
 
         {isLoading ? (

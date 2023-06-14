@@ -14,7 +14,7 @@ function Items4() {
     const fetchData = () => {
         setIsLoading(true);
 
-        return fetch("http://localhost:8080/api/category/3/products",{
+        return fetch("http://localhost:8080/api/category/5/products",{
             headers: {
                 "Authorization": "Bearer " + localStorage.getItem("token"),
             }
@@ -41,7 +41,7 @@ function Items4() {
         },
         desktop: {
             breakpoint: { max: 3000, min: 1024 },
-            items: 3
+            items: 4
         },
         tablet: {
             breakpoint: { max: 1024, min: 464 },
@@ -102,7 +102,7 @@ function Items4() {
     return (
         <>
             <div className="wrapperr" style={{ margin: '50px auto' }}>
-                <h3 className="wrapper-heading1" >ShopEase Originals </h3>
+                <h3 className="wrapper-heading1" >Make your home significantly better !  </h3>
                 <hr className="horizontal-line" />
 
                 {isLoading ? (

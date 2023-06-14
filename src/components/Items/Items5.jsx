@@ -14,7 +14,7 @@ function Items5() {
   const fetchData = () => {
     setIsLoading(true);
 
-    return fetch("http://localhost:8080/api/products?pageNumber=0&pageSize=10&sortBy=productId&sortDir=asc",{
+    return fetch("http://localhost:8080/api/category/6/products?pageNumber=0&pageSize=10&sortBy=productId&sortDir=asc",{
       headers: {
           "Authorization": "Bearer " + localStorage.getItem("token"),
       }
@@ -107,7 +107,7 @@ function Items5() {
     <>
       <div className="wrapperr" style={{ margin: '50px auto' }}>
 
-        <h3 className="wrapper-heading1" >Shop with Shopease</h3>
+        <h3 className="wrapper-heading1" >Healthy skin, beautiful you</h3>
         <hr className="horizontal-line" />
 
         {isLoading ? (

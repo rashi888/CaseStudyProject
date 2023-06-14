@@ -14,7 +14,7 @@ function Items6() {
     const fetchData = () => {
         setIsLoading(true);
 
-        return fetch("http://localhost:8080/api/products?pageNumber=0&pageSize=10&sortBy=productId&sortDir=asc", {
+        return fetch("http://localhost:8080/api/category/1/products?pageNumber=0&pageSize=10&sortBy=productId&sortDir=asc", {
             headers: {
                 "Authorization": "Bearer " + localStorage.getItem("token"),
             }
@@ -107,7 +107,7 @@ function Items6() {
         <>
             <div className="wrapperr" style={{ margin: '50px auto' }}>
 
-                <h3 className="wrapper-heading1" >Items with exciting prices  </h3>
+                <h3 className="wrapper-heading1" >Look no further! We got everything for you.</h3>
                 <hr className="horizontal-line" />
 
                 {isLoading ? (
