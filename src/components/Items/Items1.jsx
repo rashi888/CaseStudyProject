@@ -15,7 +15,7 @@ function Items1() {
 
     setIsLoading(true);
 
-    return fetch("http://localhost:8080/api/category/2/products",{
+    return fetch("http://localhost:8080/api/category/4/products",{
       headers: {
           "Authorization": "Bearer " + localStorage.getItem("token"),
       }
