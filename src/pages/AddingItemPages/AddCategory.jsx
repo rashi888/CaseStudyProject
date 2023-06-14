@@ -49,7 +49,9 @@ function AddCategory() {
 
     return (
         <>
-            <div className="containerr" style={{ margin: "2% 20%", backgroundColor: 'white', boxShadow: '5px 10px 30px lightgray', borderRadius: '4px', padding: '2%' }}>
+            <div className="containerr" style={{width:'800px', margin: "2% auto", backgroundColor: 'white', boxShadow: '5px 10px 30px lightgray', borderRadius: '4px', padding: '10px 80px' }}>
+            <h2 style={{ marginBottom: '40px',color:'#54b9c4',marginTop:'20px' }}>Add a Category</h2>
+               
                 <div className="row">
                     <div className="col-sm-4">
                         <form onSubmit={submitForm}>
@@ -69,7 +71,7 @@ function AddCategory() {
                             </div>
 
                             <button type="submit" className="btn btn-primary">Add Category</button>
-                            <Link to='/mdash' style={{ margin: "2%  0px ", padding: '3%', width: '70%' }} className=" d-block btn btn-primary ">Back To DashBoard</Link>
+                            <Link to='/mdash' style={{ margin: "15px  0px ", padding: '3%', width: '75%' }} className=" d-block btn btn-primary ">Back To DashBoard</Link>
 
                         </form>
                     </div>

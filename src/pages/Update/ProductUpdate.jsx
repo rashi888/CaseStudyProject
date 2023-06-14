@@ -1,4 +1,4 @@
-import React, { useState, useEffect,useRef, useMemo } from 'react'
+import React, { useState, useEffect, useRef, useMemo } from 'react'
 import axios from 'axios'
 import Swal from 'sweetalert2'
 import { useNavigate } from "react-router-dom";
@@ -18,12 +18,12 @@ function ProductUpdate() {
         productPrice: "",
         productDescription: "",
         productPhoto: "",
-        productMRP: "", 
+        productMRP: "",
     });
 
     const navigate = useNavigate();
 
-    
+
 
     useEffect(() => {
         fetchdata();
@@ -74,21 +74,20 @@ function ProductUpdate() {
 
 
 
-    
 
 
 
 
 
-        return (
+
+    return (
         <>
 
             <div className="containerr" style={{ margin: '3% 7%', padding: '20px 40px', boxShadow: '10px 5px 10px lightgray', borderRadius: '2px', backgroundColor: 'white' }}>
-                <h3 style={{ marginBottom: '10px' }}>Add a new Product</h3>
+                <h2  style={{ marginBottom: '40px',color:'#54b9c4',textAlign:'center',marginTop:'20px' }}>Update Product</h2>
                 <form onSubmit={submitForm}>
-                    <div className="row">
-                        <div className="col-sm-5">
-
+                    <div className="row" style={{width:'100%',margin:'auto',paddingLeft:'130px',paddingBottom:'30px'}}>
+                        <div className="col-sm-5" style={{marginLeft:'-25px',marginRight:'65px'}}>
                             <input type="hidden" name="id" />
                             <div className="form-group">
                                 <label for="productName">Name</label>
@@ -103,7 +102,9 @@ function ProductUpdate() {
                                     value={data.stock} required name="productStock" id="productStock"
                                     placeholder="Stock" />
                             </div>
-                            
+
+                        </div>
+                        <div className="col-sm-5">
                             <div className="form-group">
                                 <label for="productPrice">Price</label>
                                 <input type="number" className="form-control" onChange={(e) => handleChange(e, "productPrice")}
@@ -116,34 +117,21 @@ function ProductUpdate() {
                                     value={data.productMRP} required name="productMRP" id="productMRP"
                                     placeholder="MRP" />
                             </div>
-
-                            <div className="form-group">
-                                <label for="productDescription">Product Description</label>
-                                <JoditEditor
-                                    // ref={editor}
-                                    value={data.productDescription}
-                                    // config={config}
-                                    tabIndex={1} // tabIndex of textarea
-                                    onBlur={(newContent) => setData({ ...data, productDescription: newContent })} // preferred to use only this option to update the content for performance reasons
-                                    onChange={(newContent) => { }}
-                                />
-                            </div>
-                        </div>
-                        <div className="col-sm-5">
-                            {/* <p>Product Image</p>
-                            <div className="custom-file">
-                                <input type="file" className="custom-file-input" onChange={handleFileChange} name="productPhoto" value={data.productPhoto} accept="image/jpeg, image/png" id="productPhoto" />
-                                <label className="custom-file-label" for="productImage" > {selectedImage ? (
-                                    <p style={{ fontWeight: 300 }}>{selectedImage}</p>
-                                ) : (
-                                    <p style={{ fontWeight: 300 }}>Choose image</p>
-                                )}</label>
-                            
-                            </div> */}
-
-                            <button type="submit" className="btn btn-primary" style={{marginTop:'20px'}}>Update product</button>
                         </div>
                     </div>
+
+                    <div className="form-group"  style={{padding:'0 120px'}}>
+                        <label for="productDescription">Product Description</label>
+                        <JoditEditor
+                            // ref={editor}
+                            value={data.productDescription}
+                            // config={config}
+                            tabIndex={1} // tabIndex of textarea
+                            onBlur={(newContent) => setData({ ...data, productDescription: newContent })} // preferred to use only this option to update the content for performance reasons
+                            onChange={(newContent) => { }}
+                        />
+                    </div>
+                    <button type="submit" className="btn btn-primary" style={{ marginTop: '20px',marginLeft:'43%',marginBottom:'30px' }}>Update product</button>
                 </form>
             </div>
 
