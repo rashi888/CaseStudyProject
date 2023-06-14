@@ -6,7 +6,7 @@ import "./Items.css";
 import Swal from "sweetalert2";
 import { Spinner } from 'reactstrap'
 
-function Items2() {
+function Items5() {
 
   const [product, setProduct] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -14,7 +14,7 @@ function Items2() {
   const fetchData = () => {
     setIsLoading(true);
 
-    return fetch("http://localhost:8080/api/category/2/products?pageNumber=0&pageSize=10&sortBy=productId&sortDir=desc",{
+    return fetch("http://localhost:8080/api/category/6/products?pageNumber=0&pageSize=10&sortBy=productId&sortDir=asc",{
       headers: {
           "Authorization": "Bearer " + localStorage.getItem("token"),
       }
@@ -36,6 +36,7 @@ function Items2() {
 
   const responsive = {
     superLargeDesktop: {
+      // the naming can be any, depends on you.
       breakpoint: { max: 4000, min: 3000 },
       items: 10
     },
@@ -106,7 +107,7 @@ function Items2() {
     <>
       <div className="wrapperr" style={{ margin: '50px auto' }}>
 
-        <h3 className="wrapper-heading1" >Packed with features  </h3>
+        <h3 className="wrapper-heading1" >Healthy skin, beautiful you</h3>
         <hr className="horizontal-line" />
 
         {isLoading ? (
@@ -138,24 +139,6 @@ function Items2() {
                         </NavLink>
                       </p>
                     </div>
-                    {/* <Link to="mobiles"><script>const id = item.productId;</script>
-                <div className="image-items">
-                  <img
-                    src={"http://localhost:8080/api/products/image/" + item.productPhoto}
-                    className="card-img-top"
-                    alt="product.title"
-                  />
-                </div>
-                </Link>
-                <h4 className="heading-main">{item.productName}</h4>
-                <p className='price-main'>₹ {item.productPrice}</p>
-                <p className='description-main'> {item.productDescription}</p>
-                <p>
-                  <NavLink to="/cart">
-                    <button type="button" class="btn-item btn-warning">Add to cart</button>
-                  </NavLink>
-
-                </p> */}
                   </div>
                 </>
                 );
@@ -169,4 +152,4 @@ function Items2() {
   )
 }
 
-export default Items2
+export default Items5

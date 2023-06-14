@@ -63,8 +63,17 @@ function App() {
   const electronicsApi = "http://localhost:8080/api/category/4/products";
   const homeApi = "http://localhost:8080/api/category/5/products";
   const beautyApi = "http://localhost:8080/api/category/6/products";
-  // const allproductsApi = "http://localhost:8080/api/products?pageSize=100";
+  const toysApi = "http://localhost:8080/api/category/7/products";
+  const starbucksApi = "http://localhost:8080/api/category/9/products";
+  const watchesApi = "http://localhost:8080/api/category/10/products";
+  const footwearApi = "http://localhost:8080/api/category/11/products";
+  const personalcareApi = "http://localhost:8080/api/category/12/products";
+  const personalcareforhimApi = "http://localhost:8080/api/category/13/products";
+  const personalcareforherApi = "http://localhost:8080/api/category/14/products";
+  const householdcareApi = "http://localhost:8080/api/category/14/products";
   const allproductsApi = "http://localhost:8080/api/products";
+
+
   return (
     <>
       <Navbar />
@@ -78,12 +87,20 @@ function App() {
         <Route path='/tiles' Component={Tiles} />
         <Route path='/inbuiltcartview' Component={AddItem} />
 
-        <Route path='/Grocery' Component={() => <Allproducts api={groceryApi} />} />
-        <Route path='/Mobile' Component={() => <Allproducts api={mobileApi} />} />
-        <Route path='/Fashion' Component={() => <Allproducts api={fashionApi} />} />
-        <Route path='/Electronics' Component={() => <Allproducts api={electronicsApi} />} />
-        <Route path='/Home' Component={() => <Allproducts api={homeApi} />} />
-        <Route path='/Beauty' Component={() => <Allproducts api={beautyApi} />} />
+        <Route path='/Grocery' Component={() => <Allproducts api={groceryApi} title="Grocery" />} />
+        <Route path='/Mobile' Component={() => <Allproducts api={mobileApi} title="Mobile" />} />
+        <Route path='/Fashion' Component={() => <Allproducts api={fashionApi} title="Fashion" />} />
+        <Route path='/Electronics' Component={() => <Allproducts api={electronicsApi} title="Electronics" />} />
+        <Route path='/Home' Component={() => <Allproducts api={homeApi} />} title="Home" />
+        <Route path='/Beauty' Component={() => <Allproducts api={beautyApi} title="Beauty" />} />
+        <Route path='/Toys' Component={() => <Allproducts api={toysApi} />} title="Toys" />
+        <Route path='/Starbucks' Component={() => <Allproducts api={starbucksApi} title="Starbucks" />} />
+        <Route path='/Watches' Component={() => <Allproducts api={watchesApi} title="Watches" />} />
+        <Route path='/Footwear' Component={() => <Allproducts api={footwearApi} title="Footwear" />} />
+        <Route path='/personalcare' Component={() => <Allproducts api={personalcareApi} title="Personal care" />} />
+        <Route path='/personalcareforhim' Component={() => <Allproducts api={personalcareforhimApi} title="Personal care for him"/>} />
+        <Route path='/personalcareforher' Component={() => <Allproducts api={personalcareforherApi} title="Personal care for her"/>} />
+        <Route path='/Householdcare' Component={() => <Allproducts api={householdcareApi} title="Household Care"/>} />
         <Route path='/search' Component={() => <SearchData />} />
 
         <Route path="/productlist" Component={ProductList} />

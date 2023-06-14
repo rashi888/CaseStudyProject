@@ -2,9 +2,6 @@ import React, { Component } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import image1 from '../../assets/CarouselImg/1.png'
-import image2 from '../../assets/CarouselImg/2.png'
-import image3 from '../../assets/CarouselImg/3.png'
 import "./BannerMain.css"
 import gifBanner1 from "../../assets/BannerGifs/adbannergif.gif"
 import gifBanner2 from "../../assets/BannerGifs/End of season.gif"
@@ -22,32 +19,32 @@ export default class BannerMain extends Component {
       speed: 500,
       slidesToShow: 1,
       slidesToScroll: 1,
-      autoplay: true, // Enable automatic transitions
-      autoplaySpeed: 3000,// Set the transition interval in milliseconds
+      autoplay: true, 
+      autoplaySpeed: 3000,
     };
     return (
       <div style={{ margin: 'auto', marginBottom: '50px', marginTop: '20px' }}>
         <Slider {...settings}>
           <div className="carousel1-banner">
-            <img src={gifBanner1} alt="" height="250px" width="1250px" />
+            <img src={gifBanner1} height="250px" width="1250px" />
           </div>
           <div className="carousel1-banner">
-            <img src={gifBanner4} alt="" height="250px" width="1250px" />
+            <img src={gifBanner4} height="250px" width="1250px" />
           </div>
           <div className="carousel1-banner">
-            <img src={gifBanner2} alt="" height="250px" width="1250px" />
+            <img src={gifBanner2} height="250px" width="1250px" />
           </div>
           <div className="carousel1-banner">
-            <img src={gifBanner7} alt="" height="250px" width="1250px" />
+            <img src={gifBanner7} height="250px" width="1250px" />
           </div>
           <div className="carousel1-banner">
-            <img src={gifBanner3} alt="" height="250px" width="1250px" />
+            <img src={gifBanner3}  height="250px" width="1250px" />
           </div>
           <div className="carousel1-banner">
-            <img src={gifBanner6} alt="" height="250px" width="1250px" />
+            <img src={gifBanner6} height="250px" width="1250px" />
           </div>
           <div className="carousel1-banner">
-            <img src={gifBanner5} alt="" height="250px" width="1250px" />
+            <img src={gifBanner5} height="250px" width="1250px" />
           </div>
         </Slider>
       </div>

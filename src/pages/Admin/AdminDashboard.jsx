@@ -138,24 +138,10 @@ function AdminDashboard() {
               <p>View all merchant and manage all them from here.</p>
               {/* <Link to="/userlist"> <button className='admin-btns'> View All Users</button></Link> */}
             </Link>
-
-
-
-            {/* <div className="users-page">
-              <h5>View All Users</h5>
-              <p>View all users and Update/Delete</p>
-              <Link to="/userlist"> <button className='admin-btns'> View All Users</button></Link>
-            </div> */}
-
-
-            {/* <div className="merchant-page">
-              <h5>View All Merchants</h5>
-              <Link to="/merchantlist"> <button className='admin-btns'> View All Merchants</button></Link>
-            </div> */}
           </div>
 
           <div className="category-product-two">
-            <Link to="categoryadminlist" className="category-page" onClick={scrollToTop}>
+            <Link to="/categoryadminlist" className="category-page" onClick={scrollToTop}>
               <h5>View All Categories</h5>
               <p>View all categories and manage them from here.</p>
               {/* <Link to="/userlist"> <button className='admin-btns'> View All Users</button></Link> */}
@@ -166,17 +152,6 @@ function AdminDashboard() {
               <p>View all Products and manage all the products from here.</p>
               {/* <Link to="/userlist"> <button className='admin-btns'> View All Users</button></Link> */}
             </Link>
-
-            {/* <div className="category-page">
-              <h5>View All Categories</h5>
-              <Link to="/merchantlist"> <button className='admin-btns'> View All Categories</button></Link>
-
-            </div>
-            <div className="product-page">
-              <h5>View All Products</h5>
-              <Link to="/merchantlist"> <button className='admin-btns'> View All Products</button></Link>
-
-            </div> */}
           </div>
         </div>
 

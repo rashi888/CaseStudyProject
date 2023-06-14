@@ -130,8 +130,8 @@ function Items() {
                     </div>
                     <div className="all-main-content">
                       <h4 className="heading-main">{item.productName}</h4>
-                      <h5 className='price-main'>₹ <del> {item.productMRP}</del></h5>
-                      <h5 className='price-main'>₹ {item.productPrice}</h5>
+                      <p className='price-main'>MRP ₹ <del> {item.productMRP}</del></p>
+                      <h3 className='price-main'>₹ {item.productPrice}</h3>
                       <p>
                         <NavLink >
                           <button onClick={addtocart(item.productId)} type="button" class="btn-Item btn-warning" style={{ borderRadius: '4px', border: 'none' }}>Add to cart</button>
