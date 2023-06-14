@@ -10,9 +10,35 @@ import gifBanner4 from "../../assets/BannerGifs/img4banner.png"
 import gifBanner5 from "../../assets/BannerGifs/img5banner.png"
 import gifBanner6 from "../../assets/BannerGifs/Only at.png"
 import gifBanner7 from "../../assets/BannerGifs/skincare.png"
+import axios from "axios";
 
-export default class BannerMain extends Component {
-  render() {
+import { useNavigate } from "react-router-dom";
+
+const BannerMain = () => {
+
+const navigate = useNavigate();
+  
+ 
+    const refresh = () => window.location.reload(true)
+    
+
+    const srch = (search) => (e) => {
+      axios.get('http://localhost:8080/api/products/search/' + search,{
+          headers: {
+              "Authorization": "Bearer " + localStorage.getItem("token"),
+          }
+      })
+          .then(response => {
+              console.log(response.data);
+
+              navigate("/search", { state: { searchdata: response.data } });
+              refresh();
+
+          })
+          .catch(error => {
+              console.log(error);
+          });
+  }
     const settings = {
       dots: true,
       infinite: true,
@@ -40,7 +66,7 @@ export default class BannerMain extends Component {
           <div className="carousel1-banner">
             <img src={gifBanner3}  height="250px" width="1250px" />
           </div>
-          <div className="carousel1-banner">
+          <div onClick={srch("Toy")} className="carousel1-banner">
             <img src={gifBanner6} height="250px" width="1250px" />
           </div>
           <div className="carousel1-banner">
@@ -50,4 +76,6 @@ export default class BannerMain extends Component {
       </div>
     );
   }
-}
+
+
+export default BannerMain;
