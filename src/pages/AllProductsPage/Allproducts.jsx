@@ -27,6 +27,7 @@ function Allproducts(props) {
   if(api !== props.api){
     setApi(props.api);
     setPageNumber(0);
+    
   }
  
 
