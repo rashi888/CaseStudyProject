@@ -113,20 +113,34 @@
     width: 100px;
     /* height: 70px; */
     background-color: white;
-    padding: 6px;
+    /* padding: 6px; */
     border-radius: 3px;
     top: 50px;
     z-index: 1;
-  
+    border: 1px solid lightgray;
   }
  
   .profileimg:hover + .profile{
     display: block;
     transition: 1ms;
+     height: 100px;
+    width: 125px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
   }
   .profile:hover{
     display: block;
     transition: 1ms;
+    height: 100px;
+    width: 125px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
   }
   
   h6
