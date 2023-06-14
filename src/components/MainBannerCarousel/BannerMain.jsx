@@ -48,13 +48,14 @@ const navigate = useNavigate();
       autoplay: true, 
       autoplaySpeed: 3000,
     };
+    
     return (
       <div style={{ margin: 'auto', marginBottom: '50px', marginTop: '20px' }}>
         <Slider {...settings}>
           <div className="carousel1-banner">
             <img src={gifBanner1} height="250px" width="1250px" />
           </div>
-          <div className="carousel1-banner">
+          <div onClick={srch("ton star air cond")} className="carousel1-banner">
             <img src={gifBanner4} height="250px" width="1250px" />
           </div>
           <div className="carousel1-banner">
@@ -63,7 +64,7 @@ const navigate = useNavigate();
           <div className="carousel1-banner">
             <img src={gifBanner7} height="250px" width="1250px" />
           </div>
-          <div className="carousel1-banner">
+          <div  onClick={srch("Apple iphone 14 pro")}   className="carousel1-banner">
             <img src={gifBanner3}  height="250px" width="1250px" />
           </div>
           <div onClick={srch("Toy")} className="carousel1-banner">
