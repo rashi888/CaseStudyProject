@@ -19,7 +19,11 @@ function Navy() {
 
     const fetchData = () => {
 
-        return fetch("http://localhost:8080/api/categories/")
+        return fetch("http://localhost:8080/api/categories/",{
+            headers: {
+                "Authorization": "Bearer " + localStorage.getItem("token"),
+            }
+        })
             .then((response) => response.json())
             .then((data) => setCategory(data));
 

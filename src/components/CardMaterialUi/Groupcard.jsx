@@ -17,12 +17,36 @@ function Groupcard() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const groceryResponse = await axios.get("http://localhost:8080/api/category/1/products");
-                const mobileResponse = await axios.get("http://localhost:8080/api/category/2/products");
-                const fashionResponse = await axios.get("http://localhost:8080/api/category/3/products");
-                const electronicsResponse = await axios.get("http://localhost:8080/api/category/4/products");
-                const homeResponse = await axios.get("http://localhost:8080/api/category/5/products");
-                const beautyResponse = await axios.get("http://localhost:8080/api/category/6/products");
+                const groceryResponse = await axios.get("http://localhost:8080/api/category/1/products",{
+                    headers: {
+                        "Authorization": "Bearer " + localStorage.getItem("token"),
+                    }
+                });
+                const mobileResponse = await axios.get("http://localhost:8080/api/category/2/products",{
+                    headers: {
+                        "Authorization": "Bearer " + localStorage.getItem("token"),
+                    }
+                });
+                const fashionResponse = await axios.get("http://localhost:8080/api/category/3/products",{
+                    headers: {
+                        "Authorization": "Bearer " + localStorage.getItem("token"),
+                    }
+                });
+                const electronicsResponse = await axios.get("http://localhost:8080/api/category/4/products",{
+                    headers: {
+                        "Authorization": "Bearer " + localStorage.getItem("token"),
+                    }
+                });
+                const homeResponse = await axios.get("http://localhost:8080/api/category/5/products",{
+                    headers: {
+                        "Authorization": "Bearer " + localStorage.getItem("token"),
+                    }
+                });
+                const beautyResponse = await axios.get("http://localhost:8080/api/category/6/products",{
+                    headers: {
+                        "Authorization": "Bearer " + localStorage.getItem("token"),
+                    }
+                });
 
                 const groceryData = groceryResponse.data;
                 const mobileData = mobileResponse.data;

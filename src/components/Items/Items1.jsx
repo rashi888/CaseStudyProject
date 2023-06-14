@@ -15,7 +15,11 @@ function Items1() {
 
     setIsLoading(true);
 
-    return fetch("http://localhost:8080/api/category/2/products")
+    return fetch("http://localhost:8080/api/category/2/products",{
+      headers: {
+          "Authorization": "Bearer " + localStorage.getItem("token"),
+      }
+  })
       .then((response) => response.json())
       .then((data) => {
         setProduct(data["content"])
@@ -71,6 +75,11 @@ function Items1() {
     fetch(url, {
       method: "POST",
       body: formdata,
+      
+        headers: {
+            "Authorization": "Bearer " + localStorage.getItem("token"),
+        
+    }
     })
       .then((response) => response.json())
       .then((data) => {
