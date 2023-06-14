@@ -54,7 +54,6 @@ function Login() {
   const handleCredentialResponse = (response) => {
     console.log(response.credential);
     const token = response.credential;
-    window.localStorage.setItem("token", token);
     const decoded = jwt_decode(token);
     console.log(decoded);
     const data = {
@@ -67,6 +66,7 @@ function Login() {
     axios.post("http://localhost:8080/api/users/OAuth", data).then((response) => {
       console.log(response.data);
       console.log(response);
+      window.localStorage.setItem("token", response.data.token);
       window.localStorage.setItem("userId", response.data.userId);
       window.localStorage.setItem("role", response.data.role);
       window.localStorage.setItem("name", response.data.name);
