@@ -20,7 +20,11 @@ const Navbar = () => {
 
 
     const srch = () => {
-        axios.get('http://localhost:8080/api/products/search/' + search)
+        axios.get('http://localhost:8080/api/products/search/' + search,{
+            headers: {
+                "Authorization": "Bearer " + localStorage.getItem("token"),
+            }
+        })
             .then(response => {
                 console.log(response.data);
                 navigate("/search", { state: { searchdata: response.data } });

@@ -3,29 +3,54 @@ import { Link } from "react-router-dom";
 import b1 from "../../assets/PhoneImgs/phone1.webp"
 import Swal from 'sweetalert2';
 import { Spinner } from 'reactstrap'
+import axios from 'axios'
 
 function ProductListAdmin() {
 
     const [isLoading, setIsLoading] = useState(false);
 
     const deleteProduct = (id) => {
-        fetch("http://localhost:8080/api/products/" + id, {
-            method: "DELETE",
-        }).then(() => {
-            Swal.fire({
-                title: "Success",
-                text: "Product Deleted Successfully",
-                icon: "success",
-            });
-            fetchData();
-        });
-    };
+        axios.delete("http://localhost:8080/api/products/" + id, {
+            headers: {
+                "Authorization": "Bearer " + localStorage.getItem("token"),
+            }
+        })
+            .then((resp) => {
+                console.log(resp["data"]);
+                console.log("success log");
+                Swal.fire({
+                    title: "Success",
+                    text: "Product Deleted Successfully",
+                    icon: "success",
+                });
+                fetchData();
+            }).catch ((error) => {
+                console.log(error);
+                Swal.fire({
+                    title: "Error",
+                    text: "Product Deletion Failed",
+                    icon: "error",
+                });
+            }
+            );
+
+    }
+
+
+
+            
+
 
     const [product, setProduct] = useState([]);
 
     const fetchData = () => {
         setIsLoading(true);
-        return fetch("http://localhost:8080/api/products?sortBy=category&pageSize=100")
+        return fetch("http://localhost:8080/api/products?sortBy=category&pageSize=100",
+        {
+            headers: {
+                "Authorization": "Bearer " + localStorage.getItem("token"),
+            }
+        })
             .then((response) => response.json())
             .then((data) => {
                 setProduct(data["content"])

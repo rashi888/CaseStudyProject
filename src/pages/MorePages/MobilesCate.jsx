@@ -8,7 +8,11 @@ function MobilesCate() {
 
     const fetchData = () => {
         return fetch(
-            "http://localhost:8080/api/products?pageNumber=0&pageSize=5&sortBy=productId&sortDir=desc"
+            "http://localhost:8080/api/products?pageNumber=0&pageSize=5&sortBy=productId&sortDir=desc",{
+                headers: {
+                    "Authorization": "Bearer " + localStorage.getItem("token"),
+                }
+            }
         )
             .then((response) => response.json())
             .then((data) => setProduct(data["content"]));

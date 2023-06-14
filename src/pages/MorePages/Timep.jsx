@@ -40,6 +40,7 @@ const Login = () => {
                 "content-type": "application/json",
                 accept: "application/json",
                 "Access-Control-Allow-Origin": "*",
+                "Authorization": "Bearer " + localStorage.getItem("token"),
             },
             body: JSON.stringify({
                 username: userData.username,

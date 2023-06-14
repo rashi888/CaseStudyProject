@@ -9,7 +9,11 @@ function MerchantList() {
     const [user, setUser] = useState([]);
 
     const fetchData = () => {
-        return fetch("http://localhost:8080/api/users/")
+        return fetch("http://localhost:8080/api/users/",{
+            headers: {
+                "Authorization": "Bearer " + localStorage.getItem("token"),
+            }
+        })
             .then((response) => response.json())
             .then((data) => setUser(data));
     };
@@ -31,7 +35,11 @@ function MerchantList() {
 
         }).then((result) => {
             if (result.isConfirmed) {
-                axios.delete("http://localhost:8080/api/users/" + userId)
+                axios.delete("http://localhost:8080/api/users/" + userId,{
+                    headers: {
+                        "Authorization": "Bearer " + localStorage.getItem("token"),
+                    }
+                })
 
 
                     .then((resp) => {

@@ -11,7 +11,11 @@ function MyOrders() {
     const [data, setData] = useState([]);
 
     const order = () => {
-        axios.get('http://localhost:8080/api/order/merchantOrders/'+window.localStorage.getItem("userId"))
+        axios.get('http://localhost:8080/api/order/merchantOrders/'+window.localStorage.getItem("userId"),{
+            headers: {
+                "Authorization": "Bearer " + localStorage.getItem("token"),
+            }
+        })
             .then(response => {
                 console.log(response.data["content"]);
                 setData(response.data["content"]);
@@ -39,7 +43,11 @@ function MyOrders() {
     const accept = (id) => {
         return () => {
             axios.put('http://localhost:8080/api/order/orderStatus/'+id,{
-                "orderStatus": "Order Accepted"})
+                "orderStatus": "Order Accepted"},{
+                    headers: {
+                        "Authorization": "Bearer " + localStorage.getItem("token"),
+                    }
+                })
             .then(response => {
                 console.log(response);
                 Swal.fire({
@@ -69,6 +77,10 @@ function MyOrders() {
         return () => {
             axios.put('http://localhost:8080/api/order/orderStatus/'+id,{
                 "orderStatus": orderrejected
+                },{
+                    headers: {
+                        "Authorization": "Bearer " + localStorage.getItem("token"),
+                    }
                 })
             .then(response => {
                 console.log(response);
@@ -90,6 +102,10 @@ function MyOrders() {
         return () => {
             axios.put('http://localhost:8080/api/order/orderStatus/'+id,{
                 "orderStatus": "Order Shipped"+" via "+shippedvia+" with tracking id "+trackingid   
+                },{
+                    headers: {
+                        "Authorization": "Bearer " + localStorage.getItem("token"),
+                    }
                 })
             .then(response => {
                 console.log(response);
@@ -116,6 +132,10 @@ function MyOrders() {
         return () => {
             axios.put('http://localhost:8080/api/order/orderStatus/'+id,{
                 "orderStatus": "Order Delivered"+" on "+currentdate.getDate() + " " + months[currentdate.getMonth()] + " " + currentdate.getFullYear()
+                },{
+                    headers: {
+                        "Authorization": "Bearer " + localStorage.getItem("token"),
+                    }
                 })
             .then(response => {
                 console.log(response);

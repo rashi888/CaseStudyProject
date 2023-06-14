@@ -11,6 +11,9 @@ function MyProductList() {
     const deleteProduct = (id) => {
         fetch("http://localhost:8080/api/products/" + id, {
             method: "DELETE",
+            headers: {
+                "Authorization": "Bearer " + localStorage.getItem("token"),
+            }
         }).then(() => {
             Swal.fire({
                 title: "Success",
@@ -25,7 +28,11 @@ function MyProductList() {
 
     const fetchData = () => {
         setIsLoading(true);
-        return fetch("http://localhost:8080/api/products/mId/"+localStorage.getItem("userId"))
+        return fetch("http://localhost:8080/api/products/mId/"+localStorage.getItem("userId"),{
+            headers: {
+                "Authorization": "Bearer " + localStorage.getItem("token"),
+            }
+        })
             .then((response) => response.json())
             .then((data) => {
                 setProduct(data)

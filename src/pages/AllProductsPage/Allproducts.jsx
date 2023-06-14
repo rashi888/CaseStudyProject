@@ -34,7 +34,11 @@ function Allproducts(props) {
       "&sortDir=" +
       dir;
      
-    fetch(url)
+    fetch(url,{
+      headers: {
+          "Authorization": "Bearer " + localStorage.getItem("token"),
+      }
+  })
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
@@ -75,6 +79,9 @@ function Allproducts(props) {
     fetch(url, {
       method: "POST",
       body: formdata,
+      headers: {
+        Authorization: "Bearer " + localStorage.getItem("token"),
+      },
     })
       .then((response) => response.json())
       .then((data) => {

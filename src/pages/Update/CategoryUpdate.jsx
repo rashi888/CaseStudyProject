@@ -28,7 +28,11 @@ function CategoryUpdate() {
 
     const submitForm = (event) => {
         event.preventDefault();
-        axios.put("http://localhost:8080/api/categories/" + categoryId, data)
+        axios.put("http://localhost:8080/api/categories/" + categoryId, data,{
+            headers: {
+                "Authorization": "Bearer " + localStorage.getItem("token"),
+            }
+        })
             .then((resp) => {
                 console.log(resp["data"]["categoryId"]);
                 console.log("success log");
@@ -42,7 +46,11 @@ function CategoryUpdate() {
     }
 
     const fetchdata = () => {
-        axios.get("http://localhost:8080/api/categories/" + categoryId)
+        axios.get("http://localhost:8080/api/categories/" + categoryId,{
+            headers: {
+                "Authorization": "Bearer " + localStorage.getItem("token"),
+            }
+        })
 
             .then((resp) => {
                 console.log(resp["data"]);

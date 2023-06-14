@@ -19,7 +19,11 @@ function CartPage() {
   const fetchData = () => {
     const userId = localStorage.getItem("userId");
     if(userId==null){
-      axios.get(`http://localhost:8080/api/cart/viewCart`)
+      axios.get(`http://localhost:8080/api/cart/viewCart`,{
+        headers: {
+            "Authorization": "Bearer " + localStorage.getItem("token"),
+        }
+    })
       .then((response) => {
         console.log(response.data);
         setCart(response.data.cartItem);
@@ -32,7 +36,11 @@ function CartPage() {
     }
     else{
     axios
-      .get(`http://localhost:8080/api/cart/viewCart?userId=${userId}`)
+      .get(`http://localhost:8080/api/cart/viewCart?userId=${userId}`,{
+        headers: {
+            "Authorization": "Bearer " + localStorage.getItem("token"),
+        }
+    })
       .then((response) => {
         console.log(response.data);
         setCart(response.data.cartItem);
@@ -53,7 +61,11 @@ function CartPage() {
     formdata.append("userId", userId);
 
     axios
-      .post("http://localhost:8080/api/cart/removeFromCart", formdata)
+      .post("http://localhost:8080/api/cart/removeFromCart", formdata,{
+        headers: {
+            "Authorization": "Bearer " + localStorage.getItem("token"),
+        }
+    })
 
       .then((response) => {
         console.log(response.data);
@@ -68,7 +80,11 @@ function CartPage() {
     formdata.append("userId", userId);
 
     axios
-      .post("http://localhost:8080/api/cart/addToCart", formdata)
+      .post("http://localhost:8080/api/cart/addToCart", formdata,{
+        headers: {
+            "Authorization": "Bearer " + localStorage.getItem("token"),
+        }
+    })
 
       .then((response) => {
         console.log(response.data);
@@ -83,7 +99,11 @@ function CartPage() {
     formdata.append("userId", userId);
 
     axios
-      .post("http://localhost:8080/api/cart/removeProductFromCart", formdata)
+      .post("http://localhost:8080/api/cart/removeProductFromCart", formdata,{
+        headers: {
+            "Authorization": "Bearer " + localStorage.getItem("token"),
+        }
+    })
 
       .then((response) => {
         console.log(response.data);
@@ -108,7 +128,11 @@ function CartPage() {
     console.log(data);
     event.preventDefault();
     axios
-      .post("http://localhost:8080/api/order/", data)
+      .post("http://localhost:8080/api/order/", data,{
+        headers: {
+            "Authorization": "Bearer " + localStorage.getItem("token"),
+        }
+    })
       .then((response) => {
         console.log(response.data);
         Swal.fire({
@@ -162,7 +186,7 @@ function CartPage() {
                                 <img
                                   src={
                                     "http://localhost:8080/api/products/image/" +
-                                    item.product.productPhoto
+                                    item.product.productPhoto[0]
                                   }
                                   alt="img"
                                   className="img-fluid w-100"

@@ -16,7 +16,11 @@ function AdminDashboard() {
   });
   
   const fetchData=()=>{
-    return fetch("http://localhost:8080/api/stats/admin")
+    return fetch("http://localhost:8080/api/stats/admin",{
+      headers: {
+          "Authorization": "Bearer " + localStorage.getItem("token"),
+      }
+  })
       .then((response) => response.json())
       .then((data) => {
         setData(data)

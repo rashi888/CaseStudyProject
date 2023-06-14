@@ -14,7 +14,11 @@ function Items2() {
   const fetchData = () => {
     setIsLoading(true);
 
-    return fetch("http://localhost:8080/api/products?pageNumber=0&pageSize=10&sortBy=productId&sortDir=asc")
+    return fetch("http://localhost:8080/api/products?pageNumber=0&pageSize=10&sortBy=productId&sortDir=asc",{
+      headers: {
+          "Authorization": "Bearer " + localStorage.getItem("token"),
+      }
+  })
       .then((response) => response.json())
       .then((data) => {
         setProduct(data["content"])
@@ -69,6 +73,11 @@ function Items2() {
     fetch(url, {
       method: "POST",
       body: formdata,
+      
+        headers: {
+            "Authorization": "Bearer " + localStorage.getItem("token"),
+        }
+    
     })
       .then((response) => response.json())
       .then((data) => {

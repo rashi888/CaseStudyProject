@@ -14,7 +14,11 @@ function ProductList() {
 
     const fetchData = () => {
         setIsLoading(true);
-        return fetch("http://localhost:8080/api/products?sortBy=category&pageSize=100")
+        return fetch("http://localhost:8080/api/products?sortBy=category&pageSize=100",{
+            headers: {
+                "Authorization": "Bearer " + localStorage.getItem("token"),
+            }
+        })
             .then((response) => response.json())
             .then((data) => {
                 setProduct(data["content"])

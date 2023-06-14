@@ -20,7 +20,11 @@ function AddressUser() {
 
 
     const fetchdata = () => {
-        axios.get("http://localhost:8080/api/deliveryDetails/user/" + localStorage.getItem("userId"))
+        axios.get("http://localhost:8080/api/deliveryDetails/user/" + localStorage.getItem("userId"),{
+            headers: {
+                "Authorization": "Bearer " + localStorage.getItem("token"),
+            }
+        })
             // axios.get("http://localhost:8080/api/deliveryDetails/" )
             .then((resp) => {
                 console.log(resp["data"]);
@@ -62,7 +66,11 @@ function AddressUser() {
         const data = Object.fromEntries(formdata.entries());
         data["tempUserId"] = localStorage.getItem("userId");
         console.log(data);
-        axios.post("http://localhost:8080/api/deliveryDetails/", data)
+        axios.post("http://localhost:8080/api/deliveryDetails/", data,{
+            headers: {
+                "Authorization": "Bearer " + localStorage.getItem("token"),
+            }
+        })
             .then((resp) => {
                 console.log("success log");
                 Swal.fire({
