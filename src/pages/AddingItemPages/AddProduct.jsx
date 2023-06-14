@@ -62,7 +62,8 @@ function AddProduct() {
 
                 axios.post("http://localhost:8080/api/products/multiImg_upload/" + proId, formData, {
                     headers: {
-                        'Content-Type': 'multipart/form-data'
+                        'Content-Type': 'multipart/form-data',
+                        "Authorization": "Bearer " + localStorage.getItem("token"),
                     }
                 }).then((resp) => {
                     console.log(resp);
@@ -87,7 +88,12 @@ function AddProduct() {
 
 
     const fetchData = async () => {
-        const response = await fetch("http://localhost:8080/api/categories/");
+        const response = await fetch("http://localhost:8080/api/categories/",
+        {
+            headers: {
+                "Authorization": "Bearer " + localStorage.getItem("token"),
+            }
+        });
         const data = await response.json();
         return setCategory(data);
     };
