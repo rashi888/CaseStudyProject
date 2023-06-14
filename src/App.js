@@ -90,7 +90,7 @@ function App() {
         <Route path='/tiles' Component={Tiles} />
         <Route path='/inbuiltcartview' Component={AddItem} />
         
-        <Route  path='/category/:id' Component={()=> <Allproducts api={"http://localhost:8080/api/category/"+useParams().id+"/products"} />} />
+        <Route path='/category/:id' Component={()=> <Allproducts api={"http://localhost:8080/api/category/"+useParams().id+"/products"} />} />
         <Route path='/Grocery' Component={() => <Allproducts api={groceryApi} title="Grocery" />} />
         <Route path='/Mobile' Component={() => <Allproducts api={mobileApi} title="Mobile" />} />
         <Route path='/Fashion' Component={() => <Allproducts api={fashionApi} title="Fashion" />} />
