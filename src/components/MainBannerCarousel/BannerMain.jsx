@@ -11,6 +11,7 @@ import gifBanner5 from "../../assets/BannerGifs/img5banner.png"
 import gifBanner6 from "../../assets/BannerGifs/Only at.png"
 import gifBanner7 from "../../assets/BannerGifs/skincare.png"
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 import { useNavigate } from "react-router-dom";
 
@@ -60,9 +61,9 @@ const navigate = useNavigate();
           <div className="carousel1-banner">
             <img src={gifBanner2} height="250px" width="1250px" />
           </div>
-          <div className="carousel1-banner">
+          <Link to={"category/6"} className="carousel1-banner">
             <img src={gifBanner7} height="250px" width="1250px" />
-          </div>
+          </Link>
           <div className="carousel1-banner">
             <img src={gifBanner3}  height="250px" width="1250px" />
           </div>
