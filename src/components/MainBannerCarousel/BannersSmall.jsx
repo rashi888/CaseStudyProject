@@ -9,6 +9,7 @@ import img16 from "../../assets/NewBannersImg/img16.jpg"
 import img17 from "../../assets/NewBannersImg/img17.jpg"
 import img18 from "../../assets/NewBannersImg/img18.png"
 import axios from "axios";
+import {Link} from "react-router-dom"
 
 import { useNavigate } from "react-router-dom";
 
@@ -58,12 +59,12 @@ const BannersSmall=()=>{
         <div className="carousel1-banner">
           <img  onClick={srch("kitchen storage")} src={img16} alt="" height="280px" width="1250px" />
         </div>
-        <Link to={"category/6"}> <div className="carousel1-banner">
+        <Link to={"category/6"} className="carousel1-banner">
           <img  src={img17} alt="" height="280px" width="1250px" />
-        </div></Link>
-        <Link to={"category/10"}>  <div className="carousel1-banner">
+          </Link>
+         <Link to={"category/10"} className="carousel1-banner">
           <img src={img18} alt="" height="250px" width="1250px" />
-        </div></Link>
+        </Link>
       </Slider>
     </div>
   );
