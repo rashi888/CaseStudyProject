@@ -14,8 +14,46 @@ import cleaning from "../../assets/Grocery/cleaning.webp"
 import detergent from "../../assets/Grocery/detergent.webp"
 import household from "../../assets/Grocery/Household.webp"
 import freshners from "../../assets/Grocery/freshers.webp"
+import axios from "axios";
+
+import { useNavigate } from "react-router-dom";
+
 
 function GroceryCol() {
+    const navigate = useNavigate();
+  
+ 
+    const refresh = () => window.location.reload(true)
+    
+
+    const srch = (search) => (e) => {
+      axios.get('http://localhost:8080/api/products/search/' + search,{
+          headers: {
+              "Authorization": "Bearer " + localStorage.getItem("token"),
+          }
+      })
+          .then(response => {
+              console.log(response.data);
+
+              navigate("/search", { state: { searchdata: response.data } });
+              refresh();
+
+          })
+          .catch(error => {
+              console.log(error);
+          });
+  }
+    const settings = {
+      dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      autoplay: true, 
+      autoplaySpeed: 3000,
+    };
+    
+
     return (
         <>
             <div className="grocery-cont-images" style={{ width: '1230px', margin: '40px auto' }}>
@@ -29,9 +67,9 @@ function GroceryCol() {
                 </div>
                 <img src={personalcare} alt="" width="100%" />
                 <div className="second-img-col" style={{ display: 'flex', margin: '0px 10px' }}>
-                    <img src={Shampoo} alt="" height="33%" width="33%" style={{ marginRight: '15px' }} />
-                    <img src={oralcare} alt="" height="33%" width="33%" style={{ marginRight: '15px' }} />
-                    <img src={herbals} alt="" height="34%" width="32%" style={{ marginRight: '15px' }} />
+                    <img onClick={srch("Shampoo")}  src={Shampoo} alt="" height="33%" width="33%" style={{ marginRight: '15px' }} />
+                    <img onClick={srch("Oral Care")}  src={oralcare} alt="" height="33%" width="33%" style={{ marginRight: '15px' }} />
+                    <img onClick={srch("Herbals And Natural")} src={herbals} alt="" height="34%" width="32%" style={{ marginRight: '15px' }} />
                 </div>
                 <div className="third-img-col"  style={{ display: 'flex', margin: '0px 10px' }}>
                     <img src={Gillete} alt="" height="33%" width="33%" style={{ marginRight: '15px' }} />
@@ -42,8 +80,8 @@ function GroceryCol() {
                 <img src={household} alt="" width="100%" />
                 <div className="fourth-img-col"  style={{ display: 'flex', margin: '0px 5px' }}>
                     <img src={detergent} alt="" height="33%" width="33%" style={{ marginRight: '15px' }} />
-                    <img src={freshners} alt="" height="33%" width="33%" style={{ marginRight: '15px' }} />
-                    <img src={cleaning} alt="" height="34%" width="32%" style={{ marginRight: '15px' }} />
+                    <img onClick={srch("Repellants and Freshners")} src={freshners} alt="" height="33%" width="33%" style={{ marginRight: '15px' }} />
+                    <img onClick={srch("Cleaning Essentials")} src={cleaning} alt="" height="34%" width="32%" style={{ marginRight: '15px' }} />
 
                 </div>
 

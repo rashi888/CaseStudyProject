@@ -52,6 +52,7 @@ import MyProductList from './pages/AddingItemPages/MyProductList';
 import AddressUser from './pages/Userprofile/AddressUser';
 import ScrollToBottom from './components/ScrollToBottom/ScrollToBottom';
 import NoOrders from './pages/MorePages/NoOrders';
+import NoResultFound from './pages/MorePages/NoResultFound';
 
 
 
@@ -123,6 +124,7 @@ function App() {
         <Route path='/msignup' Component={MSignup} />
         <Route path="/cart" Component={Cart} />
         <Route path="/error" Component={Error} />
+        <Route path="/noResultFound" Component={NoResultFound} />
         <Route path="/mobcat" Component={MobilesCate} />
         <Route path='/productView' Component={ProductsView} />
         <Route path="/updateproduct/:id" Component={ProductUpdate} />
