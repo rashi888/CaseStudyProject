@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import './Navy.css'
 import { Link } from "react-router-dom"
+import { useNavigate } from 'react-router-dom'
 
 import AllCategory from "../../assets/NavyImages/All-category2.png"
 import Grocery from "../../assets/NavyImages/Grocery.webp"
@@ -37,6 +38,12 @@ function Navy() {
     console.log(category);
     // console.log("hello")
     console.log(setCategory);
+
+    const navigate = useNavigate();
+    
+
+
+
 
     return (
         <>

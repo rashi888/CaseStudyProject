@@ -7,20 +7,28 @@ import img from "../../assets/PhoneImgs/phone1.webp";
 import { RiArrowDownSLine } from "react-icons/ri";
 import Swal from "sweetalert2";
 import { Spinner } from "reactstrap";
+import { useLocation } from 'react-router'
 
 function Allproducts(props) {
+  const location = useLocation();
   const [product, setProduct] = useState([]);
   const [api, setApi] = useState(props.api);
   const [isLoading, setIsLoading] = useState(false);
   const [totalpages, setTotalpages] = useState(0);
   const [pageNumber, setPageNumber] = useState(0);
-  const [sortBy, setSortBy] = useState("productPrice");
-  const [dir, setDir] = useState("DESC");
+  const [sortBy, setSortBy] = useState("productId");
+  const [dir, setDir] = useState("ASC");
 
   const setpage = (item) => (e) => {
     console.log(item);
     setPageNumber(item - 1);
   };
+
+  if(api !== props.api){
+    setApi(props.api);
+    setPageNumber(0);
+    
+  }
  
 
   const fetchData = () => {
@@ -60,6 +68,8 @@ function Allproducts(props) {
     pageNumber,
     sortBy,
     dir,
+    api,
+    location.key
   ]);
   console.log(product);
   // console.log(totalpages);

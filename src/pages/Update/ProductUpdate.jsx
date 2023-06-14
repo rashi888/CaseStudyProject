@@ -48,7 +48,7 @@ function ProductUpdate() {
                     text: "Product Updated Successfully",
                     icon: "success",
                 });
-                navigate("/mdash");
+                navigate("/admindashboard");
             })
     }
 
