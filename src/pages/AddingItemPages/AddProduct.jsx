@@ -107,7 +107,7 @@ function AddProduct() {
         <>
 
             <div className="containerr" style={{ margin: '30px auto',width:'1100px',padding:'20px 40px', boxShadow: '10px 5px 10px lightgray', borderRadius: '2px',backgroundColor:'white' }}>
-                <h2 style={{ marginBottom: '40px',color:'gray',textAlign:'center' }}>Add a new Product</h2>
+                <h2 style={{ marginBottom: '40px',color:'#54b9c4',textAlign:'center',marginTop:'20px' }}>Add a new Product</h2>
                 <form onSubmit={submitForm} >
                     <div className="row" style={{width:'100%',margin:'auto',paddingLeft:'130px',paddingBottom:'30px'}}>
                         <div className="col-sm-5"  >

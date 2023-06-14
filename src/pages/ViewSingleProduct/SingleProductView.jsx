@@ -106,6 +106,7 @@ function SingleProductView() {
           <div className="right-for-content">
 
             <h2>{data.productName}</h2>
+            <hr style={{ border: '1px solid gray' }} />
             <h6 style={{ marginTop: '15px', textAlign: 'start' }}>Extra ₹{data.productMRP - data.productPrice} off</h6>
             <div className="pp" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
 
@@ -114,7 +115,7 @@ function SingleProductView() {
             {/* <hr style={{ border: '1px solid gray' }} />
             <h6 style={{ fontWeight: 400 }}>Description</h6>
             <div dangerouslySetInnerHTML={{ __html: data.productDescription }}></div> */}
-            <img src={singleprod} height="40%" width="70%" style={{display:'flex',alignItems:'center'}}/>
+            <img src={singleprod} height="40%" width="70%" style={{display:'flex',alignItems:'center',marginLeft:'10%'}}/>
             <div className="btn-add-div" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-around', marginLeft: '-30px' }}>
               <Link onClick={addtocart} to="/"><button style={{ backgroundColor: '#33bbca', borderRadius: '5px', fontSize: '20px' }}>Add to cart</button></Link>
               <Link> <button style={{ backgroundColor: '#33bbca', borderRadius: '5px', fontSize: '20px' }}>Buy Now</button> </Link>
@@ -125,58 +126,10 @@ function SingleProductView() {
 
         <div className="single-product-bottom">
           <hr style={{ border: '1px solid gray' }} />
-          {/* <h6 style={{ fontWeight: 400 }}>Description</h6> */}
           <h2 style={{ marginBottom: '20px' }}>Product Description</h2>
           <div dangerouslySetInnerHTML={{ __html: data.productDescription }} ></div>
         </div>
       </div>
-
-
-
-
-
-
-
-
-
-
-
-
-      {/* <div className="prod1" >
-        <div className="imgMain">
-          <div className="image-big" >
-            <img height="400px" src={"http://localhost:8080/api/products/image/" + data.productPhoto[0]} alt="" />
-          </div>
-          <div className="image-small" >
-            {
-              data.productPhoto.map((item) => {
-                return (
-                  <div className="im1">
-                    <img height="100px" src={"http://localhost:8080/api/products/image/" + item} alt="" />
-                  </div>
-                )
-              }
-              )
-            }
-          </div>
-        </div>
-        <div className="prodDetails">
-          <h2>{data.productName}</h2>
-          <h6 style={{ lbackgroundColor: 'yellow', marginTop: '15px', textAlign: 'start' }}>Extra {data.productMRP - data.productPrice} off</h6>
-          <div className="pp" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-
-            <h1>₹{data.productPrice} <h6><del>{data.productMRP}</del> <span style={{ color: 'darkgreen' }}>{(((data.productMRP - data.productPrice) * 100) / data.productMRP).toFixed(2)}%</span> </h6></h1>
-          </div>
-          <hr style={{ border: '1px solid gray' }} />
-          <h6 style={{ fontWeight: 400 }}>Description</h6>
-          <div dangerouslySetInnerHTML={{ __html: data.productDescription }}></div>
-
-          <div className="btn-add-div" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-around', marginLeft: '-30px' }}>
-            <Link onClick={addtocart} to="/"><button style={{ backgroundColor: '#33bbca', borderRadius: '5px', fontSize: '20px' }}>Add to cart</button></Link>
-            <Link> <button style={{ backgroundColor: '#33bbca', borderRadius: '5px', fontSize: '20px' }}>Buy Now</button> </Link>
-          </div>
-        </div>
-      </div> */}
     </>
   )
 }
