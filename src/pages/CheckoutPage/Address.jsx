@@ -114,7 +114,8 @@ function Address() {
       });
   };
 
-  const updateForm = (id) => (e) => {
+ const editAdd = (id) => (e) => {
+  const updateForm = (e) => {
     e.preventDefault();
     const formdata = new FormData(e.target);
 
@@ -142,6 +143,8 @@ function Address() {
         closeSecondModal();
       });
   };
+    }   
+    
 
   const refresh = () => window.location.reload(true);
 
@@ -309,7 +312,7 @@ function Address() {
                           color: "gray",
                         }}
                       >
-                        <i class="ri-pencil-fill"></i>{" "}
+                        <i onClick={editAdd(item.deliveryDetailsId)} class="ri-pencil-fill"></i>{" "}
                         </button>
                         <i
                           onClick={deleteaddress(item.deliveryDetailsId)}
@@ -335,7 +338,7 @@ function Address() {
               <div className="modal-div">
                 <div className="popup-content">
                   <h5 style={{ marginBottom: "30px" }}> Address </h5>
-                  <Form onSubmit={updateForm(deliveryDetailsId)}>
+                  <Form onSubmit={updateForm()}>
                     <Row>
                       <Col md={6}>
                         <FormGroup>
