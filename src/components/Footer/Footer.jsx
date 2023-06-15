@@ -22,7 +22,6 @@ const Footer = () => {
 
 
                 <div className="footer__addr">
-                    {/* <h1 className="footer__logo">ShopEase</h1> */}
                     <img src={logoo} alt="" style={{ height: '58px', width: '210px', marginBottom: '-10px' }} />
 
                     <div className="legal" style={{ marginTop: '35px' }}>
