@@ -39,7 +39,13 @@ function AddCategory() {
                     text: "Category Added Successfully",
                     icon: "success",
                 });
-                navigate("/mdash");
+                if(localStorage.getItem("role")=="ADMIN")
+                {
+                navigate("/admindashboard");
+                }else{
+
+                    navigate("/mdash");
+                }
                 
             })
     }

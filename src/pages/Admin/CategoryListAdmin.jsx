@@ -10,6 +10,9 @@ function CategoryListAdmin() {
     const deletecategory = (id) => {
         fetch("http://localhost:8080/api/categories/" + id, {
             method: "DELETE",
+            headers: {
+                "Authorization": "Bearer " + localStorage.getItem("token"),
+            }
         }).then(() => {
             Swal.fire({
                 title: "Success",
