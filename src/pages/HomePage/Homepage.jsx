@@ -11,9 +11,7 @@ import img13 from "../../assets/NewBannersImg/img13.png"
 import GroceryCol from '../AmazingBanners/GroceryCol'
 import SummerSpecials from '../AmazingBanners/SummerSpecials'
 import Featured from '../AmazingBanners/Featured'
-import img14 from "../../assets/NewBannersImg/img14.png"
 import BannersSmall from '../../components/MainBannerCarousel/BannersSmall'
-import { Link } from 'react-router-dom'
 import MsignBanner from '../AmazingBanners/MsignBanner'
 import shoppy from "../../assets/NewBannersImg/img10.png"
 import Items5 from '../../components/Items/Items5'
@@ -33,7 +31,7 @@ function Homepage() {
             <Tiles />
             <BannersSmall/>
             <Items4/>
-        <img src={shoppy} height="100%" width="100%"/>
+            <img src={shoppy} height="100%" width="100%"/>
             <Items5 />
             <GroceryCol/>
             <Items6/>

@@ -11,7 +11,6 @@
     font-family: Arial, Helvetica, sans-serif;
     margin-top: 0;
    margin-left: 0;
-    /* margin-bottom: 30px; */
 }
 .card-item{
     height: 180px;
@@ -21,8 +20,6 @@
     position: relative;
 }
 .col-sm-3{
-    /* margin-left: 30px;
-    margin-right: 30px; */
     margin:30px 30px;
 }
 .col-sm-3 p{
@@ -32,20 +29,9 @@
   display: -webkit-box;
   -webkit-line-clamp: 2; /* Number of lines to display */
   -webkit-box-orient: vertical;
- 
-  /* background-color: #48c1cf; */
 }
-.card-title{
-    /* background-color: blue; */
-    
-    
-}
-.card-body{
-    /* position: relative; */
-}
+
 .card-text{
-   /* background-color: yellow; */
-   /* text-overflow: ellipsis;  */
    height: 50px;
    margin-bottom: -5px;
 }
