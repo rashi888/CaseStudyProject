@@ -18,7 +18,7 @@ function Allproducts(props) {
   const [pageNumber, setPageNumber] = useState(0);
   const [sortBy, setSortBy] = useState("productId");
   const [dir, setDir] = useState("DESC");
-  const [sortWay, setSortWay] = useState("New Arrivals");
+  const [sortWay, setSortWay] = useState("Sort by");
 
   
 
