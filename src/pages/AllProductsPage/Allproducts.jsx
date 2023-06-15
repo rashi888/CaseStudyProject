@@ -83,6 +83,15 @@ function Allproducts(props) {
   const addtocart = (id) => (e) => {
     console.log(e.target.value);
     let userId = localStorage.getItem("userId");
+    if(userId === null){
+      Swal.fire({
+        title: "Error",
+        text: "Please Login to Add Product to Cart",
+        icon: "error",
+      });
+    }
+    else{
+    
     const url = "http://localhost:8080/api/cart/addToCart";
     const formdata = new FormData();
     formdata.append("productId", id);
@@ -108,6 +117,7 @@ function Allproducts(props) {
         console.log(error);
       });
   };
+};
 
   const viewProduct = (id) => (e) => {
     console.log(e.target.value);
