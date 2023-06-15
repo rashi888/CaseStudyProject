@@ -103,7 +103,6 @@ function SingleProductView() {
     let userId = localStorage.getItem("userId");
    if(userId==null){
     Swal.fire({
-       
       text: "Please Login First",
       icon: "info",
     });
@@ -156,7 +155,7 @@ function SingleProductView() {
   else{
     menu = (
       <div className="btn-add-div" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-around', marginLeft: '-30px' }}>
-        <button className="btn btn-success" style={{ width: '200px', height: '50px', borderRadius: '5px', fontSize: '20px', fontWeight: 'bold' }} onClick={addtocart}>Add to Cart</button>
+        <button className="btn btn-success" style={{ width: '200px', height: '50px', borderRadius: '5px', fontSize: '20px', fontWeight: 'bold',marginRight:'30px' }} onClick={addtocart}>Add to Cart</button>
         <button className="btn btn-success" style={{ width: '200px', height: '50px', borderRadius: '5px', fontSize: '20px', fontWeight: 'bold' }} onClick={buynow}>Buy Now</button>
       </div>
     )

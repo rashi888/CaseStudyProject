@@ -66,10 +66,10 @@ function GroceryCol() {
             <div className="grocery-cont-images" style={{ width: '1230px', margin: '40px auto' }}>
                 <img src={foodEssential} alt="" width="100%" />
                 <div className="first-img-col" style={{ display: 'flex' }}>
-                    <img onClick={navig("1")} src={Atta4} alt="" height="70%" width="70%" style={{ marginRight: '15px' }} />
+                    <img onClick={srch("spices")} src={Atta4} alt="" height="70%" width="70%" style={{ marginRight: '15px' }} />
                     <div className="twoimg-sec" style={{ display: 'flex', flexDirection: 'column' }}>
-                        <img src={Atta2} alt="" height="50%" width="100%" style={{ marginBottom: '10px' }} />
-                        <img src={Atta3} alt="" height="50%" width="100%" />
+                        <img onClick={srch("spices")} src={Atta2} alt="" height="50%" width="100%" style={{ marginBottom: '10px' }} />
+                        <img onClick={srch("spices")} src={Atta3} alt="" height="50%" width="100%" />
                     </div>
                 </div>
                 <img src={personalcare} alt="" width="100%" />

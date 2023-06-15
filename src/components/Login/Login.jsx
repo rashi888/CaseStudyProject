@@ -221,7 +221,7 @@ function Login() {
               <div className="hrline"></div>
             </div>
             <div className="google-btn" id="signInDiv"></div>
-            <div className="github-btn">
+            {/* <div className="github-btn">
               <i class="ri-github-fill" ></i>
               <GitHubLogin clientId="7c2801c627dcd73b7745"
                 onSuccess={onSuccess}
@@ -229,7 +229,7 @@ function Login() {
                 redirectUri=""
                 className="github-style"
               />
-            </div>
+            </div> */}
 
             <div className="login-link">
               Not a member? <a href="signup" style={{ textDecoration: 'none' }}>Signup now</a>

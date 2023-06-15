@@ -142,7 +142,7 @@ function Allproducts(props) {
           >
             {props.title}
           </h2>
-          <div class="dropdown show">
+          <div class="dropdown show" style={{marginBottom:'25px',right:'25px'}}>
             <Link
               class="btn dropdown-toggle"
               href="#"
