@@ -68,8 +68,7 @@ function MerchantList() {
         <>
             <div className="container-fluid my-5" style={{ backgroundColor: 'white', paddingBottom: '10px' }}>
 
-                <Link to="/useradd" style={{ margin: "2%  0px ", padding: '1%', width: '20%' }} className="btn btn-primary">Add merchant</Link>
-                <Link to='/admindashboard' style={{ margin: "2%  10px ", padding: '1%', width: '20%' }} className="btn btn-primary">Back to Dashboard</Link>
+               <Link to='/admindashboard' style={{ margin: "2%  10px ", padding: '1%', width: '20%' }} className="btn btn-primary">Back to Dashboard</Link>
                 <h2 style={{ marginBottom: '20px', padding: '10px 20px', color: '#48c1cf', backgroundColor: "white", marginLeft: '20px' }}>Merchants</h2>
                 <table className="table">
                     <thead className="thead-light">
@@ -102,23 +101,7 @@ function MerchantList() {
                 </table>
 
 
-                <nav aria-label="Page navigation example" style={{ margin: '30px 0px', padding: '10px' }}>
-                    <ul class="pagination " >
-                        <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
-                            </a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
+               
             </div>
         </>
     )

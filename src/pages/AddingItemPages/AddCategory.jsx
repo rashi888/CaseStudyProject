@@ -55,29 +55,31 @@ function AddCategory() {
 
     return (
         <>
-            <div className="containerr" style={{width:'800px', margin: "2% auto", backgroundColor: 'white', boxShadow: '5px 10px 30px lightgray', borderRadius: '4px', padding: '10px 80px' }}>
-            <h2 style={{ marginBottom: '40px',color:'#54b9c4',marginTop:'20px' }}>Add a Category</h2>
+            <div className="containerr" style={{width:'800px', margin: "2% auto", backgroundColor: 'white', boxShadow: '5px 10px 30px lightgray', borderRadius: '4px', padding: '10px 80px',display:'flex',flexDirection:'column',alignItems:'center' }}>
+            <h2 style={{ marginBottom: '40px',color:'gray',marginTop:'20px' }}>Add a Category</h2>
                
                 <div className="row">
                     <div className="col-sm-4">
-                        <form onSubmit={submitForm}>
+                        <form onSubmit={submitForm} style={{margin:'auto'}}>
                             <input type="hidden" name="id" />
-                            <div className="form-group">
-                                <label for="name"> Category Title</label>
+                            <div className="form-group" >
+                                <label for="name" style={{fontSize:'20px'}}> Category Title</label>
                                 <input type="text" className="form-control" required name='categoryTitle' placeholder="Enter name" 
                                 onChange={(e) => handleChange(e, "categoryTitle")} value={data.categoryTitle}
-                                 />
+                                 style={{width:'500px'}}/>
                             </div>
                             <div className="form-group">
-                                <label for="description">Category Description</label>
+                                <label for="description" style={{fontSize:'20px',width:'200px'}}>Category Description</label>
                                 <textarea className="form-control" rows="5" name="categoryDescription" id="categoryDescription"
                                     onChange={(e) => handleChange(e, "categoryDescription")} value={data.categoryDescription}
-                                
+                                    style={{width:'500px'}}
                                 ></textarea>
                             </div>
+                            <div className="center" style={{marginLeft:'50%',display:'flex',alignItems:'center'}}>
 
-                            <button type="submit" className="btn btn-primary">Add Category</button>
-                            <Link to='/mdash' style={{ margin: "15px  0px ", padding: '3%', width: '75%' }} className=" d-block btn btn-primary ">Back To DashBoard</Link>
+                            <button type="submit" className="btn btn-primary" style={{marginRight:'20px'}}>Add Category</button>
+                            <Link to='/mdash' style={{ margin: "15px  0px ",padding:'5px', width: '160px' }} className=" d-block btn btn-primary ">Back To DashBoard</Link>
+                            </div>
 
                         </form>
                     </div>

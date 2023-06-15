@@ -29,12 +29,12 @@
     color: black;
 }
 .box-num1,.box-num3{
-    padding: 20px 20px 10px 40px;
+    /* padding: 20px 20px 10px 40px; */
 }
 .section1,.section2,.section3,.section4{
     display: flex;
-    /* align-items: center;
-    justify-content: center; */
+    align-items: center;
+    justify-content: center;
 }
 .box-num1>h5{
     overflow: hidden;
@@ -59,11 +59,9 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin: -10px 10px 0px 10px;
+    /* margin: -10px 10px 0px 10px; */
 }
-.img-content img{
-    /* border: 1px solid lightgray; */
-}
+
 .img-collection{
     display: flex;
 }

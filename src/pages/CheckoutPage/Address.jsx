@@ -300,6 +300,7 @@ function Address() {
                       type="radio"
                       name="flexRadioDefault"
                       id="flexRadioDefault1"
+                      required
                     />
                     <label class="form-check-label" for="flexRadioDefault1">
                       {item.name},{item.addressLine1},{item.addressLine2},
@@ -351,6 +352,7 @@ function Address() {
                             name="name"
                             placeholder="Name"
                             type="name"
+                            required
                           />
                         </FormGroup>
                       </Col>
@@ -362,6 +364,7 @@ function Address() {
                             name="mobile"
                             placeholder="Mobile Number"
                             type="tel"
+                            required
                           />
                         </FormGroup>
                       </Col>
@@ -371,6 +374,7 @@ function Address() {
                       <Input
                         id="exampleAddress"
                         name="addressLine1"
+                        required
                         placeholder="Flat, House no., Building, Company, Apartment"
                       />
                     </FormGroup>
@@ -379,6 +383,7 @@ function Address() {
                       <Input
                         id="exampleAddress2"
                         name="addressLine2"
+                        required
                         placeholder="Area, Street, Sector, Village"
                       />
                     </FormGroup>
@@ -386,7 +391,7 @@ function Address() {
                       <Col md={4}>
                         <FormGroup>
                           <Label for="exampleCity">City</Label>
-                          <Input id="exampleCity" name="city" />
+                          <Input id="exampleCity" name="city"  required/>
                         </FormGroup>
                       </Col>
                       <Col md={5}>
@@ -445,7 +450,7 @@ function Address() {
                       <Col md={3}>
                         <FormGroup>
                           <Label for="exampleZip">Zip</Label>
-                          <Input id="exampleZip" name="pincode" />
+                          <Input id="exampleZip" name="pincode"  required />
                         </FormGroup>
                       </Col>
                     </Row>
@@ -475,6 +480,7 @@ function Address() {
                             name="name"
                             placeholder="Name"
                             type="name"
+                            required
                           />
                         </FormGroup>
                       </Col>
@@ -486,6 +492,7 @@ function Address() {
                             name="mobile"
                             placeholder="Mobile Number"
                             type="tel"
+                            required
                           />
                         </FormGroup>
                       </Col>
@@ -495,6 +502,7 @@ function Address() {
                       <Input
                         id="exampleAddress"
                         name="addressLine1"
+                        required
                         placeholder="Flat, House no., Building, Company, Apartment"
                       />
                     </FormGroup>
@@ -502,6 +510,7 @@ function Address() {
                       <Label for="exampleAddress2">Address 2</Label>
                       <Input
                         id="exampleAddress2"
+                        required
                         name="addressLine2"
                         placeholder="Apartment, studio, or floor"
                       />
@@ -510,7 +519,7 @@ function Address() {
                       <Col md={4}>
                         <FormGroup>
                           <Label for="exampleCity">City</Label>
-                          <Input id="exampleCity" name="city" />
+                          <Input id="exampleCity" name="city"  required/>
                         </FormGroup>
                       </Col>
                       <Col md={5}>
@@ -569,7 +578,7 @@ function Address() {
                       <Col md={3}>
                         <FormGroup>
                           <Label for="exampleZip">Zip</Label>
-                          <Input id="exampleZip" name="pincode" />
+                          <Input id="exampleZip" name="pincode"  required/>
                         </FormGroup>
                       </Col>
                     </Row>
