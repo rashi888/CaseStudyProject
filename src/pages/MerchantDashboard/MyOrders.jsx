@@ -3,13 +3,16 @@ import axios from 'axios';
 
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import { Spinner } from 'reactstrap'
 
 
 function MyOrders() {
 
     const [data, setData] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
 
     const order = () => {
+        setIsLoading(true);
         axios.get('http://localhost:8080/api/order/merchantOrders/' + window.localStorage.getItem("userId"), {
             headers: {
                 "Authorization": "Bearer " + localStorage.getItem("token"),
@@ -18,6 +21,7 @@ function MyOrders() {
             .then(response => {
                 console.log(response.data["content"]);
                 setData(response.data["content"]);
+                setIsLoading(false);
             })
             .catch(error => {
                 console.log(error);
@@ -173,7 +177,11 @@ function MyOrders() {
                     </thead>
 
                     <tbody >
-                        {data.map((item, index) => {
+                    {isLoading ? (
+          <Spinner animation="border" role="status" color='primary' style={{ marginLeft: '50%' }} />
+        ) : (
+          <>
+           {data.map((item, index) => {
                             return (<>
                                 <tr >
                                     <th scope="row" key="1">{item.orderDate} </th>
@@ -238,6 +246,8 @@ function MyOrders() {
 
                             </>)
                         })}
+          </>)}
+                       
 
 
                     </tbody>
