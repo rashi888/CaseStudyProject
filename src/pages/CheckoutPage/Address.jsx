@@ -114,16 +114,20 @@ function Address() {
       });
   };
 
+ const editAdd = (id) => (e) => {
+    e.preventDefault();
+    console.log(id);
+    setDeliveryDetailsId(id);
+  
+
+ }
   const updateForm = (id) => (e) => {
     e.preventDefault();
     const formdata = new FormData(e.target);
-
-   
-        
-    
     const data = Object.fromEntries(formdata.entries());
     data["tempUserId"] = localStorage.getItem("userId");
     console.log(data);
+    console.log(id);
     axios
       .put("http://localhost:8080/api/deliveryDetails/" + id, data, {
         headers: {
@@ -142,6 +146,8 @@ function Address() {
         closeSecondModal();
       });
   };
+
+
 
   const refresh = () => window.location.reload(true);
 
@@ -309,12 +315,12 @@ function Address() {
                           color: "gray",
                         }}
                       >
-                        <i class="ri-pencil-fill"></i>{" "}
+                        <i onClick={editAdd(item.deliveryDetailsId)} class="ri-pencil-fill"></i>{" "}
+                        </button>
                         <i
                           onClick={deleteaddress(item.deliveryDetailsId)}
                           class="ri-delete-bin-6-fill mx-3"
                         ></i>
-                      </button>
                     </label>
                   </div>
                 </>
@@ -343,7 +349,7 @@ function Address() {
                           <Input
                             id="name"
                             name="name"
-                            placeholder={data.name} 
+                            placeholder="name"
                             type="name"
                           />
                         </FormGroup>

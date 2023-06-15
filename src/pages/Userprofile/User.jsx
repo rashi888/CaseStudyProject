@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import "./User.css"
 // import userIcon from "../../assets/All_Icons/userimg1.png"
 import userIcon from "../../assets/All_Icons/user.png"
@@ -14,10 +14,33 @@ function User() {
 
     const [name, setName] = useState('');
     const [emailId, setEmailId] = useState('');
-    const [password, setPassword] = useState('');
     const [mobileNumber, setMobileNumber] = useState('');
 
     const userId = localStorage.getItem("userId");
+
+    const getUserProfile = async () => {
+        try {
+            const response = await axios.get("http://localhost:8080/api/users/" + userId, {
+                headers: {
+                    "Content-Type": "application/json",
+                    Accept: "application/json",
+                    "Authorization": "Bearer " + localStorage.getItem("token"),
+                },
+            });
+            console.log(response.data);
+            setName(response.data.name);
+            setEmailId(response.data.emailId);
+            setMobileNumber(response.data.mobileNumber);
+            return response.data;
+        } catch (error) {
+            return error.response.data;
+        }
+    };
+
+    useEffect(() => {
+        getUserProfile();
+    }, []);
+
 
     const handleFormSubmit = async (e) => {
         e.preventDefault();
@@ -25,17 +48,15 @@ function User() {
         const updatedProfile = {
             name,
             emailId,
-            password,
             mobileNumber
         };
 
         try {
-            const response = await axios.put(`http://localhost:8080/api/users/${userId}`, updatedProfile, {
+            const response = await axios.put("http://localhost:8080/api/users/"+userId, updatedProfile, {
                 headers: {
                     "Content-Type": "application/json",
                     Accept: "application/json",
                     "Authorization": "Bearer " + localStorage.getItem("token"),
-                    // authorization: localStorage.getItem("token"),
 
                 },
             });
@@ -128,21 +149,7 @@ function User() {
                                 />
                             </FormGroup>
                         </Col>
-                        <Col md={6}>
-                            <FormGroup>
-                                <Label for="examplePassword">
-                                    Password
-                                </Label>
-                                <Input
-                                    id="password"
-                                    name="password"
-                                    placeholder="Enter Password"
-                                    type="password"
-                                    value={password}
-                                    onChange={(e) => setPassword(e.target.value)}
-                                />
-                            </FormGroup>
-                        </Col>
+                        
                         <Col md={6}>
                             <FormGroup>
                                 <Label for="mobileNumber">
