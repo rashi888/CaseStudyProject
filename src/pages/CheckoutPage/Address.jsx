@@ -24,7 +24,23 @@ function Address() {
 
   const name = localStorage.getItem("name");
 
+
+
   const fetchdata = () => {
+
+    axios.get("http://localhost:8080/api/products/" + productId,{
+      headers: {
+          "Authorization": "Bearer " + localStorage.getItem("token"),
+      }
+  })
+      .then((resp) => {
+        console.log(resp["data"]);
+        setGrandtotal(resp["data"].productPrice);
+      })
+
+
+
+
     axios
       .get(
         "http://localhost:8080/api/deliveryDetails/user/" +
@@ -155,20 +171,17 @@ function Address() {
 
 
   const refresh = () => window.location.reload(true);
-if(productId==null){
 
   const [datas, setDatas] = useState({
     userId: localStorage.getItem("userId"),
     deliveryDetailsId: deliveryDetailsId,
     paymentMethod: paymentMethod,
   });
-}else{
-  const [datas, setDatas] = useState({
-    userId: localStorage.getItem("userId"),
-    deliveryDetailsId: deliveryDetailsId,
-    paymentMethod: paymentMethod,
-    productId: productId,
-  });
+
+  if(productId!=null){
+    datas["productId"] = productId;
+  }
+
 
   const checkout = (e) => {
     e.preventDefault();
@@ -183,8 +196,8 @@ if(productId==null){
       });
     } else {
       if (datas.paymentMethod === "COD") {
-        if(productId==null){
-          axios.post("http://localhost:8080/api/order/cart", datas, {
+        if(productId!=null){
+          axios.post("http://localhost:8080/api/order/buyNow", datas, {
             headers: {
               "Authorization": "Bearer " + localStorage.getItem("token"),
           }
@@ -238,17 +251,47 @@ if(productId==null){
         console.log(response.razorpay_payment_id);
         console.log(response.razorpay_order_id);
         console.log(response.razorpay_signature);
-        axios
-          .post("http://localhost:8080/api/order/", datas, {
+        if(productId!=null){
+          axios.post("http://localhost:8080/api/order/buyNow", datas, {
             headers: {
-              Authorization: "Bearer " + localStorage.getItem("token"),
-            },
+                "Authorization": "Bearer " + localStorage.getItem("token"),
+            }
           })
           .then((resp) => {
             console.log(resp["data"]);
             console.log(resp);
             const length = resp.data.length;
             const orderStatus = "Order Placed";
+            axios.put("http://localhost:8080/api/order/orderStatus/" + resp.data["id"], {orderStatus}, {
+              headers: {
+                "Authorization": "Bearer " + localStorage.getItem("token"),
+            }
+          })
+          .then((resp) => {
+            console.log(resp["data"]);
+          });
+            Swal.fire({
+              title: "Success",
+              text: "Order Placed Successfully",
+              icon: "success",
+            });
+          })
+          
+            
+        }else{
+        axios
+          .post("http://localhost:8080/api/order/", datas, {
+            headers: {
+              Authorization: "Bearer " + localStorage.getItem("token"),
+            },
+          })
+        
+          .then((resp) => {
+            console.log(resp["data"]);
+            console.log(resp);
+            const length = resp.data.length;
+            const orderStatus = "Order Placed";
+
             for (let i = 0; i < length; i++) {
               axios
                 .put(
@@ -274,7 +317,10 @@ if(productId==null){
             // console.log(orderId);
           });
 
+
+
         navigate("/orders");
+        }
       },
       prefill: {
         name: name,
