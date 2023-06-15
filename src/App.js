@@ -66,7 +66,7 @@ function App() {
   const beautyApi = "http://localhost:8080/api/category/6/products";
 
   const allproductsApi = "http://localhost:8080/api/products";
-  
+
 
 
   return (
@@ -81,15 +81,15 @@ function App() {
         <Route path="/signup" Component={Signup} />
         <Route path='/tiles' Component={Tiles} />
         <Route path='/inbuiltcartview' Component={AddItem} />
-        
-        <Route path='/category/:id' Component={()=> <Allproducts api={"http://localhost:8080/api/category/"+useParams().id+"/products"} />} />
+
+        <Route path='/category/:id' Component={() => <Allproducts api={"http://localhost:8080/api/category/" + useParams().id + "/products"} />} />
         <Route path='/Grocery' Component={() => <Allproducts api={groceryApi} title="Grocery" />} />
         <Route path='/Mobile' Component={() => <Allproducts api={mobileApi} title="Mobile" />} />
         <Route path='/Fashion' Component={() => <Allproducts api={fashionApi} title="Fashion" />} />
         <Route path='/Electronics' Component={() => <Allproducts api={electronicsApi} title="Electronics" />} />
         <Route path='/Home' Component={() => <Allproducts api={homeApi} />} title="Home" />
         <Route path='/Beauty' Component={() => <Allproducts api={beautyApi} title="Beauty" />} />
-       
+
         <Route path='/search' Component={() => <SearchData />} />
 
         <Route path="/productlist" Component={ProductList} />
