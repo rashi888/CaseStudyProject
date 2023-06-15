@@ -1,10 +1,9 @@
 import React, { useState } from 'react'
 import "./User.css"
-import userIcon from "../../assets/All_Icons/userimg.jpeg"
+// import userIcon from "../../assets/All_Icons/userimg1.png"
+import userIcon from "../../assets/All_Icons/user.png"
 import { BiUserCircle } from "react-icons/bi"
 import { RiShoppingCartFill } from "react-icons/ri"
-import { RiHeartLine } from "react-icons/ri"
-import { RiSettings2Fill } from "react-icons/ri"
 import { FiPower } from "react-icons/fi"
 import { Link } from 'react-router-dom'
 import axios from "axios"
@@ -71,7 +70,7 @@ function User() {
             <div className="user-container">
                 <div className="left-side-contain">
                     <div className="top-content">
-                        <img src={userIcon} alt="" height="200px" width="300px" />
+                        <img src={userIcon} alt="" height="80px" width="80px" />
                         <h1>Hello, User</h1>
                     </div>
                     <div className="bottom-content">
