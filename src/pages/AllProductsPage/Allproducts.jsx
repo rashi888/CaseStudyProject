@@ -29,10 +29,15 @@ function Allproducts(props) {
     setPageNumber(0);
 
   }
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
  
 
   const fetchData = () => {
     setIsLoading(true);
+    scrollToTop();
     const url =
       api +
       "?pageSize=10&pageNumber=" +
