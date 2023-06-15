@@ -43,13 +43,13 @@ function GroceryCol() {
             .catch(error => {
                 console.log(error);
             });
-            
+
     }
 
-    const navig=(arg)=>{
-        navigate("category/"+arg)
+    const navig = (arg) => {
+        navigate("category/" + arg)
     }
-  
+
     const settings = {
         dots: true,
         infinite: true,
@@ -67,33 +67,33 @@ function GroceryCol() {
                 <img src={foodEssential} alt="" width="100%" />
                 <div className="first-img-col" style={{ display: 'flex' }}>
                     <img onClick={navig("1")} src={Atta4} alt="" height="70%" width="70%" style={{ marginRight: '15px' }} />
-                <div className="twoimg-sec" style={{ display: 'flex', flexDirection: 'column' }}>
-                    <img src={Atta2} alt="" height="50%" width="100%" style={{ marginBottom: '10px' }} />
-                    <img src={Atta3} alt="" height="50%" width="100%" />
+                    <div className="twoimg-sec" style={{ display: 'flex', flexDirection: 'column' }}>
+                        <img src={Atta2} alt="" height="50%" width="100%" style={{ marginBottom: '10px' }} />
+                        <img src={Atta3} alt="" height="50%" width="100%" />
+                    </div>
                 </div>
-            </div>
-            <img src={personalcare} alt="" width="100%" />
-            <div className="second-img-col" style={{ display: 'flex', margin: '0px 10px' }}>
-                <img onClick={srch("Shampoo")} src={Shampoo} alt="" height="33%" width="33%" style={{ marginRight: '15px' }} />
-                <img onClick={srch("Oral Care")} src={oralcare} alt="" height="33%" width="33%" style={{ marginRight: '15px' }} />
-                <img onClick={srch("Herbals And Natural")} src={herbals} alt="" height="34%" width="32%" style={{ marginRight: '15px' }} />
-            </div>
-            <div className="third-img-col" style={{ display: 'flex', margin: '0px 10px' }}>
-                <img src={Gillete} alt="" height="33%" width="33%" style={{ marginRight: '15px' }} />
-                <img src={Himher} alt="" height="33%" width="33%" style={{ marginRight: '15px' }} />
-                <img src={Veet} alt="" height="34%" width="31.5%" style={{ marginRight: '15px' }} />
+                <img src={personalcare} alt="" width="100%" />
+                <div className="second-img-col" style={{ display: 'flex', margin: '0px 10px' }}>
+                    <img onClick={srch("Shampoo")} src={Shampoo} alt="" height="33%" width="33%" style={{ marginRight: '15px' }} />
+                    <img onClick={srch("Oral Care")} src={oralcare} alt="" height="33%" width="33%" style={{ marginRight: '15px' }} />
+                    <img onClick={srch("Herbals And Natural")} src={herbals} alt="" height="34%" width="32%" style={{ marginRight: '15px' }} />
+                </div>
+                <div className="third-img-col" style={{ display: 'flex', margin: '0px 10px' }}>
+                    <img onClick={srch("Personal care forhim")} src={Gillete} alt="" height="33%" width="33%" style={{ marginRight: '15px' }} />
+                    <img src={Himher} alt="" height="33%" width="33%" style={{ marginRight: '15px' }} />
+                    <img onClick={srch("Personal care forher")} src={Veet} alt="" height="34%" width="31.5%" style={{ marginRight: '15px' }} />
 
-            </div>
-            <img src={household} alt="" width="100%" />
-            <div className="fourth-img-col" style={{ display: 'flex', margin: '0px 5px' }}>
-                <img onClick={srch("Detergents")} src={detergent} alt="" height="33%" width="33%" style={{ marginRight: '15px' }} />
-                <img onClick={srch("Repellants and Freshners")} src={freshners} alt="" height="33%" width="33%" style={{ marginRight: '15px' }} />
-                <img onClick={srch("Cleaning Essentials")} src={cleaning} alt="" height="34%" width="32%" style={{ marginRight: '15px' }} />
+                </div>
+                <img src={household} alt="" width="100%" />
+                <div className="fourth-img-col" style={{ display: 'flex', margin: '0px 5px' }}>
+                    <img onClick={srch("Detergents")} src={detergent} alt="" height="33%" width="33%" style={{ marginRight: '15px' }} />
+                    <img onClick={srch("Repellants and Freshners")} src={freshners} alt="" height="33%" width="33%" style={{ marginRight: '15px' }} />
+                    <img onClick={srch("Cleaning Essentials")} src={cleaning} alt="" height="34%" width="32%" style={{ marginRight: '15px' }} />
 
-            </div>
+                </div>
 
 
-        </div >
+            </div >
         </>
     )
 }
