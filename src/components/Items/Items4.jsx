@@ -134,24 +134,7 @@ function Items4() {
                                                 </NavLink>
                                             </p>
                                         </div>
-                                        {/* <Link to="mobiles"><script>const id = item.productId;</script>
-                <div className="image-items">
-                  <img
-                    src={"http://localhost:8080/api/products/image/" + item.productPhoto}
-                    className="card-img-top"
-                    alt="product.title"
-                  />
-                </div>
-                </Link>
-                <h4 className="heading-main">{item.productName}</h4>
-                <p className='price-main'>₹ {item.productPrice}</p>
-                <p className='description-main'> {item.productDescription}</p>
-                <p>
-                  <NavLink to="/cart">
-                    <button type="button" class="btn-item btn-warning">Add to cart</button>
-                  </NavLink>
-
-                </p> */}
+                                        
                                     </div>
                                 </>
                                 );

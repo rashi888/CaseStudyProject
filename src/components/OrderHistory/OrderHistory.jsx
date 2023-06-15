@@ -23,8 +23,6 @@ function OrderHistory() {
 
     console.log(order);
 
-    
-
     return (
         <>
             <div class="container-fluid">

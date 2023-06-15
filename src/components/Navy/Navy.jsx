@@ -10,9 +10,7 @@ import Fashion from "../../assets/NavyImages/Fashion.webp"
 import Electronics from "../../assets/NavyImages/Electronics.webp"
 import Home from "../../assets/NavyImages/Home1.png"
 import Beauty from "../../assets/NavyImages/Beauty 2.png"
-// import AllCategory from "../../assets/NavyImages/allcat.png"
 
-// http://localhost:8080/api/categories/
 
 function Navy() {
    
@@ -40,10 +38,6 @@ function Navy() {
     console.log(setCategory);
 
     const navigate = useNavigate();
-    
-
-
-
 
     return (
         <>
@@ -99,33 +93,10 @@ function Navy() {
                                 <img src={Beauty} alt="" />
                                 <li className="nav-row-list"><Link to="/Beauty" className="nav-row-list-link" >Beauty</Link></li>
                             </Link>
-                            {/* <li className="nav-row-list"><Link to="" className="nav-row-list-link" >Smartphones</Link></li>
-                            <li className="nav-row-list"><Link to="" className="nav-row-list-link">furniture</Link></li>
-                            <li className="nav-row-list"><Link to="" className="nav-row-list-link">Toys</Link></li>
-                            <li className="nav-row-list"><Link to="" className="nav-row-list-link">Computing</Link></li>
-                            <li className="nav-row-list"><Link to="" className="nav-row-list-link">Games</Link></li>
-                            <li className="nav-row-list"><Link to="" className="nav-row-list-link">Automotive</Link></li> */}
-                        </ul>
+                             </ul>
                     </nav>
                 </div>
-                {/* <div className="box-inside-dropdown">
-                    <div className="item-box" >
-                        <p>Smartphones</p>
-                        <p>Furniture</p>
-                        <p>Toys</p>
-                        <p>Computing</p>
-                        <p>Games</p>
-                        <p>Automotive</p>
-                    </div>
-                    <div className="inside-item-box">
-                        <p>iphone</p>
-                        <p>Samsung Galaxy</p>
-                        <p>Realme</p>
-                        <p>Redmi</p>
-                        <p>Intex</p>
-                    </div>
-
-                </div> */}
+                
             </div>
         </>
     )
