@@ -310,11 +310,11 @@ function Address() {
                         }}
                       >
                         <i class="ri-pencil-fill"></i>{" "}
+                        </button>
                         <i
                           onClick={deleteaddress(item.deliveryDetailsId)}
                           class="ri-delete-bin-6-fill mx-3"
                         ></i>
-                      </button>
                     </label>
                   </div>
                 </>
