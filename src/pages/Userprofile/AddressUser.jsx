@@ -16,9 +16,10 @@ import { Form, FormGroup, Label, Input, FormText, Col, Button, FormGroupProps, R
 
 function AddressUser() {
 
+  
+
     const [data, setData] = useState([]);
     const [deliveryDetailsId, setDeliveryDetailsId] = useState(1);
-    const [paymentMethod, setPaymentMethod] = useState("COD");
 
 
     const fetchdata = () => {
@@ -88,11 +89,32 @@ function AddressUser() {
     }
     const refresh = () => window.location.reload(true)
 
-    const [datas, setDatas] = useState({
-        userId: localStorage.getItem("userId"),
-        deliveryDetailsId: deliveryDetailsId,
-        paymentMethod: paymentMethod,
-    });
+    const deleteAddress = (id) => (e) => {
+        e.preventDefault();
+        console.log(id);
+        axios.delete("http://localhost:8080/api/deliveryDetails/" + id,{
+            headers: {
+                "Authorization": "Bearer " + localStorage.getItem("token"),
+            }
+        })
+            .then((resp) => {
+                console.log("success log");
+                Swal.fire({
+                    title: "Success",
+                    text: "Address Deleted Successfully",
+                    icon: "success",
+                });
+                fetchdata();
+            }
+            )
+    }
+
+    const logout = () => {
+        localStorage.clear();
+        window.location.href = "/";
+    }
+
+
 
 
 
@@ -121,7 +143,7 @@ function AddressUser() {
                             <i class="ri-user-location-fill" id='icon3'></i>
                             <h6 className='headings'> Addresses</h6>
                         </div>
-                        <div className="myaccount">
+                        <div onClick={logout} className="myaccount">
                             <FiPower id='icon5' />
                             <h6 className='headings'> Log Out</h6>
                         </div>
@@ -140,9 +162,7 @@ function AddressUser() {
                                     <>
 
                                         <div class="form-check-delivery">
-                                            <input class="form-check-input" value={item.deliveryDetailsId}
-                                                onChange={(e) => setDatas({ ...datas, deliveryDetailsId: e.target.value })}
-                                                type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
+                                            
                                             <label class="form-check-label" for="flexRadioDefault1">
                                                 {item.name},
                                                 {item.addressLine1},
@@ -152,9 +172,8 @@ function AddressUser() {
                                                 <br />
                                                 {item.state}
                                                 <button onClick={openModal} style={{ border: '0', backgroundColor: 'white', marginLeft: '20px', color: 'gray' }} >
-                                                    <i class="ri-pencil-fill" ></i>
                                                         </button>
-                                                     <i  class="ri-delete-bin-6-fill mx-3">
+                                                     <i onClick={deleteAddress(item.deliveryDetailsId)} class="ri-delete-bin-6-fill mx-3">
                                                         </i>
                                             </label>
                                         </div>
