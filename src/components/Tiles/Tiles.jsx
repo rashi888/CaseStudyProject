@@ -47,21 +47,21 @@ function Tiles() {
           <h5>Specs you need</h5>
           <div className="section1">
             <div className="img-content" style={{ paddingRight: '40px' }}>
-              <img src={lap1} alt="" height="100px" width="100px" />
+              <img onClick={srch("HP Pavilion Plus")} src={lap1} alt="" height="100px" width="100px" />
               <p style={{ fontSize: '15px' }}>HP Pavilion Plus...</p>
             </div>
             <div className="img-content" style={{ marginTop: '-12px' }}>
-              <img src={lap2} alt="" height="110px" width="110px" />
+              <img onClick={srch("dell")} src={lap2} alt="" height="110px" width="110px" />
               <p style={{ fontSize: '15px' }}>Dell Vostro 3510 Laptop...</p>
             </div>
           </div>
           <div className="section2" style={{ marginTop: '-20px' }}>
             <div className="img-content" style={{ padding: '0px' }}>
-              <img src={lap3} alt="" height="100px" width="100px" />
+              <img onClick={srch("ideapad")} src={lap3} alt="" height="100px" width="100px" />
               <p style={{ fontSize: '15px' }}>Lenovo IdeaPad Slim 3 Intel...</p>
             </div>
             <div className="img-content" style={{ padding: '0px' }}>
-              <img src={lap4} alt="" height="110px" width="110px" />
+              <img onClick={srch("acer")} src={lap4} alt="" height="110px" width="110px" />
               <p style={{ fontSize: '15px' }}> Acer Swift X AMD Ryzen...</p>
             </div>
           </div>
@@ -75,14 +75,14 @@ function Tiles() {
 
         <div className="box-num3" style={{ padding: '15px', }}>
           <h5>Explore more from across the store</h5>
-          <img src={beauty1} height="47%" style={{ paddingLeft: '45px' }} />
+          <img onClick={srch("Salicylic")}  src={beauty1} height="47%" style={{ paddingLeft: '45px' }} />
           <p style={{fontSize:'14px'}}>
             Minimalist 2% Salicylic Acid Face Wash For Oily Skin...</p>
           <div className="images-contain" style={{marginTop:'-10px',marginRight:'5px',display:'flex',justifyContent:'space-between'}}>
-            <img src={beauty2} height="70px" width="70px" style={{border:'1px solid lightgray'}}/>
-            <img src={beauty3} height="70px" width="70px" style={{border:'1px solid lightgray'}}/>
-            <img src={beauty4} height="70px" width="70px" style={{border:'1px solid lightgray'}}/>
-            <img src={beauty5} height="70px" width="70px" style={{border:'1px solid lightgray'}}/>
+            <img onClick={srch("professionnel")}  src={beauty2} height="70px" width="70px" style={{border:'1px solid lightgray'}}/>
+            <img onClick={srch("perfora")}  src={beauty3} height="70px" width="70px" style={{border:'1px solid lightgray'}}/>
+            <img onClick={srch("raw essentials")}  src={beauty4} height="70px" width="70px" style={{border:'1px solid lightgray'}}/>
+            <img onClick={srch("Salicylic")}  src={beauty5} height="70px" width="70px" style={{border:'1px solid lightgray'}}/>
           </div>
           {/* <div className="section3">
             <div className="img-content">

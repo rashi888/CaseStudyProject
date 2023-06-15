@@ -26,6 +26,7 @@ const Footer = () => {
 
                     <div className="legal" style={{ marginTop: '35px' }}>
                         <p>Copyright © 2023 by Shopease and its affiliates. All rights reserved.</p>
+                        
                     </div>
                     <div className="become-seller" >
                     <p style={{ fontSize: '22px', color: '#54b9c4', fontWeight: 700, marginTop: '10px' }}>BECOME A SELLER</p>
