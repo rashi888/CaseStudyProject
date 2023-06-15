@@ -576,7 +576,7 @@ function Address() {
                       </Col>
                     </Row>
                     <FormGroup>
-                      <Label for="exampleAddress">Address</Label>
+                      <Label for="exampleAddress">Flat, House no., Building, Company, Apartment</Label>
                       <Input
                         id="exampleAddress"
                         name="addressLine1"
@@ -585,12 +585,12 @@ function Address() {
                       />
                     </FormGroup>
                     <FormGroup>
-                      <Label for="exampleAddress2">Address 2</Label>
+                      <Label for="exampleAddress2">Area, Street, Sector</Label>
                       <Input
                         id="exampleAddress2"
                         required
                         name="addressLine2"
-                        placeholder="Apartment, studio, or floor"
+                        placeholder="Area, Street, Sector"
                       />
                     </FormGroup>
                     <Row>
