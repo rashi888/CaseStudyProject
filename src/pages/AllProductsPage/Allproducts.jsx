@@ -14,6 +14,9 @@ function Allproducts(props) {
   const [pageNumber, setPageNumber] = useState(0);
   const [sortBy, setSortBy] = useState("productId");
   const [dir, setDir] = useState("DESC");
+  const [sortWay, setSortWay] = useState("Sort by");
+
+  
 
   const setpage = (item) => (e) => {
     // console.log(item);
@@ -152,16 +155,17 @@ function Allproducts(props) {
                 backgroundColor: "white",
               }}
             >
-              Sort by: <span style={{ fontWeight: "500" }}>{sortBy}</span>
+              Sort by: <span style={{ fontWeight: "500" }}>{sortWay}</span>
             </Link>
 
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
               <Link
                 class="dropdown-item"
+                value = "New Arrivals"
                 href="#"
                 onClick={() => {
                   setSortBy("productId");
-                  setDir("DESC");
+                  setSortWay("New Arrivals");
                 }}
               >
                 New Arrivals
@@ -169,9 +173,11 @@ function Allproducts(props) {
               <Link
                 class="dropdown-item"
                 href="#"
+                value = "Price: Low to High"
                 onClick={() => {
                   setSortBy("productPrice");
                   setDir("ASC");
+                  setSortWay("Price: Low to High");
                   
                 }}
               >
@@ -180,9 +186,11 @@ function Allproducts(props) {
               <Link
                 class="dropdown-item"
                 href="#"
+                value = "Price: High to Low"
                 onClick={() => {
                   setSortBy("productPrice");
                   setDir("DESC");
+                  setSortWay("Price: High to Low");
                 }}
               >
                 Price: High to Low
