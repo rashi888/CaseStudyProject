@@ -35,8 +35,12 @@ function Address() {
   })
       .then((resp) => {
         console.log(resp["data"]);
-        setGrandtotal(resp["data"].productPrice);
-      })
+        if(resp["data"].productPrice<500){
+          setGrandtotal(resp["data"].productPrice+99);
+      }else{
+          setGrandtotal(resp["data"].productPrice);
+      }
+      });
 
 
 
@@ -68,7 +72,11 @@ function Address() {
       })
       .then((response) => {
         console.log(response.data);
+        if(response.data.grandTotal>500){
         setGrandtotal(response.data.grandTotal);
+        }else{
+          setGrandtotal(response.data.grandTotal+99);
+        }
       });
   };
 
