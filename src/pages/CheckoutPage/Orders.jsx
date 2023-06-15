@@ -4,11 +4,14 @@ import imgg from "../../assets/PhoneImgs/phone1.webp"
 import { Link } from 'react-router-dom'
 import { Spinner } from 'reactstrap'
 import Norder from "../../assets/MoreImgs/Norder3.png"
+import { useNavigate } from 'react-router-dom'
 
 
 function Orders() {
     const [order, setOrder] = React.useState([]);
     const [isLoading, setIsLoading] = useState(false);
+ const navigate = useNavigate();
+    
 
 
     const fetchData = () => {
@@ -30,6 +33,11 @@ function Orders() {
     }, []);
 
     console.log(order);
+
+    const buyNow = (id) => (e) => {
+        window.location.href = "/checkout/" + id;
+    }
+
 
     if (order.length === 0) {
         return (
@@ -100,7 +108,7 @@ function Orders() {
                                                 <div className="buttons-option">
                                                     <div className="option1-div" style={{display:'flex',alignItems:'center',flexDirection:'column'}}>
                                                         {/* <button className='btn-btn' style={{ width: '230px' }}>Cancel the Order</button> */}
-                                                        <button style={{ padding: '5px 20px',width: '230px' , borderRadius: '5px', backgroundColor: 'rgb(255, 217, 0)', margin: '0px 40px 20px 40px', border: 'none' }}>Buy it again</button>
+                                                        <button onClick={buyNow(item.product.productId)} style={{ padding: '5px 20px',width: '230px' , borderRadius: '5px', backgroundColor: 'rgb(255, 217, 0)', margin: '0px 40px 20px 40px', border: 'none' }}>Buy it again</button>
                                                         <button onClick={gotoProduct(item.product.productId)} style={{ padding: '5px',width: '230px' , borderRadius: '5px', backgroundColor: 'white', margin: '0 ', border: '0.5px solid lightgray' }}>View your item</button>
 
                                                     </div>
