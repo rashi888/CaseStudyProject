@@ -12,6 +12,11 @@ import { Form, FormGroup, Label, Input, FormText, Col, Button, FormGroupProps, R
 
 function User() {
 
+    const logout = () => {
+        localStorage.clear();
+        window.location.href = "/";
+    }
+
     const [name, setName] = useState('');
     const [emailId, setEmailId] = useState('');
     const [mobileNumber, setMobileNumber] = useState('');
@@ -109,7 +114,7 @@ function User() {
                         </div>
                         <div className="myaccount">
                             <FiPower id='icon5' />
-                            <h6 className='headings'> Log Out</h6>
+                            <h6 onClick={logout()} className='headings'> Log Out</h6>
                         </div>
                     </div>
 
