@@ -155,11 +155,19 @@ function Address() {
 
 
   const refresh = () => window.location.reload(true);
+if(productId==null){
 
   const [datas, setDatas] = useState({
     userId: localStorage.getItem("userId"),
     deliveryDetailsId: deliveryDetailsId,
     paymentMethod: paymentMethod,
+  });
+}else{
+  const [datas, setDatas] = useState({
+    userId: localStorage.getItem("userId"),
+    deliveryDetailsId: deliveryDetailsId,
+    paymentMethod: paymentMethod,
+    productId: productId,
   });
 
   const checkout = (e) => {
@@ -176,7 +184,7 @@ function Address() {
     } else {
       if (datas.paymentMethod === "COD") {
         if(productId==null){
-          axios.post("http://localhost:8080/api/order/cart", datas,productId, {
+          axios.post("http://localhost:8080/api/order/cart", datas, {
             headers: {
               "Authorization": "Bearer " + localStorage.getItem("token"),
           }
