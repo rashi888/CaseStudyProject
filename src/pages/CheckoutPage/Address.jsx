@@ -109,7 +109,7 @@ function Address() {
           icon: "success",
         });
         closeModal();
-        setData(null)
+        closeSecondModal();
         fetchdata();
       });
   };
@@ -117,6 +117,10 @@ function Address() {
   const updateForm = (id) => (e) => {
     e.preventDefault();
     const formdata = new FormData(e.target);
+
+   
+        
+    
     const data = Object.fromEntries(formdata.entries());
     data["tempUserId"] = localStorage.getItem("userId");
     console.log(data);
@@ -330,7 +334,7 @@ function Address() {
             <Modal isOpen={isOpen} onClose={closeModal}>
               <div className="modal-div">
                 <div className="popup-content">
-                  <h5 style={{ marginBottom: "30px" }}>Add New Address Here</h5>
+                  <h5 style={{ marginBottom: "30px" }}> Address </h5>
                   <Form onSubmit={updateForm(deliveryDetailsId)}>
                     <Row>
                       <Col md={6}>
@@ -339,7 +343,7 @@ function Address() {
                           <Input
                             id="name"
                             name="name"
-                            placeholder="name"
+                            placeholder={data.name} 
                             type="name"
                           />
                         </FormGroup>
