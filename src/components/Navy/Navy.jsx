@@ -33,9 +33,9 @@ function Navy() {
     useEffect(() => {
         fetchData();
     }, []);
-    console.log(category);
+    // console.log(category);
     // console.log("hello")
-    console.log(setCategory);
+    // console.log(setCategory);
 
     const navigate = useNavigate();
 

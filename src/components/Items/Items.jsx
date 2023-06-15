@@ -27,9 +27,10 @@ function Items() {
   };
 
   useEffect(() => {
+    console.clear();
     fetchData();
   }, []);
-  console.log(product);
+  // console.log(product);
 
 
 
@@ -83,7 +84,7 @@ function Items() {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         Swal.fire({
           title: "Success",
           text: "Product Added to Cart Successfully",

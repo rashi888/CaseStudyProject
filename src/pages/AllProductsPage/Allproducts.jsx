@@ -20,7 +20,7 @@ function Allproducts(props) {
   const [dir, setDir] = useState("DESC");
 
   const setpage = (item) => (e) => {
-    console.log(item);
+    // console.log(item);
     setPageNumber(item - 1);
   };
 
@@ -54,7 +54,7 @@ function Allproducts(props) {
   })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         setProduct(data ["content"]);
       
 
@@ -76,17 +76,17 @@ function Allproducts(props) {
     dir,
     location.key
   ]);
-  console.log(product);
+  // console.log(product);
   // console.log(totalpages);
   const page = [];
 
   for (let i = 1; i <= totalpages; i++) {
     page.push(i);
   }
-  console.log(page);
+  // console.log(page);
 
   const addtocart = (id) => (e) => {
-    console.log(e.target.value);
+    // console.log(e.target.value);
     let userId = localStorage.getItem("userId");
     if(userId === null){
       Swal.fire({
@@ -110,7 +110,7 @@ function Allproducts(props) {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         Swal.fire({
           title: "Success",
           text: "Product Added to Cart Successfully",
@@ -124,7 +124,7 @@ function Allproducts(props) {
 };
 
   const viewProduct = (id) => (e) => {
-    console.log(e.target.value);
+    // console.log(e.target.value);
     window.location.href = "/singleproductview/" + id;
   };
 

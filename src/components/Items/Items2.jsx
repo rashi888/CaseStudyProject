@@ -28,9 +28,10 @@ function Items2() {
   };
 
   useEffect(() => {
+    console.clear();
     fetchData();
   }, []);
-  console.log(product);
+  // console.log(product);
 
   //for multicaurosel
 
@@ -54,7 +55,7 @@ function Items2() {
   };
 
   const addtocart = (id) => (e) => {
-    console.log(e.target.value);
+    // console.log(e.target.value);
     let userId = localStorage.getItem("userId");
     if(userId==null){
       Swal.fire({
@@ -80,7 +81,7 @@ function Items2() {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         Swal.fire({
           title: "Success",
           text: "Product Added to Cart Successfully",
@@ -97,7 +98,7 @@ function Items2() {
   };
 
   const viewProduct = (id) => (e) => {
-    console.log(e.target.value);
+    // console.log(e.target.value);
     window.location.href = "/singleproductview/" + id;
   };
 

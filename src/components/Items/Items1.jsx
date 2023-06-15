@@ -28,9 +28,10 @@ function Items1() {
   };
 
   useEffect(() => {
+    console.clear();
     fetchData();
   }, []);
-  console.log(product);
+  // console.log(product);
 
   //for multicaurosel
 

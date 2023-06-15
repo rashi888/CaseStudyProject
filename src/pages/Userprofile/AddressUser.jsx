@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import Modal from '../CheckoutPage/Modal';
 import "./User.css"
-import userIcon from "../../assets/All_Icons/userimg.jpeg"
+// import userIcon from "../../assets/All_Icons/userimg1.jpeg"
+import userIcon from "../../assets/All_Icons/userimg1.png"
 import { BiUserCircle } from "react-icons/bi"
 import { RiShoppingCartFill } from "react-icons/ri"
 import { RiHeartLine } from "react-icons/ri"
@@ -175,7 +176,7 @@ function AddressUser() {
                                                     <Input
                                                         id="name"
                                                         name="name"
-                                                        placeholder="name"
+                                                        placeholder="Name"
                                                         type="name"
                                                     />
                                                 </FormGroup>
@@ -201,7 +202,7 @@ function AddressUser() {
                                             <Input
                                                 id="exampleAddress"
                                                 name="addressLine1"
-                                                placeholder="1234 Main St"
+                                                placeholder="Flat, House no., Building, Company, Apartment"
                                             />
                                         </FormGroup>
                                         <FormGroup>
@@ -211,7 +212,7 @@ function AddressUser() {
                                             <Input
                                                 id="exampleAddress2"
                                                 name="addressLine2"
-                                                placeholder="Apartment, studio, or floor"
+                                                placeholder="Area, Street, Sector, Village"
                                             />
                                         </FormGroup>
                                         <Row>

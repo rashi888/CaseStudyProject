@@ -26,7 +26,7 @@ const Navbar = () => {
             }
         })
             .then(response => {
-                console.log(response.data);
+                // console.log(response.data);
                 navigate("/search", { state: { searchdata: response.data } });
                 refresh();
 
@@ -50,7 +50,7 @@ const Navbar = () => {
     }
     let menu;
     if (window.localStorage.getItem("token") != null) {
-        console.log(window.localStorage.getItem("role"))
+        // console.log(window.localStorage.getItem("role"))
         if (window.localStorage.getItem("role") === "MERCHANT") {
             menu = (
                 <div className="profile">
@@ -111,6 +111,7 @@ const Navbar = () => {
     };
 
     useEffect(() => {
+        console.clear();
         window.addEventListener('scroll', handleScroll);
 
         return () => {
