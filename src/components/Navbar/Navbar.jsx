@@ -125,8 +125,8 @@ const Navbar = () => {
             <div className="navbars" >
                 <div className="logos" onClick={scrollToTop}>
 
-                    <Link to="/">
-                        <img src={logoo} alt="" className="logo" />
+                    <Link to="/" onClick={scrollToTop}>
+                        <img onClick={scrollToTop} src={logoo} alt="" className="logo" />
                     </Link>
                 </div>
                 <div className="searchBars">
