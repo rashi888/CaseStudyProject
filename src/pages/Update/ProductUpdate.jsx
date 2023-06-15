@@ -48,8 +48,15 @@ function ProductUpdate() {
                     text: "Product Updated Successfully",
                     icon: "success",
                 });
+                if(localStorage.getItem("role")=="ADMIN")
+                {
                 navigate("/admindashboard");
+                }else
+                {
+                    navigate("/mdash");
+                }
             })
+
     }
 
     const fetchdata = () => {

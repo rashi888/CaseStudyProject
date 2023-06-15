@@ -5,8 +5,11 @@ import Swal from "sweetalert2";
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import singleprod from "../../assets/MoreImgs/shopease single product view2.png"
+import { useNavigate } from 'react-router-dom';
 
 function SingleProductView() {
+
+  const navigate = useNavigate();
 
   const [image, setImage] = useState([]);
 
@@ -95,9 +98,68 @@ function SingleProductView() {
 
   };
 
+  const buynow = () => {
+
+    let userId = localStorage.getItem("userId");
+   if(userId==null){
+    Swal.fire({
+       
+      text: "Please Login First",
+      icon: "info",
+    });
+  }
+    else{
+    const url = "http://localhost:8080/api/order/buyNow";
+    const formdata = new FormData();
+    formdata.append("productId", productId);
+    formdata.append("userId", userId);
+
+    fetch(url, {
+      method: "POST",
+      body: formdata,
+      headers: {
+        "Authorization": "Bearer " + localStorage.getItem("token"),
+    }
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        
+      })
+      .catch((error) => {
+        console.log(error);
+      }
+      );
+      
+    }
+  };
+
+   
+
+        
+
+
   const changeImage = (item) => (e) => {
     console.log(item);
     setImage("http://localhost:8080/api/products/image/" + item);
+  }
+
+  let menu;
+  if (data.stock==0)
+  {
+    menu = (
+      <div className="btn-add-div" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-around', marginLeft: '-30px' }}>
+        <button className="btn btn-danger" style={{ width: '200px', height: '50px', borderRadius: '5px', fontSize: '20px', fontWeight: 'bold', cursor: 'not-allowed' }} disabled>Out of Stock</button>
+      </div>
+    )
+  }
+  else{
+    menu = (
+      <div className="btn-add-div" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-around', marginLeft: '-30px' }}>
+        <button className="btn btn-success" style={{ width: '200px', height: '50px', borderRadius: '5px', fontSize: '20px', fontWeight: 'bold' }} onClick={addtocart}>Add to Cart</button>
+        <button className="btn btn-success" style={{ width: '200px', height: '50px', borderRadius: '5px', fontSize: '20px', fontWeight: 'bold' }} onClick={buynow}>Buy Now</button>
+      </div>
+    )
   }
 
   return (
@@ -138,9 +200,8 @@ function SingleProductView() {
             <img src={singleprod} height="40%" width="70%" style={{display:'flex',alignItems:'center',marginLeft:'10%'}}/>
   
             <div className="btn-add-div" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-around', marginLeft: '-30px' }}>
-              <Link onClick={addtocart} to="/"><button style={{ backgroundColor: '#33bbca', borderRadius: '5px', fontSize: '20px' }}>Add to cart</button></Link>
-              <Link> <button style={{ backgroundColor: '#33bbca', borderRadius: '5px', fontSize: '20px' }}>Buy Now</button> </Link>
-            </div>
+              {menu}
+              </div>
 
           </div>
         </div>
