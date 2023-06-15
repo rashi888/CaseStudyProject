@@ -61,7 +61,7 @@ function Featured() {
           <img onClick={srch("spykar")} src={second} alt="" height="45%" width="45%" className='imgFearured1' />
         </div>
         <div className="two-img" style={{ display: 'flex', margin: '50px 20px', justifyContent: 'space-around' }}>
-          <img onClick={navig("9")} src={fifth} alt="" height="45%" width="45%" className='imgFearured1' />
+          <img onClick={srch("Starbucks")} src={fifth} alt="" height="45%" width="45%" className='imgFearured1' />
           <img onClick={srch("casio watch")} src={fourth} alt="" height="45%" width="45%" className='imgFearured1' />
         </div>
         <div className="third-img" style={{ display: 'flex', margin: '50px 20px', justifyContent: 'space-around' }}>
