@@ -151,7 +151,11 @@ function AddressUser() {
                                                 {item.pincode}
                                                 <br />
                                                 {item.state}
-                                                <button onClick={openModal} style={{ border: '0', backgroundColor: 'white', marginLeft: '20px', color: 'gray' }} ><i class="ri-pencil-fill" ></i> <i class="ri-delete-bin-6-fill mx-3"></i></button>
+                                                <button onClick={openModal} style={{ border: '0', backgroundColor: 'white', marginLeft: '20px', color: 'gray' }} >
+                                                    <i class="ri-pencil-fill" ></i>
+                                                        </button>
+                                                     <i  class="ri-delete-bin-6-fill mx-3">
+                                                        </i>
                                             </label>
                                         </div>
                                     </>

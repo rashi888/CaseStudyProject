@@ -138,6 +138,7 @@ function App() {
         <Route path='/user' Component={User} />
         <Route path='/addressuser' Component={AddressUser} />
         <Route path='/singleproductview/:id' Component={SingleProductView} />
+        <Route path='/checkout/:id' Component={Address} />
 
         <Route path='/norders' Component={NoOrders} />
       </Routes>

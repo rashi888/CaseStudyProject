@@ -6,11 +6,16 @@ import Modal from "./Modal";
 import axios from "axios";
 import useRazorpay from "react-razorpay";
 import { useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 import Swal from "sweetalert2";
 
 function Address() {
   const navigate = useNavigate();
+  const { id } = useParams();
+  const productId = id;
+
+  console.log(productId);
 
   const [data, setData] = useState([]);
   const [deliveryDetailsId, setDeliveryDetailsId] = useState(null);
@@ -170,6 +175,25 @@ function Address() {
       });
     } else {
       if (datas.paymentMethod === "COD") {
+        if(productId==null){
+          axios.post("http://localhost:8080/api/order/cart", datas,productId, {
+            headers: {
+              "Authorization": "Bearer " + localStorage.getItem("token"),
+          }
+          })
+          .then((resp) => {
+            console.log(resp["data"]);
+            Swal.fire({
+              title: "Success",
+              text: "Order Placed Successfully",
+              icon: "success",
+            });
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+
+        }else{
         axios
           .post("http://localhost:8080/api/order/", datas, {
             headers: {
@@ -186,7 +210,7 @@ function Address() {
           })
           .catch((error) => {
             console.log(error);
-          });
+          });}
       } else {
         setPaymentMethod("Online");
         PayByRazorPay();
