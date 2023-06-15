@@ -29,10 +29,15 @@ function Allproducts(props) {
     setPageNumber(0);
 
   }
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
  
 
   const fetchData = () => {
     setIsLoading(true);
+    scrollToTop();
     const url =
       api +
       "?pageSize=10&pageNumber=" +
@@ -83,6 +88,14 @@ function Allproducts(props) {
   const addtocart = (id) => (e) => {
     console.log(e.target.value);
     let userId = localStorage.getItem("userId");
+    if(userId === null){
+      Swal.fire({
+        text: "Please Login to Add Product to Cart",
+        icon: "info",
+      });
+    }
+    else{
+    
     const url = "http://localhost:8080/api/cart/addToCart";
     const formdata = new FormData();
     formdata.append("productId", id);
@@ -108,6 +121,7 @@ function Allproducts(props) {
         console.log(error);
       });
   };
+};
 
   const viewProduct = (id) => (e) => {
     console.log(e.target.value);
