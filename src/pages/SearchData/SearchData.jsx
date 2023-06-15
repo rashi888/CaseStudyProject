@@ -11,6 +11,10 @@ const SearchData = (props) => {
   const location = useLocation();
   const [product, setProduct] = useState(location.state.searchdata); 
   // const [product, setProduct] = useState([]); 
+  const [pageNumber, setPageNumber] = useState(0);
+  const [sortBy, setSortBy] = useState("productId");
+  const [dir, setDir] = useState("DESC");
+  const [totalPages, setTotalPages] = useState(0);
   
   
 
@@ -56,24 +60,37 @@ const SearchData = (props) => {
 
   
 
-  const fetchData = () => {
-    return fetch(api,{
-      headers: {
-          "Authorization": "Bearer " + localStorage.getItem("token"),
-      }
-  }
-      
-    )
-      .then((response) => response.json())
-      .then((data) => setProduct(data["content"]));
-  };
-
+  
   useEffect(() => {
     fetchData();
     setProduct(location.state.searchdata);
 
   }, []);
   console.log(product);
+
+  const fetchData = () => {
+    const url =
+      "http://localhost:8080/api/products/search/" + location.state.searchdata +
+      "?pageSize=10&pageNumber=" +
+      pageNumber +
+      "&sortBy=" +
+      sortBy +
+      "&sortDir=" +
+      dir;
+      console.log(url);
+    return fetch(url,{
+      headers: {
+          "Authorization": "Bearer " + localStorage.getItem("token"),
+      }
+  })
+      .then((response) => response.json())
+      .then((data) => {
+        setTotalPages(data["totalPages"]);
+        setProduct(data["content"]);
+      });
+  };
+
+
 
   
   return (
@@ -92,7 +109,7 @@ const SearchData = (props) => {
         </div>
         </div>
 
-        {product.map((item) => {
+        {product['content'].map((item) => {
           return (<>
             <div className="card-one"  > 
               <div className="img-section">
