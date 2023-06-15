@@ -135,6 +135,7 @@ function User() {
                                     placeholder="Enter Name"
                                     type="text"
                                     value={name}
+                                    required
                                     onChange={(e) => setName(e.target.value)}
                                 />
                             </FormGroup>
@@ -150,6 +151,7 @@ function User() {
                                     placeholder="Enter Email"
                                     type="email"
                                     value={emailId}
+                                    required
                                     onChange={(e) => setEmailId(e.target.value)}
                                 />
                             </FormGroup>
@@ -166,6 +168,7 @@ function User() {
                                     placeholder="Enter Mobile Number"
                                     type="tel"
                                     value={mobileNumber}
+                                    required
                                     onChange={(e) => setMobileNumber(e.target.value)}
                                 />
                             </FormGroup>

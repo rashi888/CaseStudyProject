@@ -202,6 +202,7 @@ function AddressUser() {
                                                         name="name"
                                                         placeholder="Name"
                                                         type="name"
+                                                        required
                                                     />
                                                 </FormGroup>
                                             </Col>
@@ -215,6 +216,7 @@ function AddressUser() {
                                                         name="mobile"
                                                         placeholder="Mobile Number"
                                                         type="tel"
+                                                        required
                                                     />
                                                 </FormGroup>
                                             </Col>
@@ -227,6 +229,7 @@ function AddressUser() {
                                                 id="exampleAddress"
                                                 name="addressLine1"
                                                 placeholder="Flat, House no., Building, Company, Apartment"
+                                                required
                                             />
                                         </FormGroup>
                                         <FormGroup>
@@ -237,6 +240,7 @@ function AddressUser() {
                                                 id="exampleAddress2"
                                                 name="addressLine2"
                                                 placeholder="Area, Street, Sector, Village"
+                                                required
                                             />
                                         </FormGroup>
                                         <Row>
@@ -248,6 +252,7 @@ function AddressUser() {
                                                     <Input
                                                         id="exampleCity"
                                                         name="city"
+                                                        required
                                                     />
                                                 </FormGroup>
                                             </Col>
@@ -299,6 +304,7 @@ function AddressUser() {
                                                     <Input
                                                         id="exampleZip"
                                                         name="pincode"
+                                                        required
                                                     />
                                                 </FormGroup>
                                             </Col>
