@@ -170,7 +170,7 @@ function Address() {
             Swal.fire({
                 title: "Error",
                 text: "Please Select Delivery Address and Payment Method",
-                icon: "error",
+                icon: "warning",
             });
         }
         else{

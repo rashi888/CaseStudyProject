@@ -36,7 +36,7 @@ function Homepage() {
             <GroceryCol/>
             <Items6/>
             <MsignBanner/>
-            <img src={img13} alt="" height="100%" width="100%" style={{margin:'40px 0px'}}/>
+            <img src={img13} alt="" height="100%" width="100%" style={{margin:'5px 0px'}}/>
         </>
     )
 }
