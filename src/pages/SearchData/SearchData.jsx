@@ -22,6 +22,12 @@ const SearchData = (props) => {
   const addtocart = (id) => (e) => {
     console.log(e.target.value);
     let userId = localStorage.getItem("userId");
+    if(userId === null){
+      Swal.fire({
+        title: "Info",
+        text: "Please Login to Add Product to Cart",
+      });
+    }else{
     const url = "http://localhost:8080/api/cart/addToCart" ;
     const formdata = new FormData();
     formdata.append("productId", id);
@@ -50,6 +56,7 @@ const SearchData = (props) => {
       
 
   };
+}
 
   const viewProduct = (id) => (e) => {
     console.log(e.target.value);
@@ -57,11 +64,15 @@ const SearchData = (props) => {
     window.location.href = "/singleproductview/" + id ;
   };
 
-
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+  
   
 
   
   useEffect(() => {
+    scrollToTop();
     fetchData();
     setProduct(location.state.searchdata);
 
@@ -131,23 +142,7 @@ const SearchData = (props) => {
           </>
           );
         })}
-        <nav aria-label="Page navigation example" style={{ margin: '30px 20px', padding: '10px'}}>
-          <ul class="pagination" style={{display:'flex',alignItems:'center',justifyContent:'center'}}>
-            <li class="page-item" style={{backgroundColor:'yellow'}}>
-              <a class="page-link" href="#" aria-label="Previous" style={{fontSize:'24px'}}>
-                <span aria-hidden="true">&laquo;</span>
-              </a>
-            </li>
-            <li class="page-item f-10"><a class="page-link" href="#" style={{fontSize:'24px'}}>1</a></li>
-            <li class="page-item"><a class="page-link" href="#" style={{fontSize:'24px'}}>2</a></li>
-            <li class="page-item"><a class="page-link" href="#" style={{fontSize:'24px'}}>3</a></li>
-            <li class="page-item">
-              <a class="page-link" href="#" aria-label="Next" style={{fontSize:'24px'}}>
-                <span aria-hidden="true">&raquo;</span>
-              </a>
-            </li>
-          </ul>
-        </nav>
+        
       </div>
     </>
   )

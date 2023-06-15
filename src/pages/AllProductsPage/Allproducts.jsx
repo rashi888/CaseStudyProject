@@ -90,9 +90,8 @@ function Allproducts(props) {
     let userId = localStorage.getItem("userId");
     if(userId === null){
       Swal.fire({
-        title: "Error",
         text: "Please Login to Add Product to Cart",
-        icon: "error",
+        icon: "info",
       });
     }
     else{
