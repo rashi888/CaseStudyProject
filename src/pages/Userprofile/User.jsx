@@ -12,6 +12,8 @@ import { Form, FormGroup, Label, Input, FormText, Col, Button, FormGroupProps, R
 
 function User() {
 
+   
+
     const [name, setName] = useState('');
     const [emailId, setEmailId] = useState('');
     const [mobileNumber, setMobileNumber] = useState('');
@@ -84,6 +86,11 @@ function User() {
         //     });
     };
 
+    const logout = () => {
+        localStorage.clear();
+        window.location.href = "/";
+    }
+
     return (
         <>
             <div className="user-container">
@@ -107,7 +114,7 @@ function User() {
                             <i class="ri-user-location-fill" id='icon3'></i>
                             <Link to="/addressuser" className='linking'><h6 className='headings'> Addresses</h6></Link>
                         </div>
-                        <div className="myaccount">
+                        <div onClick={logout} className="myaccount">
                             <FiPower id='icon5' />
                             <h6 className='headings'> Log Out</h6>
                         </div>

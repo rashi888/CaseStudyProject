@@ -8,6 +8,16 @@ import axios from 'axios'
 function ProductListAdmin() {
 
     const [isLoading, setIsLoading] = useState(false);
+    const [totalpages, setTotalpages] = useState(0);
+  const [pageNumber, setPageNumber] = useState(0);
+  const [sortBy, setSortBy] = useState("productId");
+  const [dir, setDir] = useState("DESC");
+
+  const setpage = (item) => (e) => {
+    // console.log(item);
+    setPageNumber(item - 1);
+  };
+
 
     const deleteProduct = (id) => {
         axios.delete("http://localhost:8080/api/products/" + id, {
@@ -45,7 +55,13 @@ function ProductListAdmin() {
 
     const fetchData = () => {
         setIsLoading(true);
-        return fetch("http://localhost:8080/api/products?sortBy=category&pageSize=100",
+        const url = "http://localhost:8080/api/products?pageSize=10&pageNumber=" +
+      pageNumber +
+      "&sortBy=" +
+      sortBy +
+      "&sortDir=" +
+      dir;
+        return fetch(url,
         {
             headers: {
                 "Authorization": "Bearer " + localStorage.getItem("token"),
@@ -54,15 +70,25 @@ function ProductListAdmin() {
             .then((response) => response.json())
             .then((data) => {
                 setProduct(data["content"])
+                    setTotalpages(data["totalPages"]);
+
                 setIsLoading(false);
             });
     };
 
     useEffect(() => {
         fetchData();
-    }, []);
+    }, [
+        pageNumber,
+        sortBy,
+        dir,
+    ]);
     console.log(product);
+const page = [];
 
+  for (let i = 1; i <= totalpages; i++) {
+    page.push(i);
+  }
 
     return (
         <>
@@ -117,9 +143,22 @@ function ProductListAdmin() {
                                 <span aria-hidden="true">&laquo;</span>
                             </Link>
                         </li>
-                        <li class="page-item f-10"><Link class="page-link" href="#" style={{ fontSize: '24px' }}>1</Link></li>
-                        <li class="page-item"><Link class="page-link" href="#" style={{ fontSize: '24px' }}>2</Link></li>
-                        <li class="page-item"><Link class="page-link" href="#" style={{ fontSize: '24px' }}>3</Link></li>
+                        {page.map((item) => {
+              return (
+                <>
+                  <li class="page-item f-10" onClick={setpage(item)}>
+                    <Link
+                      class="page-link"
+                      onClick={setpage(item)}
+                      href="#"
+                      style={{ fontSize: "24px" }}
+                    >
+                      {item}
+                    </Link>
+                  </li>
+                </>
+              );
+            })}
                         <li class="page-item">
                             <Link class="page-link" href="#" aria-label="Next" style={{ fontSize: '24px' }}>
                                 <span aria-hidden="true">&raquo;</span>

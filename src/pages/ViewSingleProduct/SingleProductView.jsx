@@ -99,43 +99,19 @@ function SingleProductView() {
   };
 
   const buynow = () => {
-
-    let userId = localStorage.getItem("userId");
-   if(userId==null){
-    Swal.fire({
-      text: "Please Login First",
-      icon: "info",
-    });
+    if(localStorage.getItem("userId")==null){
+      Swal.fire({
+       
+        text: "Please Login First",
+        icon: "info",
+      });
+    }
+  else{
+    navigate("/checkout/"+productId);
   }
-    else{
-    const url = "http://localhost:8080/api/order/buyNow";
-    const formdata = new FormData();
-    formdata.append("productId", productId);
-    formdata.append("userId", userId);
+  }
 
-    fetch(url, {
-      method: "POST",
-      body: formdata,
-      headers: {
-        "Authorization": "Bearer " + localStorage.getItem("token"),
-    }
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        
-      })
-      .catch((error) => {
-        console.log(error);
-      }
-      );
-      
-    }
-  };
-
-   
-
-        
+    
 
 
   const changeImage = (item) => (e) => {

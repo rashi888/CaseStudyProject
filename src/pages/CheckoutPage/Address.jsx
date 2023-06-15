@@ -6,11 +6,16 @@ import Modal from "./Modal";
 import axios from "axios";
 import useRazorpay from "react-razorpay";
 import { useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 import Swal from "sweetalert2";
 
 function Address() {
   const navigate = useNavigate();
+  const { id } = useParams();
+  const productId = id;
+
+  console.log(productId);
 
   const [data, setData] = useState([]);
   const [deliveryDetailsId, setDeliveryDetailsId] = useState(null);
@@ -19,7 +24,23 @@ function Address() {
 
   const name = localStorage.getItem("name");
 
+
+
   const fetchdata = () => {
+
+    axios.get("http://localhost:8080/api/products/" + productId,{
+      headers: {
+          "Authorization": "Bearer " + localStorage.getItem("token"),
+      }
+  })
+      .then((resp) => {
+        console.log(resp["data"]);
+        setGrandtotal(resp["data"].productPrice);
+      })
+
+
+
+
     axios
       .get(
         "http://localhost:8080/api/deliveryDetails/user/" +
@@ -157,6 +178,11 @@ function Address() {
     paymentMethod: paymentMethod,
   });
 
+  if(productId!=null){
+    datas["productId"] = productId;
+  }
+
+
   const checkout = (e) => {
     e.preventDefault();
     console.log(datas);
@@ -170,6 +196,25 @@ function Address() {
       });
     } else {
       if (datas.paymentMethod === "COD") {
+        if(productId!=null){
+          axios.post("http://localhost:8080/api/order/buyNow", datas, {
+            headers: {
+              "Authorization": "Bearer " + localStorage.getItem("token"),
+          }
+          })
+          .then((resp) => {
+            console.log(resp["data"]);
+            Swal.fire({
+              title: "Success",
+              text: "Order Placed Successfully",
+              icon: "success",
+            });
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+
+        }else{
         axios
           .post("http://localhost:8080/api/order/", datas, {
             headers: {
@@ -186,7 +231,7 @@ function Address() {
           })
           .catch((error) => {
             console.log(error);
-          });
+          });}
       } else {
         setPaymentMethod("Online");
         PayByRazorPay();
@@ -206,17 +251,47 @@ function Address() {
         console.log(response.razorpay_payment_id);
         console.log(response.razorpay_order_id);
         console.log(response.razorpay_signature);
-        axios
-          .post("http://localhost:8080/api/order/", datas, {
+        if(productId!=null){
+          axios.post("http://localhost:8080/api/order/buyNow", datas, {
             headers: {
-              Authorization: "Bearer " + localStorage.getItem("token"),
-            },
+                "Authorization": "Bearer " + localStorage.getItem("token"),
+            }
           })
           .then((resp) => {
             console.log(resp["data"]);
             console.log(resp);
             const length = resp.data.length;
             const orderStatus = "Order Placed";
+            axios.put("http://localhost:8080/api/order/orderStatus/" + resp.data["id"], {orderStatus}, {
+              headers: {
+                "Authorization": "Bearer " + localStorage.getItem("token"),
+            }
+          })
+          .then((resp) => {
+            console.log(resp["data"]);
+          });
+            Swal.fire({
+              title: "Success",
+              text: "Order Placed Successfully",
+              icon: "success",
+            });
+          })
+          
+            
+        }else{
+        axios
+          .post("http://localhost:8080/api/order/", datas, {
+            headers: {
+              Authorization: "Bearer " + localStorage.getItem("token"),
+            },
+          })
+        
+          .then((resp) => {
+            console.log(resp["data"]);
+            console.log(resp);
+            const length = resp.data.length;
+            const orderStatus = "Order Placed";
+
             for (let i = 0; i < length; i++) {
               axios
                 .put(
@@ -242,7 +317,10 @@ function Address() {
             // console.log(orderId);
           });
 
+
+
         navigate("/orders");
+        }
       },
       prefill: {
         name: name,
