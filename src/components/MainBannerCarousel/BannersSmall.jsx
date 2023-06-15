@@ -59,10 +59,10 @@ const BannersSmall=()=>{
         <div className="carousel1-banner">
           <img  onClick={srch("kitchen storage")} src={img16} alt="" height="280px" width="1250px" />
         </div>
-        <Link to={"category/6"} className="carousel1-banner">
+        <Link to={"category/5"} className="carousel1-banner">
           <img  src={img17} alt="" height="280px" width="1250px" />
           </Link>
-         <Link to={"category/10"} className="carousel1-banner">
+         <Link to={"category/8"} className="carousel1-banner">
           <img src={img18} alt="" height="250px" width="1250px" />
         </Link>
       </Slider>

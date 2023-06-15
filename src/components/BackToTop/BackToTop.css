@@ -8,5 +8,6 @@
     color: #fff;
     cursor: pointer;
     border-radius: 5px;
+    z-index: 1100;
   }
   
