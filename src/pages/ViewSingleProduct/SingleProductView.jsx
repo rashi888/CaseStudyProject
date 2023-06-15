@@ -149,7 +149,7 @@ function SingleProductView() {
   {
     menu = (
       <div className="btn-add-div" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-around', marginLeft: '-30px' }}>
-        <button className="btn btn-success" style={{ width: '200px', height: '50px', borderRadius: '5px', fontSize: '20px', fontWeight: 'bold', cursor: 'not-allowed' }} disabled>Out of Stock</button>
+        <button className="btn btn-danger" style={{ width: '200px', height: '50px', borderRadius: '5px', fontSize: '20px', fontWeight: 'bold', cursor: 'not-allowed' }} disabled>Out of Stock</button>
       </div>
     )
   }
