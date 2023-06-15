@@ -239,7 +239,7 @@ function Address() {
                 icon: "success",
               });
             }
-            console.log(orderId);
+            // console.log(orderId);
           });
 
         navigate("/orders");
