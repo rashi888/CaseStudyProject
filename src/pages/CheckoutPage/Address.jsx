@@ -115,16 +115,19 @@ function Address() {
   };
 
  const editAdd = (id) => (e) => {
-  const updateForm = (e) => {
+    e.preventDefault();
+    console.log(id);
+    setDeliveryDetailsId(id);
+  
+
+ }
+  const updateForm = (id) => (e) => {
     e.preventDefault();
     const formdata = new FormData(e.target);
-
-   
-        
-    
     const data = Object.fromEntries(formdata.entries());
     data["tempUserId"] = localStorage.getItem("userId");
     console.log(data);
+    console.log(id);
     axios
       .put("http://localhost:8080/api/deliveryDetails/" + id, data, {
         headers: {
@@ -143,8 +146,8 @@ function Address() {
         closeSecondModal();
       });
   };
-    }   
-    
+
+
 
   const refresh = () => window.location.reload(true);
 
@@ -338,7 +341,7 @@ function Address() {
               <div className="modal-div">
                 <div className="popup-content">
                   <h5 style={{ marginBottom: "30px" }}> Address </h5>
-                  <Form onSubmit={updateForm()}>
+                  <Form onSubmit={updateForm(deliveryDetailsId)}>
                     <Row>
                       <Col md={6}>
                         <FormGroup>
@@ -346,7 +349,7 @@ function Address() {
                           <Input
                             id="name"
                             name="name"
-                            placeholder={data.name} 
+                            placeholder="name"
                             type="name"
                           />
                         </FormGroup>
