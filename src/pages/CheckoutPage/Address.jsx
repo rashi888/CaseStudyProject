@@ -349,7 +349,7 @@ function Address() {
                           <Input
                             id="name"
                             name="name"
-                            placeholder="name"
+                            placeholder="Name"
                             type="name"
                           />
                         </FormGroup>
@@ -371,7 +371,7 @@ function Address() {
                       <Input
                         id="exampleAddress"
                         name="addressLine1"
-                        placeholder="1234 Main St"
+                        placeholder="Flat, House no., Building, Company, Apartment"
                       />
                     </FormGroup>
                     <FormGroup>
@@ -379,7 +379,7 @@ function Address() {
                       <Input
                         id="exampleAddress2"
                         name="addressLine2"
-                        placeholder="Apartment, studio, or floor"
+                        placeholder="Area, Street, Sector, Village"
                       />
                     </FormGroup>
                     <Row>
@@ -398,7 +398,6 @@ function Address() {
                               name="state"
                               id="inputGroupSelect02"
                             >
-                              <option selected>Choose...</option>
                               <option selected>Choose...</option>
                               <option value="Andhra Pradesh">
                                 {" "}
@@ -474,7 +473,7 @@ function Address() {
                           <Input
                             id="name"
                             name="name"
-                            placeholder="name"
+                            placeholder="Name"
                             type="name"
                           />
                         </FormGroup>
@@ -496,7 +495,7 @@ function Address() {
                       <Input
                         id="exampleAddress"
                         name="addressLine1"
-                        placeholder="1234 Main St"
+                        placeholder="Flat, House no., Building, Company, Apartment"
                       />
                     </FormGroup>
                     <FormGroup>
@@ -523,7 +522,6 @@ function Address() {
                               name="state"
                               id="inputGroupSelect02"
                             >
-                              <option selected>Choose...</option>
                               <option selected>Choose...</option>
                               <option value="Andhra Pradesh">
                                 {" "}

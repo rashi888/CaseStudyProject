@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react'
 import Modal from '../CheckoutPage/Modal';
 import "./User.css"
 // import userIcon from "../../assets/All_Icons/userimg1.jpeg"
-import userIcon from "../../assets/All_Icons/userimg1.png"
+// import userIcon from "../../assets/All_Icons/userimg1.png"
+import userIcon from "../../assets/All_Icons/user.png"
 import { BiUserCircle } from "react-icons/bi"
 import { RiShoppingCartFill } from "react-icons/ri"
 import { RiHeartLine } from "react-icons/ri"
@@ -234,7 +235,6 @@ function AddressUser() {
                                                     </Label>
                                                     <div class="input-group mb-3">
                                                         <select class="form-select" name="state" id="inputGroupSelect02">
-                                                            <option selected>Choose...</option>
                                                             <option selected>Choose...</option>
                                                             <option value="Andhra Pradesh"> Andhra Pradesh</option>
                                                             <option value="Arunachal Pradesh">Arunachal Pradesh</option>

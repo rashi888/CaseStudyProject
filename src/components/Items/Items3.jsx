@@ -14,7 +14,7 @@ function Items3() {
     const fetchData = () => {
         setIsLoading(true);
 
-        return fetch("http://localhost:8080/api/category/3/products",{
+        return fetch("http://localhost:8080/api/category/3/products?sortDir=desc",{
             headers: {
                 "Authorization": "Bearer " + localStorage.getItem("token"),
             }

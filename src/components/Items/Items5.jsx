@@ -14,11 +14,11 @@ function Items5() {
   const fetchData = () => {
     setIsLoading(true);
 
-    return fetch("http://localhost:8080/api/category/6/products?pageNumber=0&pageSize=10&sortBy=productId&sortDir=asc",{
+    return fetch("http://localhost:8080/api/category/6/products?pageNumber=0&pageSize=10&sortBy=productId&sortDir=desc", {
       headers: {
-          "Authorization": "Bearer " + localStorage.getItem("token"),
+        "Authorization": "Bearer " + localStorage.getItem("token"),
       }
-  })
+    })
       .then((response) => response.json())
       .then((data) => {
         setProduct(data["content"])
@@ -58,41 +58,41 @@ function Items5() {
   const addtocart = (id) => (e) => {
     // console.log(e.target.value);
     let userId = localStorage.getItem("userId");
-    if(userId==null){
+    if (userId == null) {
       Swal.fire({
-        
+
         text: "Please Login First",
         icon: "info",
       });
 
-    }else{
-    const url = "http://localhost:8080/api/cart/addToCart";
-    const formdata = new FormData();
-    formdata.append("productId", id);
-    formdata.append("userId", userId);
+    } else {
+      const url = "http://localhost:8080/api/cart/addToCart";
+      const formdata = new FormData();
+      formdata.append("productId", id);
+      formdata.append("userId", userId);
 
-    fetch(url, {
-      method: "POST",
-      body: formdata,
-      
+      fetch(url, {
+        method: "POST",
+        body: formdata,
+
         headers: {
-            "Authorization": "Bearer " + localStorage.getItem("token"),
+          "Authorization": "Bearer " + localStorage.getItem("token"),
         }
-    
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        // console.log(data);
-        Swal.fire({
-          title: "Success",
-          text: "Product Added to Cart Successfully",
-          icon: "success",
-        });
+
       })
-      .catch((error) => {
-        console.log(error);
-      }
-      );
+        .then((response) => response.json())
+        .then((data) => {
+          // console.log(data);
+          Swal.fire({
+            title: "Success",
+            text: "Product Added to Cart Successfully",
+            icon: "success",
+          });
+        })
+        .catch((error) => {
+          console.log(error);
+        }
+        );
     }
 
 

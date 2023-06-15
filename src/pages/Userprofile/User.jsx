@@ -84,8 +84,6 @@ function User() {
         //     });
     };
 
-
-
     return (
         <>
             <div className="user-container">
