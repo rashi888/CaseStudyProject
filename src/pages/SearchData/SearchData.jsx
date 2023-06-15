@@ -60,40 +60,36 @@ const SearchData = (props) => {
 
   
 
-  const fetchData = () => {
-    const url =
-      api +
-      "?pageSize=10&pageNumber=" +
-      pageNumber +
-      "&sortBy=" +
-      sortBy +
-      "&sortDir=" +
-      dir;
-    return fetch(url,{
-      headers: {
-          "Authorization": "Bearer " + localStorage.getItem("token"),
-      }
-  }
-      
-    )
-      .then((response) => response.json())
-      .then((data) => 
-      {
-        console.log(data);
-        setProduct(data["content"]);
-        setTotalPages(data["totalPages"]);
-
-      }
-      );
-
-  };
-
+  
   useEffect(() => {
     fetchData();
     setProduct(location.state.searchdata);
 
   }, []);
   console.log(product);
+
+  const fetchData = () => {
+    const url =
+      "http://localhost:8080/api/products/search/" + location.state.searchdata +
+      "?pageSize=10&pageNumber=" +
+      pageNumber +
+      "&sortBy=" +
+      sortBy +
+      "&sortDir=" +
+      dir;
+      console.log(url);
+    return fetch(url,{
+      headers: {
+          "Authorization": "Bearer " + localStorage.getItem("token"),
+      }
+  })
+      .then((response) => response.json())
+      .then((data) => {
+        setTotalPages(data["totalPages"]);
+        setProduct(data["content"]);
+      });
+  };
+
 
 
   
