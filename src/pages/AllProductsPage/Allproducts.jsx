@@ -1,10 +1,6 @@
 import React, { useState, useEffect,useDeps } from "react";
 import "./Allproducts.css";
 import { Link } from "react-router-dom";
-import icon from "../../assets/All_Icons/user icon.png";
-// import img from "../../assets/MSignupImg/msignup.jpg"
-import img from "../../assets/PhoneImgs/phone1.webp";
-import { RiArrowDownSLine } from "react-icons/ri";
 import Swal from "sweetalert2";
 import { Spinner } from "reactstrap";
 import { useLocation } from 'react-router'
@@ -156,7 +152,7 @@ function Allproducts(props) {
                 backgroundColor: "white",
               }}
             >
-              Sort by: <span style={{ fontWeight: "500" }}>Sort By</span>
+              Sort by: <span style={{ fontWeight: "500" }}>{sortBy}</span>
             </Link>
 
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
@@ -165,6 +161,7 @@ function Allproducts(props) {
                 href="#"
                 onClick={() => {
                   setSortBy("productId");
+                  setDir("DESC");
                 }}
               >
                 New Arrivals

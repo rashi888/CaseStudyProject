@@ -5,6 +5,7 @@ import twoimg from "../../assets/FooterImg/return-policy-icon-17.png"
 import threeimg from "../../assets/FooterImg/free.png"
 import { Link, useNavigate } from "react-router-dom"
 import logoo from "../../assets/NavbarImg/ShopEaseLogo1.png"
+import makeinIndia from "../../assets/FooterImg/makeinIndia.png"
 
 const Footer = () => {
     const navigate =useNavigate();
@@ -26,7 +27,7 @@ const Footer = () => {
 
                     <div className="legal" style={{ marginTop: '35px' }}>
                         <p>Copyright © 2023 by Shopease and its affiliates. All rights reserved.</p>
-                        
+
                     </div>
                     <div className="become-seller" >
                     <p style={{ fontSize: '22px', color: '#54b9c4', fontWeight: 700, marginTop: '10px' }}>BECOME A SELLER</p>
@@ -65,7 +66,7 @@ const Footer = () => {
                 </div>
 
                 <div className="line1"></div>
-                <div className="promises" style={{ width: '350px', height: '250px', padding: '0' }}>
+                <div className="promises" style={{ width: '350px',marginTop:'15px', height: '250px', padding: '0' }}>
                     <div className="original" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                         <img src={oneimg} alt="" height="60px" width="60px" />
                         <p style={{ marginTop: '15px', marginLeft: '10px' }}> 100% ORIGINAL guarantee for  all  products at shopease.com</p>
@@ -78,6 +79,7 @@ const Footer = () => {
                         <img src={threeimg} alt="" height="70px" width="70px" />
                         <p style={{ marginTop: '15px', marginLeft: '10px' }}> Get free delivery for every order above 499</p>
                     </div>
+                    <img src={makeinIndia} height="150px" width="150px" style={{paddingTop:'10px'}}/>
                 </div>
 
                
