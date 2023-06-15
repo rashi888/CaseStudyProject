@@ -222,11 +222,10 @@ function Address() {
                     .then((resp) => {
                         console.log(resp["data"]);
                         console.log(resp);
-                        console.log(resp.data[0]["id"]);
-                        const id=resp["data"][0]["id"];
-                        console.log(id);
+                        const length=resp.data.length;
                         const orderStatus = "Order Placed";
-                        axios.put("http://localhost:8080/api/order/orderStatus/"+id, 
+                        for(let i=0;i<length;i++){
+                            axios.put("http://localhost:8080/api/order/orderStatus/"+resp.data[i]['id'],
                         {orderStatus},{
                             headers: {
                                 "Authorization": "Bearer " + localStorage.getItem("token"),
@@ -242,10 +241,16 @@ function Address() {
                             text: "Order Placed Successfully",
                             icon: "success",
                         });
+                        }
+                        console.log(orderId);
+
+                    })
+
+                        
                         navigate("/orders");
 
-                    }
-                    )
+                    
+                    
             },
             prefill: {
                 name: name,
