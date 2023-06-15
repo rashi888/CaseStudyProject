@@ -180,18 +180,10 @@ function Signup() {
 
                             <label>Confirm Password</label>
                         </div>
-                        {/* <div className="content">
-                            <div className="checkbox">
-                                <input type="checkbox" id="remember-me" />
-                                <label htmlFor="remember-me">Remember me</label>
-                            </div>
-                        </div> */}
+                        
                         <div className="field-signup">
                             <input type="submit" value="Register" />
                         </div>
-
-                        {/* <div className="google-btn" id="singInDiv"></div> */}
-
                         <div className="signup-link">
                             Already a member? <a href="login">Login</a>
                         </div>

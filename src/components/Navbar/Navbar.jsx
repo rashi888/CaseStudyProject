@@ -126,7 +126,6 @@ const Navbar = () => {
                 <div className="logos" onClick={scrollToTop}>
 
                     <Link to="/">
-                        {/* <img src={logo} alt="" className="logo" /> */}
                         <img src={logoo} alt="" className="logo" />
                     </Link>
                 </div>
@@ -152,11 +151,7 @@ const Navbar = () => {
                         <p style={{ color: 'white', padding: '15px 0px 0px 0px' }}> {Name}</p>
                         <div onClick={verifylogin}>
                             <img className="profileimg" src={profile} alt="" />
-                            {/* <div className="profile">
-            <h6>My Profile</h6>
-            <h6 onClick={logout}>LogOut</h6>
-        </div> */}
-                            {menu}
+                             {menu}
                         </div>
                     </div>
 

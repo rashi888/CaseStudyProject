@@ -3,7 +3,6 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./BannerMain.css"
-import img10 from "../../assets/NewBannersImg/img10.png"
 import img15 from "../../assets/NewBannersImg/img15.jpg"
 import img16 from "../../assets/NewBannersImg/img16.jpg"
 import img17 from "../../assets/NewBannersImg/img17.jpg"

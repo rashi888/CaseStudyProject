@@ -13,34 +13,32 @@ import jwt_decode from "jwt-decode"
 
 function Login() {
 
-  
-
-
   const onSuccess = (response) => {
-    console.log(response);
+    // console.log(response);
     const token = response.code;
     const client_id = "Iv1.781b6a8be3b8aa24";
-  const client_secret="7e4df136172e715f5f7ae915696457800aec1278";
-   axios.post("https://github.com/login/oauth/access_token?client_id="+client_id+"&client_secret="+client_secret+"&code="+token,
-   {mode:'cors',
-   headers: {
-    'Access-Control-Allow-Origin': '*',
-    'Content-Type': 'application/json',
-    'Accept': 'application/json'
-   }
-   }
-   ).then((response)=>{
+    const client_secret = "7e4df136172e715f5f7ae915696457800aec1278";
+    axios.post("https://github.com/login/oauth/access_token?client_id=" + client_id + "&client_secret=" + client_secret + "&code=" + token,
+      {
+        mode: 'cors',
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        }
+      }
+    ).then((response) => {
       console.log(response);
-  })
-  .catch((error)=>{
-    console.log(error);
-  })
+    })
+      .catch((error) => {
+        console.log(error);
+      })
 
   }
 
   const makeAPICall = async () => {
     try {
-      const response = await fetch('http://localhost:8080/login', {mode:'cors'});
+      const response = await fetch('http://localhost:8080/login', { mode: 'cors' });
       const data = await response.json();
       console.log({ data })
     }
@@ -214,12 +212,6 @@ function Login() {
 
               <label>Password</label>
             </div>
-            {/* <div className="content">
-              <div className="checkbox">
-                <input type="checkbox" id="remember-me" />
-                <label htmlFor="remember-me">Remember me</label>
-              </div>
-            </div> */}
             <div className="field">
               <input type="submit" value="Login" />
             </div>
@@ -248,7 +240,7 @@ function Login() {
       <script src="https://accounts.google.com/gsi/client"></script>
 
     </>
-    
+
   )
 }
 
