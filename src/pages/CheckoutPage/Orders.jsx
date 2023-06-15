@@ -49,6 +49,10 @@ function Orders() {
         )
     }
 
+    const gotoProduct = (id) => (e) => {
+        window.location.href = "/singleproductview/" + id;
+    }
+
     return (
         <>
             <div className="cont-container">
@@ -83,16 +87,16 @@ function Orders() {
                                             <h5 style={{ padding: '10px 20px' }}>{item.orderStatus}</h5>
                                             <div className="order-all">
                                                 <div className="img-order-img">
-                                                    <img src={
+                                                    <img onClick={gotoProduct(item.product.productId)} src={
                                                         "http://localhost:8080/api/products/image/" +
                                                         item.product.productPhoto[0]
                                                     } alt="" height="150px" width="150px" />
                                                 </div>
                                                 <div className="content-box">
-                                                    <Link ><h6 className="head3">{item.product.productName}</h6></Link>
+                                                    <Link ><h6 onClick={gotoProduct(item.product.productId)} className="head3">{item.product.productName}</h6></Link>
                                                     <p style={{ marginLeft: '40px', marginTop: '-10px' }}>Return window closed on 10-June-2023</p>
                                                     <button style={{ padding: '5px 20px', borderRadius: '5px', backgroundColor: 'rgb(255, 217, 0)', margin: '0 40px', border: 'none' }}>Buy it again</button>
-                                                    <button style={{ padding: '5px 20px', borderRadius: '5px', backgroundColor: 'white', margin: '0 -10px', border: '0.5px solid lightgray' }}>View your item</button>
+                                                    <button onClick={gotoProduct(item.product.productId)} style={{ padding: '5px 20px', borderRadius: '5px', backgroundColor: 'white', margin: '0 -10px', border: '0.5px solid lightgray' }}>View your item</button>
                                                 </div>
                                                 <div className="buttons-option">
                                                     <div className="option1-div">
