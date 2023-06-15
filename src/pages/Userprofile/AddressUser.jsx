@@ -16,14 +16,14 @@ import { Form, FormGroup, Label, Input, FormText, Col, Button, FormGroupProps, R
 
 function AddressUser() {
 
-  
+
 
     const [data, setData] = useState([]);
     const [deliveryDetailsId, setDeliveryDetailsId] = useState(1);
 
 
     const fetchdata = () => {
-        axios.get("http://localhost:8080/api/deliveryDetails/user/" + localStorage.getItem("userId"),{
+        axios.get("http://localhost:8080/api/deliveryDetails/user/" + localStorage.getItem("userId"), {
             headers: {
                 "Authorization": "Bearer " + localStorage.getItem("token"),
             }
@@ -69,7 +69,7 @@ function AddressUser() {
         const data = Object.fromEntries(formdata.entries());
         data["tempUserId"] = localStorage.getItem("userId");
         console.log(data);
-        axios.post("http://localhost:8080/api/deliveryDetails/", data,{
+        axios.post("http://localhost:8080/api/deliveryDetails/", data, {
             headers: {
                 "Authorization": "Bearer " + localStorage.getItem("token"),
             }
@@ -92,7 +92,7 @@ function AddressUser() {
     const deleteAddress = (id) => (e) => {
         e.preventDefault();
         console.log(id);
-        axios.delete("http://localhost:8080/api/deliveryDetails/" + id,{
+        axios.delete("http://localhost:8080/api/deliveryDetails/" + id, {
             headers: {
                 "Authorization": "Bearer " + localStorage.getItem("token"),
             }
@@ -155,14 +155,14 @@ function AddressUser() {
 
                     <div className="delivery-first" >
 
-                        <h3 style={{ marginBottom: '40px',color:'rgb(102, 102, 102)' }}>Products to be delivered on Address:</h3>
+                        <h3 style={{ marginBottom: '40px', color: 'rgb(102, 102, 102)' }}>Products to be delivered on Address:</h3>
                         {
                             data.map((item) => {
                                 return (
                                     <>
 
                                         <div class="form-check-delivery">
-                                            
+
                                             <label class="form-check-label" for="flexRadioDefault1">
                                                 {item.name},
                                                 {item.addressLine1},
@@ -172,9 +172,9 @@ function AddressUser() {
                                                 <br />
                                                 {item.state}
                                                 <button onClick={openModal} style={{ border: '0', backgroundColor: 'white', marginLeft: '20px', color: 'gray' }} >
-                                                        </button>
-                                                     <i onClick={deleteAddress(item.deliveryDetailsId)} class="ri-delete-bin-6-fill mx-3">
-                                                        </i>
+                                                </button>
+                                                <i onClick={deleteAddress(item.deliveryDetailsId)} class="ri-delete-bin-6-fill mx-3">
+                                                </i>
                                             </label>
                                         </div>
                                     </>
@@ -202,6 +202,7 @@ function AddressUser() {
                                                         name="name"
                                                         placeholder="Name"
                                                         type="name"
+                                                        required
                                                     />
                                                 </FormGroup>
                                             </Col>
@@ -215,28 +216,31 @@ function AddressUser() {
                                                         name="mobile"
                                                         placeholder="Mobile Number"
                                                         type="tel"
+                                                        required
                                                     />
                                                 </FormGroup>
                                             </Col>
                                         </Row>
                                         <FormGroup>
                                             <Label for="exampleAddress">
-                                                Address
+                                                Flat, House no., Building, Company, Apartment
                                             </Label>
                                             <Input
                                                 id="exampleAddress"
                                                 name="addressLine1"
                                                 placeholder="Flat, House no., Building, Company, Apartment"
+                                                required
                                             />
                                         </FormGroup>
                                         <FormGroup>
                                             <Label for="exampleAddress2">
-                                                Address 2
+                                                Area, Street, Sector, Village
                                             </Label>
                                             <Input
                                                 id="exampleAddress2"
                                                 name="addressLine2"
                                                 placeholder="Area, Street, Sector, Village"
+                                                required
                                             />
                                         </FormGroup>
                                         <Row>
@@ -248,6 +252,7 @@ function AddressUser() {
                                                     <Input
                                                         id="exampleCity"
                                                         name="city"
+                                                        required
                                                     />
                                                 </FormGroup>
                                             </Col>
@@ -299,6 +304,7 @@ function AddressUser() {
                                                     <Input
                                                         id="exampleZip"
                                                         name="pincode"
+                                                        required
                                                     />
                                                 </FormGroup>
                                             </Col>
