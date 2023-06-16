@@ -1,29 +1,39 @@
 import React from 'react'
-import aboutus from "../../assets/AdsImg/aboutimg.png"
+// import aboutus from "../../assets/AdsImg/aboutimg.png"
+import aboutus from "../../assets/MoreImgs/about us.png"
+import "./About.css"
+import picture from "../../assets/NavbarImg/Picture5.png"
+import logoo1 from "../../assets/NavbarImg/shopeaselogo11.png"
 
 function Aboutus() {
   return (
     <>
       <div className="about-us" style={{ backgroundColor: 'white', margin: '30px 40px', padding: '30px 100px' }}>
-        <div className="content-topic">
-          <h1 style={{ textAlign: 'center', margin: '20px 0' ,color:'#48c1cf'}}>About Us</h1>
+{/* <img src={logoo} height="50%" width="50%" style={{backgroundColor:'#54b9c4',margin:'35px 0',borderRadius:'5px',display:'flex',alignItems:'center',justifyContent:'center'}}/> */}
+<img src={logoo1} alt="" height="40%" width="40%" style={{margin:'0 0 60px 30%'}}/>
+        <h1>
+          <span>There  </span>
+          <span>are  </span>
+          <span>no  </span>
+          <span>limits  </span>
+          <span>to  </span>
+          <span>what  </span>
+          <span>you  </span>
+          <span>can  </span>
+          <span>accomplish,  </span>
+          <span>except  </span>
+          <span>the  </span>
+          <span>limits  </span>
+          <span>you  </span>
+          <span>place  </span>
+          <span>on  </span>
+          <span>your  </span>
+          <span>own  </span>
+          <span>thinking.  </span>
+        </h1>
 
-          <p>Hello and welcome to ShopEase, the place to find the best category for Grocery, Mobile, Fashion, Electronics, Home, Beauty for every taste and occasion. We thoroughly check the quality of our goods, working only with reliable suppliers so that you only receive the best quality product.
-            We at ShopEase believe in high quality and exceptional customer service. But most importantly, we believe shopping is a right, not a luxury, so we strive to deliver the best products at the most affordable prices, and ship them to you regardless of where you are located.</p>
-          <p>
-            At Shopease, we believe that shopping should be an enjoyable and hassle-free experience. Our mission is to provide a seamless online shopping platform where customers can discover a wide range of products, find great deals, and receive exceptional service.
-            As an ecommerce website, we strive to create a user-friendly environment that makes browsing, searching, and purchasing products a breeze. We carefully curate our product catalog, ensuring that we offer high-quality items from trusted brands across various categories. Whether you're looking for electronics, fashion, home decor, beauty products, or more, we have something for everyone.
-            <br /> <br /> Customer satisfaction is at the core of everything we do. We prioritize your needs and work tirelessly to deliver a delightful shopping experience. Our team is dedicated to providing prompt and friendly customer support, addressing any queries or concerns you may have. We believe in building long-lasting relationships with our customers by offering personalized assistance and ensuring your shopping journey is smooth from start to finish.
-            At Shopease, we understand the importance of secure and reliable transactions.
-            <br /> <br />
-            We employ advanced encryption technologies to safeguard your personal information and payment details, ensuring that your data is protected at all times. You can shop with confidence, knowing that your privacy and security are our top priorities.
-            We also strive to offer competitive prices and exciting deals to help you save money while enjoying your shopping experience. From regular discounts to seasonal promotions, we make sure you get the best value for your money. Additionally, our website features user reviews and ratings, allowing you to make informed decisions based on the experiences of other shoppers.
-            <br /> <br />  We are continuously evolving and expanding our product range to cater to the ever-changing needs and preferences of our customers. Your feedback is valuable to us, and we encourage you to share your thoughts and suggestions. We believe in constant improvement and want to make Shopease your go-to destination for all your online shopping needs.
-            Thank you for choosing Shopease. We look forward to serving you and making your shopping experience a delightful one.
-
-            Happy Shopping!
-            The Shopease Team</p>
-        </div>
+        <img src={aboutus} width="100%" height="100%"/>
+        <img src={picture} height="100%" width="100%" />
       </div>
     </>
   )

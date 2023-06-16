@@ -166,6 +166,7 @@ function Allproducts(props) {
                 onClick={() => {
                   setSortBy("productId");
                   setSortWay("New Arrivals");
+                  setDir("DESC");
                 }}
               >
                 New Arrivals
